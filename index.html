@@ -19,7 +19,8 @@
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="img/fire-hero-opt.jpg" fetchpriority="high" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; font-size: 16px; }
@@ -71,7 +72,7 @@
     .eyebrow { display: inline-block; font-size: .7rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--brand); background: var(--brand-l); border-radius: 999px; padding: .3rem .85rem; margin-bottom: 1rem; }
 
     /* Hero */
-    .hero-wrap { position: relative; background: url('img/fire-hero.jpg') center/cover no-repeat; min-height: 100svh; }
+    .hero-wrap { position: relative; background: url('img/fire-hero-opt.jpg') center/cover no-repeat; min-height: 100svh; }
     .hero-wrap::before { content: ''; position: absolute; inset: 0; background: linear-gradient(105deg, rgba(0,0,0,.85) 0%, rgba(0,0,0,.6) 55%, rgba(0,0,0,.35) 100%); pointer-events: none; }
     .hero { max-width: 1160px; margin: 0 auto; padding: 6rem 1.5rem 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; z-index: 1; min-height: inherit; }
     .hero-left h1 { font-size: 3.4rem; font-weight: 800; letter-spacing: -0.03em; color: #fff; line-height: 1.1; margin-bottom: 1.25rem; }
@@ -88,14 +89,11 @@
 
     /* Service tiles */
     .hero-right { display: grid; grid-template-columns: 1fr 1fr; gap: .85rem; }
-    .svc-tile { border-radius: 12px; padding: 1.2rem 1.25rem; background: linear-gradient(145deg, #0d1f33 0%, #0a1728 100%); border: 1px solid rgba(255,255,255,.06); color: #fff; transition: transform .5s cubic-bezier(.4,0,.2,1), box-shadow .5s, border-color .5s, opacity .5s; position: relative; overflow: hidden; cursor: default; }
-    .svc-tile::before { content: ''; position: absolute; inset: 0; border-radius: inherit; background: radial-gradient(ellipse 90% 70% at 50% -20%, rgba(192,57,43,.25), transparent); opacity: 0; transition: opacity .5s; }
-    .svc-tile.lit { transform: scale(1.05); border-color: rgba(192,57,43,.4); box-shadow: 0 16px 48px rgba(0,0,0,.45), 0 0 0 1px rgba(192,57,43,.15); }
-    .svc-tile.lit::before { opacity: 1; }
-    .svc-tile.dim { opacity: .42; transform: scale(.965); }
-    .svc-tile-icon { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,.07); display: flex; align-items: center; justify-content: center; margin-bottom: .85rem; }
+    .svc-tile { border-radius: 12px; padding: 1.2rem 1.25rem; background: rgba(255,255,255,.10); border: 1px solid rgba(255,255,255,.18); color: #fff; position: relative; overflow: hidden; cursor: default; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+    .svc-tile::before { content: ''; position: absolute; inset: 0; border-radius: inherit; background: radial-gradient(ellipse 90% 70% at 50% -20%, rgba(192,57,43,.18), transparent); }
+    .svc-tile-icon { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,.15); display: flex; align-items: center; justify-content: center; margin-bottom: .85rem; }
     .svc-tile-name { font-size: .875rem; font-weight: 600; margin-bottom: .25rem; position: relative; z-index: 1; }
-    .svc-tile-sub { font-size: .72rem; color: rgba(255,255,255,.45); position: relative; z-index: 1; }
+    .svc-tile-sub { font-size: .72rem; color: rgba(255,255,255,.65); position: relative; z-index: 1; }
 
     /* Feature strip */
     .feature-strip { background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 3.5rem 1.5rem; }
@@ -205,8 +203,10 @@
     }
     @media (max-width: 768px) {
       .hero-wrap { min-height: 0; }
-      .hero { grid-template-columns: 1fr; gap: 3rem; padding: 3.5rem 1.25rem 3rem; min-height: 0; }
-      .hero-left h1 { font-size: clamp(1rem, 5vw, 2rem); }
+      .hero { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.25rem 3.5rem; min-height: 0; }
+      .hero-left h1 { font-size: clamp(1.95rem, 9.75vw, 3.9rem); margin-bottom: 1.75rem; }
+      .hero-left p { margin-bottom: 2.5rem; }
+      .hero-ctas { margin-bottom: 2.75rem; }
       .hero-right { grid-template-columns: 1fr 1fr; }
       .photo-fade { display: none; }
       .feature-block { grid-template-columns: 1fr; gap: 2.5rem; padding: 3.5rem 1.25rem; }
@@ -228,7 +228,7 @@
       .footer-inner { flex-direction: column; text-align: center; }
     }
     @media (max-width: 480px) {
-      .hero-left h1 { font-size: clamp(1rem, 4.5vw, 1.8rem); }
+      .hero-left h1 { font-size: clamp(1.95rem, 9.1vw, 3.5rem); }
       .feature-strip-inner { grid-template-columns: 1fr; }
       .process-grid { grid-template-columns: 1fr; }
       .hero-right { grid-template-columns: 1fr 1fr; gap: .6rem; }
@@ -251,10 +251,9 @@
       <li><a href="index.html" class="active">Domů</a></li>
       <li><a href="sluzby.html">Služby</a></li>
       <li><a href="o-nas.html">O nás</a></li>
-      <li><a href="#kontakt">Kontakt</a></li>
-      <li class="mobile-cta-item"><a href="#kontakt" class="nav-cta">Nezávazná poptávka</a></li>
+      <li class="mobile-cta-item"><a href="#kontakt" class="nav-cta">Kontakt</a></li>
     </ul>
-    <a href="#kontakt" class="nav-cta">Nezávazná poptávka</a>
+    <a href="#kontakt" class="nav-cta">Kontakt</a>
     <div class="nav-hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
       <span></span><span></span><span></span>
     </div>
@@ -347,7 +346,7 @@
       <a href="sluzby.html" class="btn-primary">Prozkoumat služby</a>
     </div>
     <div class="sr sr-delay-2">
-      <img src="img/fist-bump.jpg" alt="Partnerská spolupráce" class="photo-fade" />
+      <img src="img/fist-bump-opt.jpg" alt="Partnerská spolupráce" class="photo-fade" loading="lazy" decoding="async" />
     </div>
   </div>
 </section>
@@ -368,7 +367,7 @@
       <a href="sluzby.html#pbz" class="btn-ghost">Detailní přehled systémů</a>
     </div>
     <div class="sr sr-delay-2">
-      <img src="img/blueprints.jpg" alt="Projektová dokumentace PBZ" class="photo-fade photo-fade-crop" />
+      <img src="img/blueprints-opt.jpg" alt="Projektová dokumentace PBZ" class="photo-fade photo-fade-crop" loading="lazy" decoding="async" />
     </div>
   </div>
 </div>
@@ -389,7 +388,7 @@
       <a href="sluzby.html#skoleni" class="btn-ghost">Detaily školení PO</a>
     </div>
     <div class="sr sr-delay-2">
-      <img src="img/skoleni.png" alt="Školení požární ochrany na pracovišti" class="photo-fade" />
+      <img src="img/skoleni-opt.jpg" alt="Školení požární ochrany na pracovišti" class="photo-fade" loading="lazy" decoding="async" />
     </div>
   </div>
 </div>
@@ -410,7 +409,7 @@
       <a href="sluzby.html#revize" class="btn-primary">Plán kontrol a lhůty</a>
     </div>
     <div class="sr sr-delay-2">
-      <img src="img/protokol.jpg" alt="Podepisování revizních protokolů" class="photo-fade" />
+      <img src="img/protokol-opt.jpg" alt="Podepisování revizních protokolů" class="photo-fade" loading="lazy" decoding="async" />
     </div>
   </div>
 </section>
@@ -419,21 +418,21 @@
 <div class="partners">
   <div class="partners-label">Naši partneři</div>
   <div class="partners-track" id="partnersTrack">
-    <img src="img/hilti-logo-png-transparent.png" alt="HILTI" />
-    <img src="img/Promat_Logo_format_PNG.png" alt="PROMAT" />
-    <img src="img/rigips.png" alt="Rigips" />
-    <img src="img/skypro.png" alt="Skypro" />
-    <img src="img/hastex.jpg" alt="Hastex" />
-    <img src="img/hilti-logo-png-transparent.png" alt="HILTI" />
-    <img src="img/Promat_Logo_format_PNG.png" alt="PROMAT" />
-    <img src="img/rigips.png" alt="Rigips" />
-    <img src="img/skypro.png" alt="Skypro" />
-    <img src="img/hastex.jpg" alt="Hastex" />
-    <img src="img/hilti-logo-png-transparent.png" alt="HILTI" />
-    <img src="img/Promat_Logo_format_PNG.png" alt="PROMAT" />
-    <img src="img/rigips.png" alt="Rigips" />
-    <img src="img/skypro.png" alt="Skypro" />
-    <img src="img/hastex.jpg" alt="Hastex" />
+    <img src="img/hilti-logo-png-transparent.png" alt="HILTI" loading="lazy" decoding="async" />
+    <img src="img/Promat_Logo_format_PNG.png" alt="PROMAT" loading="lazy" decoding="async" />
+    <img src="img/rigips.png" alt="Rigips" loading="lazy" decoding="async" />
+    <img src="img/skypro.png" alt="Skypro" loading="lazy" decoding="async" />
+    <img src="img/hastex.jpg" alt="Hastex" loading="lazy" decoding="async" />
+    <img src="img/hilti-logo-png-transparent.png" alt="HILTI" loading="lazy" decoding="async" />
+    <img src="img/Promat_Logo_format_PNG.png" alt="PROMAT" loading="lazy" decoding="async" />
+    <img src="img/rigips.png" alt="Rigips" loading="lazy" decoding="async" />
+    <img src="img/skypro.png" alt="Skypro" loading="lazy" decoding="async" />
+    <img src="img/hastex.jpg" alt="Hastex" loading="lazy" decoding="async" />
+    <img src="img/hilti-logo-png-transparent.png" alt="HILTI" loading="lazy" decoding="async" />
+    <img src="img/Promat_Logo_format_PNG.png" alt="PROMAT" loading="lazy" decoding="async" />
+    <img src="img/rigips.png" alt="Rigips" loading="lazy" decoding="async" />
+    <img src="img/skypro.png" alt="Skypro" loading="lazy" decoding="async" />
+    <img src="img/hastex.jpg" alt="Hastex" loading="lazy" decoding="async" />
   </div>
 </div>
 
@@ -492,22 +491,11 @@
   const grid = document.getElementById('tileGrid');
   tiles.forEach((t, i) => {
     const div = document.createElement('div');
-    div.className = 'svc-tile' + (i === 0 ? ' lit' : '');
+    div.className = 'svc-tile';
     div.innerHTML = `<div class="svc-tile-icon">${t.icon}</div><div class="svc-tile-name">${t.name}</div><div class="svc-tile-sub">${t.sub}</div>`;
     grid.appendChild(div);
   });
 
-  let current = 0;
-  function rotateTiles() {
-    const all = grid.querySelectorAll('.svc-tile');
-    all.forEach((el, i) => {
-      el.classList.remove('lit', 'dim');
-      if (i === current) el.classList.add('lit');
-      else el.classList.add('dim');
-    });
-    current = (current + 1) % tiles.length;
-  }
-  setInterval(rotateTiles, 1800);
 
   // Scroll reveal
   const observer = new IntersectionObserver((entries) => {
