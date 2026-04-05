@@ -127,8 +127,11 @@
       .footer-inner { flex-direction: column; text-align: center; }
       /* Mobile dropdown */
       .nav-dropdown-btn { display: flex !important; padding: .85rem 1.25rem; color: rgba(255,255,255,.8) !important; border-bottom: 1px solid rgba(255,255,255,.07); font-size: .9rem; width: 100%; justify-content: space-between; }
-      .nav-dropdown-menu { position: static; transform: none; opacity: 1; visibility: visible; box-shadow: none; border: none; padding: 0; min-width: auto; background: rgba(0,0,0,.2); border-radius: 0; transition: none; }
+      .nav-dropdown-menu { position: static; transform: none; opacity: 1; visibility: visible; box-shadow: none; border: none; padding: 0; min-width: auto; background: rgba(0,0,0,.2); border-radius: 0; max-height: 0; overflow: hidden; transition: max-height .3s cubic-bezier(.4,0,.2,1); }
+      .nav-dropdown.open .nav-dropdown-menu { max-height: 200px; }
+      .nav-dropdown.open .nav-dropdown-arrow { transform: rotate(180deg); }
       .nav-dropdown-menu a { padding: .75rem 1.25rem .75rem 2rem !important; font-size: .85rem !important; border-bottom: 1px solid rgba(255,255,255,.07) !important; color: rgba(255,255,255,.6) !important; }
+      .nav-dropdown-menu a[href="kontakt.html"] { display: none !important; }
     }
   </style>
 </head>
@@ -256,6 +259,15 @@
     navLinks.classList.toggle('open');
     hamburger.classList.toggle('open');
   });
+
+  // Mobile dropdown toggle
+  const dropdownBtn = document.querySelector('.nav-dropdown-btn');
+  const dropdown = document.querySelector('.nav-dropdown');
+  if (dropdownBtn) {
+    dropdownBtn.addEventListener('click', () => {
+      dropdown.classList.toggle('open');
+    });
+  }
 </script>
 </body>
 </html>
