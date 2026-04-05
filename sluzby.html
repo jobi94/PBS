@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Služby požární bezpečnosti | PBŘ, PBZ, revize – PBS</title>
+  <meta name="description" content="Projektová dokumentace PBŘ, dodávka a montáž PBZ, revize a kontroly, školení. Komplexní požární bezpečnost staveb od jednoho dodavatele. Poptejte dnes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; color: var(--body); background: var(--bg); }
+
+    :root {
+      --head: #0a2540;
+      --body: #425466;
+      --subtle: #697386;
+      --brand: #C0392B;
+      --brand-d: #9B2D20;
+      --brand-l: rgba(192,57,43,.08);
+      --bg: #ffffff;
+      --bg-alt: #f7f8fa;
+      --bg-dark: #0d1f33;
+      --border: #e3e8ef;
+      --shadow-sm: 0 1px 3px rgba(50,50,93,.1), 0 1px 2px rgba(0,0,0,.06);
+      --shadow-md: 0 4px 16px rgba(50,50,93,.12), 0 2px 6px rgba(0,0,0,.06);
+      --shadow-lg: 0 16px 48px rgba(50,50,93,.18), 0 4px 16px rgba(0,0,0,.08);
+      --r: 10px;
+      --r-lg: 16px;
+    }
+
+    .grad-bar { height: 3px; background: linear-gradient(90deg, #7F0000, #C0392B, #E74C3C, #E67E22, #F39C12); width: 100%; }
+
+    /* Nav */
+    nav { position: sticky; top: 0; z-index: 100; background: #0d1f33; border-bottom: 1px solid rgba(255,255,255,.1); }
+    .nav-inner { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .nav-logo { display: flex; align-items: center; gap: .6rem; font-size: 1.25rem; font-weight: 800; color: #fff; letter-spacing: -0.04em; text-decoration: none; }
+    .nav-logo img { height: 34px; width: auto; display: block; filter: brightness(0) invert(1); }
+    .nav-logo span { color: var(--brand); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: .875rem; font-weight: 500; color: rgba(255,255,255,.7); text-decoration: none; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: #fff; }
+    .nav-cta { font-size: .875rem; font-weight: 600; color: #fff; background: var(--brand); border: none; border-radius: var(--r); padding: .55rem 1.1rem; cursor: pointer; text-decoration: none; transition: background .2s, transform .15s, box-shadow .2s; box-shadow: 0 4px 12px rgba(192,57,43,.3); }
+    .nav-cta:hover { background: var(--brand-d); transform: translateY(-1px); box-shadow: 0 6px 18px rgba(192,57,43,.4); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: .4rem; }
+    .nav-hamburger span { width: 22px; height: 2px; background: #fff; border-radius: 2px; }
+
+    /* Buttons */
+    .btn-primary { display: inline-flex; align-items: center; gap: .5rem; background: var(--brand); color: #fff; font-size: .9375rem; font-weight: 600; border-radius: var(--r); padding: .75rem 1.5rem; text-decoration: none; border: none; cursor: pointer; box-shadow: 0 4px 14px rgba(192,57,43,.35); transition: background .2s, transform .15s, box-shadow .2s; }
+    .btn-primary:hover { background: var(--brand-d); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(192,57,43,.45); }
+    .btn-ghost { display: inline-flex; align-items: center; gap: .5rem; background: transparent; color: var(--head); font-size: .9375rem; font-weight: 600; border-radius: var(--r); padding: .75rem 1.5rem; text-decoration: none; border: 1.5px solid var(--border); cursor: pointer; transition: background .2s, border-color .2s, transform .15s; }
+    .btn-ghost:hover { background: var(--bg-alt); border-color: #c1c8d4; transform: translateY(-1px); }
+
+    .eyebrow { display: inline-block; font-size: .7rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--brand); background: var(--brand-l); border-radius: 999px; padding: .3rem .85rem; margin-bottom: 1rem; }
+
+    /* Page hero */
+    .page-hero-wrap { background: #fff; width: 100%; display: block; }
+    .page-hero { max-width: 1160px; margin: 0 auto; padding: 5rem 1.5rem 4rem; }
+    .page-hero h1 { font-size: 3rem; font-weight: 800; letter-spacing: -0.03em; color: var(--head); line-height: 1.1; margin-bottom: 1.25rem; max-width: 760px; }
+    .page-hero p { font-size: 1.0625rem; line-height: 1.75; color: var(--body); max-width: 640px; margin-bottom: 2rem; }
+    .quick-nav { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .quick-nav a { font-size: .78rem; font-weight: 600; color: var(--brand); background: rgba(192,57,43,.08); border: 1px solid rgba(192,57,43,.25); border-radius: 999px; padding: .35rem .9rem; text-decoration: none; transition: color .2s, border-color .2s, background .2s; }
+    .quick-nav a:hover { background: rgba(192,57,43,.15); border-color: rgba(192,57,43,.45); }
+
+    /* Service sections */
+    .svc-section { border-top: 1px solid var(--border); }
+    .svc-section-inner { max-width: 1160px; margin: 0 auto; padding: 5rem 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .svc-section-inner.full { grid-template-columns: 1fr; }
+    .svc-section.alt { background: var(--bg-alt); }
+
+    .svc-text h2 { font-size: 2rem; font-weight: 700; letter-spacing: -0.025em; color: var(--head); line-height: 1.2; margin-bottom: 1rem; }
+    .svc-text > p { font-size: 1rem; line-height: 1.75; color: var(--body); margin-bottom: 1.75rem; }
+
+    /* Check list */
+    .clist { list-style: none; display: flex; flex-direction: column; }
+    .clist li { display: flex; align-items: flex-start; gap: .75rem; font-size: .9rem; line-height: 1.6; color: var(--body); padding: .6rem 0; border-bottom: 1px solid var(--border); }
+    .clist li:last-child { border-bottom: none; }
+    .clist li::before { content: ''; display: block; width: 18px; height: 18px; min-width: 18px; border-radius: 50%; background: var(--brand-l) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23C0392B' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") no-repeat center; margin-top: .15rem; }
+
+    /* Sidebar card */
+    .sidebar-card { background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.75rem; box-shadow: var(--shadow-sm); position: sticky; top: 80px; }
+    .sidebar-card.dark { background: var(--bg-dark); border-color: rgba(255,255,255,.06); }
+    .sidebar-card h3 { font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--subtle); margin-bottom: 1.25rem; }
+    .sidebar-card.dark h3 { color: rgba(255,255,255,.35); }
+
+    .who-item { display: flex; align-items: center; gap: .75rem; padding: .55rem 0; border-bottom: 1px solid var(--border); font-size: .875rem; color: var(--body); }
+    .who-item:last-child { border-bottom: none; }
+    .who-icon { width: 32px; height: 32px; border-radius: 8px; background: var(--brand-l); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+    /* System cards grid */
+    .sys-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
+    .sys-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.5rem; box-shadow: var(--shadow-sm); transition: box-shadow .25s, transform .25s, border-color .25s; }
+    .sys-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); border-color: rgba(192,57,43,.2); }
+    .sys-card-icon { width: 38px; height: 38px; border-radius: 9px; background: var(--brand-l); display: flex; align-items: center; justify-content: center; margin-bottom: .9rem; }
+    .sys-card h3 { font-size: .9rem; font-weight: 700; color: var(--head); margin-bottom: .5rem; }
+    .sys-card p { font-size: .8rem; line-height: 1.65; color: var(--subtle); }
+
+    /* Info box */
+    .info-box { background: var(--brand-l); border: 1px solid rgba(192,57,43,.15); border-radius: var(--r); padding: 1.1rem 1.25rem; margin-top: 1.5rem; }
+    .info-box p { font-size: .85rem; line-height: 1.6; color: var(--brand-d); }
+    .info-box strong { color: var(--brand); }
+
+    /* Accordion */
+    .accordion-wrap { margin-top: 2rem; }
+    .accordion-heading { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--subtle); margin-bottom: .75rem; }
+    .acc-item { border: 1px solid var(--border); border-radius: var(--r); margin-bottom: .5rem; overflow: hidden; transition: border-color .2s; }
+    .acc-item.open { border-color: rgba(192,57,43,.25); box-shadow: var(--shadow-sm); }
+    .acc-btn { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1rem; background: none; border: none; padding: 1rem 1.5rem; cursor: pointer; text-align: left; }
+    .acc-btn:hover { background: var(--bg-alt); }
+    .acc-item.open .acc-btn { background: var(--bg-alt); }
+    .acc-btn-left { display: flex; align-items: center; gap: .75rem; }
+    .acc-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--brand); flex-shrink: 0; opacity: .35; transition: opacity .2s; }
+    .acc-item.open .acc-dot { opacity: 1; }
+    .acc-title { font-size: .9375rem; font-weight: 600; color: var(--head); }
+    .acc-badge { font-size: .68rem; font-weight: 600; color: var(--subtle); background: var(--bg-alt); border: 1px solid var(--border); border-radius: 999px; padding: .2rem .75rem; white-space: nowrap; }
+    .acc-item.open .acc-badge { color: var(--brand); background: var(--brand-l); border-color: rgba(192,57,43,.2); }
+    .acc-chevron { flex-shrink: 0; color: var(--subtle); transition: transform .3s ease; }
+    .acc-item.open .acc-chevron { transform: rotate(180deg); }
+    .acc-body { max-height: 0; overflow: hidden; transition: max-height .4s ease; }
+    .acc-body-inner { padding: 1.25rem 1.5rem 1.5rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 3rem; }
+    .acc-row { display: flex; align-items: baseline; gap: .75rem; padding: .45rem 0; border-bottom: 1px solid var(--border); }
+    .acc-row:last-child { border-bottom: none; }
+    .acc-row-label { font-size: .78rem; font-weight: 600; color: var(--subtle); min-width: 160px; flex-shrink: 0; }
+    .acc-row-val { font-size: .83rem; color: var(--body); line-height: 1.55; }
+    .acc-note { font-size: .8rem; color: var(--subtle); margin-top: .75rem; padding-top: .75rem; border-top: 1px solid var(--border); line-height: 1.6; grid-column: 1 / -1; }
+    @media (max-width: 760px) {
+      .acc-body-inner { grid-template-columns: 1fr; gap: 0; }
+      .acc-btn { padding: .85rem 1rem; }
+      .acc-title { font-size: .875rem; }
+      .acc-badge { display: none; }
+    }
+
+    /* Law box */
+    .law-box { background: var(--bg); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.5rem; }
+    .law-row { display: flex; align-items: baseline; gap: .75rem; padding: .6rem 0; border-bottom: 1px solid var(--border); }
+    .law-row:last-child { border-bottom: none; }
+    .law-num { font-size: .78rem; font-weight: 700; color: var(--brand); white-space: nowrap; }
+    .law-desc { font-size: .83rem; color: var(--body); line-height: 1.5; }
+
+    /* Partner logos grid */
+    .partner-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
+    .partner-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.75rem 1.5rem; display: flex; flex-direction: column; align-items: center; gap: .9rem; box-shadow: var(--shadow-sm); transition: box-shadow .25s, transform .25s; }
+    .partner-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .partner-card img { height: 36px; width: auto; object-fit: contain; filter: grayscale(.3); transition: filter .2s; }
+    .partner-card:hover img { filter: grayscale(0); }
+    .partner-card p { font-size: .75rem; color: var(--subtle); text-align: center; line-height: 1.5; }
+
+    /* Dark CTA block */
+    .cta-block { background: var(--bg-dark); border-radius: var(--r-lg); padding: 3.5rem; margin-top: 4rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap; }
+    .cta-block h3 { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.02em; color: #fff; margin-bottom: .5rem; }
+    .cta-block p { font-size: .9375rem; color: rgba(255,255,255,.55); line-height: 1.65; }
+
+    /* Contact dark */
+    .contact-dark { background: var(--bg-dark); padding: 5.5rem 1.5rem; }
+    .contact-dark-inner { max-width: 1160px; margin: 0 auto; }
+    .contact-dark h2 { font-size: 2.3rem; font-weight: 700; letter-spacing: -0.025em; color: #fff; margin-bottom: .75rem; }
+    .contact-dark .sub { font-size: 1rem; color: rgba(255,255,255,.55); margin-bottom: 3rem; line-height: 1.7; }
+    .contact-boxes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-bottom: 2.5rem; }
+    .contact-box { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: var(--r-lg); padding: 1.5rem; transition: background .25s, border-color .25s; }
+    .contact-box:hover { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.13); }
+    .contact-box-icon { width: 40px; height: 40px; border-radius: 10px; background: rgba(192,57,43,.15); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
+    .contact-box h4 { font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: .5rem; }
+    .contact-box a, .contact-box p { font-size: 1rem; font-weight: 600; color: #fff; text-decoration: none; line-height: 1.5; }
+    .contact-box a:hover { color: rgba(255,255,255,.8); }
+    .contact-box .small { font-size: .8rem; color: rgba(255,255,255,.4); font-weight: 400; margin-top: .25rem; }
+
+    /* Footer */
+    footer { background: #000; padding: 2.75rem 1.5rem; }
+    .footer-inner { max-width: 1160px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem; }
+    .footer-logo { display: flex; align-items: center; gap: .5rem; font-size: 1rem; font-weight: 800; color: rgba(255,255,255,.7); letter-spacing: -0.04em; text-decoration: none; }
+    .footer-logo img { height: 26px; width: auto; display: block; filter: brightness(0) invert(.7); }
+    .footer-logo span { color: var(--brand); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { font-size: .8rem; color: rgba(255,255,255,.35); text-decoration: none; transition: color .2s; }
+    .footer-links a:hover { color: rgba(255,255,255,.65); }
+    .footer-copy { font-size: .75rem; color: rgba(255,255,255,.22); }
+
+    /* Scroll reveal */
+    .sr { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+    .sr.in { opacity: 1; transform: none; }
+    .sr-delay-1 { transition-delay: .1s; }
+    .sr-delay-2 { transition-delay: .2s; }
+    .sr-delay-3 { transition-delay: .3s; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .svc-section-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .sys-grid { grid-template-columns: repeat(2, 1fr); }
+      .partner-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-boxes { grid-template-columns: 1fr; }
+      .cta-block { padding: 2.5rem; }
+    }
+    @media (max-width: 768px) {
+      .page-hero { padding: 3.5rem 1.25rem 3rem; }
+      .page-hero h1 { font-size: 2.2rem; }
+      .svc-section-inner { padding: 3.5rem 1.25rem; }
+      .nav-links, .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: #0d1f33; border-bottom: 1px solid rgba(255,255,255,.1); padding: 1rem 1.5rem; gap: 1rem; box-shadow: 0 8px 32px rgba(0,0,0,.5); }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .cta-block { flex-direction: column; text-align: center; padding: 2rem; }
+    }
+    @media (max-width: 480px) {
+      .sys-grid { grid-template-columns: 1fr; }
+      .partner-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="grad-bar"></div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="img/logo.svg" alt="PBS logo" />
+      SPBS<span>.</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Domů</a></li>
+      <li><a href="sluzby.html" class="active">Služby</a></li>
+      <li><a href="o-nas.html">O nás</a></li>
+      <li><a href="index.html#kontakt">Kontakt</a></li>
+    </ul>
+    <a href="index.html#kontakt" class="nav-cta">Nezávazná poptávka</a>
+    <div class="nav-hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- Page hero -->
+<div class="page-hero-wrap">
+<div class="page-hero sr">
+  <span class="eyebrow">Přehled služeb</span>
+  <h1>Požární bezpečnost staveb – komplexní služby pod jednou střechou</h1>
+  <p>Každá stavba potřebuje požární bezpečnost postavenou na míru. PBS zajišťuje celý rozsah – od první studie PBŘ přes dodávku a montáž PBZ až po pravidelné revize a kontroly vyžadované zákonem.</p>
+  <div class="quick-nav" role="navigation" aria-label="Rychlá navigace">
+    <a href="#skoleni">Školení PO</a>
+    <a href="#revize">Revize PBZ</a>
+    <a href="#pbz">Dodávka PBZ</a>
+    <a href="#pbr">PBŘ dokumentace</a>
+  </div>
+</div>
+</div>
+
+<!-- Školení -->
+<section class="svc-section" id="skoleni">
+  <div class="svc-section-inner">
+    <div class="svc-text sr">
+      <span class="eyebrow">01 — Školení a dokumentace</span>
+      <h2>Školení a dokumentace požární ochrany</h2>
+      <p>Každý zaměstnavatel je ze zákona povinen zajistit školení o požární ochraně. Připravíme školení na míru vašemu provozu a zpracujeme veškerou povinnou dokumentaci PO.</p>
+      <ul class="clist" style="margin-bottom:1.5rem">
+        <li>Školení zaměstnanců o požární ochraně – vstupní i periodické</li>
+        <li>Školení preventivních požárních hlídek a vedoucích zaměstnanců</li>
+        <li>Zpracování požárního řádu, poplachových směrnic a evakuačního plánu</li>
+        <li>Vedení požární knihy a dokumentace zdolávání požáru</li>
+        <li>Posouzení požárního nebezpečí pro zvýšeně rizikové provozy</li>
+      </ul>
+    </div>
+    <div class="sr sr-delay-2">
+      <div class="sidebar-card">
+        <h3>Zákonný základ</h3>
+        <p style="font-size:.875rem;color:var(--body);line-height:1.65;margin-bottom:1.25rem">Školení provádí odborně způsobilá osoba (OZO PO) nebo technik PO v souladu s platnou legislativou.</p>
+        <div class="law-box">
+          <div class="law-row">
+            <span class="law-num">§ 16</span>
+            <span class="law-desc">Zákon č. 133/1985 Sb., o požární ochraně</span>
+          </div>
+          <div class="law-row">
+            <span class="law-num">§ 37</span>
+            <span class="law-desc">Vyhláška č. 246/2001 Sb., o požární prevenci</span>
+          </div>
+          <div class="law-row">
+            <span class="law-num">ČSN</span>
+            <span class="law-desc">ČSN 73 0802, ČSN EN 54, ČSN EN 12845</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Revize -->
+<section class="svc-section alt" id="revize">
+  <div class="svc-section-inner full">
+    <div class="svc-text sr">
+      <span class="eyebrow">02 — Servis a revize</span>
+      <h2>Revize a kontroly PBZ</h2>
+      <p>Zákon ukládá pravidelné kontroly a revize požárně bezpečnostních zařízení. Zajistíme plán kontrol, provedeme zkoušky a vystavíme protokoly, které vyžadují hasiči i pojišťovny.</p>
+      <div class="info-box" style="margin-bottom:0">
+        <p><strong>Automatický reminder:</strong> Upozorníme vás 30 dní před vypršením platnosti každého protokolu, abyste nikdy nezmeškali zákonnou lhůtu.</p>
+      </div>
+
+      <div class="accordion-wrap">
+        <p class="accordion-heading">Plán kontrol a revizí — přehled lhůt</p>
+
+        <div class="acc-item" id="acc-eps">
+          <button class="acc-btn" onclick="kpToggle('acc-eps')" aria-expanded="false">
+            <span class="acc-btn-left">
+              <span class="acc-dot"></span>
+              <span class="acc-title">EPS – Elektronická požární signalizace</span>
+            </span>
+            <span style="display:flex;align-items:center;gap:.6rem">
+              <span class="acc-badge">Měsíčně + ročně</span>
+              <svg class="acc-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="acc-body">
+            <div class="acc-body-inner">
+              <div class="acc-row"><span class="acc-row-label">Měsíční kontrola</span><span class="acc-row-val">Funkční zkouška alespoň 1 hlásiče nebo ručního tlačítkového hlásiče z každé smyčky</span></div>
+              <div class="acc-row"><span class="acc-row-label">Čtvrtletní kontrola</span><span class="acc-row-val">Zkouška přenosu na PCO/HZS, kontrola akumulátorů a záložního napájení</span></div>
+              <div class="acc-row"><span class="acc-row-label">Roční revize</span><span class="acc-row-val">Zkouška 100 % hlásičů, ústředny, signalizačních prvků, záznamy v protokolu</span></div>
+              <div class="acc-row"><span class="acc-row-label">Norma</span><span class="acc-row-val">ČSN EN 54-14, ČSN 34 2710, vyhláška č. 246/2001 Sb.</span></div>
+              <p class="acc-note">Protokol platí 12 měsíců. Výsledky se zapisují do požární knihy objektu.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item" id="acc-zokt">
+          <button class="acc-btn" onclick="kpToggle('acc-zokt')" aria-expanded="false">
+            <span class="acc-btn-left">
+              <span class="acc-dot"></span>
+              <span class="acc-title">ZOKT – Zařízení pro odvod kouře a tepla</span>
+            </span>
+            <span style="display:flex;align-items:center;gap:.6rem">
+              <span class="acc-badge">Ročně</span>
+              <svg class="acc-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="acc-body">
+            <div class="acc-body-inner">
+              <div class="acc-row"><span class="acc-row-label">Roční kontrola</span><span class="acc-row-val">Zkouška otevření a zavření všech klapek a střešních světlíků, pohony, koncové spínače</span></div>
+              <div class="acc-row"><span class="acc-row-label">Přetlakové větrání</span><span class="acc-row-val">Měření diferenčního tlaku CHÚC, výkonová zkouška ventilátorů</span></div>
+              <div class="acc-row"><span class="acc-row-label">Napájení a záloha</span><span class="acc-row-val">Zkouška přechodu na záložní napájení, test UPS / diesel</span></div>
+              <div class="acc-row"><span class="acc-row-label">Norma</span><span class="acc-row-val">ČSN EN 12101-6, ČSN EN 12101-2, ČSN 73 0802</span></div>
+              <p class="acc-note">Protokol platí 12 měsíců. Závady s termínem odstranění se uvádějí v protokolu.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item" id="acc-shz">
+          <button class="acc-btn" onclick="kpToggle('acc-shz')" aria-expanded="false">
+            <span class="acc-btn-left">
+              <span class="acc-dot"></span>
+              <span class="acc-title">SHZ – Stabilní hasicí zařízení (sprinklery)</span>
+            </span>
+            <span style="display:flex;align-items:center;gap:.6rem">
+              <span class="acc-badge">Týdně až ročně</span>
+              <svg class="acc-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="acc-body">
+            <div class="acc-body-inner">
+              <div class="acc-row"><span class="acc-row-label">Týdenní kontrola</span><span class="acc-row-val">Vizuální kontrola tlakoměrů, hlídka zásobníků vody a průtokových ventilů</span></div>
+              <div class="acc-row"><span class="acc-row-label">Měsíční kontrola</span><span class="acc-row-val">Funkční test čerpacích agregátů, průtok a tlak systému</span></div>
+              <div class="acc-row"><span class="acc-row-label">Čtvrtletní kontrola</span><span class="acc-row-val">Zkouška průtokového alarmu, kontrola záložního napájení čerpadel</span></div>
+              <div class="acc-row"><span class="acc-row-label">Roční revize</span><span class="acc-row-val">Kompletní zkouška všech ventilů, sprinklerových hlav, nádrží, poplachového hlášení</span></div>
+              <div class="acc-row"><span class="acc-row-label">Norma</span><span class="acc-row-val">ČSN EN 12845, ČSN EN 15004 (plynová SHZ)</span></div>
+              <p class="acc-note">Sprinklerové systémy podléhají nejpřísnějšímu kontrolnímu plánu. Záznamy vedeme v digitální formě.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item" id="acc-dvere">
+          <button class="acc-btn" onclick="kpToggle('acc-dvere')" aria-expanded="false">
+            <span class="acc-btn-left">
+              <span class="acc-dot"></span>
+              <span class="acc-title">Požární dveře, vrata a rolety</span>
+            </span>
+            <span style="display:flex;align-items:center;gap:.6rem">
+              <span class="acc-badge">Ročně</span>
+              <svg class="acc-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="acc-body">
+            <div class="acc-body-inner">
+              <div class="acc-row"><span class="acc-row-label">Roční kontrola</span><span class="acc-row-val">Funkční zkouška samozavírání, EI odolnosti spár, těsnění, přidržovačů a elektromagnetů</span></div>
+              <div class="acc-row"><span class="acc-row-label">Rolety a clony</span><span class="acc-row-val">Zkouška spuštění (manuální + automatické), elektropohony, pojistky, koncové spínače</span></div>
+              <div class="acc-row"><span class="acc-row-label">Vizuální kontrola</span><span class="acc-row-val">Stav kování, prahů, zárubní a označení CE + EI třídy</span></div>
+              <div class="acc-row"><span class="acc-row-label">Norma</span><span class="acc-row-val">ČSN EN 1634-1, ČSN 73 0802, EN 16034</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item" id="acc-ucpavky">
+          <button class="acc-btn" onclick="kpToggle('acc-ucpavky')" aria-expanded="false">
+            <span class="acc-btn-left">
+              <span class="acc-dot"></span>
+              <span class="acc-title">Požární ucpávky prostupů</span>
+            </span>
+            <span style="display:flex;align-items:center;gap:.6rem">
+              <span class="acc-badge">Ročně</span>
+              <svg class="acc-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="acc-body">
+            <div class="acc-body-inner">
+              <div class="acc-row"><span class="acc-row-label">Roční kontrola</span><span class="acc-row-val">Vizuální kontrola integrity tmelu, tvarovek a desek – praskliny, narušení, přepracování prostupů</span></div>
+              <div class="acc-row"><span class="acc-row-label">Dokumentace</span><span class="acc-row-val">Soulad s montážním listem výrobce (HILTI, PROMAT, INTUMEX), označení štítkem</span></div>
+              <div class="acc-row"><span class="acc-row-label">Norma</span><span class="acc-row-val">ČSN EN 1366-3, ETAG 026, technické listy výrobce</span></div>
+              <p class="acc-note">Každý prostup musí mít montážní protokol a být označen štítkem s typem systému a EI klasifikací.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item" id="acc-osvetlen">
+          <button class="acc-btn" onclick="kpToggle('acc-osvetlen')" aria-expanded="false">
+            <span class="acc-btn-left">
+              <span class="acc-dot"></span>
+              <span class="acc-title">Nouzové osvětlení únikových cest</span>
+            </span>
+            <span style="display:flex;align-items:center;gap:.6rem">
+              <span class="acc-badge">Ročně</span>
+              <svg class="acc-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="acc-body">
+            <div class="acc-body-inner">
+              <div class="acc-row"><span class="acc-row-label">Měsíční test</span><span class="acc-row-val">Krátkodobý (1 min) test přechodu na záložní baterie všech svítidel</span></div>
+              <div class="acc-row"><span class="acc-row-label">Roční zkouška</span><span class="acc-row-val">Plný výdrž test – minimálně 1 hodina na bateriovém napájení, měření osvětlenosti</span></div>
+              <div class="acc-row"><span class="acc-row-label">Norma</span><span class="acc-row-val">ČSN EN 1838, ČSN EN 50172, ČSN 73 0802</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item" id="acc-hasici">
+          <button class="acc-btn" onclick="kpToggle('acc-hasici')" aria-expanded="false">
+            <span class="acc-btn-left">
+              <span class="acc-dot"></span>
+              <span class="acc-title">Hasicí přístroje a vnitřní hydranty</span>
+            </span>
+            <span style="display:flex;align-items:center;gap:.6rem">
+              <span class="acc-badge">Ročně</span>
+              <svg class="acc-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="acc-body">
+            <div class="acc-body-inner">
+              <div class="acc-row"><span class="acc-row-label">Hasicí přístroje</span><span class="acc-row-val">Vizuální kontrola, kontrola tlaku, plomby, štítky – ročně; odborná zkouška každých 5 let</span></div>
+              <div class="acc-row"><span class="acc-row-label">Vnitřní hydranty</span><span class="acc-row-val">Kontrola průtoku a tlaku, stav hadice a navijáku, funkce uzavíracího ventilu – ročně</span></div>
+              <div class="acc-row"><span class="acc-row-label">Norma</span><span class="acc-row-val">ČSN EN 671-3 (hydranty), ČSN EN 3 (přístroje), vyhláška č. 246/2001 Sb.</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PBZ -->
+<section class="svc-section" id="pbz">
+  <div class="svc-section-inner full">
+    <div class="svc-text sr">
+      <span class="eyebrow">03 — Dodávka a montáž</span>
+      <h2>Dodávka a montáž požárně bezpečnostních zařízení</h2>
+      <p>Dodáváme a instalujeme veškerá požárně bezpečnostní zařízení, která jsou součástí vašeho PBŘ nebo která vyžaduje zákon. Pracujeme s prověřenými výrobci a certifikovanými systémy.</p>
+    </div>
+    <div class="sys-grid">
+      <div class="sys-card sr">
+        <div class="sys-card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+        </div>
+        <h3>Detekce a signalizace</h3>
+        <p>EPS ústředny a hlásiče, HSP, tlačítkové hlásiče, sirény, přenos poplachu na PCO.</p>
+      </div>
+      <div class="sys-card sr sr-delay-1">
+        <div class="sys-card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.59 4.59A2 2 0 1111 8H2m10.59 11.41A2 2 0 1014 16H2m15.73-8.27A2.5 2.5 0 1119.5 12H2"/></svg>
+        </div>
+        <h3>Odvod kouře a tepla</h3>
+        <p>ZOKT přirozený i nucený, přetlakové větrání CHÚC a PDS, kouřové ventilátory a klapky.</p>
+      </div>
+      <div class="sys-card sr sr-delay-2">
+        <div class="sys-card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+        </div>
+        <h3>Stabilní hasicí zařízení</h3>
+        <p>Sprinklerová zařízení, drenčery, vodní mlha, plynová SHZ – CO₂, inertní plyny, FK-5-1-12.</p>
+      </div>
+      <div class="sys-card sr">
+        <div class="sys-card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        </div>
+        <h3>Požární uzávěry a ucpávky</h3>
+        <p>Požární dveře, vrata, rolety a clony. Ucpávky prostupů HILTI, PROMAT, INTUMEX. VZT klapky.</p>
+      </div>
+      <div class="sys-card sr sr-delay-1">
+        <div class="sys-card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12m0 0c0-4.97-4.03-9-9-9m9 9c0-4.97 4.03-9 9-9"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3>Hydrantové systémy</h3>
+        <p>Vnitřní hydrantové skříně a hadicové navijáky. Zálohy – UPS, akumulátory, dieselagregáty.</p>
+      </div>
+      <div class="sys-card sr sr-delay-2">
+        <div class="sys-card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Nouzové osvětlení</h3>
+        <p>Nouzové osvětlení a označení únikových cest. Záložní napájení PBZ, trvalé i přepínané systémy.</p>
+      </div>
+    </div>
+    <div class="sr" style="margin-top:3rem;text-align:center">
+      <a href="index.html#kontakt" class="btn-primary">Chci nacenit systém
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PBŘ -->
+<section class="svc-section alt" id="pbr">
+  <div class="svc-section-inner">
+    <div class="svc-text sr">
+      <span class="eyebrow">04 — Projektová dokumentace</span>
+      <h2>Projektová dokumentace požární bezpečnosti (PBŘ)</h2>
+      <p>Požárně bezpečnostní řešení (PBŘ) je povinnou součástí projektové dokumentace stavby. Zpracováváme ho pro všechny fáze – od studie přes dokumentaci pro stavební povolení až po realizační projekt.</p>
+      <ul class="clist">
+        <li>Stanovení požárního rizika a kategorie stavby dle ČSN 73 0802 a ČSN 73 0804</li>
+        <li>Návrh požárních úseků, odstupových vzdáleností a únikových cest</li>
+        <li>Specifikace požadavků na PBZ – EPS, ZOKT, SHZ a další</li>
+        <li>Koordinace s TZB, statikou a architekturou</li>
+        <li>Dokumentace pro stavební úřad a hasičský záchranný sbor</li>
+      </ul>
+    </div>
+    <div class="sr sr-delay-2">
+      <div class="sidebar-card">
+        <h3>Pro koho</h3>
+        <div class="who-item">
+          <div class="who-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          </div>
+          Investoři a developeři
+        </div>
+        <div class="who-item">
+          <div class="who-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+          </div>
+          Projektové kanceláře
+        </div>
+        <div class="who-item">
+          <div class="who-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          Obce a správci veřejných budov
+        </div>
+        <div class="who-item">
+          <div class="who-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+          </div>
+          Stavební firmy a generální dodavatelé
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="footer-logo">
+      <img src="img/logo.svg" alt="PBS logo" />
+      SPBS<span>.</span>
+    </a>
+    <div class="footer-links">
+      <a href="index.html">Domů</a>
+      <a href="sluzby.html">Služby</a>
+      <a href="o-nas.html">O nás</a>
+      <a href="index.html#kontakt">Kontakt</a>
+    </div>
+    <span class="footer-copy">&copy; 2026 PBS – Požárně bezpečnostní řešení staveb</span>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.sr').forEach(el => observer.observe(el));
+
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+  function kpToggle(id) {
+    const item = document.getElementById(id);
+    const body = item.querySelector('.acc-body');
+    const btn  = item.querySelector('.acc-btn');
+    const open = item.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.acc-item.open').forEach(el => {
+      el.classList.remove('open');
+      el.querySelector('.acc-body').style.maxHeight = null;
+      el.querySelector('.acc-btn').setAttribute('aria-expanded', 'false');
+    });
+    if (!open) {
+      item.classList.add('open');
+      body.style.maxHeight = body.scrollHeight + 'px';
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  }
+</script>
+</body>
+</html>

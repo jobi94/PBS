@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="cs">
-
 <head>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NKLRVGF0HN"></script>
@@ -13,1341 +12,518 @@
 </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Požární bezpečnost staveb | PBŘ, ucpávky, revize — Praha, HK, Pardubice, Olomouc</title>
-  <meta name="description"
-    content="Požárně bezpečnostní řešení stavby, ucpávky prostupů a revize PO. Autorizovaný technik pro Prahu, Středočeský, Královéhradecký, Pardubický, Liberecký a Olomoucký kraj." />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-          },
-          colors: {
-            fire: {
-              red: '#C0392B',
-              dark: '#0f0f0f',
-              charcoal: '#1c1c1e',
-              gray: '#8a8a8e',
-            }
-          },
-          letterSpacing: {
-            wider: '0.06em',
-            widest: '0.15em',
-          }
-        }
-      }
-    }
-  </script>
+  <title>Požární bezpečnost staveb | PBS – od projektu ke kolaudaci</title>
+  <meta name="description" content="Komplexní požárně bezpečnostní řešení staveb: PBŘ, dodávka a montáž PBZ, revize i školení. Jeden specialista pro celý projekt. Poptejte se zdarma." />
+  <meta property="og:title" content="PBS – Požárně bezpečnostní řešení staveb" />
+  <meta property="og:description" content="Jeden specialista pro celou požární bezpečnost vaší stavby. PBŘ, PBZ, revize, kolaudace." />
+  <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet" />
   <style>
-    * { -webkit-font-smoothing: antialiased; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; color: var(--body); background: var(--bg); }
+
+    :root {
+      --head: #0a2540;
+      --body: #425466;
+      --subtle: #697386;
+      --brand: #C0392B;
+      --brand-d: #9B2D20;
+      --brand-l: rgba(192,57,43,.08);
+      --bg: #ffffff;
+      --bg-alt: #f7f8fa;
+      --bg-dark: #0d1f33;
+      --border: #e3e8ef;
+      --shadow-sm: 0 1px 3px rgba(50,50,93,.1), 0 1px 2px rgba(0,0,0,.06);
+      --shadow-md: 0 4px 16px rgba(50,50,93,.12), 0 2px 6px rgba(0,0,0,.06);
+      --shadow-lg: 0 16px 48px rgba(50,50,93,.18), 0 4px 16px rgba(0,0,0,.08);
+      --r: 10px;
+      --r-lg: 16px;
+    }
+
+    /* Gradient bar */
+    .grad-bar { height: 3px; background: linear-gradient(90deg, #7F0000, #C0392B, #E74C3C, #E67E22, #F39C12); width: 100%; }
+
+    /* Nav */
+    nav { position: sticky; top: 0; z-index: 100; background: #0d1f33; border-bottom: 1px solid rgba(255,255,255,.1); }
+    .nav-inner { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .nav-logo { display: flex; align-items: center; gap: .6rem; font-size: 1.25rem; font-weight: 800; color: #fff; letter-spacing: -0.04em; text-decoration: none; }
+    .nav-logo img { height: 34px; width: auto; display: block; filter: brightness(0) invert(1); }
+    .nav-logo span { color: var(--brand); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: .875rem; font-weight: 500; color: rgba(255,255,255,.7); text-decoration: none; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: #fff; }
+    .nav-cta { font-size: .875rem; font-weight: 600; color: #fff; background: var(--brand); border: none; border-radius: var(--r); padding: .55rem 1.1rem; cursor: pointer; text-decoration: none; transition: background .2s, transform .15s, box-shadow .2s; box-shadow: 0 4px 12px rgba(192,57,43,.3); }
+    .nav-cta:hover { background: var(--brand-d); transform: translateY(-1px); box-shadow: 0 6px 18px rgba(192,57,43,.4); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: .4rem; }
+    .nav-hamburger span { width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: all .3s; }
+
+    /* Buttons */
+    .btn-primary { display: inline-flex; align-items: center; gap: .5rem; background: var(--brand); color: #fff; font-size: .9375rem; font-weight: 600; border-radius: var(--r); padding: .75rem 1.5rem; text-decoration: none; border: none; cursor: pointer; box-shadow: 0 4px 14px rgba(192,57,43,.35); transition: background .2s, transform .15s, box-shadow .2s; }
+    .btn-primary:hover { background: var(--brand-d); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(192,57,43,.45); }
+    .btn-ghost { display: inline-flex; align-items: center; gap: .5rem; background: transparent; color: var(--head); font-size: .9375rem; font-weight: 600; border-radius: var(--r); padding: .75rem 1.5rem; text-decoration: none; border: 1.5px solid var(--border); cursor: pointer; transition: background .2s, border-color .2s, transform .15s; }
+    .btn-ghost:hover { background: var(--bg-alt); border-color: #c1c8d4; transform: translateY(-1px); }
+
+    /* Eyebrow */
+    .eyebrow { display: inline-block; font-size: .7rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--brand); background: var(--brand-l); border-radius: 999px; padding: .3rem .85rem; margin-bottom: 1rem; }
 
     /* Hero */
-    .hero-bg {
-      background: linear-gradient(160deg, #0f0f14 0%, #1a1a22 40%, #111116 100%);
-      position: relative;
-    }
-    .hero-bg::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(192,57,43,0.12) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 50% at 20% 80%, rgba(255,255,255,0.03) 0%, transparent 50%);
-      pointer-events: none;
-    }
+    .hero-wrap { position: relative; background: url('img/fire-hero.jpg') center/cover no-repeat; min-height: 100svh; }
+    .hero-wrap::before { content: ''; position: absolute; inset: 0; background: linear-gradient(105deg, rgba(0,0,0,.85) 0%, rgba(0,0,0,.6) 55%, rgba(0,0,0,.35) 100%); pointer-events: none; }
+    .hero { max-width: 1160px; margin: 0 auto; padding: 6rem 1.5rem 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; z-index: 1; min-height: inherit; }
+    .hero-left h1 { font-size: 3.4rem; font-weight: 800; letter-spacing: -0.03em; color: #fff; line-height: 1.1; margin-bottom: 1.25rem; }
+    .hero-left p { font-size: 1.0625rem; line-height: 1.75; color: rgba(255,255,255,.82); margin-bottom: 2rem; max-width: 480px; }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.25rem; }
+    .trust-chips { display: flex; gap: .75rem; flex-wrap: wrap; }
+    .trust-chip { display: inline-flex; align-items: center; gap: .4rem; font-size: .78rem; font-weight: 500; color: rgba(255,255,255,.7); background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); border-radius: 999px; padding: .35rem .85rem; }
+    .trust-chip svg { flex-shrink: 0; stroke: rgba(255,255,255,.55); }
+    /* Hero ghost button on dark background */
+    .hero-wrap .btn-ghost { color: rgba(255,255,255,.9); border-color: rgba(255,255,255,.32); background: rgba(255,255,255,.08); }
+    .hero-wrap .btn-ghost:hover { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.55); transform: translateY(-1px); }
+    /* Hero eyebrow on dark background */
+    .hero-wrap .eyebrow { background: rgba(192,57,43,.22); color: #f08070; border: 1px solid rgba(192,57,43,.35); }
 
-    /* Big PBŘS overlay text */
-    .pbr-display {
-      font-size: clamp(64px, 17.6vw, 256px);
-      font-weight: 900;
-      line-height: 0.88;
-      letter-spacing: -0.03em;
-      user-select: none;
-    }
+    /* Service tiles */
+    .hero-right { display: grid; grid-template-columns: 1fr 1fr; gap: .85rem; }
+    .svc-tile { border-radius: 12px; padding: 1.2rem 1.25rem; background: linear-gradient(145deg, #0d1f33 0%, #0a1728 100%); border: 1px solid rgba(255,255,255,.06); color: #fff; transition: transform .5s cubic-bezier(.4,0,.2,1), box-shadow .5s, border-color .5s, opacity .5s; position: relative; overflow: hidden; cursor: default; }
+    .svc-tile::before { content: ''; position: absolute; inset: 0; border-radius: inherit; background: radial-gradient(ellipse 90% 70% at 50% -20%, rgba(192,57,43,.25), transparent); opacity: 0; transition: opacity .5s; }
+    .svc-tile.lit { transform: scale(1.05); border-color: rgba(192,57,43,.4); box-shadow: 0 16px 48px rgba(0,0,0,.45), 0 0 0 1px rgba(192,57,43,.15); }
+    .svc-tile.lit::before { opacity: 1; }
+    .svc-tile.dim { opacity: .42; transform: scale(.965); }
+    .svc-tile-icon { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,.07); display: flex; align-items: center; justify-content: center; margin-bottom: .85rem; }
+    .svc-tile-name { font-size: .875rem; font-weight: 600; margin-bottom: .25rem; position: relative; z-index: 1; }
+    .svc-tile-sub { font-size: .72rem; color: rgba(255,255,255,.45); position: relative; z-index: 1; }
 
-    /* Building placeholder */
-    .building-bg {
-      background: linear-gradient(135deg, #d6d6d4 0%, #e8e8e6 50%, #d0d0ce 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .building-bg::after {
-      content: 'Foto / 3D vizualizace budovy';
-      position: absolute;
-      color: rgba(0,0,0,0.2);
-      font-size: 12px;
-      font-family: system-ui;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
+    /* Feature strip */
+    .feature-strip { background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 3.5rem 1.5rem; }
+    .feature-strip-inner { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    .feat-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.5rem; box-shadow: var(--shadow-sm); transition: box-shadow .25s, transform .25s; }
+    .feat-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .feat-card-icon { width: 42px; height: 42px; border-radius: 10px; background: var(--brand-l); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
+    .feat-card h3 { font-size: .9375rem; font-weight: 700; color: var(--head); margin-bottom: .4rem; letter-spacing: -0.01em; }
+    .feat-card p { font-size: .83rem; line-height: 1.6; color: var(--subtle); }
 
-    /* Dramatic section */
-    .dramatic-bg {
-      background: linear-gradient(135deg, #0a0a0c 0%, #151519 60%, #1a0a08 100%);
-      position: relative;
-    }
-    .dramatic-bg::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(192,57,43,0.08) 0%, transparent 60%);
-      pointer-events: none;
-    }
+    /* Feature blocks */
+    .feature-block { max-width: 1160px; margin: 0 auto; padding: 5.5rem 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .feature-block.reversed { direction: rtl; }
+    .feature-block.reversed > * { direction: ltr; }
+    .feature-block-text h2 { font-size: 2.3rem; font-weight: 700; letter-spacing: -0.025em; color: var(--head); line-height: 1.18; margin-bottom: 1rem; }
+    .feature-block-text p { font-size: 1rem; line-height: 1.75; color: var(--body); margin-bottom: 1.5rem; }
+    .benefit-list { list-style: none; display: flex; flex-direction: column; gap: .75rem; margin-bottom: 1.75rem; }
+    .benefit-list li { display: flex; align-items: flex-start; gap: .75rem; font-size: .9375rem; line-height: 1.55; color: var(--body); }
+    .benefit-list li::before { content: ''; display: block; width: 18px; height: 18px; min-width: 18px; border-radius: 50%; background: var(--brand-l); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23C0392B' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; margin-top: .1rem; }
 
-    /* Nav link hover */
-    nav a:hover { opacity: 0.6; }
+    /* Fading photo */
+    .photo-fade { width: 100%; display: block; border-radius: 4px;
+      -webkit-mask-image: radial-gradient(ellipse 90% 85% at 50% 50%, black 60%, rgba(0,0,0,.6) 78%, transparent 100%);
+      mask-image: radial-gradient(ellipse 90% 85% at 50% 50%, black 60%, rgba(0,0,0,.6) 78%, transparent 100%);
+    }
+    .photo-fade-crop { aspect-ratio: 4/3; object-fit: cover; object-position: center 30%; }
 
-    /* CTA underline link */
-    .cta-link {
-      border-bottom: 1.5px solid currentColor;
-      padding-bottom: 1px;
-      transition: opacity 0.2s;
-    }
-    .cta-link:hover { opacity: 0.65; }
+    /* Dark mockup */
+    .mockup { background: linear-gradient(145deg, #0d1f33 0%, #081422 100%); border-radius: var(--r-lg); border: 1px solid rgba(255,255,255,.06); padding: 1.75rem; box-shadow: var(--shadow-lg); }
+    .mockup-header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 1rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,.07); }
+    .mockup-title { font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.4); }
+    .mockup-dots { display: flex; gap: 6px; }
+    .mockup-dots span { width: 10px; height: 10px; border-radius: 50%; }
+    .mockup-dots span:nth-child(1) { background: #ff5f57; }
+    .mockup-dots span:nth-child(2) { background: #febc2e; }
+    .mockup-dots span:nth-child(3) { background: #28c840; }
+    .mockup-row { display: flex; align-items: center; justify-content: space-between; padding: .55rem 0; border-bottom: 1px solid rgba(255,255,255,.04); }
+    .mockup-row:last-child { border-bottom: none; }
+    .mockup-label { font-size: .78rem; color: rgba(255,255,255,.45); font-family: 'SFMono-Regular', Consolas, monospace; }
+    .mockup-val { font-size: .78rem; font-family: 'SFMono-Regular', Consolas, monospace; font-weight: 600; }
+    .mockup-val.ok { color: #2ecc71; }
+    .mockup-val.info { color: rgba(255,255,255,.8); }
+    .mockup-val.warn { color: #f39c12; }
+    .mockup-val.active { color: #3498db; }
+    .mockup-badge { font-size: .65rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; border-radius: 999px; padding: .15rem .55rem; }
+    .mockup-badge.green { background: rgba(46,204,113,.15); color: #2ecc71; }
+    .mockup-badge.blue { background: rgba(52,152,219,.15); color: #3498db; }
+    .mockup-badge.red { background: rgba(192,57,43,.2); color: #e74c3c; }
 
-    /* Service card hover */
-    .service-card { transition: background 0.2s; }
-    .service-card:hover { background: #f5f5f5; }
+    /* Section separator */
+    .section-alt { background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 
-    /* Logo items */
-    .logo-item { opacity: 0.55; transition: opacity 0.2s; }
-    .logo-item:hover { opacity: 1; }
 
-    /* Mobile menu */
-    #mobile-menu {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 40;
-      background: rgba(0,0,0,0.97);
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
+    /* Partners */
+    .partners { background: var(--bg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 2.5rem 0; overflow: hidden;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%);
     }
-    #mobile-menu.open { display: flex; }
-    #mobile-menu a {
-      color: white;
-      font-size: 1.25rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-    #mobile-menu a:hover { opacity: 0.5; }
+    .partners-label { text-align: center; font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--subtle); margin-bottom: 1.75rem; }
+    .partners-inner { overflow: hidden; }
+    .partners-track { display: flex; gap: 4rem; align-items: center; animation: scroll-partners 24s linear infinite; width: max-content; will-change: transform; }
+    .partners-track img { height: 48px; width: auto; object-fit: contain; filter: grayscale(1) opacity(.5); transition: filter .3s; }
+    .partners-track img:hover { filter: grayscale(0) opacity(1); }
+    @keyframes scroll-partners { from { transform: translateX(0); } to { transform: translateX(-33.333%); } }
 
-    /* Prevent body scroll when menu open */
-    body.menu-open { overflow: hidden; }
+    /* Contact dark */
+    .contact-dark { background: var(--bg-dark); padding: 5.5rem 1.5rem; }
+    .contact-dark-inner { max-width: 1160px; margin: 0 auto; }
+    .contact-dark h2 { font-size: 2.3rem; font-weight: 700; letter-spacing: -0.025em; color: #fff; margin-bottom: .75rem; }
+    .contact-dark .sub { font-size: 1rem; color: rgba(255,255,255,.55); margin-bottom: 3rem; line-height: 1.7; }
+    .contact-boxes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-bottom: 2.5rem; }
+    .contact-box { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: var(--r-lg); padding: 1.5rem; transition: background .25s, border-color .25s; }
+    .contact-box:hover { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.13); }
+    .contact-box-icon { width: 40px; height: 40px; border-radius: 10px; background: rgba(192,57,43,.15); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
+    .contact-box h4 { font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: .5rem; }
+    .contact-box a, .contact-box p { font-size: 1rem; font-weight: 600; color: #fff; text-decoration: none; line-height: 1.5; }
+    .contact-box a:hover { color: rgba(255,255,255,.8); }
+    .contact-box .small { font-size: .8rem; color: rgba(255,255,255,.4); font-weight: 400; margin-top: .25rem; }
 
-    /* Touch target minimum */
-    button, a { -webkit-tap-highlight-color: transparent; }
+    /* Footer */
+    footer { background: #000; padding: 2.75rem 1.5rem; }
+    .footer-inner { max-width: 1160px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem; }
+    .footer-logo { display: flex; align-items: center; gap: .5rem; font-size: 1rem; font-weight: 800; color: rgba(255,255,255,.7); letter-spacing: -0.04em; text-decoration: none; }
+    .footer-logo img { height: 26px; width: auto; display: block; filter: brightness(0) invert(.7); }
+    .footer-logo span { color: var(--brand); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { font-size: .8rem; color: rgba(255,255,255,.35); text-decoration: none; transition: color .2s; }
+    .footer-links a:hover { color: rgba(255,255,255,.65); }
+    .footer-copy { font-size: .75rem; color: rgba(255,255,255,.22); }
 
-    /* Glassmorphism hover button */
-    .hover-btn {
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      border-radius: 999px;
-      padding: 0.75rem 2rem;
-      font-weight: 600;
-      font-size: 0.8rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #ffffff;
-      background: rgba(30, 10, 8, 0.55);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: none;
-      outline: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.2s ease;
-      text-decoration: none;
-    }
-    .hover-btn::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      pointer-events: none;
-      z-index: 1;
-      box-shadow:
-        inset 0 0 0 1px rgba(255, 120, 90, 0.30),
-        inset 0 0 18px 0  rgba(255, 80, 50, 0.12),
-        inset 0 -3px 12px 0 rgba(255, 60, 30, 0.18),
-        0 1px 3px 0  rgba(0,0,0,0.55),
-        0 6px 20px 0 rgba(0,0,0,0.50);
-    }
-    .hover-btn:active { transform: scale(0.975); }
+    /* Scroll reveal */
+    .sr { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+    .sr.in { opacity: 1; transform: none; }
+    .sr-delay-1 { transition-delay: .1s; }
+    .sr-delay-2 { transition-delay: .2s; }
+    .sr-delay-3 { transition-delay: .3s; }
+    .sr-delay-4 { transition-delay: .4s; }
 
-    /* Glow particles */
-    .hover-btn .glow-circle {
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      filter: blur(22px);
-      mix-blend-mode: screen;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      z-index: 0;
+    /* Responsive */
+    @media (max-width: 900px) {
+      .feature-strip-inner { grid-template-columns: repeat(2, 1fr); }
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-boxes { grid-template-columns: 1fr; }
     }
-    .hover-btn .glow-circle.fade-in  { opacity: 0.40; }
-    .hover-btn .glow-circle.fade-out { opacity: 0; transition: opacity 0.35s ease; }
-    .hover-btn span { position: relative; z-index: 2; }
-
-    /* 3D Service Carousel */
-    .srv-scene {
-      perspective: 2800px;
-      perspective-origin: 50% 50%;
-      overflow: hidden;
-      width: 100%;
-      height: 520px;
-      position: relative;
+    @media (max-width: 768px) {
+      .hero-wrap { min-height: 0; }
+      .hero { grid-template-columns: 1fr; gap: 3rem; padding: 3.5rem 1.25rem 3rem; min-height: 0; }
+      .hero-left h1 { font-size: 2.4rem; }
+      .hero-right { grid-template-columns: 1fr 1fr; }
+      .photo-fade { display: none; }
+      .feature-block { grid-template-columns: 1fr; gap: 2.5rem; padding: 3.5rem 1.25rem; }
+      .feature-block.reversed { direction: ltr; }
+      .feature-strip-inner { grid-template-columns: 1fr 1fr; }
+      .process-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links, .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: #111; border-bottom: 1px solid rgba(255,255,255,.1); padding: 1rem 1.5rem; gap: 1rem; box-shadow: 0 8px 32px rgba(0,0,0,.5); }
+      .nav-links.open ~ .nav-cta { display: block; }
+      .contact-boxes { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; text-align: center; }
     }
-    .srv-track {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform-style: preserve-3d;
-      cursor: grab;
-      user-select: none;
-      touch-action: none;
+    @media (max-width: 480px) {
+      .hero-left h1 { font-size: 2rem; }
+      .feature-strip-inner { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr; }
+      .hero-right { grid-template-columns: 1fr 1fr; gap: .6rem; }
     }
-    .srv-track:active { cursor: grabbing; }
-    .srv-face {
-      position: absolute;
-      width: 230px;
-      height: 360px;
-      border-radius: 16px;
-      background: linear-gradient(160deg, #ffffff 0%, #f4f4f6 100%);
-      border: 1px solid rgba(255,255,255,0.9);
-      box-shadow:
-        0 1px 0 0 rgba(255,255,255,0.85) inset,
-        0 -1px 0 0 rgba(0,0,0,0.06) inset,
-        0 8px 32px rgba(0,0,0,0.14),
-        0 2px 8px rgba(0,0,0,0.08);
-      padding: 22px;
-      backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
-      overflow: hidden;
-      transition: box-shadow 0.2s, transform 0.2s;
-      top: -180px;
-      left: -115px;
-      text-rendering: optimizeLegibility;
-      -webkit-font-smoothing: subpixel-antialiased;
-    }
-    .srv-face:hover {
-      box-shadow:
-        0 1px 0 0 rgba(255,255,255,0.85) inset,
-        0 -1px 0 0 rgba(0,0,0,0.06) inset,
-        0 16px 48px rgba(0,0,0,0.18),
-        0 4px 12px rgba(0,0,0,0.10);
-    }
-    /* ── Kontrolní plán accordions ── */
-    .kp-btn {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 20px 0;
-      background: none;
-      border: none;
-      cursor: pointer;
-      text-align: left;
-    }
-    .kp-num {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .1em;
-      color: #C0392B;
-      min-width: 26px;
-      flex-shrink: 0;
-    }
-    .kp-title {
-      font-size: 15px;
-      font-weight: 600;
-      color: #0f0f0f;
-      flex: 1;
-      line-height: 1.4;
-      transition: color 0.15s;
-    }
-    .kp-btn:hover .kp-title { color: #C0392B; }
-    .kp-icon {
-      font-size: 20px;
-      font-weight: 300;
-      color: #8a8a8e;
-      flex-shrink: 0;
-      line-height: 1;
-      transition: transform 0.25s ease, color 0.15s;
-    }
-    .kp-btn[aria-expanded="true"] .kp-icon {
-      transform: rotate(45deg);
-      color: #C0392B;
-    }
-    .kp-btn[aria-expanded="true"] .kp-title { color: #C0392B; }
-    .kp-body {
-      overflow: hidden;
-      max-height: 0;
-      transition: max-height 0.35s ease;
-    }
-    .kp-inner {
-      padding-bottom: 22px;
-      padding-left: 42px;
-    }
-    .kp-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: #0f0f0f;
-      margin-bottom: 8px;
-    }
-    .kp-ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .kp-ul li {
-      font-size: 13px;
-      color: #4a4a4e;
-      line-height: 1.55;
-      padding-left: 14px;
-      position: relative;
-    }
-    .kp-ul li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 9px;
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: #C0392B;
-      opacity: 0.5;
-    }
-
-    /* Carousel nav controls */
-    .srv-nav-btn {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      border: 1.5px solid rgba(0,0,0,0.12);
-      background: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      color: #8a8a8e;
-      font-size: 16px;
-      transition: border-color 0.15s, color 0.15s, transform 0.1s;
-    }
-    .srv-nav-btn:hover { border-color: #C0392B; color: #C0392B; }
-    .srv-nav-btn:active { transform: scale(0.92); }
-
-    /* ── Partners marquee ── */
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to   { transform: translateX(-50%); }
-    }
-    .marquee-wrapper { overflow: hidden; }
-    .marquee-track {
-      display: flex;
-      align-items: center;
-      gap: 100px;
-      width: max-content;
-      animation: marquee 28s linear infinite;
-      will-change: transform;
-    }
-    .marquee-logo {
-      height: 68px;
-      width: auto;
-      max-width: 200px;
-      object-fit: contain;
-      filter: grayscale(100%) opacity(0.45);
-      transition: filter 0.3s;
-      flex-shrink: 0;
-    }
-    .marquee-logo:hover { filter: grayscale(0%) opacity(1); }
-
   </style>
 </head>
+<body>
 
-<body class="font-sans bg-white text-fire-dark">
+<!-- Gradient bar -->
+<div class="grad-bar"></div>
 
-  <!-- ══════════════════════════════════════════════
-       MOBILE MENU OVERLAY
-  ══════════════════════════════════════════════ -->
-  <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigace">
-    <a href="#sluzby" onclick="closeMenu()">Služby</a>
-    <a href="#kontrolni-plan" onclick="closeMenu()">Kontrolní plán</a>
-    <a href="#proc-my" onclick="closeMenu()">Proč my</a>
-    <a href="#postup" onclick="closeMenu()">Postup</a>
-    <a href="#reference" onclick="closeMenu()">Reference</a>
-    <a href="#kontakt" onclick="closeMenu()" class="hover-btn" style="margin-top:1rem;">
-      <span>Kontakt</span>
+<!-- Nav -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="img/logo.svg" alt="PBS logo" />
+      SPBS<span>.</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Domů</a></li>
+      <li><a href="sluzby.html">Služby</a></li>
+      <li><a href="o-nas.html">O nás</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+    <a href="#kontakt" class="nav-cta">Nezávazná poptávka</a>
+    <div class="nav-hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero-wrap">
+  <div class="hero">
+    <div class="hero-left sr">
+      <span class="eyebrow">Požárně bezpečnostní řešení staveb</span>
+      <h1>Správa požární bezpečnosti staveb</h1>
+      <p>SPBS zajišťuje kompletní požárně bezpečnostní řešení staveb v oblasti B2B a B2G. Pracujeme s obcemi, správci budov, výrobními firmami i nemocnicemi.</p>
+      <div class="hero-ctas">
+        <a href="#kontakt" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.02 1.18C.02.45.59-.01 1.32 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L5.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Nezávazná poptávka
+        </a>
+        <a href="sluzby.html" class="btn-ghost">Přehled služeb</a>
+      </div>
+      <div class="trust-chips">
+        <span class="trust-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Certifikované systémy
+        </span>
+        <span class="trust-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Odezva do 24 hodin
+        </span>
+        <span class="trust-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          PBŘ až po kolaudaci
+        </span>
+      </div>
+    </div>
+
+    <div class="hero-right sr sr-delay-2" id="tileGrid">
+      <!-- Tiles injected by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- Feature strip -->
+<div class="feature-strip">
+  <div class="feature-strip-inner">
+    <div class="feat-card sr">
+      <div class="feat-card-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3>Certifikované systémy</h3>
+      <p>Dodáváme pouze systémy s platnou certifikací – HILTI, PROMAT, INTUMEX a další prověřené značky.</p>
+    </div>
+    <div class="feat-card sr sr-delay-1">
+      <div class="feat-card-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      </div>
+      <h3>Jeden dodavatel</h3>
+      <p>PBŘ, montáž, revize i školení zajistíte přes jediný kontakt. Méně koordinace, jasná odpovědnost.</p>
+    </div>
+    <div class="feat-card sr sr-delay-2">
+      <div class="feat-card-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <h3>Odezva do 24 h</h3>
+      <p>Každá poptávka dostane reakci do 24 hodin. Urgent situace řešíme přednostně ještě týž den.</p>
+    </div>
+    <div class="feat-card sr sr-delay-3">
+      <div class="feat-card-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      </div>
+      <h3>Od projektu po kolaudaci</h3>
+      <p>Vstupujeme v libovolné fázi stavby a neopustíme vás, dokud stavební úřad nepodepíše kolaudaci.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Feature block 1: text left, mockup right -->
+<section>
+  <div class="feature-block">
+    <div class="feature-block-text sr">
+      <span class="eyebrow">Kompletní PBZ</span>
+      <h2>Kompletní PBZ pod jednou střechou</h2>
+      <p>Namísto tří různých dodavatelů řídíte jedinou smlouvu. Každý systém navrhujeme, montujeme a revidujeme sami – s plnou technickou i právní odpovědností.</p>
+      <ul class="benefit-list">
+        <li>Stavba bez mezer – jedno rozhraní pro celou požární ochranu</li>
+        <li>Odpovědnost za projekt i realizaci na jednom místě</li>
+        <li>Zkušenosti napříč typy staveb: bytové domy, haly, zdravotnictví, obce</li>
+        <li>Prověřené systémy a materiály s platnou certifikací</li>
+      </ul>
+      <a href="sluzby.html" class="btn-primary">Prozkoumat služby</a>
+    </div>
+    <div class="sr sr-delay-2">
+      <img src="img/fist-bump.jpg" alt="Partnerská spolupráce" class="photo-fade" />
+    </div>
+  </div>
+</section>
+
+<!-- Feature block 2: reversed -->
+<div class="section-alt">
+  <div class="feature-block reversed">
+    <div class="feature-block-text sr">
+      <span class="eyebrow">Přehled systémů PBZ</span>
+      <h2>Každý systém PBZ navržený přesně pro váš objekt</h2>
+      <p>EPS, ZOKT, sprinklery, protipožární ucpávky, hydrantové systémy i nouzové napájení – vše navrhujeme s ohledem na konkrétní dispozici, kategorii a požadavky HZS.</p>
+      <ul class="benefit-list">
+        <li>EPS ústředny a hlásiče s přenosem na PCO</li>
+        <li>ZOKT – přirozený i nucený odvod kouře, CHÚC</li>
+        <li>Sprinklerová zařízení, drenčery, plynová SHZ</li>
+        <li>Protipožární ucpávky HILTI, PROMAT, INTUMEX</li>
+      </ul>
+      <a href="sluzby.html#pbz" class="btn-ghost">Detailní přehled systémů</a>
+    </div>
+    <div class="sr sr-delay-2">
+      <img src="img/blueprints.jpg" alt="Projektová dokumentace PBZ" class="photo-fade photo-fade-crop" />
+    </div>
+  </div>
+</div>
+
+<!-- Feature block 3: Školení -->
+<div class="section-alt" style="border-top:none;">
+  <div class="feature-block">
+    <div class="feature-block-text sr">
+      <span class="eyebrow">Školení a dokumentace PO</span>
+      <h2>Školení požární ochrany – zákonná povinnost bez starostí</h2>
+      <p>Zákon ukládá každému zaměstnavateli povinnost zajistit školení o požární ochraně. Provedeme ho za vás – na míru vašemu provozu, s veškerou dokumentací a záznamy pro případ kontroly.</p>
+      <ul class="benefit-list">
+        <li>Vstupní i periodická školení zaměstnanců, hlídek a vedoucích</li>
+        <li>Zpracování požárního řádu, poplachových směrnic, evakuačního plánu</li>
+        <li>Vedení požární knihy a dokumentace zdolávání požáru</li>
+        <li>Posouzení požárního nebezpečí pro zvýšeně rizikové provozy</li>
+      </ul>
+      <a href="sluzby.html#skoleni" class="btn-ghost">Detaily školení PO</a>
+    </div>
+    <div class="sr sr-delay-2">
+      <img src="img/skoleni.png" alt="Školení požární ochrany na pracovišti" class="photo-fade" />
+    </div>
+  </div>
+</div>
+
+<!-- Feature block 4: Revize -->
+<section>
+  <div class="feature-block reversed">
+    <div class="feature-block-text sr">
+      <span class="eyebrow">Revize a kontroly PBZ</span>
+      <h2>Revize PBZ – protokoly, které hasiči i pojišťovny uznají</h2>
+      <p>Pravidelné revize a kontroly požárně bezpečnostních zařízení jsou zákonnou povinností. Zajistíme kompletní plán kontrol, provedeme zkoušky a vystavíme protokoly s platností pro HZS i pojišťovnu.</p>
+      <ul class="benefit-list">
+        <li>EPS – měsíční zkoušky hlásičů, roční revize ústředny a přenosu na PCO</li>
+        <li>ZOKT – roční zkouška klapek, pohonů a přetlakového větrání CHÚC</li>
+        <li>SHZ – týdenní až roční kontroly sprinklerů, čerpadel a ventilů</li>
+        <li>Upozornění 30 dní před vypršením každého protokolu</li>
+      </ul>
+      <a href="sluzby.html#revize" class="btn-primary">Plán kontrol a lhůty</a>
+    </div>
+    <div class="sr sr-delay-2">
+      <img src="img/protokol.jpg" alt="Podepisování revizních protokolů" class="photo-fade" />
+    </div>
+  </div>
+</section>
+
+<!-- Partners scrolling strip -->
+<div class="partners">
+  <div class="partners-label">Naši partneři</div>
+  <div class="partners-track" id="partnersTrack">
+    <img src="img/hilti-logo-png-transparent.png" alt="HILTI" />
+    <img src="img/Promat_Logo_format_PNG.png" alt="PROMAT" />
+    <img src="img/rigips.png" alt="Rigips" />
+    <img src="img/skypro.png" alt="Skypro" />
+    <img src="img/hastex.jpg" alt="Hastex" />
+    <img src="img/hilti-logo-png-transparent.png" alt="HILTI" />
+    <img src="img/Promat_Logo_format_PNG.png" alt="PROMAT" />
+    <img src="img/rigips.png" alt="Rigips" />
+    <img src="img/skypro.png" alt="Skypro" />
+    <img src="img/hastex.jpg" alt="Hastex" />
+    <img src="img/hilti-logo-png-transparent.png" alt="HILTI" />
+    <img src="img/Promat_Logo_format_PNG.png" alt="PROMAT" />
+    <img src="img/rigips.png" alt="Rigips" />
+    <img src="img/skypro.png" alt="Skypro" />
+    <img src="img/hastex.jpg" alt="Hastex" />
+  </div>
+</div>
+
+<!-- Contact dark -->
+<section class="contact-dark" id="kontakt">
+  <div class="contact-dark-inner">
+    <div class="sr">
+      <span class="eyebrow" style="background:rgba(192,57,43,.18);color:#e87b6e;">Kontakt</span>
+      <h2>Promluvme o vašem projektu</h2>
+      <p class="sub">Jeden hovor stačí k tomu, aby bylo jasno – rozsah, termín, cena. Pracujeme v Praze, Hradci Králové, Pardubicích, Olomouci a Středočeském kraji.</p>
+    </div>
+    <div class="contact-boxes sr sr-delay-1">
+      <div class="contact-box">
+        <div class="contact-box-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.02 1.18C.02.45.59-.01 1.32 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L5.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <h4>Telefon</h4>
+        <a href="tel:+420123456789">+420 123 456 789</a>
+        <p class="small">Po–Pá 7:00–17:00</p>
+      </div>
+      <div class="contact-box">
+        <div class="contact-box-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h4>E-mail</h4>
+        <a href="mailto:info@pbs-firma.cz">info@pbs-firma.cz</a>
+        <p class="small">Odpovídáme do 24 hodin</p>
+      </div>
+      <div class="contact-box">
+        <div class="contact-box-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h4>Působnost</h4>
+        <p>Praha, Hradec Králové</p>
+        <p class="small">Pardubice, Olomouc, Středočeský kraj</p>
+      </div>
+    </div>
+    <a href="mailto:info@pbs-firma.cz" class="btn-primary sr sr-delay-2" style="background:var(--brand);box-shadow:0 4px 18px rgba(192,57,43,.45);">
+      Odeslat poptávku
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
     </a>
   </div>
+</section>
 
-  <!-- ══════════════════════════════════════════════
-       NAVIGATION
-  ══════════════════════════════════════════════ -->
-  <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 md:px-8 py-4 md:py-5 bg-black bg-opacity-70 backdrop-blur-sm">
-    <!-- Logo -->
-    <a href="#" class="flex items-center gap-2.5 text-white no-underline shrink-0">
-      <svg width="26" height="26" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M14 2C14 2 8 8.5 8 14.5C8 18.09 10.69 21 14 21C17.31 21 20 18.09 20 14.5C20 11.5 17.5 9 17.5 9C17.5 9 17 12 15 13C15 13 16 8 14 2Z" fill="#C0392B" />
-        <path d="M14 26C11.5 26 9.5 24.21 9.5 22C9.5 20.5 10.5 19.2 12 18.5C12 20 13 21 14 21C15 21 16 20 16 18.5C17.5 19.2 18.5 20.5 18.5 22C18.5 24.21 16.5 26 14 26Z" fill="#E74C3C" />
-      </svg>
-      <span class="font-semibold text-xs tracking-wider uppercase leading-tight">
-        Požární bezpečnost staveb
-      </span>
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="footer-logo">
+      <img src="img/logo.svg" alt="PBS logo" />
+      SPBS<span>.</span>
     </a>
-
-    <!-- Desktop nav links -->
-    <div class="hidden md:flex items-center gap-8 text-white text-xs font-medium tracking-widest uppercase">
-      <a href="#sluzby">Služby</a>
-      <a href="#kontrolni-plan">Kontrolní plán</a>
-      <a href="#proc-my">Proč my</a>
-      <a href="#postup">Postup</a>
-      <a href="#reference">Reference</a>
+    <div class="footer-links">
+      <a href="index.html">Domů</a>
+      <a href="sluzby.html">Služby</a>
+      <a href="o-nas.html">O nás</a>
+      <a href="#kontakt">Kontakt</a>
     </div>
-
-    <!-- Desktop CTA -->
-    <a href="#kontakt" class="hover-btn hidden md:inline-block">
-      <span>Kontakt</span>
-    </a>
-
-    <!-- Mobile hamburger -->
-    <button id="hamburger" onclick="toggleMenu()" aria-label="Otevřít menu"
-      class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 shrink-0">
-      <span id="h1" class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
-      <span id="h2" class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
-      <span id="h3" class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
-    </button>
-  </nav>
-
-
-  <!-- ══════════════════════════════════════════════
-       HERO
-  ══════════════════════════════════════════════ -->
-  <section class="hero-bg relative flex flex-col justify-center overflow-hidden"
-    style="height: 100svh; min-height: 580px; max-height: 960px;">
-
-    <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70 pointer-events-none"></div>
-
-    <!-- Content -->
-    <div class="relative z-10 px-5 md:px-16 text-center md:text-left" style="margin-top: -5vh;">
-      <p class="text-white text-xs font-medium tracking-widest uppercase mb-3 md:mb-4 opacity-70">
-        Požární bezpečnost staveb
-      </p>
-
-      <h1 class="text-white font-bold leading-none mb-4 mx-auto md:mx-0"
-        style="font-size: clamp(32px, 7vw, 84px); max-width: 780px; letter-spacing: -0.02em;">
-        Požární bezpečnost,<br />na které záleží!
-      </h1>
-
-      <p class="text-white/80 font-light mb-8 md:mb-10 max-w-xl leading-relaxed mx-auto md:mx-0"
-        style="font-size: clamp(14px, 1.5vw, 18px);">
-        PBŘ dokumentace, ucpávky prostupů, požární dveře a revize PO.<br class="hidden sm:block" />
-        Vše potřebné pro stavební povolení i provoz budovy.
-      </p>
-
-      <!-- CTAs -->
-      <div class="flex flex-row gap-4 items-center justify-center md:justify-start">
-        <a href="#kontakt" class="hover-btn" style="padding: 1rem 2.25rem;">
-          <span>Nezávazná poptávka</span>
-        </a>
-        <a href="#sluzby" class="text-white text-sm font-medium cta-link tracking-wide">
-          Přehled služeb
-        </a>
-      </div>
-
-      <!-- Regions -->
-      <p class="text-white/35 text-xs mt-8 md:mt-10 tracking-wider leading-relaxed">
-        Praha · Středočeský kraj · Královéhradecký kraj<br class="sm:hidden" />
-        <span class="hidden sm:inline"> · </span>Pardubický kraj · Liberecký kraj · Olomoucký kraj
-      </p>
-    </div>
-
-    <!-- Large PBS display text -->
-    <div class="absolute bottom-0 left-0 right-0 md:left-auto md:right-0 leading-none select-none pointer-events-none overflow-hidden text-center md:text-right">
-      <div class="pbr-display text-white/10 md:pr-6">PBS</div>
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════════════════
-       PBZ / SERVICES — 12 PANELS (carousel)
-  ══════════════════════════════════════════════ -->
-  <section id="sluzby" class="py-14 md:py-24 bg-white">
-    <div class="max-w-5xl mx-auto px-5 md:px-8">
-
-      <div class="text-center mb-10 md:mb-16">
-        <p class="text-xs font-medium tracking-widest uppercase text-fire-gray mb-3">Služby a PBZ</p>
-        <h2 class="font-bold leading-none whitespace-nowrap"
-          style="font-size: clamp(16px, 3vw, 48px); letter-spacing: -0.02em;">
-          Požárně bezpečnostní zařízení (PBZ)
-        </h2>
-        <p class="text-fire-gray text-sm leading-relaxed mt-3 max-w-2xl mx-auto">
-          PBZ je soubor technických zařízení pro detekci, varování, odvod kouře, hašení a podporu zásahu. Níže jsou všechny typy, se kterými pracujeme.
-        </p>
-      </div>
-
-      <!-- 3D Carousel -->
-      <div class="srv-scene" id="srv-scene">
-        <div class="srv-track" id="srv-track">
-
-          <!-- 1 / 10 -->
-          <div class="srv-face">
-            <p style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#C0392B;margin-bottom:10px;">Ovládání energií a „bezpečné vypnutí"</p>
-            <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;">
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>Požární vypínač elektrické energie</strong> <span style="color:#8a8a8e;">(centrál stop, total stop)</span></li>
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>Ovládání uzávěrů plynu</strong> <span style="color:#8a8a8e;">(HUP/UZÁVĚR, elektroventily)</span></li>
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>Odpojení FVE / bateriových úložišť</strong> <span style="color:#8a8a8e;">(pokud je instalováno)</span></li>
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>Ovládání technologických zařízení při požáru</strong> <span style="color:#8a8a8e;">(zastavení strojů, dopravníků, ventilace apod.)</span></li>
-            </ul>
-          </div>
-
-          <!-- 2 / 10 -->
-          <div class="srv-face">
-            <p style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#C0392B;margin-bottom:10px;">Nouzové napájení a kabeláže</p>
-            <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;">
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>Záložní zdroje PBZ</strong> <span style="color:#8a8a8e;">(akumulátory, UPS pro PBZ, diesel agregát – dle projektu)</span></li>
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>Požárně odolné kabelové trasy</strong> <span style="color:#8a8a8e;">pro PBZ (funkční integrita, kabelové systémy)</span></li>
-            </ul>
-          </div>
-
-          <!-- 3 / 10 -->
-          <div class="srv-face">
-            <p style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#C0392B;margin-bottom:10px;">Evakuace a orientace</p>
-            <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px;">
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>Nouzové osvětlení</strong> <span style="color:#8a8a8e;">(únikové i protipanické)</span></li>
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>Označení únikových cest</strong> <span style="color:#8a8a8e;">(světelné piktogramy, směrovky)</span></li>
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>Nouzové otevírání dveří</strong> <span style="color:#8a8a8e;">(panikové kování, elektrické zámky s požárním režimem)</span></li>
-            </ul>
-          </div>
-
-          <!-- 4 / 10 -->
-          <div class="srv-face">
-            <p style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#C0392B;margin-bottom:10px;">Zařízení pro požární zásah a výtahy</p>
-            <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;">
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>Požární výtah</strong> <span style="color:#8a8a8e;">(pokud je požadován)</span></li>
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>Zařízení pro komunikaci/ovládání při zásahu</strong> <span style="color:#8a8a8e;">(HSP ovládání, opakovače, požární telefon, signalizace poruch atd.)</span></li>
-            </ul>
-          </div>
-
-          <!-- 5 / 10 -->
-          <div class="srv-face">
-            <p style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#C0392B;margin-bottom:10px;">Detekce, signalizace, řízení</p>
-            <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;">
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>EPS</strong> <span style="color:#8a8a8e;">(elektrická požární signalizace) – ústředna, hlásiče, tlačítkové hlásiče, sirény, opticko-akustická signalizace</span></li>
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>EZS</strong> <span style="color:#8a8a8e;">(elektrická zabezpečovací signalizace) – s přídavným systémem požárních hlásičů (detekcí kouře a tepla)</span></li>
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>ZDP / přenos na PCO</strong> <span style="color:#8a8a8e;">(zařízení dálkového přenosu poplachu)</span></li>
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>HSP</strong> <span style="color:#8a8a8e;">(hlasová signalizace požáru / evakuační rozhlas)</span></li>
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>POPT</strong> <span style="color:#8a8a8e;">(požárně ovládané prvky – souhrn ovládaných zařízení, viz níže)</span></li>
-            </ul>
-          </div>
-
-          <!-- 6 / 10 -->
-          <div class="srv-face">
-            <p style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#C0392B;margin-bottom:10px;">Odvod kouře a tepla, větrání</p>
-            <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;">
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>ZOKT</strong> <span style="color:#8a8a8e;">(zařízení pro odvod kouře a tepla) – přirozené/ nucené</span></li>
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>Odtah kouře z CHÚC</strong> <span style="color:#8a8a8e;">(chráněných únikových cest) / přetlakové větrání (PDS)</span></li>
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>Požární ventilace</strong> <span style="color:#8a8a8e;">(kouřové ventilátory, klapky, regulační prvky)</span></li>
-            </ul>
-          </div>
-
-          <!-- 7 / 10 -->
-          <div class="srv-face">
-            <p style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#C0392B;margin-bottom:10px;">Požární uzávěry, dělení a požární klapky</p>
-            <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;">
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>Požární dveře/vrata</strong> <span style="color:#8a8a8e;">(samočinné zavírání, koordinátory, elektromagnety)</span></li>
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>Požární okna</strong></li>
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>Požární ucpávky</strong> <span style="color:#8a8a8e;">(prostupy instalací)</span></li>
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>Požární klapky ve VZT</strong> <span style="color:#8a8a8e;">(kouřové/požární, zpětné klapky dle systému)</span></li>
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>Požární rolety, závěsy, požární clony</strong> <span style="color:#8a8a8e;">(pohyblivé uzávěry otvorů)</span></li>
-            </ul>
-          </div>
-
-          <!-- 8 / 10 -->
-          <div class="srv-face">
-            <p style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#C0392B;margin-bottom:10px;">Stabilní a polostabilní hasicí zařízení</p>
-            <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:5px;">
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>SHZ</strong> <span style="color:#8a8a8e;">– podle média: sprinkler (vodní), drenčer, vodní mlha, pěnové, plynové (CO₂, inertní plyny, FK-5-1-12), práškové, aerosolové</span></li>
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>Sprinklerové čerpací stanice</strong><span style="color:#8a8a8e;">, nádrže, armatury, alarmové ventily (součást SHZ)</span></li>
-            </ul>
-          </div>
-
-          <!-- 9 / 10 -->
-          <div class="srv-face">
-            <p style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#C0392B;margin-bottom:10px;">Zdroje vody a prostředky pro zásah</p>
-            <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px;">
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>Vnitřní odběrná místa</strong> <span style="color:#8a8a8e;">(hadicové systémy, nástěnné hydranty)</span></li>
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>Vnější hydranty</strong> <span style="color:#8a8a8e;">a zásobní požární nádrže</span></li>
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>Přenosné a pojízdné hasicí přístroje</strong> <span style="color:#8a8a8e;">(výběr média, rozmístění, revize)</span></li>
-            </ul>
-          </div>
-
-          <!-- 10 / 10 -->
-          <div class="srv-face">
-            <p style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#C0392B;margin-bottom:10px;">Další časté prvky (podle stavby)</p>
-            <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;">
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>Požární klíčový trezor / požární klíčová skříň</strong> <span style="color:#8a8a8e;">(přístup pro IZS)</span></li>
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>Nástupní plochy pro požární techniku</strong> <span style="color:#8a8a8e;">(souvisí s PBŘ a řešením přístupu)</span></li>
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>Požární klapky pro prostupy dopravníků</strong> <span style="color:#8a8a8e;">/ speciální uzávěry technologie</span></li>
-              <li style="font-size:11px;color:#0f0f0f;line-height:1.4;"><strong>Požární detekce v potrubí / sání</strong> <span style="color:#8a8a8e;">(aspirační systémy) – varianta EPS</span></li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-      <p class="text-center text-xs text-fire-gray/50 mt-4 tracking-wide">← Přetáhněte pro procházení →</p>
-      <div class="flex items-center justify-center gap-3 mt-5">
-        <button onclick="srvPrev()" class="srv-nav-btn">←</button>
-        <button onclick="srvToggle()" id="srv-toggle" class="srv-nav-btn">⏸</button>
-        <button onclick="srvNext()" class="srv-nav-btn">→</button>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════════════════
-       KONTROLNÍ PLÁN PBZ
-  ══════════════════════════════════════════════ -->
-  <section id="kontrolni-plan" class="py-14 md:py-24 bg-[#f8f8f7]">
-    <div class="max-w-5xl mx-auto px-5 md:px-8">
-
-      <div class="mb-10 md:mb-14">
-        <p class="text-xs font-medium tracking-widest uppercase text-fire-gray mb-3">PBZ dokumentace</p>
-        <h2 class="font-bold leading-tight"
-          style="font-size: clamp(14px, 3vw, 40px); letter-spacing: -0.02em; white-space: nowrap;">
-          Kontrolní plán požárně bezpečnostních zařízení
-        </h2>
-      </div>
-
-      <div class="kp-list" style="border-top: 1px solid #e4e4e2;">
-
-        <!-- 1 -->
-        <div class="kp-item" style="border-bottom: 1px solid #e4e4e2;">
-          <button class="kp-btn" onclick="kpToggle(this)" aria-expanded="false">
-            <span class="kp-num">01</span>
-            <span class="kp-title">Elektrická požární signalizace (EPS) + ZDP/PCO</span>
-            <span class="kp-icon">+</span>
-          </button>
-          <div class="kp-body">
-            <div class="kp-inner">
-              <p class="kp-label">Kontroluje se</p>
-              <ul class="kp-ul">
-                <li>bezporuchový stav ústředny (poruchy, odpojené smyčky, napájení)</li>
-                <li>stav záloh (akumulátory – napětí, stáří, nabíjení)</li>
-                <li>funkce signalizace poplachu/poruchy, tisk/protokol událostí</li>
-                <li>funkce tlačítkových hlásičů (vybrané kusy) a vybraných čidel (dle plánu)</li>
-                <li>přenos na PCO (ZDP) – test přenosu</li>
-              </ul>
-              <p class="kp-label" style="margin-top:16px;">Četnost</p>
-              <ul class="kp-ul">
-                <li><strong>denně:</strong> vizuální kontrola ústředny (obsluha)</li>
-                <li><strong>měsíčně:</strong> provozní test vybraných prvků + kontrola akumulátorů (obsluha/technik dle režimu)</li>
-                <li><strong>ročně:</strong> servisní kontrola a funkční zkoušky dle výrobce + protokol (odborná firma)</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2 -->
-        <div class="kp-item" style="border-bottom: 1px solid #e4e4e2;">
-          <button class="kp-btn" onclick="kpToggle(this)" aria-expanded="false">
-            <span class="kp-num">02</span>
-            <span class="kp-title">Hlasová signalizace požáru (HSP) / evakuační rozhlas</span>
-            <span class="kp-icon">+</span>
-          </button>
-          <div class="kp-body">
-            <div class="kp-inner">
-              <p class="kp-label">Kontroluje se</p>
-              <ul class="kp-ul">
-                <li>bezporuchový stav ústředny, zálohy</li>
-                <li>srozumitelnost hlášení (zkušební hlášení dle režimu)</li>
-                <li>funkce zón, zesilovačů, reproduktorových větví, prioritních vstupů</li>
-              </ul>
-              <p class="kp-label" style="margin-top:16px;">Četnost</p>
-              <ul class="kp-ul">
-                <li><strong>měsíčně:</strong> krátký funkční test (hlášení / test tónu)</li>
-                <li><strong>ročně:</strong> komplexní zkouška + protokol</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3 -->
-        <div class="kp-item" style="border-bottom: 1px solid #e4e4e2;">
-          <button class="kp-btn" onclick="kpToggle(this)" aria-expanded="false">
-            <span class="kp-num">03</span>
-            <span class="kp-title">Nouzové osvětlení a označení únikových cest</span>
-            <span class="kp-icon">+</span>
-          </button>
-          <div class="kp-body">
-            <div class="kp-inner">
-              <p class="kp-label">Kontroluje se</p>
-              <ul class="kp-ul">
-                <li>rozsvit, směrování piktogramů, stav svítidel</li>
-                <li>přechod na baterii při výpadku, výdrž (dle typu)</li>
-              </ul>
-              <p class="kp-label" style="margin-top:16px;">Četnost</p>
-              <ul class="kp-ul">
-                <li><strong>měsíčně:</strong> funkční test (krátký)</li>
-                <li><strong>ročně:</strong> zkouška předepsané výdrže + protokol</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4 -->
-        <div class="kp-item" style="border-bottom: 1px solid #e4e4e2;">
-          <button class="kp-btn" onclick="kpToggle(this)" aria-expanded="false">
-            <span class="kp-num">04</span>
-            <span class="kp-title">ZOKT – odvod kouře a tepla (přirozený i nucený), přetlak CHÚC</span>
-            <span class="kp-icon">+</span>
-          </button>
-          <div class="kp-body">
-            <div class="kp-inner">
-              <p class="kp-label">Kontroluje se</p>
-              <ul class="kp-ul">
-                <li>otevření klapek/světlíků, funkce ovládání (tlačítka, EPS vazby)</li>
-                <li>stav pohonů, mechanik, koncových spínačů, signalizace poruch</li>
-                <li>u nuceného: ventilátory, napájení, směry, klapky, regulace</li>
-              </ul>
-              <p class="kp-label" style="margin-top:16px;">Četnost</p>
-              <ul class="kp-ul">
-                <li><strong>měsíčně:</strong> funkční zkouška vybraných prvků (otevření / spouštění)</li>
-                <li><strong>ročně:</strong> komplexní zkouška celého systému + protokol</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- 5 -->
-        <div class="kp-item" style="border-bottom: 1px solid #e4e4e2;">
-          <button class="kp-btn" onclick="kpToggle(this)" aria-expanded="false">
-            <span class="kp-num">05</span>
-            <span class="kp-title">Požární uzávěry otvorů (dveře, vrata, rolety, clony)</span>
-            <span class="kp-icon">+</span>
-          </button>
-          <div class="kp-body">
-            <div class="kp-inner">
-              <p class="kp-label">Kontroluje se</p>
-              <ul class="kp-ul">
-                <li>samovolné zavření / samozavírače, koordinátory, volný chod</li>
-                <li>elektromagnety a jejich uvolnění při požáru (vazba na EPS)</li>
-                <li>neporušenost (těsnění, prahy, kování), funkce panikového kování</li>
-              </ul>
-              <p class="kp-label" style="margin-top:16px;">Četnost</p>
-              <ul class="kp-ul">
-                <li><strong>měsíčně:</strong> provozní kontrola zavírání (obsluha)</li>
-                <li><strong>ročně:</strong> odborná kontrola + protokol (servis)</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- 6 -->
-        <div class="kp-item" style="border-bottom: 1px solid #e4e4e2;">
-          <button class="kp-btn" onclick="kpToggle(this)" aria-expanded="false">
-            <span class="kp-num">06</span>
-            <span class="kp-title">Požární klapky ve VZT, kouřové klapky</span>
-            <span class="kp-icon">+</span>
-          </button>
-          <div class="kp-body">
-            <div class="kp-inner">
-              <p class="kp-label">Kontroluje se</p>
-              <ul class="kp-ul">
-                <li>funkce zavření/otevření, koncové polohy, signalizace</li>
-                <li>čistota, volný pohyb, stav přívodu napájení/ovládání</li>
-              </ul>
-              <p class="kp-label" style="margin-top:16px;">Četnost</p>
-              <ul class="kp-ul">
-                <li><strong>ročně:</strong> funkční zkouška + protokol (odborně)</li>
-                <li>u náročných provozů doplň <strong>půlročně</strong></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- 7 -->
-        <div class="kp-item" style="border-bottom: 1px solid #e4e4e2;">
-          <button class="kp-btn" onclick="kpToggle(this)" aria-expanded="false">
-            <span class="kp-num">07</span>
-            <span class="kp-title">Požární ucpávky (prostupy)</span>
-            <span class="kp-icon">+</span>
-          </button>
-          <div class="kp-body">
-            <div class="kp-inner">
-              <p class="kp-label">Kontroluje se</p>
-              <ul class="kp-ul">
-                <li>neporušenost, označení, zda nejsou dodatečné prostupy bez utěsnění</li>
-                <li>mechanické poškození, chybějící tmel/manžety, neoznačené zásahy</li>
-              </ul>
-              <p class="kp-label" style="margin-top:16px;">Četnost</p>
-              <ul class="kp-ul">
-                <li><strong>ročně:</strong> vizuální kontrola + záznam</li>
-                <li><strong>po každé stavební úpravě:</strong> mimořádná kontrola</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- 8 -->
-        <div class="kp-item" style="border-bottom: 1px solid #e4e4e2;">
-          <button class="kp-btn" onclick="kpToggle(this)" aria-expanded="false">
-            <span class="kp-num">08</span>
-            <span class="kp-title">Vnitřní hydranty / hadicové systémy, požární vodovod</span>
-            <span class="kp-icon">+</span>
-          </button>
-          <div class="kp-body">
-            <div class="kp-inner">
-              <p class="kp-label">Kontroluje se</p>
-              <ul class="kp-ul">
-                <li>přístupnost, označení, plomby, hadice, proudnice, naviják</li>
-                <li>tlak a průtok (dle možností), těsnost armatur</li>
-              </ul>
-              <p class="kp-label" style="margin-top:16px;">Četnost</p>
-              <ul class="kp-ul">
-                <li><strong>měsíčně:</strong> vizuálně (přístupnost, plomby, stav)</li>
-                <li><strong>ročně:</strong> provozní zkouška + protokol</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- 9 -->
-        <div class="kp-item" style="border-bottom: 1px solid #e4e4e2;">
-          <button class="kp-btn" onclick="kpToggle(this)" aria-expanded="false">
-            <span class="kp-num">09</span>
-            <span class="kp-title">Hasicí přístroje (věcné prostředky)</span>
-            <span class="kp-icon">+</span>
-          </button>
-          <div class="kp-body">
-            <div class="kp-inner">
-              <p class="kp-label">Kontroluje se</p>
-              <ul class="kp-ul">
-                <li>umístění, přístupnost, plomby, tlak, stav, revizní štítek</li>
-              </ul>
-              <p class="kp-label" style="margin-top:16px;">Četnost</p>
-              <ul class="kp-ul">
-                <li><strong>měsíčně:</strong> vizuální kontrola (obsluha)</li>
-                <li><strong>ročně:</strong> odborná kontrola (servis) + protokol</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- 10 -->
-        <div class="kp-item" style="border-bottom: 1px solid #e4e4e2;">
-          <button class="kp-btn" onclick="kpToggle(this)" aria-expanded="false">
-            <span class="kp-num">10</span>
-            <span class="kp-title">Stabilní hasicí zařízení (sprinkler, drenčer, pěna, plyn, aerosol…)</span>
-            <span class="kp-icon">+</span>
-          </button>
-          <div class="kp-body">
-            <div class="kp-inner">
-              <p class="kp-label">Kontroluje se</p>
-              <ul class="kp-ul">
-                <li>stav ústředny, signalizace, tlak, armatury, uzávěry, zónové ventily</li>
-                <li>čerpadla (hlavní, záložní, jockey pump), nádrž, hladiny</li>
-                <li>u plynu: tlak lahví, uzávěrů, odvětrání, blokace dveří</li>
-              </ul>
-              <p class="kp-label" style="margin-top:16px;">Četnost (orientačně)</p>
-              <ul class="kp-ul">
-                <li><strong>týdně:</strong> kontrola tlaků/ventilů/čerpadel (podle systému)</li>
-                <li><strong>měsíčně:</strong> funkční testy vybraných částí</li>
-                <li><strong>ročně:</strong> kompletní servis + protokol (odborná firma)</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- 11 -->
-        <div class="kp-item" style="border-bottom: 1px solid #e4e4e2;">
-          <button class="kp-btn" onclick="kpToggle(this)" aria-expanded="false">
-            <span class="kp-num">11</span>
-            <span class="kp-title">Záložní zdroje PBZ (akumulátory, UPS pro PBZ, agregát)</span>
-            <span class="kp-icon">+</span>
-          </button>
-          <div class="kp-body">
-            <div class="kp-inner">
-              <p class="kp-label">Kontroluje se</p>
-              <ul class="kp-ul">
-                <li>stav nabíjení, kapacita (zátěžově), svorky, stáří, teplota</li>
-                <li>u agregátu: start, provozní zkouška, palivo, baterie startu</li>
-              </ul>
-              <p class="kp-label" style="margin-top:16px;">Četnost</p>
-              <ul class="kp-ul">
-                <li><strong>měsíčně:</strong> vizuál + krátký test</li>
-                <li><strong>ročně:</strong> zátěžová/kapacitní zkouška dle systému + protokol</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- 12 -->
-        <div class="kp-item" style="border-bottom: 1px solid #e4e4e2;">
-          <button class="kp-btn" onclick="kpToggle(this)" aria-expanded="false">
-            <span class="kp-num">12</span>
-            <span class="kp-title">Požární vypínač, uzávěry plynu, ovládání technologií (POPT)</span>
-            <span class="kp-icon">+</span>
-          </button>
-          <div class="kp-body">
-            <div class="kp-inner">
-              <p class="kp-label">Kontroluje se</p>
-              <ul class="kp-ul">
-                <li>funkce ovládání, popis, přístupnost, vazby na EPS</li>
-                <li>správná reakce technologie (vypnutí VZT, zastavení dopravníků apod.)</li>
-              </ul>
-              <p class="kp-label" style="margin-top:16px;">Četnost</p>
-              <ul class="kp-ul">
-                <li><strong>ročně:</strong> funkční zkouška + záznam</li>
-                <li><strong>po změně technologie:</strong> mimořádně</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-
-  <!-- ══════════════════════════════════════════════
-       DRAMATIC FULL-BLEED + WHY US
-  ══════════════════════════════════════════════ -->
-  <section id="proc-my" class="dramatic-bg py-16 md:py-28 lg:py-36">
-    <div class="max-w-5xl mx-auto px-5 md:px-8">
-      <p class="text-xs font-medium tracking-widest uppercase text-white/50 mb-4 text-center">Proč spolupracovat právě s námi</p>
-      <h2 class="text-white font-bold leading-tight mb-8 md:mb-10 text-center"
-        style="font-size: clamp(20px, 3.2vw, 52px); letter-spacing: -0.02em;">
-        Jeden specialista pro komplexní<br />požární bezpečnost
-      </h2>
-
-      <div class="max-w-xl mx-auto">
-        <div class="space-y-7 md:space-y-8">
-          <div class="flex gap-4 md:gap-5">
-            <div class="w-0.5 bg-fire-red mt-1 shrink-0 self-stretch" style="min-height:36px;"></div>
-            <div>
-              <h4 class="text-white font-semibold mb-1">Stavební i provozní fáze bez rozestupu</h4>
-              <p class="text-white/60 text-sm leading-relaxed">PBŘ zpracujeme ještě před vydáním povolení a jsme u stavby až do kolaudace. Výsledek: žádné mezery v dokumentaci, žádné překvapení při přejímce.</p>
-            </div>
-          </div>
-          <div class="flex gap-4 md:gap-5">
-            <div class="w-0.5 bg-fire-red mt-1 shrink-0 self-stretch" style="min-height:36px;"></div>
-            <div>
-              <h4 class="text-white font-semibold mb-1">Odpovědnost na jednom místě</h4>
-              <p class="text-white/60 text-sm leading-relaxed">Montáže, dokumentace i revize zajišťujeme sami — nekomunikujete s pěti různými dodavateli. Jeden kontakt, jeden protokol, jedna odpovědnost.</p>
-            </div>
-          </div>
-          <div class="flex gap-4 md:gap-5">
-            <div class="w-0.5 bg-fire-red mt-1 shrink-0 self-stretch" style="min-height:36px;"></div>
-            <div>
-              <h4 class="text-white font-semibold mb-1">Regionální dosah, aktuální znalost norem</h4>
-              <p class="text-white/60 text-sm leading-relaxed">Působíme v Praze, Středočeském, Královéhradeckém, Pardubickém a Olomouckém kraji. Zákonné požadavky a lokální praxe HZS se liší — my je sledujeme.</p>
-            </div>
-          </div>
-          <div class="flex gap-4 md:gap-5">
-            <div class="w-0.5 bg-fire-red mt-1 shrink-0 self-stretch" style="min-height:36px;"></div>
-            <div>
-              <h4 class="text-white font-semibold mb-1">Zkušenosti napříč typy staveb</h4>
-              <p class="text-white/60 text-sm leading-relaxed">Bytové domy, průmyslové haly, kanceláře, zdravotnická zařízení, sklady. Přes 120 zpracovaných PBŘ a 85 000 m² ošetřených ploch.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════════════════
-       PROCESS
-  ══════════════════════════════════════════════ -->
-  <section id="postup" class="py-14 md:py-24 bg-white">
-    <div class="max-w-5xl mx-auto px-5 md:px-8">
-
-      <div class="mb-10 md:mb-16 text-center">
-        <p class="text-xs font-medium tracking-widest uppercase text-fire-gray mb-3">Jak pracujeme / Průběh spolupráce</p>
-        <h2 class="font-bold leading-tight" style="font-size: clamp(24px, 4vw, 50px); letter-spacing: -0.02em;">
-          Od poptávky ke kolaudaci
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-0">
-
-        <div class="p-5 md:p-6 border-t-2 border-fire-red">
-          <div class="text-fire-red font-black text-3xl md:text-4xl mb-3 md:mb-4 leading-none">01</div>
-          <h4 class="font-bold text-sm mb-2 uppercase tracking-wider">Poptávka</h4>
-          <p class="text-fire-gray text-sm leading-relaxed">Popište nám stavbu nebo provoz. Odpovíme do 24 hodin s návrhem dalšího postupu.</p>
-        </div>
-
-        <div class="p-5 md:p-6 border-t-2 border-black/10 md:border-fire-red/30">
-          <div class="text-fire-dark/20 font-black text-3xl md:text-4xl mb-3 md:mb-4 leading-none">02</div>
-          <h4 class="font-bold text-sm mb-2 uppercase tracking-wider">Analýza</h4>
-          <p class="text-fire-gray text-sm leading-relaxed">Projdeme projektovou dokumentaci, navštívíme objekt a stanovíme rozsah požárně bezpečnostního řešení.</p>
-        </div>
-
-        <div class="p-5 md:p-6 border-t-2 border-black/10">
-          <div class="text-fire-dark/20 font-black text-3xl md:text-4xl mb-3 md:mb-4 leading-none">03</div>
-          <h4 class="font-bold text-sm mb-2 uppercase tracking-wider">Realizace</h4>
-          <p class="text-fire-gray text-sm leading-relaxed">Zpracujeme PBŘ, provedeme montáže ucpávek a uzávěrů nebo zajistíme revize PBZ — dle rozsahu zakázky.</p>
-        </div>
-
-        <div class="p-5 md:p-6 border-t-2 border-black/10">
-          <div class="text-fire-dark/20 font-black text-3xl md:text-4xl mb-3 md:mb-4 leading-none">04</div>
-          <h4 class="font-bold text-sm mb-2 uppercase tracking-wider">Předání</h4>
-          <p class="text-fire-gray text-sm leading-relaxed">Obdržíte kompletní dokumentaci, protokoly a kontrolní plán pro provoz. Vše připravené pro kolaudaci a HZS.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-
-
-  <!-- ══════════════════════════════════════════════
-       PARTNERS / LOGO MARQUEE
-  ══════════════════════════════════════════════ -->
-  <section id="partneri" class="py-12 md:py-16 bg-[#f5f5f4] overflow-hidden">
-    <div class="max-w-5xl mx-auto px-5 md:px-8 mb-8 text-center">
-      <p class="text-xs font-medium tracking-widest uppercase text-fire-gray">Certifikovaní partneři a spolupráce</p>
-    </div>
-    <div class="marquee-wrapper relative">
-      <!-- Fade edges -->
-      <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-24 z-10" style="background: linear-gradient(to right, #f5f5f4, transparent);"></div>
-      <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-24 z-10" style="background: linear-gradient(to left, #f5f5f4, transparent);"></div>
-      <div class="marquee-track flex items-center gap-16 md:gap-24">
-        <!-- Set A -->
-        <img src="img/hilti.webp" alt="HILTI" class="marquee-logo" style="height:136px;max-width:400px;">
-        <img src="img/Promat_Logo_format_PNG.png"     alt="Promat" class="marquee-logo">
-        <img src="img/rigips.png"                     alt="Rigips Saint-Gobain" class="marquee-logo">
-        <img src="img/hastex.jpg"                     alt="Hastex & Haspr" class="marquee-logo">
-        <img src="img/skypro.png"                     alt="Skypro Height Safety" class="marquee-logo">
-        <!-- Set B (duplicate for seamless loop) -->
-        <img src="img/hilti.webp" alt="HILTI" class="marquee-logo" style="height:136px;max-width:400px;">
-        <img src="img/Promat_Logo_format_PNG.png"     alt="Promat" class="marquee-logo">
-        <img src="img/rigips.png"                     alt="Rigips Saint-Gobain" class="marquee-logo">
-        <img src="img/hastex.jpg"                     alt="Hastex & Haspr" class="marquee-logo">
-        <img src="img/skypro.png"                     alt="Skypro Height Safety" class="marquee-logo">
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════════
-       CTA BLOCK
-  ══════════════════════════════════════════════ -->
-  <section id="kontakt" class="bg-fire-dark py-16 md:py-28">
-    <div class="max-w-5xl mx-auto px-5 md:px-8 flex flex-col md:flex-row md:items-start justify-between gap-10 md:gap-20">
-
-      <!-- Left -->
-      <div class="w-full md:max-w-lg">
-        <p class="text-xs font-medium tracking-widest uppercase text-white/40 mb-4">Kontakt</p>
-        <h2 class="text-white font-bold leading-tight mb-5 md:mb-6"
-          style="font-size: clamp(22px, 2.8vw, 38px); letter-spacing: -0.02em;">
-          Pro více informací a případnou spolupráci nás kontaktujte
-        </h2>
-        <p class="text-white/55 text-sm leading-relaxed mb-6 md:mb-8">
-          Pošlete e-mail, nebo nám zavolejte. Sdělte nám typ stavby, lokalitu a rozsah požadavků — zbytek vyřešíme společně.
-        </p>
-        <div class="flex flex-col gap-5 text-white/70 text-sm">
-          <div>
-            <div class="text-xs tracking-wider uppercase text-white/35 mb-2">Asistentka</div>
-            <div class="flex flex-col gap-1.5">
-              <a href="tel:+420737517995" class="hover:text-white transition-colors">Tel.: +420 737 517 995</a>
-              <a href="mailto:email@email.cz" class="hover:text-white transition-colors">E-mail: email@email.cz</a>
-              <span class="text-white/50">Adresa: Zemědělská 1145/4a, Hradec Králové 500 03</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right: QR code -->
-      <div class="w-full md:min-w-[400px] md:max-w-[480px] rounded-2xl border border-white/10 bg-white/[0.03] p-7 md:p-10 flex flex-col items-center justify-center gap-6">
-        <p class="text-white/40 text-xs font-medium tracking-widest uppercase">Naskenujte QR kód</p>
-        <div class="rounded-2xl bg-white p-4 shadow-lg">
-          <img src="img/qrcode.png" alt="QR kód – kontakt" style="width:240px;height:240px;display:block;" />
-        </div>
-        <p class="text-white/30 text-xs text-center leading-relaxed max-w-xs">
-          Naskenujte kód mobilem pro rychlý kontakt
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════════════════
-       FOOTER
-  ══════════════════════════════════════════════ -->
-  <footer class="bg-black text-white/50 py-12">
-    <div class="max-w-5xl mx-auto px-5 md:px-8">
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-10 md:mb-12">
-
-        <!-- Brand -->
-        <div class="sm:col-span-2 md:col-span-1">
-          <div class="flex items-center gap-2 mb-4">
-            <svg width="22" height="22" viewBox="0 0 28 28" fill="none">
-              <path d="M14 2C14 2 8 8.5 8 14.5C8 18.09 10.69 21 14 21C17.31 21 20 18.09 20 14.5C20 11.5 17.5 9 17.5 9C17.5 9 17 12 15 13C15 13 16 8 14 2Z" fill="#C0392B" />
-              <path d="M14 26C11.5 26 9.5 24.21 9.5 22C9.5 20.5 10.5 19.2 12 18.5C12 20 13 21 14 21C15 21 16 20 16 18.5C17.5 19.2 18.5 20.5 18.5 22C18.5 24.21 16.5 26 14 26Z" fill="#E74C3C" />
-            </svg>
-            <span class="text-white text-xs font-semibold tracking-wider">Požární bezpečnost řešení staveb</span>
-          </div>
-          <p class="text-xs leading-relaxed text-white/35">
-            Projektování · Pasivní PO<br />
-            Revize · Dokumentace
-          </p>
-        </div>
-
-        <!-- Navigation -->
-        <div>
-          <p class="text-white/25 text-xs tracking-widest uppercase mb-4">Navigace</p>
-          <ul class="space-y-2.5 text-xs">
-            <li><a href="#sluzby" class="hover:text-white transition-colors">Služby</a></li>
-            <li><a href="#proc-my" class="hover:text-white transition-colors">Proč my</a></li>
-            <li><a href="#postup" class="hover:text-white transition-colors">Postup spolupráce</a></li>
-            <li><a href="#reference" class="hover:text-white transition-colors">Reference</a></li>
-            <li><a href="#kontakt" class="hover:text-white transition-colors">Kontakt</a></li>
-          </ul>
-        </div>
-
-        <!-- Services -->
-        <div>
-          <p class="text-white/25 text-xs tracking-widest uppercase mb-4">Služby</p>
-          <ul class="space-y-2.5 text-xs">
-            <li><a href="#" class="hover:text-white transition-colors">PBŘ dokumentace</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">Ucpávky prostupů</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">Požární dveře a rolety</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">Revize PO</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">Školení zaměstnanců</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">BOZP poradenství</a></li>
-          </ul>
-        </div>
-
-        <!-- Address -->
-        <div>
-          <p class="text-white/25 text-xs tracking-widest uppercase mb-4">Kontakt</p>
-          <address class="not-italic text-xs leading-relaxed space-y-1">
-            <div><a href="mailto:info@pbrs.cz" class="hover:text-white transition-colors">info@pbrs.cz</a></div>
-            <div><a href="tel:+420000000000" class="hover:text-white transition-colors">+420 000 000 000</a></div>
-            <div class="mt-3 text-white/30 leading-relaxed">
-              Praha · Středočeský kraj<br />
-              Královéhradecký kraj<br />
-              Pardubický kraj<br />
-              Liberecký kraj · Olomoucký kraj
-            </div>
-          </address>
-        </div>
-
-      </div>
-
-      <!-- Bottom bar -->
-      <div class="border-t border-white/10 pt-6 md:pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-white/25">
-        <div>© 2026 Požární bezpečnostní řešení staveb. Všechna práva vyhrazena.</div>
-        <div class="flex gap-5 md:gap-6">
-          <a href="#" class="hover:text-white/60 transition-colors">Ochrana osobních údajů</a>
-          <a href="#" class="hover:text-white/60 transition-colors">GDPR</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-
-  <script>
-    /* ── Hover-button glow particle effect ── */
-    (function () {
-      const THROTTLE_MS = 100;
-      const CIRCLE_COLORS = ['#ffb89a', '#ffcca8', '#ff9060', '#ffb89a'];
-
-      function initHoverBtn(btn) {
-        let listening = false;
-        let lastAdded = 0;
-
-        function createCircle(x, y) {
-          const el = document.createElement('div');
-          el.className = 'glow-circle';
-          const color = CIRCLE_COLORS[Math.floor(Math.random() * CIRCLE_COLORS.length)];
-          el.style.left = x + 'px';
-          el.style.top  = y + 'px';
-          el.style.background = color;
-          btn.appendChild(el);
-
-          // fade in
-          requestAnimationFrame(() => {
-            requestAnimationFrame(() => { el.classList.add('fade-in'); });
-          });
-
-          // fade out
-          setTimeout(() => {
-            el.classList.remove('fade-in');
-            el.classList.add('fade-out');
-          }, 300);
-
-          // remove
-          setTimeout(() => { el.remove(); }, 700);
-        }
-
-        btn.addEventListener('pointerenter', () => { listening = true; });
-        btn.addEventListener('pointerleave', () => { listening = false; });
-        btn.addEventListener('pointermove', (e) => {
-          if (!listening) return;
-          const now = Date.now();
-          if (now - lastAdded < THROTTLE_MS) return;
-          lastAdded = now;
-          const rect = btn.getBoundingClientRect();
-          createCircle(e.clientX - rect.left, e.clientY - rect.top);
-        });
-      }
-
-      document.querySelectorAll('.hover-btn').forEach(initHoverBtn);
-    })();
-
-    /* ── Mobile menu ── */
-    function toggleMenu() {
-      const menu = document.getElementById('mobile-menu');
-      const body = document.body;
-      const h1 = document.getElementById('h1');
-      const h2 = document.getElementById('h2');
-      const h3 = document.getElementById('h3');
-      const isOpen = menu.classList.toggle('open');
-      body.classList.toggle('menu-open', isOpen);
-      if (isOpen) {
-        h1.style.transform = 'translateY(8px) rotate(45deg)';
-        h2.style.opacity = '0';
-        h3.style.transform = 'translateY(-8px) rotate(-45deg)';
-      } else {
-        h1.style.transform = '';
-        h2.style.opacity = '';
-        h3.style.transform = '';
-      }
-    }
-    function closeMenu() {
-      const menu = document.getElementById('mobile-menu');
-      if (menu.classList.contains('open')) toggleMenu();
-    }
-    // Close on Escape
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
-
-    /* ── Kontrolní plán accordion toggle ── */
-    function kpToggle(btn) {
-      const body = btn.nextElementSibling;
-      const isOpen = btn.getAttribute('aria-expanded') === 'true';
-      // Close all others
-      document.querySelectorAll('.kp-btn[aria-expanded="true"]').forEach(b => {
-        if (b !== btn) {
-          b.setAttribute('aria-expanded', 'false');
-          b.nextElementSibling.style.maxHeight = '0';
-        }
-      });
-      if (isOpen) {
-        btn.setAttribute('aria-expanded', 'false');
-        body.style.maxHeight = '0';
-      } else {
-        btn.setAttribute('aria-expanded', 'true');
-        body.style.maxHeight = body.scrollHeight + 'px';
-      }
-    }
-
-    /* ── 3D Service Carousel ── */
-    (function () {
-      const track = document.getElementById('srv-track');
-      if (!track) return;
-      const faces = Array.from(track.children);
-      const n = faces.length;
-      const R = Math.round(270 / (2 * Math.tan(Math.PI / n)));
-      const STEP = 360 / n;
-
-      faces.forEach((face, i) => {
-        face.style.transform = `rotateY(${i * STEP}deg) translateZ(${R}px)`;
-      });
-
-      let angle = 0, lastX = 0, vel = 0, dragging = false, raf = null, autoActive = true;
-      const toggleBtn = document.getElementById('srv-toggle');
-
-      function rotate(a) { angle = a; track.style.transform = `rotateY(${a}deg)`; }
-
-      function autoSpin() { if (!autoActive) return; rotate(angle + 0.12); raf = requestAnimationFrame(autoSpin); }
-      raf = requestAnimationFrame(autoSpin);
-
-      function animateTo(target) {
-        cancelAnimationFrame(raf);
-        const startAngle = angle, diff = target - startAngle, startTime = performance.now(), duration = 450;
-        function step(now) {
-          const t = Math.min((now - startTime) / duration, 1);
-          rotate(startAngle + diff * (1 - Math.pow(1 - t, 3)));
-          if (t < 1) raf = requestAnimationFrame(step);
-        }
-        raf = requestAnimationFrame(step);
-      }
-
-      window.srvPrev = function () {
-        autoActive = false;
-        if (toggleBtn) toggleBtn.textContent = '▶';
-        animateTo(Math.round(angle / STEP) * STEP + STEP);
-      };
-      window.srvNext = function () {
-        autoActive = false;
-        if (toggleBtn) toggleBtn.textContent = '▶';
-        animateTo(Math.round(angle / STEP) * STEP - STEP);
-      };
-      window.srvToggle = function () {
-        if (autoActive) {
-          autoActive = false;
-          cancelAnimationFrame(raf);
-          if (toggleBtn) toggleBtn.textContent = '▶';
-        } else {
-          autoActive = true;
-          if (toggleBtn) toggleBtn.textContent = '⏸';
-          raf = requestAnimationFrame(autoSpin);
-        }
-      };
-
-      track.addEventListener('pointerdown', e => {
-        autoActive = false;
-        cancelAnimationFrame(raf);
-        if (toggleBtn) toggleBtn.textContent = '▶';
-        dragging = true; lastX = e.clientX; vel = 0;
-        track.setPointerCapture(e.pointerId);
-      });
-      track.addEventListener('pointermove', e => {
-        if (!dragging) return;
-        const dx = e.clientX - lastX; vel = dx; lastX = e.clientX;
-        rotate(angle + dx * 0.28);
-      });
-      track.addEventListener('pointerup', () => {
-        dragging = false;
-        function coast() {
-          if (Math.abs(vel) < 0.15) return;
-          vel *= 0.93; rotate(angle + vel * 0.28);
-          raf = requestAnimationFrame(coast);
-        }
-        coast();
-      });
-    })();
-  </script>
-
-
+    <span class="footer-copy">&copy; 2025 PBS – Požárně bezpečnostní řešení staveb</span>
+  </div>
+</footer>
+
+<script>
+  // Service tiles data
+  const tiles = [
+    { name: 'EPS & Signalizace', sub: 'Elektronická požární signalizace', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>' },
+    { name: 'ZOKT', sub: 'Odvod kouře a tepla', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.59 4.59A2 2 0 1111 8H2m10.59 11.41A2 2 0 1014 16H2m15.73-8.27A2.5 2.5 0 1119.5 12H2"/></svg>' },
+    { name: 'Sprinklerová zařízení', sub: 'SHZ – automatické hašení', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>' },
+    { name: 'Požární ucpávky', sub: 'HILTI, PROMAT, INTUMEX', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>' },
+    { name: 'Dokumentace PBŘ', sub: 'Projektová dokumentace PO', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>' },
+    { name: 'Revize PBZ', sub: 'Pravidelné kontroly a protokoly', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>' }
+  ];
+
+  const grid = document.getElementById('tileGrid');
+  tiles.forEach((t, i) => {
+    const div = document.createElement('div');
+    div.className = 'svc-tile' + (i === 0 ? ' lit' : '');
+    div.innerHTML = `<div class="svc-tile-icon">${t.icon}</div><div class="svc-tile-name">${t.name}</div><div class="svc-tile-sub">${t.sub}</div>`;
+    grid.appendChild(div);
+  });
+
+  let current = 0;
+  function rotateTiles() {
+    const all = grid.querySelectorAll('.svc-tile');
+    all.forEach((el, i) => {
+      el.classList.remove('lit', 'dim');
+      if (i === current) el.classList.add('lit');
+      else el.classList.add('dim');
+    });
+    current = (current + 1) % tiles.length;
+  }
+  setInterval(rotateTiles, 1800);
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.sr').forEach(el => observer.observe(el));
+
+  // Hamburger
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+</script>
 </body>
 </html>
