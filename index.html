@@ -67,6 +67,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .nav-cta:hover { background: var(--brand-d); transform: translateY(-1px); box-shadow: 0 6px 18px rgba(192,57,43,.4); }
     .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: .4rem; }
     .nav-hamburger span { width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: all .3s; }
+    .nav-right { display: flex; align-items: center; gap: .5rem; }
+    .nav-email-btn { display: none; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.4); color: #fff; text-decoration: none; flex-shrink: 0; transition: background .15s; }
     .mobile-cta-item { display: none; }
 
     /* Nav dropdown */
@@ -91,10 +93,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     /* Hero */
     .hero-wrap { position: relative; background: url('img/fire-hero-opt.jpg') center/cover no-repeat; min-height: 100svh; margin-top: -63px; }
-    .hero-wrap::before { content: ''; position: absolute; inset: 0; background: linear-gradient(105deg, rgba(0,0,0,.85) 0%, rgba(0,0,0,.6) 55%, rgba(0,0,0,.35) 100%); pointer-events: none; }
-    .hero { max-width: 1160px; margin: 0 auto; padding: 6rem 1.5rem 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; z-index: 1; min-height: inherit; }
-    .hero-left h1 { font-size: 3.4rem; font-weight: 800; letter-spacing: -0.03em; color: #fff; line-height: 1.1; margin-bottom: 1.25rem; }
-    .hero-left p { font-size: 1.0625rem; line-height: 1.75; color: rgba(255,255,255,.82); margin-bottom: 2rem; max-width: 480px; }
+    .hero-wrap::before { content: ''; position: absolute; inset: 0; background: linear-gradient(115deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.45) 60%, rgba(0,0,0,.15) 100%); pointer-events: none; }
+    .hero { max-width: 1160px; margin: 0 auto; padding: 10rem 1.5rem 8rem; position: relative; z-index: 1; min-height: inherit; display: flex; align-items: center; }
+    .hero-left h1 { font-size: clamp(2.8rem, 4.5vw, 5rem); font-weight: 800; letter-spacing: -0.02em; color: #fff; line-height: 1.06; margin-bottom: 1.75rem; text-shadow: 0 2px 32px rgba(0,0,0,.18); }
+    .hero-left p { font-size: 1.125rem; line-height: 1.8; color: rgba(255,255,255,.78); margin-bottom: 2.25rem; max-width: 500px; }
     .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.25rem; }
     .trust-chips { display: flex; gap: .75rem; flex-wrap: wrap; }
     .trust-chip { display: inline-flex; align-items: center; gap: .4rem; font-size: .78rem; font-weight: 500; color: rgba(120,220,130,.95); background: rgba(46,160,67,.12); border: 1px solid rgba(46,160,67,.35); border-radius: 999px; padding: .35rem .85rem; }
@@ -103,10 +105,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .hero-wrap .btn-ghost { color: rgba(255,255,255,.9); border-color: rgba(255,255,255,.32); background: rgba(255,255,255,.08); }
     .hero-wrap .btn-ghost:hover { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.55); transform: translateY(-1px); }
     /* Hero eyebrow on dark background */
-    .hero-wrap .eyebrow { background: rgba(192,57,43,.22); color: #f08070; border: 1px solid rgba(192,57,43,.35); text-transform: none; font-size: .85rem; letter-spacing: .02em; }
+    .hero-wrap .eyebrow { background: rgba(46,160,67,.18); color: rgba(120,220,130,.95); border: 1px solid rgba(46,160,67,.4); text-transform: none; font-size: .85rem; letter-spacing: .02em; }
 
     /* Service tiles */
-    .hero-right { display: grid; grid-template-columns: 1fr 1fr; gap: .85rem; }
+    .hero-linkedin { position: absolute; bottom: 2.5rem; right: 2rem; color: #fff; text-decoration: none; opacity: .85; transition: opacity .2s, transform .2s; display: inline-flex; z-index: 2; }
+    .hero-linkedin svg { width: 52px; height: 52px; }
+    .hero-linkedin:hover { opacity: 1; transform: scale(1.08); }
     .svc-tile { border-radius: 12px; padding: 1.2rem 1.25rem; background: rgba(255,255,255,.10); border: 1px solid rgba(255,255,255,.18); color: #fff; position: relative; overflow: hidden; cursor: default; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
     .svc-tile::before { content: ''; position: absolute; inset: 0; border-radius: inherit; background: radial-gradient(ellipse 90% 70% at 50% -20%, rgba(192,57,43,.18), transparent); }
     .svc-tile-icon { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,.15); display: flex; align-items: center; justify-content: center; margin-bottom: .85rem; }
@@ -221,11 +225,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     @media (max-width: 768px) {
       .hero-wrap { min-height: 0; }
-      .hero { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.25rem 3.5rem; min-height: 0; }
+      .hero { grid-template-columns: 1fr; gap: 3rem; padding: 7rem 1.5rem 6rem; min-height: 0; }
+      .hero-left h1 { margin-bottom: 2rem; }
+      .hero-left p { margin-bottom: 2.75rem; }
+      .hero-ctas { gap: .85rem; margin-bottom: 0; }
+      .trust-chips { display: none; }
+      .hero-wrap .eyebrow { background: rgba(46,160,67,.18); color: rgba(120,220,130,.95); border-color: rgba(46,160,67,.4); }
       .hero-left h1 { font-size: clamp(1.95rem, 9.75vw, 3.9rem); margin-bottom: 1.75rem; }
       .hero-left p { margin-bottom: 2.5rem; }
       .hero-ctas { margin-bottom: 2.75rem; }
-      .hero-right { grid-template-columns: 1fr 1fr; }
+      .hero-linkedin { bottom: 1.5rem; right: 1.25rem; }
+      .hero-linkedin svg { width: 38px; height: 38px; }
       .photo-fade { display: none; }
       .feature-block { grid-template-columns: 1fr; gap: 2.5rem; padding: 3.5rem 1.25rem; }
       .feature-block.reversed { direction: ltr; }
@@ -233,6 +243,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .process-grid { grid-template-columns: 1fr 1fr; }
       .nav-cta { display: none; }
       .nav-hamburger { display: flex; }
+      .nav-email-btn { display: flex; background: var(--brand); border-color: var(--brand); color: #fff; }
       .nav-links { display: flex !important; flex-direction: column; list-style: none; gap: 0; position: absolute; top: 64px; right: 1rem; left: auto; width: 230px; background: #000; border: 1px solid rgba(255,255,255,.1); border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,.6); overflow: hidden; max-height: 0; opacity: 0; pointer-events: none; transition: max-height .38s cubic-bezier(.4,0,.2,1), opacity .22s ease; z-index: 200; }
       .nav-links.open { max-height: 900px; opacity: 1; pointer-events: auto; }
       .nav-links li a { display: block; padding: .85rem 1.25rem; color: #fff !important; border-bottom: 1px solid rgba(255,255,255,.07); font-size: .9rem; }
@@ -256,7 +267,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .hero-left h1 { font-size: clamp(1.95rem, 9.1vw, 3.5rem); }
       .feature-strip-inner { grid-template-columns: 1fr; }
       .process-grid { grid-template-columns: 1fr; }
-      .hero-right { grid-template-columns: 1fr 1fr; gap: .6rem; }
     }
   </style>
 </head>
@@ -307,8 +317,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <li class="mobile-cta-item"><a href="kontakt.html" class="nav-cta">Kontakt</a></li>
     </ul>
     <a href="kontakt.html" class="nav-cta">Kontakt</a>
+        <div class="nav-right">
+    <a href="mailto:email@email.cz" class="nav-email-btn" aria-label="Napište nám e-mail">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    </a>
     <div class="nav-hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
       <span></span><span></span><span></span>
+    </div>
     </div>
   </div>
 </nav>
@@ -319,7 +334,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero-left sr">
       <span class="eyebrow">Správa požární bezpečnosti staveb s.r.o.</span>
       <h1>Požární bezpečnost<br>na které záleží!</h1>
-      <p>Zajišťujeme kompletní požárně bezpečnostní řešení staveb pro obce, správce budov, výrobní firmy i nemocnice.</p>
+      <p>Zajišťujeme komplexní služby v oblasti požání ochrany pro obce, správce budov, výrobní firmy i nemocnice.</p>
       <div class="hero-ctas">
         <a href="nase-projekty.html" class="btn-primary">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
@@ -343,10 +358,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
 
-    <div class="hero-right sr sr-delay-2" id="tileGrid">
-      <!-- Tiles injected by JS -->
-    </div>
   </div>
+  <a href="https://www.linkedin.com/" class="hero-linkedin" aria-label="SPBS na LinkedIn" target="_blank" rel="noopener noreferrer">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M19 0H5C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5V5c0-2.761-2.238-5-5-5zM8 19H5V8h3v11zM6.5 6.732c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765c1.396-2.586 7-2.777 7 2.476V19z"/></svg>
+  </a>
 </section>
 
 <!-- Feature strip -->
@@ -531,25 +546,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 <script>
-  // Service tiles data
-  const tiles = [
-    { name: 'EPS & Signalizace', sub: 'Elektronická požární signalizace', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>' },
-    { name: 'ZOKT', sub: 'Odvod kouře a tepla', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.59 4.59A2 2 0 1111 8H2m10.59 11.41A2 2 0 1014 16H2m15.73-8.27A2.5 2.5 0 1119.5 12H2"/></svg>' },
-    { name: 'Sprinklerová zařízení', sub: 'SHZ – automatické hašení', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>' },
-    { name: 'Požární ucpávky', sub: 'HILTI, PROMAT, INTUMEX', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>' },
-    { name: 'Dokumentace PBŘ', sub: 'Projektová dokumentace PO', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>' },
-    { name: 'Revize PBZ', sub: 'Pravidelné kontroly a protokoly', icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>' }
-  ];
-
-  const grid = document.getElementById('tileGrid');
-  tiles.forEach((t, i) => {
-    const div = document.createElement('div');
-    div.className = 'svc-tile';
-    div.innerHTML = `<div class="svc-tile-icon">${t.icon}</div><div class="svc-tile-name">${t.name}</div><div class="svc-tile-sub">${t.sub}</div>`;
-    grid.appendChild(div);
-  });
-
-
   // Scroll reveal
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); } });

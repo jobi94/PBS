@@ -62,6 +62,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .nav-cta:hover { background: var(--brand-d); transform: translateY(-1px); box-shadow: 0 6px 18px rgba(192,57,43,.4); }
     .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: .4rem; }
     .nav-hamburger span { width: 22px; height: 2px; background: var(--head); border-radius: 2px; transition: all .3s; }
+    .nav-right { display: flex; align-items: center; gap: .5rem; }
+    .nav-email-btn { display: none; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid rgba(0,0,0,.15); color: var(--head); text-decoration: none; flex-shrink: 0; transition: background .15s; }
     .mobile-cta-item { display: none; }
 
     /* Nav dropdown */
@@ -113,13 +115,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .section-sub { font-size: .9375rem; color: var(--subtle); margin-bottom: 2.5rem; max-width: 560px; line-height: 1.65; }
 
     /* Service cards */
-    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    .svc-card { background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 2rem; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: start; }
+    .svc-card { background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 2rem; display: flex; flex-direction: column; }
+    .svc-bottom { margin-top: auto; padding-top: .5rem; }
     .svc-icon { font-size: 2rem; margin-bottom: .85rem; }
     .svc-tag { display: inline-block; font-size: .65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--bozp); background: var(--bozp-l); border-radius: 4px; padding: .2rem .55rem; margin-bottom: .75rem; }
     .svc-card h3 { font-size: 1rem; font-weight: 700; color: var(--head); margin-bottom: .75rem; }
     .svc-intro { font-size: .875rem; color: var(--body); line-height: 1.65; margin-bottom: 1rem; }
-    .svc-card ul { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+    .svc-toggle { display: inline-flex; align-items: center; gap: .4rem; background: none; border: 1px solid var(--border); border-radius: 8px; padding: .45rem .85rem; font-size: .75rem; font-weight: 600; color: var(--bozp); cursor: pointer; font-family: inherit; transition: background .15s, border-color .15s; margin-top: .25rem; white-space: nowrap; }
+    .svc-toggle:hover { background: var(--bozp-l); border-color: rgba(41,128,185,.25); }
+    .svc-toggle-arrow { transition: transform .25s; display: flex; flex-shrink: 0; }
+    .svc-card.open .svc-toggle-arrow { transform: rotate(180deg); }
+    .svc-dropdown { max-height: 0; overflow: hidden; transition: max-height .35s cubic-bezier(.4,0,.2,1); }
+    .svc-card.open .svc-dropdown { max-height: 400px; }
+    .svc-card ul { list-style: none; display: flex; flex-direction: column; gap: .5rem; padding: .85rem 0 .25rem; }
     .svc-card ul li { font-size: .875rem; color: var(--body); line-height: 1.5; padding-left: 1.2rem; position: relative; }
     .svc-card ul li::before { content: '✓'; position: absolute; left: 0; color: var(--bozp); font-weight: 700; font-size: .8rem; }
 
@@ -204,6 +213,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .info-row { grid-template-columns: 1fr; gap: .1rem; }
       .nav-cta { display: none; }
       .nav-hamburger { display: flex; }
+      .nav-email-btn { display: flex; background: var(--brand); border-color: var(--brand); color: #fff; }
       .nav-links { display: flex !important; flex-direction: column; list-style: none; gap: 0; position: absolute; top: 64px; right: 1rem; left: auto; width: 230px; background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,.1); overflow: hidden; max-height: 0; opacity: 0; pointer-events: none; transition: max-height .38s cubic-bezier(.4,0,.2,1), opacity .22s ease; z-index: 200; }
       .nav-links.open { max-height: 900px; opacity: 1; pointer-events: auto; }
       .nav-links li a { display: block; padding: .85rem 1.25rem; color: var(--head) !important; border-bottom: 1px solid rgba(0,0,0,.07); font-size: .9rem; }
@@ -269,8 +279,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <li class="mobile-cta-item"><a href="kontakt.html" class="nav-cta">Kontakt</a></li>
     </ul>
     <a href="kontakt.html" class="nav-cta">Kontakt</a>
+        <div class="nav-right">
+    <a href="mailto:email@email.cz" class="nav-email-btn" aria-label="Napište nám e-mail">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    </a>
     <div class="nav-hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
       <span></span><span></span><span></span>
+    </div>
     </div>
   </div>
 </nav>
@@ -323,15 +338,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="svc-tag">BOZP</span>
         <h3>Bezpečnost a ochrana zdraví při práci</h3>
         <p class="svc-intro">Každý zaměstnavatel ze zákona odpovídá za bezpečnost na svém pracovišti. Správa BOZP přebírá celou tuto agendu – od první analýzy rizik až po pravidelné kontroly a aktualizace dokumentace.</p>
-        <ul>
-          <li>Vyhledávání a hodnocení rizik na pracovišti</li>
-          <li>Školení zaměstnanců a vedoucích pracovníků</li>
-          <li>Kategorizace pracovních činností</li>
-          <li>Zpracování a aktualizace dokumentace BOZP</li>
-          <li>Elektronická kniha úrazů a evidence pracovních úrazů</li>
-          <li>Zastupování při kontrolách inspekce práce</li>
-          <li>Pohotovost mimo pracovní dobu</li>
-        </ul>
+        <div class="svc-bottom">
+        <button class="svc-toggle">
+          S čím vám pomůžeme
+          <svg class="svc-toggle-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="svc-dropdown">
+          <ul>
+            <li>Vyhledávání a hodnocení rizik na pracovišti</li>
+            <li>Školení zaměstnanců a vedoucích pracovníků</li>
+            <li>Kategorizace pracovních činností</li>
+            <li>Zpracování a aktualizace dokumentace BOZP</li>
+            <li>Elektronická kniha úrazů a evidence pracovních úrazů</li>
+            <li>Zastupování při kontrolách inspekce práce</li>
+            <li>Pohotovost mimo pracovní dobu</li>
+          </ul>
+        </div>
+        </div>
       </div>
 
       <div class="svc-card sr sr-delay-1">
@@ -339,15 +362,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="svc-tag">Požární ochrana</span>
         <h3>Požární ochrana</h3>
         <p class="svc-intro">Požární ochrana není jen o hasičácích a hasicích přístrojích. Je to kompletní systém dokumentace, pravidelných školení, revizí a kontrol, který musí fungovat průběžně – ne jen při havárii.</p>
-        <ul>
-          <li>Vypracování dokumentace požární ochrany</li>
-          <li>Pravidelná školení požární ochrany</li>
-          <li>Revize požárně bezpečnostních zařízení</li>
-          <li>Zpracování požárních evakuačních plánů</li>
-          <li>Roční prověrky požární ochrany</li>
-          <li>Elektronická evidence revizí</li>
-          <li>Zastupování při kontrolách HZS</li>
-        </ul>
+        <div class="svc-bottom">
+        <button class="svc-toggle">
+          S čím vám pomůžeme
+          <svg class="svc-toggle-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="svc-dropdown">
+          <ul>
+            <li>Vypracování dokumentace požární ochrany</li>
+            <li>Pravidelná školení požární ochrany</li>
+            <li>Revize požárně bezpečnostních zařízení</li>
+            <li>Zpracování požárních evakuačních plánů</li>
+            <li>Roční prověrky požární ochrany</li>
+            <li>Elektronická evidence revizí</li>
+            <li>Zastupování při kontrolách HZS</li>
+          </ul>
+        </div>
+        </div>
       </div>
 
       <div class="svc-card sr sr-delay-2">
@@ -355,15 +386,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="svc-tag">Životní prostředí – EMS</span>
         <h3>Ochrana životního prostředí a EMS</h3>
         <p class="svc-intro">Environmentální legislativa je pro mnoho firem nepřehledná džungle. Správa BOZP se specializuje na zavádění a metodiku čistíren odpadních vod (ČOV), pravidelná hlášení a systémy environmentálního managementu.</p>
-        <ul>
-          <li>Konzultace v oblasti ochrany životního prostředí</li>
-          <li>Pravidelná hlášení do ISPOP a dalších systémů</li>
-          <li>Zavedení a metodika ČOV (čistírny odpadních vod)</li>
-          <li>Vedení odpadového hospodářství a evidence odpadů</li>
-          <li>Ochrana ovzduší a nakládání s vodami</li>
-          <li>Systém environmentálního managementu (EMS)</li>
-          <li>Zastupování při jednání se státní správou</li>
-        </ul>
+        <div class="svc-bottom">
+        <button class="svc-toggle">
+          S čím vám pomůžeme
+          <svg class="svc-toggle-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="svc-dropdown">
+          <ul>
+            <li>Konzultace v oblasti ochrany životního prostředí</li>
+            <li>Pravidelná hlášení do ISPOP a dalších systémů</li>
+            <li>Zavedení a metodika ČOV (čistírny odpadních vod)</li>
+            <li>Vedení odpadového hospodářství a evidence odpadů</li>
+            <li>Ochrana ovzduší a nakládání s vodami</li>
+            <li>Systém environmentálního managementu (EMS)</li>
+            <li>Zastupování při jednání se státní správou</li>
+          </ul>
+        </div>
+        </div>
       </div>
 
     </div>
@@ -381,37 +420,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p>Správa BOZP s.r.o. řeší přesně tento problém. Jejich tým tvoří odborně způsobilé osoby podle platné legislativy – specialisté na BOZP, technici PO a poradci pro životní prostředí. Firma využívá CRM informační systém, který sleduje legislativní změny a automaticky upozorňuje na to, co je potřeba aktualizovat.</p>
           <p>Výsledek: vaši lidé se mohou soustředit na to, co umějí nejlépe. Zákonné povinnosti jsou splněné, dokumentace je aktuální a při případné kontrole víte, že za vámi stojí tým odborníků.</p>
         </div>
-    </div>
-  </div>
-</div>
-
-<!-- Steps -->
-<div class="wrap">
-  <div class="section-block">
-    <span class="eyebrow sr">Jak spolupráce funguje</span>
-    <h2 class="section-title sr">Od první schůzky po průběžnou správu</h2>
-    <p class="section-sub sr" style="margin-bottom:2rem;"></p>
-    <div class="steps-grid">
-      <div class="step-card sr">
-        <div class="step-num">01</div>
-        <h3>Bezplatná konzultace</h3>
-        <p>Zjistíme stav vaší dokumentace, rizika a to, co je akutně potřeba řešit.</p>
-      </div>
-      <div class="step-card sr sr-delay-1">
-        <div class="step-num">02</div>
-        <h3>Nastavení agendy</h3>
-        <p>Připravíme nebo aktualizujeme veškerou dokumentaci BOZP, PO a ŽP na míru vašemu provozu.</p>
-      </div>
-      <div class="step-card sr sr-delay-2">
-        <div class="step-num">03</div>
-        <h3>Školení a revize</h3>
-        <p>Proškolíme zaměstnance i vedoucí, zajistíme revize a pravidelné prověrky.</p>
-      </div>
-      <div class="step-card sr sr-delay-3">
-        <div class="step-num">04</div>
-        <h3>Průběžná správa</h3>
-        <p>Sledujeme legislativní změny, aktualizujeme dokumentaci a zastupujeme vás při kontrolách.</p>
-      </div>
     </div>
   </div>
 </div>
@@ -435,33 +443,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 
-<!-- Company info -->
-<div class="wrap">
-  <div class="section-block">
-    <h2 class="section-title sr">Správa BOZP s.r.o.</h2>
-    <p class="section-sub sr">Specialisté na bezpečnost práce a požární ochranu</p>
-    <div class="info-grid sr">
-      <div class="info-card">
-        <h3>Firemní údaje</h3>
-        <div class="info-rows">
-          <div class="info-row"><span class="info-label">Služby</span><span class="info-value">BOZP, Požární ochrana, Životní prostředí (EMS)</span></div>
-          <div class="info-row"><span class="info-label">Tým</span><span class="info-value">9+ specialistů, OZO dle platné legislativy</span></div>
-          <div class="info-row"><span class="info-label">Kancelář</span><span class="info-value">Resslova 935/3, 500 02 Hradec Králové</span></div>
-          <div class="info-row"><span class="info-label">Sídlo</span><span class="info-value">Rumunská 219, Josefov, 551 02 Jaroměř</span></div>
-          <div class="info-row"><span class="info-label">IČ</span><span class="info-value">07414552</span></div>
-        </div>
-      </div>
-      <div class="info-card">
-        <h3>Kontakt</h3>
-        <div class="info-rows">
-          <div class="info-row"><span class="info-label">Telefon</span><span class="info-value"><a href="tel:+420737517995">737 517 995</a></span></div>
-          <div class="info-row"><span class="info-label">E-mail</span><span class="info-value"><a href="mailto:asistentka@spravabozp.cz">asistentka@spravaBOZP.cz</a></span></div>
-          <div class="info-row"><span class="info-label">Web</span><span class="info-value"><a href="https://www.spravabozp.cz" target="_blank" rel="noopener noreferrer">www.spravabozp.cz</a></span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- FAQ -->
 <div class="wrap">
@@ -552,6 +533,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   document.querySelectorAll('.nav-dropdown-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       btn.closest('.nav-dropdown').classList.toggle('open');
+    });
+  });
+
+  // Equalize service card heights so only the clicked one expands
+  const svcCards = document.querySelectorAll('.svc-card');
+  const equalizeCards = () => {
+    svcCards.forEach(c => { c.style.minHeight = ''; });
+    let max = 0;
+    svcCards.forEach(c => { max = Math.max(max, c.offsetHeight); });
+    svcCards.forEach(c => { c.style.minHeight = max + 'px'; });
+  };
+  window.addEventListener('load', equalizeCards);
+  window.addEventListener('resize', equalizeCards);
+
+  svcCards.forEach(btn => {
+    btn.querySelector('.svc-toggle').addEventListener('click', () => {
+      const card = btn;
+      const isOpen = card.classList.contains('open');
+      svcCards.forEach(c => c.classList.remove('open'));
+      if (!isOpen) card.classList.add('open');
     });
   });
 

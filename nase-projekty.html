@@ -62,6 +62,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .nav-cta:hover { background: var(--brand-d); transform: translateY(-1px); box-shadow: 0 6px 18px rgba(192,57,43,.4); }
     .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: .4rem; }
     .nav-hamburger span { width: 22px; height: 2px; background: var(--head); border-radius: 2px; transition: all .3s; }
+    .nav-right { display: flex; align-items: center; gap: .5rem; }
+    .nav-email-btn { display: none; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid rgba(0,0,0,.15); color: var(--head); text-decoration: none; flex-shrink: 0; transition: background .15s; }
     .mobile-cta-item { display: none; }
 
     /* Nav dropdown */
@@ -136,6 +138,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .section { padding: 3.5rem 1.25rem; }
       .nav-cta { display: none; }
       .nav-hamburger { display: flex; }
+      .nav-email-btn { display: flex; background: var(--brand); border-color: var(--brand); color: #fff; }
       .nav-links { display: flex !important; flex-direction: column; list-style: none; gap: 0; position: absolute; top: 64px; right: 1rem; left: auto; width: 230px; background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,.1); overflow: hidden; max-height: 0; opacity: 0; pointer-events: none; transition: max-height .38s cubic-bezier(.4,0,.2,1), opacity .22s ease; z-index: 200; }
       .nav-links.open { max-height: 900px; opacity: 1; pointer-events: auto; }
       .nav-links li a { display: block; padding: .85rem 1.25rem; color: var(--head) !important; border-bottom: 1px solid rgba(0,0,0,.07); font-size: .9rem; }
@@ -205,8 +208,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <li class="mobile-cta-item"><a href="kontakt.html" class="nav-cta">Kontakt</a></li>
     </ul>
     <a href="kontakt.html" class="nav-cta">Kontakt</a>
+        <div class="nav-right">
+    <a href="mailto:email@email.cz" class="nav-email-btn" aria-label="Napište nám e-mail">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    </a>
     <div class="nav-hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
       <span></span><span></span><span></span>
+    </div>
     </div>
   </div>
 </nav>
@@ -221,9 +229,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- Gallery -->
 <section>
   <div class="section">
-    <h2 class="section-title sr">Realizované projekty</h2>
-    <p class="section-subtitle sr">Každý projekt navrhujeme, realizujeme a revidujeme s plnou technickou i právní odpovědností.</p>
-
     <div class="gallery-grid">
 
       <div class="gallery-card sr">
@@ -233,7 +238,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="gallery-card-body">
           <span class="gallery-card-tag">Školení</span>
           <h3>Školení zaměstnanců PO</h3>
-          <p>Vstupní a periodická školení o požární ochraně pro zaměstnavatele, preventivní požární hlídky a vedoucí zaměstnance.</p>
+          <p>Pravidelná školení zaměstnanců v oblasti požární ochrany pro průmyslové i administrativní objekty.</p>
         </div>
       </div>
 
@@ -244,56 +249,61 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="gallery-card-body">
           <span class="gallery-card-tag">EPS</span>
           <h3>Elektrická požární signalizace</h3>
-          <p>Návrh, dodávka, montáž a revize EPS – od jednoduchých systémů po komplexní řešení pro průmyslové a administrativní budovy.</p>
+          <p>Návrh, instalace a revize systémů EPS v bytových domech, kancelářích a průmyslových halách.</p>
         </div>
       </div>
 
       <div class="gallery-card sr sr-delay-2">
         <div class="gallery-card-img">
-          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg>
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
         <div class="gallery-card-body">
           <span class="gallery-card-tag">Hasicí přístroje</span>
-          <h3>Hasicí přístroje a zařízení</h3>
-          <p>Dodávka, rozmístění, kontroly a revize přenosných i pojízdných hasicích přístrojů dle ČSN EN 3 a vyhlášky MV.</p>
+          <h3>Revize hasicích přístrojů</h3>
+          <p>Komplexní správa a revize hasicích přístrojů včetně vedení evidence pro celé objekty.</p>
         </div>
       </div>
 
-      <div class="gallery-card sr sr-delay-3">
+      <div class="gallery-card sr">
         <div class="gallery-card-img">
-          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg>
         </div>
         <div class="gallery-card-body">
           <span class="gallery-card-tag">Protipožární dveře</span>
           <h3>Protipožární dveře a zárubně</h3>
-          <p>Dodávka a montáž certifikovaných protipožárních dveří EI 30, EI 45 a EI 60 pro oddělení požárních úseků.</p>
+          <p>Dodávka a montáž certifikovaných protipožárních dveří pro nové i rekonstruované stavby.</p>
         </div>
       </div>
 
-      <div class="gallery-card sr sr-delay-4">
+      <div class="gallery-card sr sr-delay-1">
         <div class="gallery-card-img">
-          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
         </div>
         <div class="gallery-card-body">
           <span class="gallery-card-tag">Protipožární ucpávky</span>
-          <h3>Protipožární ucpávky a těsnění</h3>
-          <p>Utěsnění prostupů instalací přes požární předěly – kabelové, potrubní i kombinované ucpávky s certifikací EI.</p>
+          <h3>Protipožární ucpávky prostupů</h3>
+          <p>Utěsnění prostupů instalací a kabeláže certifikovanými protipožárními ucpávkami dle normy.</p>
         </div>
       </div>
 
-      <div class="gallery-card sr sr-delay-5">
+      <div class="gallery-card sr sr-delay-2">
         <div class="gallery-card-img">
           <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
         </div>
         <div class="gallery-card-body">
-          <span class="gallery-card-tag">Dokumentace</span>
-          <h3>Požární dokumentace</h3>
-          <p>Zpracování PBŘ, požárního řádu, evakuačních plánů a veškeré dokumentace pro stavební úřad a HZS.</p>
+          <span class="gallery-card-tag">Požární dokumentace</span>
+          <h3>Požárně bezpečnostní řešení</h3>
+          <p>Zpracování PBŘ pro stavební řízení, kolaudace a provozní dokumentace pro všechny typy staveb.</p>
         </div>
       </div>
 
     </div>
+  </div>
+</section>
 
+<!-- Partner banner section -->
+<section>
+  <div class="section">
     <!-- Partner banner -->
     <div class="partner-banner sr">
       <div class="partner-banner-text">
