@@ -19,8 +19,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kontakt | SPBS – Požárně bezpečnostní řešení staveb</title>
-  <meta name="description" content="Kontaktujte SPBS – specialisty na požární bezpečnost staveb. Asistentka i technik požární bezpečnosti jsou připraveni zodpovědět vaše dotazy." />
+  <title>Partneři | SPBS – Požárně bezpečnostní řešení staveb</title>
+  <meta name="description" content="Partneři SPBS – firmy a organizace, se kterými spolupracujeme při zajišťování požární bezpečnosti staveb." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -86,27 +86,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* Section */
     .section { max-width: 1160px; margin: 0 auto; padding: 5rem 1.5rem; }
 
-    /* Contact cards */
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-    .contact-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 2.5rem; box-shadow: var(--shadow-sm); transition: box-shadow .2s; }
-    .contact-card:hover { box-shadow: var(--shadow-md); }
-    .contact-card-role { font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--brand); margin-bottom: 1.25rem; display: block; }
-    .contact-card h2 { font-size: 1.3rem; font-weight: 700; color: var(--head); margin-bottom: .5rem; letter-spacing: -0.02em; }
-    .contact-card-desc { font-size: .9rem; color: var(--body); line-height: 1.6; margin-bottom: 2rem; }
-    .contact-rows { display: flex; flex-direction: column; gap: .85rem; }
-    .contact-row { display: grid; grid-template-columns: 5rem 1fr; align-items: baseline; }
-    .contact-row-label { font-size: .78rem; font-weight: 600; color: var(--subtle); }
-    .contact-row-value { font-size: .9375rem; color: var(--head); }
-    .contact-row-value a { color: var(--head); text-decoration: none; transition: color .2s; }
-    .contact-row-value a:hover { color: var(--brand); }
-
-    /* QR card */
-    .qr-card { background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 2rem; display: flex; flex-direction: column; align-items: center; gap: 1.25rem; margin-top: 2rem; }
-    .qr-card img { width: 100%; max-width: 200px; display: block; border-radius: 8px; }
-    .qr-card-label { font-size: .78rem; color: var(--subtle); text-align: center; }
-
-    /* Divider */
-    .section-label { font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--subtle); margin-bottom: 2.5rem; }
+    /* Partners grid */
+    .partners-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
+    .partner-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 2rem; box-shadow: var(--shadow-sm); transition: box-shadow .2s; display: flex; flex-direction: column; gap: .75rem; }
+    .partner-card:hover { box-shadow: var(--shadow-md); }
+    .partner-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--head); letter-spacing: -0.02em; }
+    .partner-card p { font-size: .9rem; color: var(--body); line-height: 1.6; }
 
     /* Footer */
     footer { background: #000; padding: 2.75rem 1.5rem; }
@@ -123,12 +108,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .sr { opacity: 0; transform: translateY(20px); transition: opacity .55s ease, transform .55s ease; }
     .sr.in { opacity: 1; transform: none; }
     .sr-delay-1 { transition-delay: .1s; }
+    .sr-delay-2 { transition-delay: .2s; }
 
     @media (max-width: 768px) {
       .page-hero { padding: 3.5rem 1.25rem 3rem; }
       .page-hero h1 { font-size: 2.2rem; }
       .section { padding: 3.5rem 1.25rem; }
-      .contact-grid { grid-template-columns: 1fr; }
+      .partners-grid { grid-template-columns: 1fr; }
       .nav-cta { display: none; }
       .nav-hamburger { display: flex; }
       .nav-links { display: flex !important; flex-direction: column; list-style: none; gap: 0; position: absolute; top: 64px; right: 1rem; left: auto; width: 230px; background: #0d1f33; border: 1px solid rgba(255,255,255,.12); border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,.6); overflow: hidden; max-height: 0; opacity: 0; pointer-events: none; transition: max-height .38s cubic-bezier(.4,0,.2,1), opacity .22s ease; z-index: 200; }
@@ -182,7 +168,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <a href="sluzby.html">Požární Dokumentace</a>
         </div>
       </li>
-      <li><a href="partneri.html">Partneři</a></li>
+      <li><a href="partneri.html" class="active">Partneři</a></li>
       <li class="nav-dropdown">
         <button class="nav-dropdown-btn" aria-haspopup="true">
           Společnost
@@ -190,7 +176,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </button>
         <div class="nav-dropdown-menu">
           <a href="o-nas.html">O nás</a>
-          <a href="kontakt.html" class="active">Kontakt</a>
+          <a href="kontakt.html">Kontakt</a>
         </div>
       </li>
       <li class="mobile-cta-item"><a href="kontakt.html" class="nav-cta">Kontakt</a></li>
@@ -204,62 +190,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- Page hero -->
 <div class="page-hero sr">
-  <span class="eyebrow">Spojte se s námi</span>
-  <h1>Kontakt</h1>
-  <p>Potřebujete zpracovat PBŘ, zajistit montáž PBZ nebo naplánovat revize? Obraťte se přímo na naši asistentku nebo technické oddělení.</p>
+  <span class="eyebrow">Spolupráce</span>
+  <h1>Partneři</h1>
+  <p>Spolupracujeme s důvěryhodnými firmami a organizacemi, které sdílí náš závazek ke kvalitě a bezpečnosti.</p>
 </div>
 
-<!-- Contacts -->
+<!-- Partners -->
 <section>
   <div class="section">
-    <div class="contact-grid">
-
-      <!-- Asistentka -->
-      <div class="contact-card sr">
-        <span class="contact-card-role">Administrativa &amp; koordinace</span>
-        <h2>Asistentka</h2>
-        <p class="contact-card-desc">Objednávky, dotazy ke smlouvám, fakturace a obecná komunikace.</p>
-        <div class="contact-rows">
-          <div class="contact-row">
-            <span class="contact-row-label">Tel.</span>
-            <span class="contact-row-value"><a href="tel:+420737517995">+420 737 517 995</a></span>
-          </div>
-          <div class="contact-row">
-            <span class="contact-row-label">E-mail</span>
-            <span class="contact-row-value"><a href="mailto:email@email.cz">email@email.cz</a></span>
-          </div>
-          <div class="contact-row">
-            <span class="contact-row-label">Adresa</span>
-            <span class="contact-row-value">Zemědělská 1145/4a<br>Hradec Králové 500 03</span>
-          </div>
-        </div>
-        <div class="qr-card">
-          <img src="img/qrcode.png" alt="QR kód – rychlý kontakt" />
-          <span class="qr-card-label">Naskenujte pro rychlý kontakt</span>
-        </div>
+    <div class="partners-grid">
+      <div class="partner-card sr">
+        <h3>Název partnera</h3>
+        <p>Popis spolupráce a oblasti, ve které společně působíme.</p>
       </div>
-
-      <!-- Technik -->
-      <div class="contact-card sr sr-delay-1">
-        <span class="contact-card-role">Technické poradenství</span>
-        <h2>Technik požární bezpečnosti staveb</h2>
-        <p class="contact-card-desc">Odborné dotazy k PBŘ, PBZ, revizím a technickým řešením konkrétní stavby.</p>
-        <div class="contact-rows">
-          <div class="contact-row">
-            <span class="contact-row-label">Tel.</span>
-            <span class="contact-row-value"><a href="tel:+420000000000">+420 000 000 000</a></span>
-          </div>
-          <div class="contact-row">
-            <span class="contact-row-label">E-mail</span>
-            <span class="contact-row-value"><a href="mailto:technik@email.cz">technik@email.cz</a></span>
-          </div>
-          <div class="contact-row">
-            <span class="contact-row-label">Oblast</span>
-            <span class="contact-row-value">Praha, Hradec Králové,<br>Pardubice, Olomouc,<br>Středočeský kraj</span>
-          </div>
-        </div>
+      <div class="partner-card sr sr-delay-1">
+        <h3>Název partnera</h3>
+        <p>Popis spolupráce a oblasti, ve které společně působíme.</p>
       </div>
-
+      <div class="partner-card sr sr-delay-2">
+        <h3>Název partnera</h3>
+        <p>Popis spolupráce a oblasti, ve které společně působíme.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -274,6 +225,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="footer-links">
       <a href="index.html">Domů</a>
       <a href="sluzby.html">Služby</a>
+      <a href="partneri.html">Partneři</a>
       <a href="o-nas.html">O nás</a>
       <a href="kontakt.html">Kontakt</a>
     </div>
