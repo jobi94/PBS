@@ -118,13 +118,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .svc-tile-sub { font-size: .72rem; color: rgba(255,255,255,.65); position: relative; z-index: 1; }
 
     /* Feature strip */
-    .feature-strip { background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 3.5rem 1.5rem; }
-    .feature-strip-inner { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
-    .feat-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.5rem; box-shadow: var(--shadow-sm); transition: box-shadow .25s, transform .25s; }
-    .feat-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
-    .feat-card-icon { width: 42px; height: 42px; border-radius: 10px; background: var(--brand-l); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
-    .feat-card h3 { font-size: .9375rem; font-weight: 700; color: var(--head); margin-bottom: .4rem; letter-spacing: -0.01em; }
-    .feat-card p { font-size: .83rem; line-height: 1.6; color: var(--subtle); }
+    .about-strip { background: var(--bg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 5rem 1.5rem; }
+    .about-strip-inner { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .about-strip-left { position: static; }
+    .about-strip-left .eyebrow { margin-bottom: 1.25rem; }
+    .about-strip-left h2 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); font-weight: 800; color: var(--head); line-height: 1.25; letter-spacing: -0.025em; border-left: 4px solid var(--brand); padding-left: 1.25rem; }
+    .about-strip-right { display: flex; flex-direction: column; gap: 1.25rem; }
+    .about-strip-right p { font-size: 1rem; line-height: 1.8; color: var(--body); padding-bottom: 1.25rem; border-bottom: 1px solid var(--border); }
+    .about-strip-right p:last-child { border-bottom: none; padding-bottom: 0; }
 
     /* Feature blocks */
     .feature-block { max-width: 1160px; margin: 0 auto; padding: 5.5rem 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
@@ -219,11 +220,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     /* Responsive */
     @media (max-width: 900px) {
-      .feature-strip-inner { grid-template-columns: repeat(2, 1fr); }
       .process-grid { grid-template-columns: repeat(2, 1fr); }
       .contact-dark-inner { grid-template-columns: 1fr; gap: 3rem; }
     }
     @media (max-width: 768px) {
+      .about-strip-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .about-strip-left { position: static; }
       .hero-wrap { min-height: 0; }
       .hero { grid-template-columns: 1fr; gap: 3rem; padding: 7rem 1.5rem 6rem; min-height: 0; }
       .hero-left h1 { margin-bottom: 2rem; }
@@ -239,7 +241,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .photo-fade { display: none; }
       .feature-block { grid-template-columns: 1fr; gap: 2.5rem; padding: 3.5rem 1.25rem; }
       .feature-block.reversed { direction: ltr; }
-      .feature-strip-inner { grid-template-columns: 1fr 1fr; }
       .process-grid { grid-template-columns: 1fr 1fr; }
       .nav-cta { display: none; }
       .nav-hamburger { display: flex; }
@@ -265,7 +266,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     @media (max-width: 480px) {
       .hero-left h1 { font-size: clamp(1.95rem, 9.1vw, 3.5rem); }
-      .feature-strip-inner { grid-template-columns: 1fr; }
       .process-grid { grid-template-columns: 1fr; }
     }
 
@@ -369,36 +369,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </a>
 </section>
 
-<!-- Feature strip -->
-<div class="feature-strip">
-  <div class="feature-strip-inner">
-    <div class="feat-card sr">
-      <div class="feat-card-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      </div>
-      <h3>Certifikované systémy</h3>
-      <p>Dodáváme pouze systémy s platnou certifikací – HILTI, PROMAT, INTUMEX a další prověřené značky.</p>
+<!-- About strip -->
+<div class="about-strip">
+  <div class="about-strip-inner">
+    <div class="about-strip-left sr">
+      <span class="eyebrow">SPBS</span>
+      <h2>Každá stavba potřebuje požární ochranu.</h2>
     </div>
-    <div class="feat-card sr sr-delay-1">
-      <div class="feat-card-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-      </div>
-      <h3>Jeden dodavatel</h3>
-      <p>PBŘ, montáž, revize i školení zajistíte přes jediný kontakt. Méně koordinace, jasná odpovědnost.</p>
-    </div>
-    <div class="feat-card sr sr-delay-2">
-      <div class="feat-card-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-      </div>
-      <h3>Odezva do 24 h</h3>
-      <p>Každá poptávka dostane reakci do 24 hodin. Urgent situace řešíme přednostně ještě týž den.</p>
-    </div>
-    <div class="feat-card sr sr-delay-3">
-      <div class="feat-card-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-      </div>
-      <h3>Od projektu po kolaudaci</h3>
-      <p>Vstupujeme v libovolné fázi stavby a neopustíme vás, dokud stavební úřad nepodepíše kolaudaci.</p>
+    <div class="about-strip-right sr sr-delay-1">
+      <p>Zákon to sice přikazuje, ale splnit zákonné minimum a skutečně ochránit budovu jsou dvě různé věci. My se pohybujeme mezi nimi už roky – navrhujeme systémy, které fungují!</p>
+      <p>Pracujeme pro bytové domy, výrobní haly, obchodní centra, nemocnice i průmyslové areály. Typ stavby nehraje roli. Hraje roli to, co v ní je – lidé, technika, data, výroba.</p>
+      <p>Navrhneme systém, dodáme ho, namontujeme, provedeme funkční zkoušky a postaráme se o pravidelný servis. Dokumentaci vyřídíme sami. Součinnost s HZS je samozřejmostí!</p>
+      <p>Pracujeme s certifikovanými systémy a materiály – HILTI, PROMAT, INTUMEX a dalšími. Každý projekt dostane řešení přesně podle svého požárně bezpečnostního řešení (PBŘ).</p>
     </div>
   </div>
 </div>
