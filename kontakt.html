@@ -322,11 +322,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   const scrollHome = document.getElementById('scrollHome');
   const mainNav = document.querySelector('nav');
-  let lastScroll = 0;
   window.addEventListener('scroll', () => {
     const cur = window.scrollY;
-    mainNav.style.transform = (cur > lastScroll && cur > 80) ? 'translateY(-100%)' : '';
-    lastScroll = cur;
+    mainNav.style.transform = cur > 80 ? 'translateY(-100%)' : '';
     scrollHome.classList.toggle('visible', cur > 320);
   });
   scrollHome.addEventListener('click', () => {
