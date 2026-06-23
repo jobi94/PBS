@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N6QKN765');</script>
+<!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBTKS8D7NY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZBTKS8D7NY');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slovníček pojmů požární bezpečnosti staveb | PBS od A do Z</title>
+  <meta name="description" content="Přehledný slovník pojmů z oblasti požární bezpečnosti staveb. Vysvětlujeme požární úseky, odolnost konstrukcí, EPS, ZOKT, únikové cesty a desítky dalších pojmů srozumitelně a přesně." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; color: var(--body); background: var(--bg); }
+
+    :root {
+      --head: #0a2540;
+      --body: #425466;
+      --subtle: #697386;
+      --brand: #C0392B;
+      --brand-d: #9B2D20;
+      --brand-l: rgba(192,57,43,.08);
+      --bg: #ffffff;
+      --bg-alt: #f7f8fa;
+      --bg-dark: #0d1f33;
+      --border: #e3e8ef;
+      --shadow-sm: 0 1px 3px rgba(50,50,93,.1), 0 1px 2px rgba(0,0,0,.06);
+      --shadow-md: 0 4px 16px rgba(50,50,93,.12), 0 2px 6px rgba(0,0,0,.06);
+      --r: 10px;
+      --r-lg: 16px;
+    }
+
+    .grad-bar { height: 3px; background: linear-gradient(90deg, #7F0000, #C0392B, #E74C3C, #E67E22, #F39C12); width: 100%; }
+
+    /* Nav */
+    nav { position: sticky; top: 0; z-index: 100; transition: transform .35s ease; background: #fff; border-bottom: 1px solid rgba(0,0,0,.08); }
+    .nav-inner { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: relative; }
+    .nav-logo { display: flex; align-items: center; gap: .6rem; font-size: 1.25rem; font-weight: 800; color: var(--head); letter-spacing: -0.04em; text-decoration: none; }
+    .nav-logo img { height: 34px; width: auto; display: block; }
+    .nav-logo span { color: var(--brand); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: .875rem; font-weight: 700; color: rgba(0,0,0,.55); text-decoration: none; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--head); }
+    .nav-cta { font-size: .875rem; font-weight: 600; color: #fff; background: var(--brand); border: none; border-radius: var(--r); padding: .55rem 1.1rem; cursor: pointer; text-decoration: none; transition: background .2s, transform .15s, box-shadow .2s; box-shadow: 0 4px 12px rgba(192,57,43,.3); }
+    .nav-cta:hover { background: var(--brand-d); transform: translateY(-1px); box-shadow: 0 6px 18px rgba(192,57,43,.4); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: .4rem; }
+    .nav-hamburger span { width: 22px; height: 2px; background: var(--head); border-radius: 2px; transition: all .3s; }
+    .nav-right { display: flex; align-items: center; gap: .5rem; }
+    .nav-email-btn { display: none; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid rgba(0,0,0,.15); color: var(--head); text-decoration: none; flex-shrink: 0; transition: background .15s; }
+    .mobile-cta-item { display: none; }
+
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-btn { display: flex; align-items: center; gap: .3rem; font-size: .875rem; font-weight: 700; color: rgba(0,0,0,.55); cursor: pointer; background: none; border: none; padding: 0; font-family: inherit; transition: color .2s; }
+    .nav-dropdown-btn:hover, .nav-dropdown.open .nav-dropdown-btn, .nav-dropdown-btn.active { color: var(--head); }
+    .nav-dropdown-arrow { transition: transform .2s; display: flex; }
+    .nav-dropdown:hover .nav-dropdown-arrow { transform: rotate(180deg); }
+    .nav-dropdown-menu { position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%); background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: .4rem 0; min-width: 160px; box-shadow: 0 4px 16px rgba(0,0,0,.1); opacity: 0; visibility: hidden; transition: opacity .18s, visibility .18s; z-index: 300; }
+    .nav-dropdown:hover .nav-dropdown-menu { opacity: 1; visibility: visible; }
+    .nav-dropdown-menu a { display: block; padding: .65rem 1.2rem; font-size: .875rem; font-weight: 500; color: rgba(0,0,0,.6); text-decoration: none; white-space: nowrap; transition: color .15s, background .15s; }
+    .nav-dropdown-menu a:hover, .nav-dropdown-menu a.active { color: var(--head); background: rgba(0,0,0,.04); }
+
+    /* Page hero */
+    .page-hero { background: var(--bg-dark); padding: 4rem 1.5rem 3.5rem; }
+    .page-hero-inner { max-width: 860px; margin: 0 auto; }
+    .page-hero .eyebrow { display: inline-block; font-size: .7rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: rgba(192,57,43,.9); background: rgba(192,57,43,.15); border: 1px solid rgba(192,57,43,.25); border-radius: 999px; padding: .3rem .85rem; margin-bottom: 1.25rem; }
+    .page-hero h1 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800; color: #fff; line-height: 1.2; letter-spacing: -0.025em; margin-bottom: 1rem; }
+    .page-hero p { font-size: 1.0625rem; color: rgba(255,255,255,.6); line-height: 1.7; max-width: 680px; }
+
+    /* Search */
+    .search-wrap { background: var(--bg-alt); border-bottom: 1px solid var(--border); padding: 1.5rem; position: sticky; top: 60px; z-index: 90; }
+    .search-inner { max-width: 860px; margin: 0 auto; position: relative; }
+    .search-inner svg { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--subtle); pointer-events: none; }
+    #glossSearch { width: 100%; padding: .75rem 1rem .75rem 2.75rem; font-size: .9375rem; font-family: inherit; border: 1.5px solid var(--border); border-radius: var(--r); background: #fff; color: var(--head); outline: none; transition: border-color .2s, box-shadow .2s; }
+    #glossSearch:focus { border-color: var(--brand); box-shadow: 0 0 0 3px rgba(192,57,43,.1); }
+    #glossSearch::placeholder { color: var(--subtle); }
+
+    /* Letter nav */
+    .letter-nav { border-bottom: 1px solid var(--border); background: #fff; overflow-x: auto; scrollbar-width: none; }
+    .letter-nav::-webkit-scrollbar { display: none; }
+    .letter-nav-inner { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: .2rem; }
+    .letter-nav-inner a { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 44px; font-size: .8rem; font-weight: 700; color: var(--subtle); text-decoration: none; border-bottom: 2px solid transparent; transition: color .15s, border-color .15s; flex-shrink: 0; }
+    .letter-nav-inner a:hover { color: var(--head); }
+    .letter-nav-inner a.has-terms { color: var(--head); }
+    .letter-nav-inner a.has-terms:hover, .letter-nav-inner a.active-letter { color: var(--brand); border-bottom-color: var(--brand); }
+
+    /* Glossary content */
+    .gloss-wrap { max-width: 860px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+    .gloss-section { margin-bottom: 3rem; }
+    .gloss-section.hidden { display: none; }
+
+    .gloss-letter-head { font-size: 2rem; font-weight: 800; color: var(--brand); letter-spacing: -0.03em; margin-bottom: 1.25rem; padding-bottom: .75rem; border-bottom: 2px solid var(--brand-l); scroll-margin-top: 120px; }
+
+    .term-item { padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
+    .term-item:last-child { border-bottom: none; }
+    .term-item.hidden { display: none; }
+
+    .term-name { font-size: 1rem; font-weight: 700; color: var(--head); margin-bottom: .4rem; }
+    .term-def { font-size: .9375rem; line-height: 1.75; color: var(--body); }
+    .term-def em { font-style: italic; color: var(--subtle); }
+
+    /* Abbreviations table */
+    .abbr-section { background: var(--bg-alt); border-top: 1px solid var(--border); padding: 3rem 1.5rem 4rem; }
+    .abbr-inner { max-width: 860px; margin: 0 auto; }
+    .abbr-inner h2 { font-size: 1.4rem; font-weight: 800; color: var(--head); margin-bottom: 1.5rem; letter-spacing: -0.02em; }
+    .abbr-table { width: 100%; border-collapse: collapse; }
+    .abbr-table th { font-size: .75rem; font-weight: 700; color: var(--subtle); text-transform: uppercase; letter-spacing: .06em; padding: .6rem 1rem; text-align: left; border-bottom: 2px solid var(--border); background: #fff; }
+    .abbr-table td { font-size: .9rem; padding: .75rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .abbr-table td:first-child { font-weight: 700; color: var(--brand); width: 110px; white-space: nowrap; }
+    .abbr-table td:last-child { color: var(--body); }
+    .abbr-table tr:last-child td { border-bottom: none; }
+    .abbr-table tr:hover td { background: rgba(192,57,43,.03); }
+
+    /* No results */
+    .no-results { display: none; text-align: center; padding: 3rem 1rem; color: var(--subtle); font-size: .9375rem; }
+    .no-results.visible { display: block; }
+
+    /* Scroll-reveal */
+    .sr { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
+    .sr.in { opacity: 1; transform: none; }
+
+    /* Footer */
+    footer { background: #000; padding: 2.75rem 1.5rem; }
+    .footer-inner { max-width: 1160px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem; }
+    .footer-logo { display: flex; align-items: center; gap: .5rem; font-size: 1rem; font-weight: 800; color: rgba(255,255,255,.7); letter-spacing: -0.04em; text-decoration: none; }
+    .footer-logo img { height: 26px; width: auto; display: block; filter: brightness(0) invert(.7); }
+    .footer-logo span { color: var(--brand); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { font-size: .8rem; color: rgba(255,255,255,.35); text-decoration: none; transition: color .2s; }
+    .footer-links a:hover { color: rgba(255,255,255,.65); }
+    .footer-copy { font-size: .75rem; color: rgba(255,255,255,.22); }
+
+    /* Scroll home */
+    .scroll-home { position: fixed; right: 0; top: 50%; transform: translateY(-50%) translateX(100%); background: var(--brand); color: #fff; width: 46px; height: 46px; border-radius: 12px 0 0 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 998; transition: transform .35s cubic-bezier(.4,0,.2,1), background .2s; border: none; box-shadow: -3px 0 16px rgba(192,57,43,.35); }
+    .scroll-home.visible { transform: translateY(-50%) translateX(0); }
+    .scroll-home:hover { background: var(--brand-d); }
+
+    @media (max-width: 768px) {
+      .nav-hamburger { display: flex; }
+      .nav-cta { display: none; }
+      .nav-email-btn { display: flex; background: var(--brand); border-color: var(--brand); color: #fff; }
+      .nav-links { display: flex !important; flex-direction: column; list-style: none; gap: 0; position: absolute; top: 64px; right: 1rem; left: auto; width: 230px; background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,.1); overflow: hidden; max-height: 0; opacity: 0; pointer-events: none; transition: max-height .38s cubic-bezier(.4,0,.2,1), opacity .22s ease; z-index: 200; }
+      .nav-links.open { max-height: 900px; opacity: 1; pointer-events: auto; }
+      .nav-links li a { display: block; padding: .85rem 1.25rem; color: var(--head) !important; border-bottom: 1px solid rgba(0,0,0,.07); font-size: .9rem; }
+      .nav-links li:last-child a { border-bottom: none; }
+      .nav-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+      .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: translateX(-8px); }
+      .nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+      .nav-dropdown-btn { display: flex !important; padding: .85rem 1.25rem; color: var(--head) !important; border-bottom: 1px solid rgba(0,0,0,.07); font-size: .9rem; width: 100%; justify-content: space-between; }
+      .nav-dropdown-menu { position: static; transform: none; opacity: 1; visibility: visible; box-shadow: none; border: none; padding: 0; min-width: auto; background: #fff; border-radius: 0; max-height: 0; overflow: hidden; transition: max-height .3s cubic-bezier(.4,0,.2,1); }
+      .nav-dropdown.open .nav-dropdown-menu { max-height: 400px; }
+      .nav-dropdown.open .nav-dropdown-arrow { transform: rotate(180deg); }
+      .nav-dropdown-menu a { padding: .75rem 1.25rem .75rem 2rem !important; font-size: .85rem !important; border-bottom: 1px solid rgba(0,0,0,.07) !important; color: rgba(0,0,0,.6) !important; }
+      .mobile-cta-item { display: list-item; }
+      .search-wrap { top: 60px; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .abbr-table td:first-child { width: 80px; }
+    }
+  </style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N6QKN765" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<div class="grad-bar"></div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="img/logo.svg" alt="SPBS logo" />
+      SPBS<span>.</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Domů</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-btn active" aria-haspopup="true">
+          Služby
+          <span class="nav-dropdown-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="sluzby.html">Školení zaměstnanců</a>
+          <a href="sluzby.html">EPS</a>
+          <a href="sluzby.html">Protipožární ucpávky</a>
+          <a href="sluzby.html">Hasicí přístroje</a>
+          <a href="sluzby.html">Součinnost HZS</a>
+          <a href="sluzby.html">Požární Dokumentace</a>
+          <a href="slovnik-pojmu.html" class="active">Slovník pojmů</a>
+        </div>
+      </li>
+      <li><a href="partneri.html">Partneři</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-btn" aria-haspopup="true">
+          Společnost
+          <span class="nav-dropdown-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="o-nas.html">O nás</a>
+          <a href="nase-projekty.html">Naše projekty</a>
+          <a href="reference.html">Reference</a>
+        </div>
+      </li>
+      <li class="mobile-cta-item"><a href="kontakt.html" class="nav-cta">Kontakt</a></li>
+    </ul>
+    <a href="kontakt.html" class="nav-cta">Kontakt</a>
+    <div class="nav-right">
+      <a href="mailto:email@email.cz" class="nav-email-btn" aria-label="Napište nám e-mail">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </a>
+      <div class="nav-hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Page hero -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <span class="eyebrow">Vzdělání</span>
+    <h1>Slovník pojmů požární bezpečnosti staveb</h1>
+    <p>Zkratky, normy a odborné pojmy z oblasti PBS – vysvětleny srozumitelně a přesně. Pro projektanty, stavebníky i zvídavé laiky.</p>
+  </div>
+</div>
+
+<!-- Search -->
+<div class="search-wrap">
+  <div class="search-inner">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="search" id="glossSearch" placeholder="Hledat pojem nebo zkratku…" autocomplete="off" />
+  </div>
+</div>
+
+<!-- Letter nav -->
+<nav class="letter-nav" aria-label="Abecední navigace">
+  <div class="letter-nav-inner" id="letterNav">
+    <a href="#A" class="has-terms">A</a>
+    <a href="#B" class="has-terms">B</a>
+    <a href="#C" class="has-terms">C</a>
+    <a href="#D" class="has-terms">D</a>
+    <a href="#E" class="has-terms">E</a>
+    <a href="#F" class="has-terms">F</a>
+    <a href="#H" class="has-terms">H</a>
+    <a href="#I" class="has-terms">I</a>
+    <a href="#J" class="has-terms">J</a>
+    <a href="#K" class="has-terms">K</a>
+    <a href="#M" class="has-terms">M</a>
+    <a href="#N" class="has-terms">N</a>
+    <a href="#O" class="has-terms">O</a>
+    <a href="#P" class="has-terms">P</a>
+    <a href="#R" class="has-terms">R</a>
+    <a href="#S" class="has-terms">S</a>
+    <a href="#U" class="has-terms">U</a>
+    <a href="#V" class="has-terms">V</a>
+    <a href="#Z" class="has-terms">Z</a>
+  </div>
+</nav>
+
+<!-- Glossary -->
+<div class="gloss-wrap" id="glossWrap">
+
+  <div class="no-results" id="noResults">Žádný pojem nebyl nalezen.</div>
+
+  <!-- A -->
+  <section class="gloss-section sr" id="A">
+    <h2 class="gloss-letter-head">A</h2>
+    <div class="term-item">
+      <h3 class="term-name">Aktivní požární ochrana</h3>
+      <p class="term-def">Souhrnný název pro všechna technická zařízení, která při požáru zasahují – detekují oheň, spouštějí alarmy, hasí nebo odvádějí kouř. Patří sem elektrická požární signalizace (EPS), sprinklery, zařízení pro odvod kouře a tepla (ZOKT) a podobná technika. Oproti pasivní ochraně nečeká – reaguje. <em>Viz také: Pasivní požární ochrana.</em></p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Autorizovaná osoba v oboru PBS</h3>
+      <p class="term-def">Projektant se specializací na požární bezpečnost staveb, který je oprávněn zpracovávat požárně bezpečnostní řešení (PBŘ). Projektování PBS smí provádět pouze autorizovaní inženýři zapsaní v Komoře autorizovaných inženýrů a techniků (ČKAIT) s příslušnou specializací.</p>
+    </div>
+  </section>
+
+  <!-- B -->
+  <section class="gloss-section sr" id="B">
+    <h2 class="gloss-letter-head">B</h2>
+    <div class="term-item">
+      <h3 class="term-name">Bezpečná doba pobytu</h3>
+      <p class="term-def">Čas, po který jsou osoby na únikové cestě chráněny před účinky požáru – zejména před kouřem a teplem. U chráněné únikové cesty (CHÚC) typu A je to 4 minuty, u typu B 15 minut a u typu C 30 minut. Čím déle musí lidé cestu procházet, tím přísnější požadavky na její provedení platí.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Bezkouřová vrstva</h3>
+      <p class="term-def">Prostor těsně pod stropem, do kterého kouř při požáru ještě nepronikl. Norma předpokládá, že bezkouřová vrstva sahá do výšky minimálně 2,5 m nad podlahou – pod touto hranicí by měli být evakuující se lidé v bezpečí před zplodinami hoření. Výšku bezkouřové vrstvy ovlivňují zejména odvětrávací opatření a geometrie prostoru.</p>
+    </div>
+  </section>
+
+  <!-- C -->
+  <section class="gloss-section sr" id="C">
+    <h2 class="gloss-letter-head">C</h2>
+    <div class="term-item">
+      <h3 class="term-name">Celistvost (mezní stav E)</h3>
+      <p class="term-def">Jeden z mezních stavů požární odolnosti. Označuje schopnost konstrukce zabránit průniku plamenů a horkých plynů na stranu odvracenou od ohně. Hodnotí se zejména u dělicích konstrukcí – stěn, stropů, dveří. Pokud průnik hrozí, konstrukce mezní stav E nesplňuje.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">CHÚC – Chráněná úniková cesta</h3>
+      <p class="term-def">Komunikační prostor (chodba, schodiště) trvale volný, vedoucí k východu z budovy, jehož bezpečnost v případě požáru je nadřazena všemu ostatnímu. Na rozdíl od nechráněné únikové cesty je CHÚC odděleným požárním úsekem s přísnými požadavky na provedení – minimum hořlavých materiálů, požární dveře se samozavíračem, vlastní větrání. Podle náročnosti se dělí na typy A, B a C. <em>Viz také: NÚC, Úniková cesta.</em></p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">ČSN 73 0802 (kmenová norma PBS)</h3>
+      <p class="term-def">Základní technická norma požární bezpečnosti staveb platná pro nevýrobní objekty. Definuje způsob výpočtu požárního rizika, stanovuje požadavky na únikové cesty, požárně dělicí konstrukce, odstupové vzdálenosti i vybavení požárně bezpečnostními zařízeními. Spolu s ČSN 73 0804 tvoří páteř celého kodexu PBS.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">ČSN 73 0804</h3>
+      <p class="term-def">Kmenová norma požární bezpečnosti pro výrobní objekty. Liší se od ČSN 73 0802 přístupem ke stanovení požárního rizika i specifickými požadavky na velké průmyslové haly, sklady a technologické provozy.</p>
+    </div>
+  </section>
+
+  <!-- D -->
+  <section class="gloss-section sr" id="D">
+    <h2 class="gloss-letter-head">D</h2>
+    <div class="term-item">
+      <h3 class="term-name">Doba evakuace (tu)</h3>
+      <p class="term-def">Čas, za který mají všechny osoby z daného požárního úseku nebo celého objektu bezpečně opustit budovu. Musí být kratší než doba, po kterou jsou únikové cesty ještě bezpečně průchodné. Vypočítává se ze šířky a délky únikových cest, počtu osob a součinitele podmínek evakuace.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Druh konstrukční části (D1, D2, D3)</h3>
+      <p class="term-def">Klasifikace stavebních konstrukcí podle jejich chování za požáru – zejména s ohledem na možné odkapávání nebo odpadávání hořícího materiálu. D1 jsou konstrukce bez odkapávání a odpadávání, D2 připouštějí odkapávání, D3 pak i odpadávání. Druh má přímý vliv na požadavky, které na danou konstrukci norma klade.</p>
+    </div>
+  </section>
+
+  <!-- E -->
+  <section class="gloss-section sr" id="E">
+    <h2 class="gloss-letter-head">E</h2>
+    <div class="term-item">
+      <h3 class="term-name">Ekonomické riziko</h3>
+      <p class="term-def">Vedle požárního rizika norma pracuje i s ekonomickým rizikem – tedy odhadem škod na majetku. Ekonomické riziko se uplatňuje zejména u výrobních a skladových objektů, kde přímé škody po požáru mohou být obrovské. V praxi ovlivňuje, jak velké mohou být požární úseky.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">EPS – Elektrická požární signalizace</h3>
+      <p class="term-def">Systém detektorů, ústředen a hlásičů, který automaticky zaznamená počínající požár a spustí poplach. Moderní EPS umí rozlišit kouř, teplo i plameny, přenést signál na hasiče přes ZDP a aktivovat další protipožární systémy jako ZOKT nebo SHZ. Jde o jedno z vyhrazených požárně bezpečnostních zařízení.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Evakuace</h3>
+      <p class="term-def">Organizovaný odchod osob z prostoru ohroženého požárem do bezpečí. Rozlišujeme evakuaci současnou (všichni najednou) a postupnou – ta se uplatňuje například v nemocnicích nebo domovech pro seniory, kde přesun všech naráz není možný.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Evakuační výtah</h3>
+      <p class="term-def">Speciální výtah určený pro evakuaci osob, které se nemohou pohybovat po schodech (osoby na vozíčku, pacienti, starší lidé). Musí fungovat i za požáru – má vlastní požární úsek šachty, záložní napájení a zvýšenou požární odolnost.</p>
+    </div>
+  </section>
+
+  <!-- F -->
+  <section class="gloss-section sr" id="F">
+    <h2 class="gloss-letter-head">F</h2>
+    <div class="term-item">
+      <h3 class="term-name">Flash over (celkové vzplanutí prostoru)</h3>
+      <p class="term-def">Okamžik, kdy teplota v hořícím prostoru stoupne natolik, že se zapaluje veškerý hořlavý obsah naráz. Před flash overem hoří jen část prostoru, po něm hoří vše. Jde o kritický bod, po kterém záchrana osob uvnitř není reálná. Požární odolnost konstrukcí se navrhuje právě pro podmínky po flash overu.</p>
+    </div>
+  </section>
+
+  <!-- H -->
+  <section class="gloss-section sr" id="H">
+    <h2 class="gloss-letter-head">H</h2>
+    <div class="term-item">
+      <h3 class="term-name">Hasicí přístroj (PHP – přenosný hasicí přístroj)</h3>
+      <p class="term-def">Ruční hasicí zařízení pro prvotní likvidaci malých požárů. Počet a typ PHP v objektu stanoví vyhláška o technických podmínkách požární ochrany, přičemž závisí na ploše a požárním zatížení daného prostoru. Pravidelné revize jsou povinné.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">HZS – Hasičský záchranný sbor</h3>
+      <p class="term-def">Profesionální složka požární ochrany ČR s celostátní působností. HZS vydává stanoviska k projektové dokumentaci staveb podléhajících státnímu požárnímu dozoru, provádí kontroly a schvaluje požárně bezpečnostní řešení. Pro jednoduché stavby (rodinné domy do 200 m²) tato povinnost odpadá.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Hořlavost stavebních hmot</h3>
+      <p class="term-def">Klasifikace materiálů podle toho, jak rychle a intenzivně hoří. Český systém dělí hmoty na nehořlavé (A), snadno hořlavé (B) a hořlavé třídy C1 (těžce hořlavé), C2 (středně hořlavé) a C3 (lehce hořlavé). Evropský klasifikační systém používá třídy A1, A2, B až F. Oba systémy existují souběžně, přičemž přednost má evropský postup.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Hořlavý konstrukční systém</h3>
+      <p class="term-def">Stavba, jejíž nosné nebo požárně dělicí konstrukce jsou ze dřeva nebo jiných hořlavých materiálů. Klade vyšší požadavky na provedení – například kratší mezní rozměry požárních úseků nebo přísnější stupeň požární bezpečnosti. <em>Viz také: Nehořlavý konstrukční systém, Smíšený konstrukční systém.</em></p>
+    </div>
+  </section>
+
+  <!-- I -->
+  <section class="gloss-section sr" id="I">
+    <h2 class="gloss-letter-head">I</h2>
+    <div class="term-item">
+      <h3 class="term-name">Izolační schopnost (mezní stav I)</h3>
+      <p class="term-def">Schopnost konstrukce zabránit přenosu tepla na neohroženou stranu tak, aby zde nevznikl požár nebo aby teplota nepřekročila normou stanovenou mez. Hodnotí se u požárních stěn, stropů a dveří. Spolu s mezními stavy R (únosnost) a E (celistvost) tvoří základ klasifikace požární odolnosti.</p>
+    </div>
+  </section>
+
+  <!-- J -->
+  <section class="gloss-section sr" id="J">
+    <h2 class="gloss-letter-head">J</h2>
+    <div class="term-item">
+      <h3 class="term-name">Jednotky požární ochrany (JPO)</h3>
+      <p class="term-def">Souhrnný název pro profesionální i dobrovolné hasičské sbory, které zasahují při požárech. Navrhování staveb musí zohledňovat podmínky pro efektivní zásah JPO – přístupové komunikace, nástupní plochy, zásahové cesty i zásobování požární vodou.</p>
+    </div>
+  </section>
+
+  <!-- K -->
+  <section class="gloss-section sr" id="K">
+    <h2 class="gloss-letter-head">K</h2>
+    <div class="term-item">
+      <h3 class="term-name">Kodex norem PBS (ČSN 73 08xx)</h3>
+      <p class="term-def">Soubor českých technických norem řady ČSN 73 08xx, který komplexně řeší požární bezpečnost staveb. Zahrnuje normy kmenové (ČSN 73 0802, ČSN 73 0804), projektové (pro konkrétní typy budov) i hodnotové. Kodex je v platnosti od roku 1977 a průběžně se aktualizuje.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Konstrukční systém budovy</h3>
+      <p class="term-def">Klasifikace budovy z hlediska hořlavosti jejích nosných a požárně dělicích konstrukcí. Rozlišujeme nehořlavý, smíšený a hořlavý konstrukční systém. Typ konstrukčního systému přímo ovlivňuje přípustné rozměry požárních úseků a požadavky na požární odolnost.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Kouřová klapka</h3>
+      <p class="term-def">Zařízení zabudované do vzduchotechnického potrubí, které se při požáru automaticky uzavře a zabrání šíření kouře a tepla potrubní soustavou do jiných požárních úseků. Jde o vyhrazené požárně bezpečnostní zařízení, které musí splňovat požadavky na požární odolnost a být pravidelně kontrolováno.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Kouřová sekce (v ZOKT)</h3>
+      <p class="term-def">Část haly nebo velkého prostoru ohraničená kouřovými zábranami, v níž zařízení ZOKT udržuje bezkouřovou vrstvu. Dělení prostoru na kouřové sekce umožňuje efektivněji odvádět kouř a teplo a prodlužuje čas bezpečné evakuace.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Kouřová zábrana</h3>
+      <p class="term-def">Svislá pevná nebo závěsná clona, která rozděluje velký prostor (halu, atrium) na kouřové sekce. Zabraňuje horizontálnímu šíření kouře a umožňuje efektivní odvod kouře přes ZOKT.</p>
+    </div>
+  </section>
+
+  <!-- M -->
+  <section class="gloss-section sr" id="M">
+    <h2 class="gloss-letter-head">M</h2>
+    <div class="term-item">
+      <h3 class="term-name">Mezní stav (požární odolnost)</h3>
+      <p class="term-def">Stav, při jehož dosažení přestává konstrukce plnit svou požadovanou funkci. Základní mezní stavy jsou: <strong>R</strong> – únosnost a stabilita, <strong>E</strong> – celistvost (zabraňuje průniku plamenů), <strong>I</strong> – izolační schopnost (zabraňuje přenosu tepla), <strong>W</strong> – radiace, <strong>C</strong> – samozavírání. Kombinace těchto stavů se uvádí jako klasifikace odolnosti, např. EI 30 nebo REI 60.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Mezní rozměry požárního úseku</h3>
+      <p class="term-def">Maximální přípustná plocha nebo délka požárního úseku, kterou norma připouští bez nutnosti dalšího členění. Závisí na stupni požární bezpečnosti, konstrukčním systému budovy a případné instalaci SHZ nebo ZOKT. Překročení mezních rozměrů není možné – prostor je nutné rozdělit požárními dělicími konstrukcemi.</p>
+    </div>
+  </section>
+
+  <!-- N -->
+  <section class="gloss-section sr" id="N">
+    <h2 class="gloss-letter-head">N</h2>
+    <div class="term-item">
+      <h3 class="term-name">Nahodilé požární zatížení</h3>
+      <p class="term-def">Část výpočtového požárního zatížení tvořená hořlavými předměty a materiály, které se v prostoru nacházejí při jeho provozu – nábytek, zásoby, zboží apod. Na rozdíl od stálého požárního zatížení se nahodilé zatížení může měnit podle toho, jak je prostor využíván.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Nástupní plocha</h3>
+      <p class="term-def">Zpevněná plocha u budovy určená pro přistavení výsuvného žebříku nebo autoplošiny hasičů. Umožňuje záchranný zásah z vnějšku ve výšce. Požadavky na nástupní plochy (rozměry, únosnost, poloha) stanoví norma v závislosti na výšce budovy a počtu evakuovaných osob.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Nehořlavý konstrukční systém</h3>
+      <p class="term-def">Stavba, jejíž nosné i požárně dělicí konstrukce jsou z nehořlavých materiálů (beton, ocel, zdivo). Umožňuje větší požární úseky a klade nižší nároky na požární odolnost než hořlavý nebo smíšený systém.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">NÚC – Nechráněná úniková cesta</h3>
+      <p class="term-def">Komunikační prostor (chodba, schodiště), který není oddělen od ostatních prostor požárně dělicími konstrukcemi. Platí pro ni normy na mezní délku a šířku, podmínky průchodnosti a omezení požárního zatížení, jsou ale méně přísné než u CHÚC. <em>Viz také: CHÚC, Úniková cesta.</em></p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Nouzové osvětlení</h3>
+      <p class="term-def">Osvětlení, které se automaticky spustí při výpadku el. energie nebo při evakuaci a osvětluje únikové cesty, požární uzávěry a bezpečnostní značení. Musí fungovat z autonomního záložního zdroje minimálně po stanovenou dobu.</p>
+    </div>
+  </section>
+
+  <!-- O -->
+  <section class="gloss-section sr" id="O">
+    <h2 class="gloss-letter-head">O</h2>
+    <div class="term-item">
+      <h3 class="term-name">Odstupová vzdálenost</h3>
+      <p class="term-def">Minimální bezpečná vzdálenost mezi dvěma budovami nebo jejich částmi tak, aby se požár z jednoho objektu nesálal teplem na druhý. Vypočítává se z požárně otevřených ploch a jejich plochy, výhřevnosti a polohy. Pokud jsou objekty blíže, musí mít fasády zvýšenou požární odolnost.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Odkapávání a odpadávání</h3>
+      <p class="term-def">Chování hořlavých materiálů za požáru – odkapávání (tekuté kapky hořícího materiálu) nebo odpadávání (pevné kusy). Nebezpečné zejména u fasád a podhledů, protože mohou šířit požár do míst, kam by jinak nedosáhl. Proto norma omezuje použití materiálů s těmito vlastnostmi na únikových cestách a fasádách.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">OB1, OB2, OB3, OB4</h3>
+      <p class="term-def">Skupiny budov pro bydlení a ubytování podle ČSN 73 0833. OB1 jsou nejmenší stavby (rodinné domy do 600 m² a tří nadzemních podlaží), OB4 naopak výškové bytové domy. Zařazení do skupiny určuje, jak přísné požadavky požární bezpečnosti musí daná stavba splňovat.</p>
+    </div>
+  </section>
+
+  <!-- P -->
+  <section class="gloss-section sr" id="P">
+    <h2 class="gloss-letter-head">P</h2>
+    <div class="term-item">
+      <h3 class="term-name">Pasivní požární ochrana</h3>
+      <p class="term-def">Konstrukční a dispoziční opatření, která jsou do stavby zabudována od začátku a chrání ji bez aktivního zásahu – rozdělení na požární úseky, použití nehořlavých materiálů, navrhování únikových cest, požadavky na požární odolnost konstrukcí. Pasivní ochrana je páteří požární bezpečnosti každé budovy.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">PBŘ – Požárně bezpečnostní řešení</h3>
+      <p class="term-def">Povinná část projektové dokumentace staveb, která komplexně řeší požární bezpečnost navrhovaného objektu. Zpracovává ho autorizovaná osoba v oboru PBS. PBŘ stanoví rozdělení na požární úseky, požárně technické charakteristiky, podmínky evakuace, vybavení PBZ a podmínky pro zásah hasičů.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Požár</h3>
+      <p class="term-def">Každé nežádoucí hoření, při kterém došlo k usmrcení nebo zranění osob či zvířat, ke škodám na majetku nebo životním prostředí, nebo kdy byly tyto hodnoty bezprostředně ohroženy. Prostý oheň v krbu nebo svíčce požárem není – klíčové je slovo „nežádoucí".</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Požárně bezpečnostní zařízení (PBZ)</h3>
+      <p class="term-def">Veškerá technická zařízení sloužící k detekci, hašení, odvodu kouře nebo ochraně únikových cest. Patří sem EPS, SHZ, ZOKT, hydranty, požární klapky, nouzové osvětlení, evakuační výtahy nebo požární ucpávky. Vyhrazená PBZ (EPS, SHZ, ZOKT, ZDP) podléhají přísným normám na projektování, montáž a pravidelné kontroly.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Požárně dělicí konstrukce</h3>
+      <p class="term-def">Stěna, strop nebo jiná konstrukce, která odděluje sousední požární úseky a brání šíření požáru. Musí splňovat požadavky na požární odolnost odpovídající danému stupni požární bezpečnosti (SPB). Patří sem požární stěny, požární stropy a požární uzávěry otvorů.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Požárně nebezpečný prostor (PNP)</h3>
+      <p class="term-def">Plocha nebo prostor kolem budovy, v němž hrozí nebezpečí přenesení požáru sáláním tepla nebo přímým dotykem plamene. Velikost PNP závisí na odstupových vzdálenostech. Pokud PNP zasahuje na sousední pozemek nebo stavbu, je nutné přijmout opatření.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Požárně otevřená plocha</h3>
+      <p class="term-def">Plocha na fasádě budovy (okna, dveře, prosklené části), skrze kterou při požáru uniká teplo a plameny navenek. Čím větší je požárně otevřená plocha, tím větší odstupová vzdálenost musí být mezi budovami.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Požárně technická charakteristika (PTCh)</h3>
+      <p class="term-def">Souhrn hodnot popisujících chování stavebního materiálu nebo konstrukce za požáru – zejména hořlavost, třídu reakce na oheň, požární odolnost, výhřevnost nebo rychlost šíření plamene. PTCh jsou podkladem pro výběr materiálů při navrhování PBS.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Požární nátěr / nástřik / obklad</h3>
+      <p class="term-def">Ochranné úpravy konstrukčních prvků zvyšující jejich požární odolnost. Požární nátěry (intumescentní) při zahřátí nafouknou a vytvoří izolační vrstvu. Nástřiky fungují podobně a používají se zejména na ocelové konstrukce. Obklady (sádrokarton, minerální desky) mechanicky chrání nosnou konstrukci před teplem.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Požární odolnost</h3>
+      <p class="term-def">Schopnost stavební konstrukce odolávat účinkům plně rozvinutého požáru po stanovenou dobu, aniž by ztratila požadované vlastnosti. Vyjadřuje se v minutách – například EI 30 znamená, že konstrukce zachovává celistvost a izolační schopnost po dobu 30 minut. Požadovaná hodnota závisí na stupni požární bezpečnosti (SPB) daného úseku.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Požární pás</h3>
+      <p class="term-def">Část fasády mezi okny v různých podlažích, která musí být provedena z nehořlavého materiálu a mít dostatečnou výšku. Brání tomu, aby se požár z nižšího podlaží šířil po fasádě do podlaží vyšších.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Požární prevence</h3>
+      <p class="term-def">Soubor opatření, jejichž cílem je předcházet vzniku požárů. Zahrnuje technická opatření (správný návrh stavby, instalace), organizační opatření (školení zaměstnanců, požární řád, požární hlídky) i legislativní rámec (zákon o požární ochraně, vyhlášky).</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Požární přepážka / ucpávka</h3>
+      <p class="term-def">Systém utěsnění prostupů instalací (kabelů, potrubí, vzduchotechniky) skrze požárně dělicí konstrukce. Zajišťuje, že ani skrze otvor pro potrubí nebo kabel se požár nepřenese do sousedního úseku. Požární ucpávky musí mít certifikovanou požární odolnost odpovídající odolnosti dané konstrukce.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Požární riziko</h3>
+      <p class="term-def">Teoreticky stanovený rozsah negativních důsledků předpokládaného požáru v daném prostoru. Vyjadřuje se jako výpočtové požární zatížení (pv), z něhož se odvíjí stupeň požární bezpečnosti, mezní rozměry požárních úseků i požadavky na stavební konstrukce.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Požární stěna</h3>
+      <p class="term-def">Nosná nebo nenosná svislá dělicí konstrukce oddělující sousední požární úseky nebo sousední objekty. Musí splňovat mezní stav REI (nosná) nebo EI (nenosná) s hodnotou odolnosti stanovenou dle SPB. Jde o jeden ze základních prvků pasivní požární ochrany.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Požární strop</h3>
+      <p class="term-def">Vodorovná dělicí konstrukce (strop) na hranici sousedních požárních úseků v různých podlažích. Musí splňovat mezní stav REI. Zabraňuje svislému šíření požáru a kouře.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Požární úsek (PÚ)</h3>
+      <p class="term-def">Základní stavební a posuzovací jednotka požární bezpečnosti. Je to část budovy ohraničená od zbytku objektu požárně dělicími konstrukcemi tak, aby se v případě požáru oheň udržel pouze v tomto prostoru. Velikost, stupeň požární bezpečnosti i vybavení každého PÚ se posuzují samostatně.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Požární uzávěr</h3>
+      <p class="term-def">Dveře, okno, poklop nebo jiný prvek uzavírající otvor v požárně dělicí konstrukci tak, aby byl zachován požadovaný stupeň požární odolnosti. Nejčastěji jde o protipožární dveře (EI nebo EW) vybavené samozavíračem.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Požární voda</h3>
+      <p class="term-def">Voda určená k hašení požárů. Zásobování požární vodou (ČSN 73 0873) řeší vnější hydrantové sítě, vnitřní hydranty (nástěnné hadicové systémy) i zásobní nádrže. Dostatečné zásobování je podmínkou vydání kolaudačního souhlasu.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Požární výška objektu (h)</h3>
+      <p class="term-def">Výška od podlahy nejnižšího nadzemního podlaží k podlaze posledního nadzemního podlaží. Klíčový parametr pro navrhování PBS – s rostoucí výškou rostou nároky na chráněné únikové cesty, evakuační výtahy i požární odolnost konstrukcí. Objekty s h > 22,5 m jsou považovány za výškové.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Požární zatížení (stálé a nahodilé)</h3>
+      <p class="term-def">Celkové množství hořlavých látek v požárním úseku. <strong>Stálé požární zatížení</strong> tvoří hořlavé materiály zabudované do konstrukcí. <strong>Nahodilé požární zatížení</strong> představují věci, které se v prostoru nacházejí při provozu. Dohromady tvoří výpočtové požární zatížení (pv).</p>
+    </div>
+  </section>
+
+  <!-- R -->
+  <section class="gloss-section sr" id="R">
+    <h2 class="gloss-letter-head">R</h2>
+    <div class="term-item">
+      <h3 class="term-name">Reakce na oheň (třída)</h3>
+      <p class="term-def">Evropská klasifikace stavebních výrobků podle toho, jak přispívají k rozvoji požáru. Třídy jsou označeny A1, A2 (nehořlavé) a B, C, D, E, F (s rostoucím příspěvkem k hoření). Doplňkové klasifikace hodnotí tvorbu kouře (s1–s3) a odkapávání (d0–d2). Třídu reakce na oheň musí mít certifikovanou každý stavební výrobek, u nějž to norma vyžaduje.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Revize PBZ</h3>
+      <p class="term-def">Pravidelná odborná kontrola požárně bezpečnostních zařízení – hasicích přístrojů, hydrantů, EPS, ZOKT nebo SHZ. Frekvence revizí je dána právními předpisy a technickými normami. Bez platné revize není zařízení způsobilé plnit svou funkci při požáru.</p>
+    </div>
+  </section>
+
+  <!-- S -->
+  <section class="gloss-section sr" id="S">
+    <h2 class="gloss-letter-head">S</h2>
+    <div class="term-item">
+      <h3 class="term-name">Samozavírač</h3>
+      <p class="term-def">Mechanické zařízení zajišťující automatické uzavření dveří po průchodu. Povinná součást požárních uzávěrů na únikových cestách a v požárně dělicích konstrukcích. Dveře trvale otevřené musí být vybaveny elektromagnetickým přidržovačem, jenž se při požáru automaticky uvolní.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">SHZ – Stabilní hasicí zařízení</h3>
+      <p class="term-def">Trvalé instalované hasicí zařízení, které automaticky detekuje požár a hasí ho bez zásahu člověka. Nejrozšířenější typ je sprinklerový systém (vodní), ale existují i plynová, prášková nebo mlhová SHZ. Instalace SHZ může výrazně snížit požadavky na velikost požárních úseků nebo délku únikových cest.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Smíšený konstrukční systém</h3>
+      <p class="term-def">Budova, jejíž část nosných nebo požárně dělicích konstrukcí je z hořlavých a část z nehořlavých materiálů. Požadavky PBS jsou přísnější než u čistě nehořlavého systému, ale mírnější než u hořlavého.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Součinitel požárního úseku (a)</h3>
+      <p class="term-def">Výpočtový parametr vyjadřující rychlost odhořívání v daném požárním úseku – závisí na charakteru hořlavých látek a stavebních podmínkách. Ovlivňuje délku únikových cest, počty evakuovaných osob na jeden únikový pruh i dobu evakuace.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Součinitel c (vliv PBZ)</h3>
+      <p class="term-def">Součinitel snižující výpočtové požární zatížení (pv) v závislosti na instalovaných požárně bezpečnostních zařízeních. Nabývá hodnot 0,5 až 1,0. Instalace SHZ nebo ZOKT snižuje tento součinitel a tím umožňuje větší požární úseky nebo jiné úlevy v PBS.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Sprinkler / sprinklerové hasicí zařízení</h3>
+      <p class="term-def">Nejběžnější typ SHZ. Skládá se ze sítě potrubí se sprinklery – hlavicemi obsahujícími teplem aktivovatelný prvek (skleněná ampulka), který se roztaví při dosažení nastavené teploty a spustí přívod vody. Aktivuje se pouze v místě požáru, nikoli celý systém najednou.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Státní požární dozor (SPD)</h3>
+      <p class="term-def">Výkon státní správy v oblasti požární ochrany prováděný Hasičským záchranným sborem. Zahrnuje posuzování projektové dokumentace, kontroly staveb a provozů, vydávání stanovisek a ukládání nápravných opatření.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Stupeň požární bezpečnosti (SPB)</h3>
+      <p class="term-def">Klasifikace každého požárního úseku do jednoho ze šesti stupňů (I–VI) podle výpočtového požárního zatížení a dalších parametrů. SPB přímo určuje požadovanou požární odolnost dělicích a nosných konstrukcí, mezní rozměry úseku i typ únikové cesty. Čím vyšší stupeň, tím přísnější požadavky.</p>
+    </div>
+  </section>
+
+  <!-- U -->
+  <section class="gloss-section sr" id="U">
+    <h2 class="gloss-letter-head">U</h2>
+    <div class="term-item">
+      <h3 class="term-name">Úniková cesta (ÚC)</h3>
+      <p class="term-def">Jakýkoli prostor v budově, kterým se osoby mohou bezpečně dostat ven při požáru. Základní dělení je na nechráněné (NÚC) a chráněné (CHÚC). Norma stanovuje požadavky na délku, šířku, provedení, větrání a vybavení únikových cest podle druhu objektu a počtu evakuovaných osob.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Únikový pruh</h3>
+      <p class="term-def">Základní jednotka pro posuzování šířky únikové cesty. Jeden únikový pruh má šířku 550 mm. Šířka dveří, chodeb nebo schodišťových ramen se vyjadřuje v počtu únikových pruhů. Pro konkrétní počet osob norma stanoví minimální počet únikových pruhů.</p>
+    </div>
+  </section>
+
+  <!-- V -->
+  <section class="gloss-section sr" id="V">
+    <h2 class="gloss-letter-head">V</h2>
+    <div class="term-item">
+      <h3 class="term-name">Výpočtové požární zatížení (pv)</h3>
+      <p class="term-def">Výsledná hodnota vyjadřující intenzitu předpokládaného požáru v posuzovaném požárním úseku – v kg/m² (ekvivalent dřeva). Zahrnuje stálé i nahodilé požární zatížení a vliv geometrie a podmínek hoření. Z hodnoty pv se odvíjí stupeň požární bezpečnosti (SPB) a veškeré další požadavky PBS.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Výšková budova</h3>
+      <p class="term-def">Budova s požární výškou objektu (h) větší než 22,5 m, tedy přibližně od 9. nadzemního podlaží výše. Na výškové budovy se vztahují výrazně přísnější požadavky PBS – povinné chráněné únikové cesty s přetlakovou ventilací, evakuační výtahy, zvýšená požární odolnost nosných konstrukcí.</p>
+    </div>
+  </section>
+
+  <!-- Z -->
+  <section class="gloss-section sr" id="Z">
+    <h2 class="gloss-letter-head">Z</h2>
+    <div class="term-item">
+      <h3 class="term-name">Zásahová cesta</h3>
+      <p class="term-def">Komunikace uvnitř nebo vně budovy určená pro pohyb hasičů při zásahu – nikoliv pro evakuaci osob. Vnitřní zásahové cesty jsou chodby nebo prostory s min. šířkou pro průchod hasiče s vybavením, vnější jsou požární žebříky nebo přístupové komunikace.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">ZDP – Zařízení dálkového přenosu</h3>
+      <p class="term-def">Technické zařízení propojující EPS v budově přímo s operačním střediskem HZS. Po vyhlášení poplachu EPS odesílá ZDP automatický signál hasičům bez nutnosti ručního volání. Zkracuje dobu odezvy na požár a je povinné v objektech s vyšším rizikem (nemocnice, školy, obchodní centra nad stanovené limity).</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">ZOKT – Zařízení pro odvod kouře a tepla</h3>
+      <p class="term-def">Systém, který při požáru odvádí kouř a horké plyny z budovy ven a přivádí čerstvý vzduch, čímž udržuje bezkouřovou vrstvu v prostoru. Slouží primárně k prodloužení doby bezpečné evakuace a umožnění zásahu hasičů. Může fungovat přirozeně (světlíky, odvětrávací otvory) nebo nuceně (ventilátory). ZOKT je vyhrazené PBZ.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Zpráva o posouzení požárního nebezpečí</h3>
+      <p class="term-def">Dokument zpracovaný autorizovanou osobou v oboru PBS, který posuzuje konkrétní stavbu nebo změnu stavby z hlediska požárního nebezpečí. Je součástí projektové dokumentace tam, kde to zákon nebo vyhláška výslovně vyžadují.</p>
+    </div>
+  </section>
+
+</div>
+
+<!-- Abbreviations table -->
+<div class="abbr-section">
+  <div class="abbr-inner sr">
+    <h2>Přehled zkratek</h2>
+    <table class="abbr-table">
+      <thead>
+        <tr><th>Zkratka</th><th>Plný název</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>PBS</td><td>Požární bezpečnost staveb</td></tr>
+        <tr><td>PBŘ</td><td>Požárně bezpečnostní řešení</td></tr>
+        <tr><td>PBZ</td><td>Požárně bezpečnostní zařízení</td></tr>
+        <tr><td>PNP</td><td>Požárně nebezpečný prostor</td></tr>
+        <tr><td>PÚ</td><td>Požární úsek</td></tr>
+        <tr><td>PHP</td><td>Přenosný hasicí přístroj</td></tr>
+        <tr><td>SPB</td><td>Stupeň požární bezpečnosti</td></tr>
+        <tr><td>ÚC</td><td>Úniková cesta</td></tr>
+        <tr><td>NÚC</td><td>Nechráněná úniková cesta</td></tr>
+        <tr><td>CHÚC</td><td>Chráněná úniková cesta</td></tr>
+        <tr><td>EPS</td><td>Elektrická požární signalizace</td></tr>
+        <tr><td>SHZ</td><td>Stabilní hasicí zařízení</td></tr>
+        <tr><td>ZOKT</td><td>Zařízení pro odvod kouře a tepla</td></tr>
+        <tr><td>ZDP</td><td>Zařízení dálkového přenosu</td></tr>
+        <tr><td>HZS</td><td>Hasičský záchranný sbor</td></tr>
+        <tr><td>JPO</td><td>Jednotky požární ochrany</td></tr>
+        <tr><td>SPD</td><td>Státní požární dozor</td></tr>
+        <tr><td>PTCh</td><td>Požárně technická charakteristika</td></tr>
+        <tr><td>pv</td><td>Výpočtové požární zatížení</td></tr>
+        <tr><td>h</td><td>Požární výška objektu</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="footer-logo">
+      <img src="img/logo.svg" alt="SPBS logo" />
+      SPBS<span>.</span>
+    </a>
+    <div class="footer-links">
+      <a href="index.html">Domů</a>
+      <a href="sluzby.html">Služby</a>
+      <a href="o-nas.html">O nás</a>
+      <a href="kontakt.html">Kontakt</a>
+    </div>
+    <span class="footer-copy">&copy; 2026 SPBS – Požárně bezpečnostní řešení staveb</span>
+  </div>
+</footer>
+
+<button class="scroll-home" id="scrollHome" aria-label="Zpět na začátek">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+</button>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); } });
+  }, { threshold: 0.05 });
+  document.querySelectorAll('.sr').forEach(el => observer.observe(el));
+
+  // Nav hamburger
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    hamburger.classList.toggle('open');
+  });
+
+  // Mobile dropdown
+  document.querySelectorAll('.nav-dropdown-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.closest('.nav-dropdown').classList.toggle('open');
+    });
+  });
+
+  // Scroll home + nav hide
+  const scrollHome = document.getElementById('scrollHome');
+  const mainNav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    const cur = window.scrollY;
+    mainNav.style.transform = cur > 80 ? 'translateY(-100%)' : '';
+    scrollHome.classList.toggle('visible', cur > 320);
+  });
+  scrollHome.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Search filter
+  const searchInput = document.getElementById('glossSearch');
+  const noResults = document.getElementById('noResults');
+
+  searchInput.addEventListener('input', () => {
+    const q = searchInput.value.trim().toLowerCase();
+    let totalVisible = 0;
+
+    document.querySelectorAll('.gloss-section').forEach(section => {
+      let sectionVisible = 0;
+      section.querySelectorAll('.term-item').forEach(item => {
+        const name = item.querySelector('.term-name').textContent.toLowerCase();
+        const def  = item.querySelector('.term-def').textContent.toLowerCase();
+        const match = !q || name.includes(q) || def.includes(q);
+        item.classList.toggle('hidden', !match);
+        if (match) sectionVisible++;
+      });
+      section.classList.toggle('hidden', sectionVisible === 0);
+      totalVisible += sectionVisible;
+    });
+
+    noResults.classList.toggle('visible', totalVisible === 0 && q.length > 0);
+  });
+</script>
+</body>
+</html>
