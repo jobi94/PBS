@@ -14,16 +14,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-ZBTKS8D7NY');
 </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>O nás | SPBS – odborníci na požární bezpečnost staveb</title>
-  <meta name="description" content="Jsme specialisté na požární bezpečnost staveb s praxí napříč typy objektů. Zjistěte, proč investoři a obce svěřují požární ochranu právě nám." />
+  <title>O nás | SPBS – Požární bezpečnost staveb | Hradec Králové</title>
+  <meta name="description" content="Specializujeme se na požární bezpečnost staveb v Královéhradeckém, Libereckém, Pardubickém, Středočeském kraji a Praze. Od PBŘ po kolaudaci – jeden tým, jedna odpovědnost." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; font-size: 16px; }
@@ -35,14 +34,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       --subtle: #697386;
       --brand: #C0392B;
       --brand-d: #9B2D20;
-      --brand-l: rgba(192,57,43,.08);
       --bg: #ffffff;
       --bg-alt: #f7f8fa;
       --bg-dark: #0d1f33;
       --border: #e3e8ef;
       --shadow-sm: 0 1px 3px rgba(50,50,93,.1), 0 1px 2px rgba(0,0,0,.06);
       --shadow-md: 0 4px 16px rgba(50,50,93,.12), 0 2px 6px rgba(0,0,0,.06);
-      --shadow-lg: 0 16px 48px rgba(50,50,93,.18), 0 4px 16px rgba(0,0,0,.08);
       --r: 10px;
       --r-lg: 16px;
     }
@@ -53,7 +50,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     nav { position: sticky; top: 0; z-index: 100; transition: transform .35s ease; background: #fff; border-bottom: 1px solid rgba(0,0,0,.08); }
     .nav-inner { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: relative; }
     .nav-logo { display: flex; align-items: center; gap: .6rem; font-size: 1.25rem; font-weight: 800; color: var(--head); letter-spacing: -0.04em; text-decoration: none; }
-    .nav-logo img { height: 34px; width: auto; display: block; filter: none; }
+    .nav-logo img { height: 34px; width: auto; display: block; }
     .nav-logo span { color: var(--brand); }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a { font-size: .875rem; font-weight: 700; color: rgba(0,0,0,.55); text-decoration: none; transition: color .2s; }
@@ -69,86 +66,71 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* Nav dropdown */
     .nav-dropdown { position: relative; }
     .nav-dropdown-btn { display: flex; align-items: center; gap: .3rem; font-size: .875rem; font-weight: 700; color: rgba(0,0,0,.55); cursor: pointer; background: none; border: none; padding: 0; font-family: inherit; transition: color .2s; }
-    .nav-dropdown-btn:hover, .nav-dropdown.open .nav-dropdown-btn, .nav-dropdown-btn.active { color: var(--head); }
+    .nav-dropdown-btn:hover, .nav-dropdown.open .nav-dropdown-btn { color: var(--head); }
     .nav-dropdown-arrow { transition: transform .2s; display: flex; }
     .nav-dropdown:hover .nav-dropdown-arrow { transform: rotate(180deg); }
-    .nav-dropdown-menu { position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%); background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: .4rem 0; min-width: 140px; box-shadow: 0 4px 16px rgba(0,0,0,.1); opacity: 0; visibility: hidden; transition: opacity .18s, visibility .18s; z-index: 300; }
+    .nav-dropdown-menu { position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%); background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: .4rem 0; min-width: 210px; box-shadow: 0 4px 16px rgba(0,0,0,.1); opacity: 0; visibility: hidden; transition: opacity .18s, visibility .18s; z-index: 300; }
     .nav-dropdown:hover .nav-dropdown-menu { opacity: 1; visibility: visible; }
     .nav-dropdown-menu a { display: block; padding: .65rem 1.2rem; font-size: .875rem; font-weight: 500; color: rgba(0,0,0,.6); text-decoration: none; white-space: nowrap; transition: color .15s, background .15s; }
     .nav-dropdown-menu a:hover, .nav-dropdown-menu a.active { color: var(--head); background: rgba(0,0,0,.04); }
 
-    /* Buttons */
-    .btn-primary { display: inline-flex; align-items: center; gap: .5rem; background: var(--brand); color: #fff; font-size: .9375rem; font-weight: 600; border-radius: var(--r); padding: .75rem 1.5rem; text-decoration: none; border: none; cursor: pointer; box-shadow: 0 4px 14px rgba(192,57,43,.35); transition: background .2s, transform .15s, box-shadow .2s; }
-    .btn-primary:hover { background: var(--brand-d); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(192,57,43,.45); }
-    .btn-ghost { display: inline-flex; align-items: center; gap: .5rem; background: transparent; color: var(--head); font-size: .9375rem; font-weight: 600; border-radius: var(--r); padding: .75rem 1.5rem; text-decoration: none; border: 1.5px solid var(--border); cursor: pointer; transition: background .2s, border-color .2s, transform .15s; }
-    .btn-ghost:hover { background: var(--bg-alt); border-color: #c1c8d4; transform: translateY(-1px); }
-
-    .eyebrow { display: inline-block; font-size: .7rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--brand); background: var(--brand-l); border-radius: 999px; padding: .3rem .85rem; margin-bottom: 1rem; }
+    /* Breadcrumb */
+    .breadcrumb { background: var(--bg-dark); padding: .75rem 1.5rem; display: flex; align-items: center; gap: .5rem; font-size: .8rem; color: rgba(255,255,255,.45); }
+    .breadcrumb a { color: rgba(255,255,255,.45); text-decoration: none; transition: color .2s; }
+    .breadcrumb a:hover { color: rgba(255,255,255,.8); }
+    .breadcrumb-sep { color: rgba(255,255,255,.2); }
 
     /* Page hero */
     .page-hero { background: var(--bg-dark); padding: 4rem 1.5rem 3.5rem; }
-    .page-hero h1 { font-size: 3rem; font-weight: 800; letter-spacing: -0.03em; color: var(--head); line-height: 1.1; margin-bottom: 1.25rem; max-width: 760px; }
-    .page-hero p { font-size: 1.0625rem; line-height: 1.75; color: var(--body); max-width: 600px; }
+    .page-hero-inner { max-width: 860px; margin: 0 auto; }
+    .page-hero .eyebrow { display: inline-flex; align-items: center; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #27ae60; background: rgba(39,174,96,.12); border: 1px solid rgba(39,174,96,.3); border-radius: 999px; padding: .3rem .85rem; margin-bottom: 1.25rem; }
+    .page-hero h1 { font-size: clamp(1.75rem, 3.5vw, 2.6rem); font-weight: 800; letter-spacing: -0.03em; color: #fff; line-height: 1.12; margin-bottom: 1.25rem; }
+    .page-hero p { font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,.65); margin-bottom: .85rem; }
+    .page-hero p:last-child { margin-bottom: 0; }
+    .page-hero .tagline { font-size: 1rem; font-style: italic; color: rgba(255,255,255,.45); margin-top: 1.25rem; }
 
-    /* Section wrapper */
-    .section { max-width: 1160px; margin: 0 auto; padding: 5rem 1.5rem; }
-    .section-alt { background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .section-alt .section { }
-    .section-dark { background: var(--bg-dark); border-top: 1px solid rgba(255,255,255,.04); }
+    /* Content sections */
+    .content-section { max-width: 860px; margin: 0 auto; padding: 3.5rem 1.5rem; border-bottom: 1px solid var(--border); }
+    .content-section:last-of-type { border-bottom: none; }
+    .content-section h2 { font-size: 1.5rem; font-weight: 800; color: var(--head); letter-spacing: -0.02em; margin-bottom: 1.25rem; padding-left: 1rem; border-left: 3px solid var(--brand); }
+    .content-section p { font-size: .9375rem; line-height: 1.8; color: var(--body); margin-bottom: 1rem; }
+    .content-section p:last-child { margin-bottom: 0; }
 
-    /* Two-column layouts */
-    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
-    .two-col-3-2 { display: grid; grid-template-columns: 3fr 2fr; gap: 4rem; align-items: start; }
+    /* Partner chips */
+    .partner-chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.25rem; }
+    .partner-chip { display: inline-flex; align-items: center; gap: .5rem; font-size: .82rem; font-weight: 600; color: var(--head); background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--r); padding: .45rem .9rem; text-decoration: none; transition: border-color .2s, box-shadow .2s; }
+    .partner-chip:hover { border-color: rgba(192,57,43,.3); box-shadow: var(--shadow-sm); }
+    .partner-chip.clickable { cursor: pointer; }
 
-    .section-text h2 { font-size: 2rem; font-weight: 700; letter-spacing: -0.025em; color: var(--head); line-height: 1.2; margin-bottom: 1rem; }
-    .section-text > p { font-size: 1rem; line-height: 1.75; color: var(--body); margin-bottom: 1rem; }
-    .section-text > p + p { margin-top: .75rem; }
+    /* Contact cards */
+    .contact-mini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+    .contact-mini-card { background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.35rem 1.5rem; display: flex; gap: 1.25rem; align-items: flex-start; }
+    .contact-mini-qr { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: .35rem; }
+    .contact-mini-qr img { width: 72px; height: 72px; border-radius: 6px; display: block; }
+    .contact-mini-qr span { font-size: .6rem; color: var(--subtle); text-align: center; line-height: 1.3; }
+    .contact-mini-info { display: flex; flex-direction: column; gap: .3rem; min-width: 0; }
+    .contact-mini-role { font-size: .65rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--subtle); }
+    .contact-mini-name { font-size: .9rem; font-weight: 700; color: var(--head); margin-bottom: .2rem; }
+    .contact-mini-row { font-size: .8rem; color: var(--body); display: flex; gap: .4rem; }
+    .contact-mini-row span:first-child { color: var(--subtle); flex-shrink: 0; font-weight: 500; }
+    .contact-mini-row a { color: var(--brand); text-decoration: none; }
+    .contact-mini-row a:hover { text-decoration: underline; }
+    @media (max-width: 640px) { .contact-mini-grid { grid-template-columns: 1fr; } }
 
-    /* Check list */
-    .clist { list-style: none; display: flex; flex-direction: column; margin-top: 1.5rem; }
-    .clist li { display: flex; align-items: flex-start; gap: .75rem; font-size: .9rem; line-height: 1.6; color: var(--body); padding: .6rem 0; border-bottom: 1px solid var(--border); }
-    .clist li:last-child { border-bottom: none; }
-    .clist li::before { content: ''; display: block; width: 18px; height: 18px; min-width: 18px; border-radius: 50%; background: var(--brand-l) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23C0392B' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") no-repeat center; margin-top: .15rem; }
+    /* Region tags */
+    .region-tags { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: 1.1rem; }
+    .region-tag { font-size: .78rem; font-weight: 600; color: var(--head); background: var(--bg-alt); border: 1px solid var(--border); border-radius: 999px; padding: .3rem .75rem; }
 
-    /* Stat cards */
-    .stat-cards { display: flex; flex-direction: column; gap: 1rem; }
-    .stat-card { border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.5rem 1.75rem; box-shadow: var(--shadow-sm); transition: box-shadow .25s, transform .25s; }
-    .stat-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
-    .stat-card.primary { background: var(--brand); border-color: var(--brand); }
-    .stat-val { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.04em; color: var(--head); line-height: 1; margin-bottom: .3rem; }
-    .stat-card.primary .stat-val { color: #fff; }
-    .stat-label { font-size: .83rem; color: var(--subtle); line-height: 1.4; }
-    .stat-card.primary .stat-label { color: rgba(255,255,255,.7); }
-
-    /* Law table */
-    .law-table { border: 1px solid var(--border); border-radius: var(--r-lg); overflow: hidden; margin-top: 1.75rem; }
-    .law-row { display: flex; align-items: baseline; gap: 1rem; padding: .85rem 1.25rem; border-bottom: 1px solid var(--border); transition: background .15s; }
-    .law-row:last-child { border-bottom: none; }
-    .law-row:hover { background: var(--bg-alt); }
-    .law-num { font-size: .78rem; font-weight: 700; color: var(--brand); white-space: nowrap; min-width: 90px; }
-    .law-desc { font-size: .875rem; color: var(--body); line-height: 1.5; }
-
-    /* Dark box */
-    .dark-box { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); border-radius: var(--r-lg); padding: 1.75rem; margin-top: 1.5rem; }
-    .dark-box h3 { font-size: 1rem; font-weight: 700; color: #ffffff; margin-bottom: .75rem; }
-    .dark-box p { font-size: .875rem; line-height: 1.65; color: rgba(255,255,255,.5); }
-    .dark-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
-    .dark-tag { font-size: .72rem; font-weight: 600; color: rgba(120,220,130,.95); background: rgba(46,160,67,.12); border: 1px solid rgba(46,160,67,.35); border-radius: 999px; padding: .3rem .75rem; }
-
-    /* Project type cards */
-    .proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
-    .proj-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.5rem; box-shadow: var(--shadow-sm); transition: box-shadow .25s, transform .25s, border-color .25s; }
-    .proj-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); border-color: rgba(192,57,43,.2); }
-    .proj-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--brand-l); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
-    .proj-card h3 { font-size: .9375rem; font-weight: 700; color: var(--head); margin-bottom: .4rem; }
-    .proj-card p { font-size: .8rem; line-height: 1.65; color: var(--subtle); }
-
-    /* CTA banner */
-    .cta-banner { background: linear-gradient(135deg, var(--brand) 0%, #8B1A10 100%); border-radius: var(--r-lg); padding: 3.5rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap; margin-top: 4rem; }
-    .cta-banner h3 { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.02em; color: #fff; margin-bottom: .5rem; }
-    .cta-banner p { font-size: .9375rem; color: rgba(255,255,255,.65); line-height: 1.65; }
-    .btn-white { display: inline-flex; align-items: center; gap: .5rem; background: #fff; color: var(--brand); font-size: .9375rem; font-weight: 700; border-radius: var(--r); padding: .75rem 1.5rem; text-decoration: none; transition: box-shadow .2s, transform .15s; flex-shrink: 0; }
-    .btn-white:hover { box-shadow: 0 6px 20px rgba(0,0,0,.2); transform: translateY(-1px); }
+    /* CTA block */
+    .cta-wrap { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+    .cta-block { background: var(--head); border-radius: var(--r-lg); padding: 3rem 2.5rem; }
+    .cta-block h2 { font-size: 1.4rem; font-weight: 800; color: #fff; letter-spacing: -0.02em; margin-bottom: 1rem; }
+    .cta-block p { font-size: .9375rem; line-height: 1.75; color: rgba(255,255,255,.7); margin-bottom: 1.5rem; }
+    .cta-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-white { display: inline-flex; align-items: center; gap: .45rem; background: #fff; color: var(--head); font-size: .9rem; font-weight: 700; border-radius: var(--r); padding: .75rem 1.5rem; text-decoration: none; transition: background .15s, transform .15s; }
+    .btn-white:hover { background: #f0f0f0; transform: translateY(-1px); }
+    .btn-outline-w { display: inline-flex; align-items: center; gap: .45rem; background: transparent; color: rgba(255,255,255,.8); font-size: .9rem; font-weight: 600; border-radius: var(--r); padding: .75rem 1.5rem; text-decoration: none; border: 1.5px solid rgba(255,255,255,.25); transition: border-color .2s, background .2s; }
+    .btn-outline-w:hover { border-color: rgba(255,255,255,.55); background: rgba(255,255,255,.07); }
 
     /* Footer */
     footer { background: #000; padding: 2.75rem 1.5rem; }
@@ -162,21 +144,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .footer-copy { font-size: .75rem; color: rgba(255,255,255,.22); }
 
     /* Scroll reveal */
-    .sr { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+    .sr { opacity: 0; transform: translateY(20px); transition: opacity .55s ease, transform .55s ease; }
     .sr.in { opacity: 1; transform: none; }
-    .sr-delay-1 { transition-delay: .1s; }
-    .sr-delay-2 { transition-delay: .2s; }
-    .sr-delay-3 { transition-delay: .3s; }
 
-    /* Responsive */
-    @media (max-width: 900px) {
-      .two-col, .two-col-3-2 { grid-template-columns: 1fr; gap: 2.5rem; }
-      .proj-grid { grid-template-columns: repeat(2, 1fr); }
-    }
+    /* Scroll-to-top */
+    .scroll-home { position: fixed; right: 0; top: 50%; transform: translateY(-50%) translateX(100%); background: var(--brand); color: #fff; width: 46px; height: 46px; border-radius: 12px 0 0 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 998; transition: transform .35s cubic-bezier(.4,0,.2,1), background .2s, box-shadow .2s; border: none; box-shadow: -3px 0 16px rgba(192,57,43,.35); }
+    .scroll-home.visible { transform: translateY(-50%) translateX(0); }
+    .scroll-home:hover { background: var(--brand-d); }
+
     @media (max-width: 768px) {
-      .page-hero { padding: 3.5rem 1.25rem 3rem; }
-      .page-hero h1 { font-size: 2.2rem; }
-      .section { padding: 3.5rem 1.25rem; }
+      .page-hero { padding: 2.5rem 1.25rem 3rem; }
+      .content-section { padding: 2.5rem 1.25rem; }
+      .cta-wrap { padding: 0 1.25rem 3rem; }
+      .cta-block { padding: 2rem 1.5rem; }
+      .cta-btns { flex-direction: column; }
+      .contact-card { padding: 1.5rem; }
       .nav-cta { display: none; }
       .nav-hamburger { display: flex; }
       .nav-email-btn { display: flex; background: var(--brand); border-color: var(--brand); color: #fff; }
@@ -188,28 +170,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .mobile-cta-item .nav-cta { display: block !important; text-align: center; padding: .65rem 1rem; box-shadow: none; border-radius: 8px; }
       .nav-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
       .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: translateX(-8px); }
+      .nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+      .footer-inner { flex-direction: column; text-align: center; }
       .nav-dropdown-btn { display: flex !important; padding: .85rem 1.25rem; color: var(--head) !important; border-bottom: 1px solid rgba(0,0,0,.07); font-size: .9rem; width: 100%; justify-content: space-between; }
       .nav-dropdown-menu { position: static; transform: none; opacity: 1; visibility: visible; box-shadow: none; border: none; padding: 0; min-width: auto; background: #fff; border-radius: 0; max-height: 0; overflow: hidden; transition: max-height .3s cubic-bezier(.4,0,.2,1); }
       .nav-dropdown.open .nav-dropdown-menu { max-height: 400px; }
       .nav-dropdown.open .nav-dropdown-arrow { transform: rotate(180deg); }
       .nav-dropdown-menu a { padding: .75rem 1.25rem .75rem 2rem !important; font-size: .85rem !important; border-bottom: 1px solid rgba(0,0,0,.07) !important; color: rgba(0,0,0,.6) !important; }
-      .nav-dropdown-menu a.active { color: var(--head) !important; }
       .nav-dropdown-menu a[href="kontakt.html"] { display: none !important; }
-      .nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
-      .footer-inner { flex-direction: column; text-align: center; }
-      .cta-banner { flex-direction: column; text-align: center; padding: 2.5rem; }
     }
-    @media (max-width: 480px) {
-      .proj-grid { grid-template-columns: 1fr; }
-    }
-
-    /* Scroll-to-top home button */
-    .scroll-home { position: fixed; right: 0; top: 50%; transform: translateY(-50%) translateX(100%); background: var(--brand); color: #fff; width: 46px; height: 46px; border-radius: 12px 0 0 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 998; transition: transform .35s cubic-bezier(.4,0,.2,1), background .2s, box-shadow .2s; border: none; box-shadow: -3px 0 16px rgba(192,57,43,.35); text-decoration: none; }
-    .scroll-home.visible { transform: translateY(-50%) translateX(0); }
-    .scroll-home:hover { background: var(--brand-d); box-shadow: -4px 0 20px rgba(192,57,43,.5); }
-      .page-hero h1 { color: #fff !important; }
-    .page-hero p { color: rgba(255,255,255,.65) !important; }
-    .page-hero .eyebrow { color: #27ae60; background: rgba(39,174,96,.12); border: 1px solid rgba(39,174,96,.3); border-radius: 999px; padding: .3rem .85rem; }
   </style>
 </head>
 <body>
@@ -220,6 +189,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="grad-bar"></div>
 
+<!-- Nav -->
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
@@ -245,7 +215,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </li>
       <li><a href="partneri.html">Partneři</a></li>
       <li class="nav-dropdown">
-        <button class="nav-dropdown-btn" aria-haspopup="true">
+        <button class="nav-dropdown-btn active" aria-haspopup="true">
           Společnost
           <span class="nav-dropdown-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
         </button>
@@ -258,186 +228,130 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <li class="mobile-cta-item"><a href="kontakt.html" class="nav-cta">Kontakt</a></li>
     </ul>
     <a href="kontakt.html" class="nav-cta">Kontakt</a>
-        <div class="nav-right">
-    <a href="mailto:email@email.cz" class="nav-email-btn" aria-label="Napište nám e-mail">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-    </a>
-    <div class="nav-hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
-      <span></span><span></span><span></span>
-    </div>
+    <div class="nav-right">
+      <a href="mailto:email@email.cz" class="nav-email-btn" aria-label="Napište nám e-mail">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </a>
+      <div class="nav-hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
     </div>
   </div>
 </nav>
 
-<!-- Page hero -->
-<div class="page-hero sr">
-  <div class="page-hero-inner" style="max-width:860px;margin:0 auto;">
-  <span class="eyebrow">O společnosti</span>
-  <h1>Specialisté na požární bezpečnost staveb s praxí, na níž záleží</h1>
-  <p>SPBS je firma zaměřená výhradně na požární bezpečnost staveb. Pracujeme v oblasti B2B a B2G – naši klienti jsou investoři, developeři, projektové kanceláře, obce a správci veřejných budov.</p>
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+  <a href="index.html">Domů</a>
+  <span class="breadcrumb-sep">›</span>
+  <span>O nás</span>
+</div>
+
+<!-- Hero -->
+<div class="page-hero">
+  <div class="page-hero-inner sr">
+    <span class="eyebrow">O společnosti</span>
+    <h1>Kdo jsme</h1>
+    <p>SPBS – Správa požární bezpečnosti staveb s.r.o. – jsme specializovaná firma na požární bezpečnost se sídlem v Hradci Králové.</p>
+    <p class="tagline">Zákonné minimum a skutečná ochrana budovy jsou dvě různé věci. My se pohybujeme tam, kde obojí splývá.</p>
   </div>
 </div>
 
-<!-- Kdo jsme -->
-<section>
-  <div class="section">
-    <div class="two-col-3-2">
-      <div class="section-text sr">
-        <span class="eyebrow">01 — Kdo jsme</span>
-        <h2>Kdo jsme</h2>
-        <p>Nejsme generální dodavatel, který požární bezpečnost přidá jako vedlejší položku. SPBS je náš hlavní obor. To znamená, že každý projekt řešíme s plnou odpovědností a odbornou znalostí – od první konzultace až po předání protokolů při kolaudaci.</p>
-        <p>Naší silnou stránkou je provázanost všech fází – jeden tým navrhuje, realizuje i reviduje. Víte vždy přesně, na koho se obrátit.</p>
-        <ul class="clist">
-          <li>Projektová dokumentace PBŘ zpracovaná vlastními specialisty</li>
-          <li>Dodávka a montáž PBZ – realizujeme to, co navrhujeme</li>
-          <li>Revize a kontroly – servisujeme to, co jsme postavili</li>
-          <li>Školení a dokumentace – zajistíme soulad se zákonem</li>
-        </ul>
+<!-- Co děláme -->
+<div class="content-section sr">
+  <h2>Co děláme</h2>
+  <p>Pokrýváme celý rozsah požární bezpečnosti – od PBŘ přes dodávku a montáž EPS, protipožárních ucpávek a hasicích přístrojů až po školení zaměstnanců, požární dokumentaci a součinnost s HZS při kolaudaci. Revize a pravidelné kontroly PBZ jsou samozřejmostí. V oblasti BOZP spolupracujeme s partnerem SprávaBOZP.cz – obojí zvládneme najednou.</p>
+</div>
+
+<!-- S kým pracujeme -->
+<div class="content-section sr">
+  <h2>S kým pracujeme</h2>
+  <p>Pro protipožární ucpávky používáme systémy Hilti – naši technici jsou držiteli certifikátu výrobce. Pro EPS jsme autorizovaným partnerem LITES Liberec – jediného českého výrobce elektrické požární signalizace. Dále spolupracujeme s Promat, Rigips, Skypro a Hastex.</p>
+  <div class="partner-chips">
+    <a href="hilti.html" class="partner-chip">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Hilti
+    </a>
+    <a href="lites.html" class="partner-chip">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+      LITES Liberec
+    </a>
+    <span class="partner-chip">Promat</span>
+    <span class="partner-chip">Rigips</span>
+    <span class="partner-chip">Skypro</span>
+    <span class="partner-chip">Hastex</span>
+  </div>
+</div>
+
+<!-- Kde působíme -->
+<div class="content-section sr">
+  <h2>Kde působíme</h2>
+  <p>Sídlíme v Hradci Králové a pravidelně pracujeme v Královéhradeckém, Libereckém, Pardubickém a Středočeském kraji a v Praze. Projekt mimo tyto regiony? Ozvěte se – domluvíme se.</p>
+  <div class="region-tags">
+    <span class="region-tag">📍 Hradec Králové</span>
+    <span class="region-tag">Královéhradecký kraj</span>
+    <span class="region-tag">Liberecký kraj</span>
+    <span class="region-tag">Pardubický kraj</span>
+    <span class="region-tag">Středočeský kraj</span>
+    <span class="region-tag">Praha</span>
+  </div>
+  <div class="contact-mini-grid">
+
+    <!-- Asistentka -->
+    <div class="contact-mini-card">
+      <div class="contact-mini-qr">
+        <img src="img/qrcode.png" alt="QR kód – Asistentka" />
+        <span>Rychlý kontakt</span>
       </div>
-      <div class="stat-cards sr sr-delay-2">
-        <div class="stat-card primary">
-          <div class="stat-val">B2B &amp; B2G</div>
-          <div class="stat-label">Výhradně firemní a veřejná klientela – žádné domácnosti</div>
+      <div class="contact-mini-info">
+        <span class="contact-mini-role">Administrativa &amp; koordinace</span>
+        <span class="contact-mini-name">Asistentka</span>
+        <div class="contact-mini-row">
+          <span>Tel.</span>
+          <a href="tel:+420737517995">+420 737 517 995</a>
         </div>
-        <div class="stat-card">
-          <div class="stat-val">100 %</div>
-          <div class="stat-label">Požární bezpečnost jako hlavní obor – ne přídavná služba</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-val">PBŘ → kolaudace</div>
-          <div class="stat-label">Kompletní životní cyklus projektu pod jednou střechou</div>
+        <div class="contact-mini-row">
+          <span>Mail</span>
+          <a href="mailto:email@email.cz">email@email.cz</a>
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- Odborná způsobilost -->
-<div class="section-alt">
-  <div class="section">
-    <div class="two-col">
-      <div class="section-text sr">
-        <span class="eyebrow">02 — Legislativa a způsobilost</span>
-        <h2>Odborná způsobilost a zákonné požadavky</h2>
-        <p>Požární bezpečnost staveb je regulovaná oblast. Projektová dokumentace PBŘ musí být zpracována oprávněnou osobou. Revize PBZ smí provádět jen odborná firma s příslušnou autorizací.</p>
-        <p>Veškeré práce SPBS provádíme v souladu s platnou legislativou a technickými normami ČSN.</p>
-        <div class="law-table">
-          <div class="law-row">
-            <span class="law-num">Zákon 133/1985</span>
-            <span class="law-desc">O požární ochraně – základní zákonný rámec celé PO</span>
-          </div>
-          <div class="law-row">
-            <span class="law-num">Vyhl. 246/2001</span>
-            <span class="law-desc">O podmínkách požární bezpečnosti a výkonu státního požárního dozoru</span>
-          </div>
-          <div class="law-row">
-            <span class="law-num">ČSN 73 0802</span>
-            <span class="law-desc">Požární bezpečnost staveb – nevýrobní objekty</span>
-          </div>
-          <div class="law-row">
-            <span class="law-num">ČSN 73 0804</span>
-            <span class="law-desc">Požární bezpečnost staveb – výrobní objekty</span>
-          </div>
-          <div class="law-row">
-            <span class="law-num">ČSN EN 54</span>
-            <span class="law-desc">Elektrická požární signalizace – komponenty a systémy</span>
-          </div>
-          <div class="law-row">
-            <span class="law-num">ČSN EN 12845</span>
-            <span class="law-desc">Stabilní hasicí zařízení – sprinklerová zařízení</span>
-          </div>
+    <!-- Technik PO -->
+    <div class="contact-mini-card">
+      <div class="contact-mini-qr">
+        <img src="img/qrcode.png" alt="QR kód – Technik PO" />
+        <span>Rychlý kontakt</span>
+      </div>
+      <div class="contact-mini-info">
+        <span class="contact-mini-role">Technické poradenství</span>
+        <span class="contact-mini-name">Technik PO</span>
+        <div class="contact-mini-row">
+          <span>Tel.</span>
+          <a href="tel:+420000000000">+420 000 000 000</a>
+        </div>
+        <div class="contact-mini-row">
+          <span>Mail</span>
+          <a href="mailto:technik@email.cz">technik@email.cz</a>
         </div>
       </div>
-      <div class="sr sr-delay-2">
-        <div style="background:var(--bg-dark);border-radius:var(--r-lg);padding:2rem;height:100%">
-          <div style="margin-bottom:1.5rem">
-            <div style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#ffffff;margin-bottom:1rem">Proč na tom záleží</div>
-            <p style="font-size:.9rem;line-height:1.7;color:rgba(255,255,255,.55)">Zákonné reference nejsou jen formalita. Dokazují, že každý projekt SPBS je odborně podložený, dokumentačně správný a připravený na kolaudační řízení i kontroly HZS.</p>
-          </div>
-          <div class="dark-box">
-            <h3>Tým SPBS zahrnuje</h3>
-            <p>Odborně způsobilé osoby (OZO PO), techniky požární ochrany a certifikované montéry PBZ s příslušnými oprávněními.</p>
-            <div class="dark-tags">
-              <span class="dark-tag">OZO PO</span>
-              <span class="dark-tag">Technik PO</span>
-              <span class="dark-tag">Montér PBZ</span>
-              <span class="dark-tag">HZS</span>
-              <span class="dark-tag">BOZP</span>
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-wrap">
+  <div class="cta-block sr">
+    <h2>Máte projekt nebo otázku?</h2>
+    <p>Ozvěte se – odpovíme rychle a řekneme vám na rovinu, co váš projekt vyžaduje a jak to zvládneme.</p>
+    <div class="cta-btns">
+      <a href="kontakt.html" class="btn-white">Kontaktovat nás</a>
+      <a href="partneri.html" class="btn-outline-w">Naši partneři</a>
     </div>
   </div>
 </div>
 
-<!-- Typy staveb -->
-<section>
-  <div class="section">
-    <div class="section-text sr" style="max-width:640px;margin-bottom:.5rem">
-      <span class="eyebrow">03 — Typy staveb</span>
-      <h2>Zkušenosti napříč typy staveb</h2>
-      <p>Každý typ stavby má jiné požadavky na požární bezpečnost. Pracujeme s rezidencemi, průmyslovými halami i zdravotnickými zařízeními.</p>
-    </div>
-
-    <div class="proj-grid">
-      <div class="proj-card sr">
-        <div class="proj-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
-        <h3>Bytové a polyfunkční domy</h3>
-        <p>Požární úseky, EPS, ZOKT, nouzové osvětlení. Soulad s požadavky pro obytné stavby a smíšené provoz.</p>
-      </div>
-      <div class="proj-card sr sr-delay-1">
-        <div class="proj-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
-        </div>
-        <h3>Průmyslové a logistické haly</h3>
-        <p>Sprinklery, plynová zařízení, velkorozponové ZOKT. Návrh pro vysoké požární zatížení a specifické provozy.</p>
-      </div>
-      <div class="proj-card sr sr-delay-2">
-        <div class="proj-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-        </div>
-        <h3>Obecní a veřejné budovy</h3>
-        <p>Školy, úřady, kulturní domy, sportovní haly. Splnění požadavků pro objekty s veřejným přístupem.</p>
-      </div>
-      <div class="proj-card sr">
-        <div class="proj-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-        </div>
-        <h3>Zdravotnická zařízení</h3>
-        <p>Nemocnice, polikliniky, pečovatelské domy. Zvýšené požadavky na evakuaci a pasivní požární ochranu.</p>
-      </div>
-      <div class="proj-card sr sr-delay-1">
-        <div class="proj-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
-        </div>
-        <h3>Obchodní a administrativní objekty</h3>
-        <p>Kancelářské budovy, obchodní centra. EPS, ZOKT, SHZ a koordinace s VZT projektantem.</p>
-      </div>
-      <div class="proj-card sr sr-delay-2">
-        <div class="proj-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M5.34 18.66l-1.41 1.41M22 12h-2M4 12H2m15.66-6.34l1.41-1.41M4.93 19.07l1.41-1.41M17.66 17.66l1.41 1.41M4.93 4.93l1.41 1.41M20 12a8 8 0 11-16 0 8 8 0 0116 0z"/></svg>
-        </div>
-        <h3>Rekonstrukce dokončených staveb</h3>
-        <p>Přehodnocení PBŘ, doplnění PBZ, revize stávající dokumentace po stavebních zásazích.</p>
-      </div>
-    </div>
-
-    <div class="cta-banner sr">
-      <div>
-        <h3>Promluvme o vašem projektu</h3>
-        <p>Sdělte nám typ a fázi stavby – navrhneme optimální postup a připravíme cenovou kalkulaci.</p>
-      </div>
-      <a href="kontakt.html" class="btn-white">
-        Kontaktovat SPBS
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
+<!-- Footer -->
 <footer>
   <div class="footer-inner">
     <a href="index.html" class="footer-logo">
@@ -446,7 +360,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </a>
     <div class="footer-links">
       <a href="index.html">Domů</a>
-      
+      <a href="partneri.html">Partneři</a>
+      <a href="nase-projekty.html">Naše projekty</a>
       <a href="o-nas.html">O nás</a>
       <a href="kontakt.html">Kontakt</a>
     </div>
@@ -471,7 +386,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     hamburger.classList.toggle('open');
   });
 
-  // Mobile dropdown toggle
   document.querySelectorAll('.nav-dropdown-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       btn.closest('.nav-dropdown').classList.toggle('open');
@@ -488,5 +402,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   scrollHome.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
-</script></body>
+</script>
+</body>
 </html>
