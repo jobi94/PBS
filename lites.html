@@ -18,8 +18,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Partneři | SPBS – Požárně bezpečnostní řešení staveb</title>
-  <meta name="description" content="Partneři SPBS – firmy a organizace, se kterými spolupracujeme při zajišťování požární bezpečnosti staveb." />
+  <title>LITES Liberec – partner SPBS pro EPS | lites.cz</title>
+  <meta name="description" content="Jsme autorizovaným partnerem LITES Liberec, jediného českého výrobce elektrické požární signalizace. Společně zajišťujeme projektování, dodávku a instalaci EPS." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -35,11 +35,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       --brand: #C0392B;
       --brand-d: #9B2D20;
       --brand-l: rgba(192,57,43,.08);
-      --bozp: #2980b9;
-      --bozp-l: rgba(41,128,185,.08);
-      --bg-dark: #0d1f33;
       --bg: #ffffff;
       --bg-alt: #f7f8fa;
+      --bg-dark: #0d1f33;
       --border: #e3e8ef;
       --shadow-sm: 0 1px 3px rgba(50,50,93,.1), 0 1px 2px rgba(0,0,0,.06);
       --shadow-md: 0 4px 16px rgba(50,50,93,.12), 0 2px 6px rgba(0,0,0,.06);
@@ -53,7 +51,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     nav { position: sticky; top: 0; z-index: 100; transition: transform .35s ease; background: #fff; border-bottom: 1px solid rgba(0,0,0,.08); }
     .nav-inner { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: relative; }
     .nav-logo { display: flex; align-items: center; gap: .6rem; font-size: 1.25rem; font-weight: 800; color: var(--head); letter-spacing: -0.04em; text-decoration: none; }
-    .nav-logo img { height: 34px; width: auto; display: block; filter: none; }
+    .nav-logo img { height: 34px; width: auto; display: block; }
     .nav-logo span { color: var(--brand); }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a { font-size: .875rem; font-weight: 700; color: rgba(0,0,0,.55); text-decoration: none; transition: color .2s; }
@@ -69,7 +67,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* Nav dropdown */
     .nav-dropdown { position: relative; }
     .nav-dropdown-btn { display: flex; align-items: center; gap: .3rem; font-size: .875rem; font-weight: 700; color: rgba(0,0,0,.55); cursor: pointer; background: none; border: none; padding: 0; font-family: inherit; transition: color .2s; }
-    .nav-dropdown-btn:hover, .nav-dropdown.open .nav-dropdown-btn, .nav-dropdown-btn.active { color: var(--head); }
+    .nav-dropdown-btn:hover, .nav-dropdown.open .nav-dropdown-btn { color: var(--head); }
     .nav-dropdown-arrow { transition: transform .2s; display: flex; }
     .nav-dropdown:hover .nav-dropdown-arrow { transform: rotate(180deg); }
     .nav-dropdown-menu { position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%); background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: .4rem 0; min-width: 160px; box-shadow: 0 4px 16px rgba(0,0,0,.1); opacity: 0; visibility: hidden; transition: opacity .18s, visibility .18s; z-index: 300; }
@@ -77,36 +75,60 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .nav-dropdown-menu a { display: block; padding: .65rem 1.2rem; font-size: .875rem; font-weight: 500; color: rgba(0,0,0,.6); text-decoration: none; white-space: nowrap; transition: color .15s, background .15s; }
     .nav-dropdown-menu a:hover, .nav-dropdown-menu a.active { color: var(--head); background: rgba(0,0,0,.04); }
 
-    /* Page hero */
-    .page-hero { background: var(--bg-dark); padding: 4rem 1.5rem 3.5rem; }
-    .page-hero h1 { font-size: 3rem; font-weight: 800; letter-spacing: -0.03em; color: var(--head); line-height: 1.1; margin-bottom: 1.25rem; }
-    .page-hero p { font-size: 1.0625rem; line-height: 1.75; color: var(--body); max-width: 600px; }
+    /* Breadcrumb */
+    .breadcrumb { background: var(--bg-dark); padding: .75rem 1.5rem; display: flex; align-items: center; gap: .5rem; font-size: .8rem; color: rgba(255,255,255,.45); }
+    .breadcrumb a { color: rgba(255,255,255,.45); text-decoration: none; transition: color .2s; }
+    .breadcrumb a:hover { color: rgba(255,255,255,.8); }
+    .breadcrumb-sep { color: rgba(255,255,255,.2); }
 
     /* Eyebrow */
     .eyebrow { display: inline-flex; align-items: center; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--brand); margin-bottom: 1.25rem; }
 
-    /* Section */
-    .section { max-width: 1160px; margin: 0 auto; padding: 5rem 1.5rem; }
+    /* Page hero */
+    .page-hero { background: var(--bg-dark); padding: 4rem 1.5rem 3.5rem; }
+    .page-hero-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 220px; gap: 4rem; align-items: center; }
+    .page-hero .eyebrow { color: #27ae60; background: rgba(39,174,96,.12); border: 1px solid rgba(39,174,96,.3); border-radius: 999px; padding: .3rem .85rem; }
+    .page-hero h1 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 800; letter-spacing: -0.03em; color: #fff; line-height: 1.12; margin-bottom: 1.25rem; }
+    .page-hero p { font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,.65); margin-bottom: .85rem; }
+    .page-hero p:last-of-type { margin-bottom: 0; }
+    .hero-logo-box { display: flex; align-items: center; justify-content: center; background: #fff; border-radius: var(--r-lg); padding: 2rem; }
+    .hero-logo-box img { width: 160px; max-width: 100%; }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.75rem; }
 
-    /* Partners grid */
-    .partners-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
+    /* Buttons */
+    .btn-primary { display: inline-flex; align-items: center; gap: .45rem; background: var(--brand); color: #fff; font-size: .9rem; font-weight: 700; border-radius: var(--r); padding: .75rem 1.5rem; text-decoration: none; transition: background .2s, transform .15s; box-shadow: 0 4px 12px rgba(192,57,43,.35); }
+    .btn-primary:hover { background: var(--brand-d); transform: translateY(-1px); }
+    .btn-ghost-light { display: inline-flex; align-items: center; gap: .45rem; background: transparent; color: rgba(255,255,255,.75); font-size: .9rem; font-weight: 600; border-radius: var(--r); padding: .75rem 1.5rem; text-decoration: none; border: 1.5px solid rgba(255,255,255,.22); transition: border-color .2s, background .2s; }
+    .btn-ghost-light:hover { border-color: rgba(255,255,255,.5); background: rgba(255,255,255,.07); }
 
-    /* Partner card */
-    .partner-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 2rem; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: .75rem; text-decoration: none; color: inherit; transition: box-shadow .2s, transform .2s; }
-    .partner-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
-    .partner-card-logo { height: 130px; display: flex; align-items: center; margin-bottom: .25rem; }
-    .partner-card-logo img { max-height: 130px; max-width: 260px; object-fit: contain; }
-    .partner-card-tags { display: flex; flex-wrap: wrap; gap: .4rem; }
-    .partner-tag { font-size: .65rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--bozp); background: var(--bozp-l); border-radius: 4px; padding: .2rem .55rem; }
-    .partner-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--head); letter-spacing: -0.02em; }
-    .partner-card p { font-size: .875rem; color: var(--body); line-height: 1.6; flex: 1; }
-    .partner-card-link { display: inline-flex; align-items: center; gap: .35rem; font-size: .8rem; font-weight: 600; color: var(--bozp); margin-top: .25rem; }
-    .partner-card-link svg { transition: transform .2s; }
-    .partner-card:hover .partner-card-link svg { transform: translateX(3px); }
+    /* Content */
+    .content-wrap { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+    .content-block { padding: 3.5rem 0; border-bottom: 1px solid var(--border); }
+    .content-block:last-of-type { border-bottom: none; }
+    .content-block h2 { font-size: 1.5rem; font-weight: 800; color: var(--head); letter-spacing: -0.02em; margin-bottom: 1.25rem; padding-left: 1rem; border-left: 3px solid var(--brand); }
+    .content-block p { font-size: .9375rem; line-height: 1.8; color: var(--body); margin-bottom: 1rem; }
+    .content-block p:last-child { margin-bottom: 0; }
 
-    /* Placeholder card */
-    .partner-card-placeholder { background: var(--bg-alt); border: 1px dashed var(--border); border-radius: var(--r-lg); padding: 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 220px; gap: .5rem; }
-    .partner-card-placeholder span { font-size: .875rem; color: var(--subtle); }
+    /* Check list */
+    .check-list { list-style: none; display: flex; flex-direction: column; gap: .65rem; margin-top: 1.25rem; }
+    .check-list li { font-size: .9375rem; color: var(--body); line-height: 1.65; padding-left: 1.6rem; position: relative; }
+    .check-list li::before { content: '✓'; position: absolute; left: 0; color: var(--brand); font-weight: 700; }
+
+    /* Reference strip */
+    .ref-strip { margin-top: 1.75rem; background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.5rem 1.75rem; }
+    .ref-strip-label { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--subtle); margin-bottom: .85rem; }
+    .ref-names { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .ref-name { font-size: .8rem; font-weight: 600; color: var(--head); background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: .3rem .75rem; }
+
+    /* CTA block */
+    .cta-block { background: var(--head); border-radius: var(--r-lg); padding: 3rem 2.5rem; margin: 4rem auto; max-width: 800px; }
+    .cta-block h2 { font-size: 1.4rem; font-weight: 800; color: #fff; letter-spacing: -0.02em; margin-bottom: 1rem; }
+    .cta-block p { font-size: .9375rem; line-height: 1.75; color: rgba(255,255,255,.7); margin-bottom: 1.5rem; }
+    .cta-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-white { display: inline-flex; align-items: center; gap: .45rem; background: #fff; color: var(--head); font-size: .9rem; font-weight: 700; border-radius: var(--r); padding: .75rem 1.5rem; text-decoration: none; transition: background .15s, transform .15s; }
+    .btn-white:hover { background: #f0f0f0; transform: translateY(-1px); }
+    .btn-outline-w { display: inline-flex; align-items: center; gap: .45rem; background: transparent; color: rgba(255,255,255,.8); font-size: .9rem; font-weight: 600; border-radius: var(--r); padding: .75rem 1.5rem; text-decoration: none; border: 1.5px solid rgba(255,255,255,.25); transition: border-color .2s, background .2s; }
+    .btn-outline-w:hover { border-color: rgba(255,255,255,.55); background: rgba(255,255,255,.07); }
 
     /* Footer */
     footer { background: #000; padding: 2.75rem 1.5rem; }
@@ -123,16 +145,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .sr { opacity: 0; transform: translateY(20px); transition: opacity .55s ease, transform .55s ease; }
     .sr.in { opacity: 1; transform: none; }
     .sr-delay-1 { transition-delay: .1s; }
-    .sr-delay-2 { transition-delay: .2s; }
 
-    @media (max-width: 900px) {
-      .partners-grid { grid-template-columns: 1fr 1fr; }
+    /* Scroll-to-top */
+    .scroll-home { position: fixed; right: 0; top: 50%; transform: translateY(-50%) translateX(100%); background: var(--brand); color: #fff; width: 46px; height: 46px; border-radius: 12px 0 0 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 998; transition: transform .35s cubic-bezier(.4,0,.2,1), background .2s, box-shadow .2s; border: none; box-shadow: -3px 0 16px rgba(192,57,43,.35); text-decoration: none; }
+    .scroll-home.visible { transform: translateY(-50%) translateX(0); }
+    .scroll-home:hover { background: var(--brand-d); box-shadow: -4px 0 20px rgba(192,57,43,.5); }
+
+    @media (max-width: 860px) {
+      .page-hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-logo-box { display: none; }
     }
     @media (max-width: 768px) {
-      .page-hero { padding: 3.5rem 1.25rem 3rem; }
-      .page-hero h1 { font-size: 2.2rem; }
-      .section { padding: 3.5rem 1.25rem; }
-      .partners-grid { grid-template-columns: 1fr; }
+      .page-hero { padding: 2.5rem 1.25rem 3rem; }
+      .content-wrap { padding: 0 1.25rem; }
+      .content-block { padding: 2.5rem 0; }
+      .cta-block { padding: 2rem 1.5rem; margin: 2.5rem 1.25rem; }
+      .cta-btns { flex-direction: column; }
       .nav-cta { display: none; }
       .nav-hamburger { display: flex; }
       .nav-email-btn { display: flex; background: var(--brand); border-color: var(--brand); color: #fff; }
@@ -151,17 +179,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .nav-dropdown.open .nav-dropdown-menu { max-height: 400px; }
       .nav-dropdown.open .nav-dropdown-arrow { transform: rotate(180deg); }
       .nav-dropdown-menu a { padding: .75rem 1.25rem .75rem 2rem !important; font-size: .85rem !important; border-bottom: 1px solid rgba(0,0,0,.07) !important; color: rgba(0,0,0,.6) !important; }
-      .nav-dropdown-menu a.active { color: var(--head) !important; }
       .nav-dropdown-menu a[href="kontakt.html"] { display: none !important; }
     }
-
-    /* Scroll-to-top home button */
-    .scroll-home { position: fixed; right: 0; top: 50%; transform: translateY(-50%) translateX(100%); background: var(--brand); color: #fff; width: 46px; height: 46px; border-radius: 12px 0 0 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 998; transition: transform .35s cubic-bezier(.4,0,.2,1), background .2s, box-shadow .2s; border: none; box-shadow: -3px 0 16px rgba(192,57,43,.35); text-decoration: none; }
-    .scroll-home.visible { transform: translateY(-50%) translateX(0); }
-    .scroll-home:hover { background: var(--brand-d); box-shadow: -4px 0 20px rgba(192,57,43,.5); }
-      .page-hero h1 { color: #fff !important; }
-    .page-hero p { color: rgba(255,255,255,.65) !important; }
-    .page-hero .eyebrow { color: #27ae60; background: rgba(39,174,96,.12); border: 1px solid rgba(39,174,96,.3); border-radius: 999px; padding: .3rem .85rem; }
   </style>
 </head>
 <body>
@@ -211,93 +230,89 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <li class="mobile-cta-item"><a href="kontakt.html" class="nav-cta">Kontakt</a></li>
     </ul>
     <a href="kontakt.html" class="nav-cta">Kontakt</a>
-        <div class="nav-right">
-    <a href="mailto:email@email.cz" class="nav-email-btn" aria-label="Napište nám e-mail">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-    </a>
-    <div class="nav-hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
-      <span></span><span></span><span></span>
-    </div>
+    <div class="nav-right">
+      <a href="mailto:email@email.cz" class="nav-email-btn" aria-label="Napište nám e-mail">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </a>
+      <div class="nav-hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
     </div>
   </div>
 </nav>
 
 <!-- Breadcrumb -->
-<div class="breadcrumb" style="background:var(--bg-dark);padding:.75rem 1.5rem;display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:rgba(255,255,255,.45);">
-  <a href="index.html" style="color:rgba(255,255,255,.45);text-decoration:none;">Domů</a>
-  <span style="color:rgba(255,255,255,.2);">›</span>
-  <span>Partneři</span>
+<div class="breadcrumb">
+  <a href="index.html">Domů</a>
+  <span class="breadcrumb-sep">›</span>
+  <a href="partneri.html">Partneři</a>
+  <span class="breadcrumb-sep">›</span>
+  <span>LITES Liberec</span>
 </div>
 
-<!-- Page hero -->
-<div class="page-hero sr">
-  <div class="page-hero-inner" style="max-width:860px;margin:0 auto;">
-  <span class="eyebrow">Spolupráce</span>
-  <h1>Partneři</h1>
-  <p>Spolupracujeme s důvěryhodnými firmami a organizacemi, které sdílí náš závazek ke kvalitě a bezpečnosti.</p>
-  </div>
-</div>
-
-<!-- Partners -->
-<section>
-  <div class="section">
-    <div class="partners-grid">
-
-      <!-- Správa BOZP -->
-      <a href="sprava-bozp.html" class="partner-card sr">
-        <div class="partner-card-logo">
-          <img src="img/sprava-bozp-logo.png" alt="Správa BOZP s.r.o." />
-        </div>
-        <div class="partner-card-tags">
-          <span class="partner-tag">BOZP</span>
-          <span class="partner-tag">Požární ochrana</span>
-          <span class="partner-tag">Životní prostředí</span>
-        </div>
-        <h3>Správa BOZP s.r.o.</h3>
-        <p>Outsourcing BOZP, požární ochrany a environmentálního managementu. Komplexní bezpečnostní pokrytí pro váš provoz pod jednou střechou.</p>
-        <span class="partner-card-link">
-          Více informací
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </span>
-      </a>
-
-      <!-- LITES Liberec -->
-      <a href="lites.html" class="partner-card sr sr-delay-1">
-        <div class="partner-card-logo">
-          <img src="img/lites-logo.jpg" alt="LITES Liberec" style="max-height:130px;max-width:380px;" />
-        </div>
-        <div class="partner-card-tags" style="margin-bottom:1.5rem;">
-          <span class="partner-tag">EPS</span>
-          <span class="partner-tag">Požární signalizace</span>
-        </div>
-        <h3>LITES Liberec</h3>
-        <p>Jediný český výrobce elektrické požární signalizace s tradicí od 70. let. Autorizovaný partner SPBS pro projektování, dodávku a instalaci EPS.</p>
-        <span class="partner-card-link">
-          Více informací
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </span>
-      </a>
-
-      <a href="hilti.html" class="partner-card sr sr-delay-2">
-        <div class="partner-card-logo">
-          <img src="img/hilti-logo.png" alt="Hilti" style="max-height:80px;max-width:200px;" />
-        </div>
-        <div class="partner-card-tags">
-          <span class="partner-tag">Protipožární ucpávky</span>
-          <span class="partner-tag">Pasivní PO</span>
-          <span class="partner-tag">Certifikovaný partner</span>
-        </div>
-        <h3>Hilti</h3>
-        <p>Certifikovaný partner pro navrhování a realizaci protipožárních ucpávek. Systémy Hilti pokrývají kabelové, potrubní i kombinované prostupy – s kompletní dokumentací ke kolaudaci.</p>
-        <span class="partner-card-link">
-          Zjistit více
+<!-- Hero -->
+<div class="page-hero">
+  <div class="page-hero-inner sr">
+    <div>
+      <span class="eyebrow">Partnerská firma</span>
+      <h1>LITES Liberec – náš partner pro elektrickou požární signalizaci</h1>
+      <p><a href="https://www.lites.cz" target="_blank" rel="noopener noreferrer" style="color:#fff;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35);">lites.cz</a> je jediný český výrobce elektrické požární signalizace (EPS) s tradicí sahající do 70. let minulého století. LITES vyrábí kompletní systémy EPS – od ústředen a hlásičů přes bezdrátové systémy až po speciální řešení pro průmyslová prostředí s nebezpečím výbuchu (ATEX). Produkty splňují evropské normy řady EN 54 a jsou skladem v ČR s českou technickou podporou.</p>
+      <p>Mezi referenčními objekty LITES figurují Pražský hrad, Škoda Auto, Plzeňský Prazdroj nebo elektrárny ČEZ.</p>
+      <div class="hero-ctas">
+        <a href="https://www.lites.cz" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          Přejít na lites.cz
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+        <a href="eps.html" class="btn-ghost-light">
+          Naše služby EPS
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </span>
-      </a>
-
+        </a>
+      </div>
+    </div>
+    <div class="hero-logo-box">
+      <img src="img/lites-logo.jpg" alt="LITES Liberec" />
     </div>
   </div>
-</section>
+</div>
+
+<!-- Content -->
+<div class="content-wrap">
+
+  <!-- V čem spolupracujeme -->
+  <div class="content-block sr">
+    <h2>V čem spolupracujeme</h2>
+    <p>Jako autorizovaný partner LITES zajišťujeme pro naše klienty kompletní služby v oblasti EPS:</p>
+    <ul class="check-list">
+      <li>Projektování EPS v souladu s ČSN 73 0875 a ČSN 34 2710 jako součást PBŘ</li>
+      <li>Dodávku technologie LITES – přímý přístup k produktům bez prostředníka</li>
+      <li>Montáž a uvedení do provozu certifikovanými techniky proškolenými výrobcem</li>
+      <li>Rekonstrukce stávajícího EPS – systémy LITES jsou kompatibilní s původní kabeláží, což výrazně snižuje náklady</li>
+      <li>Servis a zákonné revize dle ČSN 34 2710</li>
+    </ul>
+    <p style="margin-top:1.5rem;">Díky partnerství s LITES kombinujeme odbornost v oboru PBS s přímou vazbou na výrobce – a klientovi dodáváme jedno komplexní řešení od projektu po kolaudaci.</p>
+
+    <div style="margin-top:1.75rem;background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.5rem 1.75rem;">
+      <div class="ref-strip-label" style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--subtle);margin-bottom:.85rem;">Referenční objekty LITES</div>
+      <div class="ref-names">
+        <span class="ref-name">Pražský hrad</span>
+        <span class="ref-name">Škoda Auto</span>
+        <span class="ref-name">Plzeňský Prazdroj</span>
+        <span class="ref-name">Elektrárny ČEZ</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- CTA block -->
+<div class="cta-block sr">
+  <h2>Potřebujete EPS navrhnout, dodat nebo zrekonstruovat?</h2>
+  <p>Ozvěte se nám – jako autorizovaný partner LITES vás provedeme celým procesem od projektu přes montáž až po kolaudaci.</p>
+  <div class="cta-btns">
+    <a href="kontakt.html" class="btn-white">Nezávazná poptávka</a>
+    <a href="eps.html" class="btn-outline-w">Co zajišťujeme v oblasti EPS</a>
+  </div>
+</div>
 
 <!-- Footer -->
 <footer>
@@ -351,5 +366,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   scrollHome.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
-</script></body>
+</script>
+</body>
 </html>

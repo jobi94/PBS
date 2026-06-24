@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N6QKN765');</script>
+<!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBTKS8D7NY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZBTKS8D7NY');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Školení požární ochrany zaměstnanců | SPBS – OZO PO na míru</title>
+  <meta name="description" content="Zajistíme zákonem povinné školení PO pro vaše zaměstnance, vedoucí i požární hlídky. Spolupracujeme s SprávaBOZP.cz – školení BOZP a PO pod jednou střechou." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; color: var(--body); background: var(--bg); }
+
+    :root {
+      --head: #0a2540;
+      --body: #425466;
+      --subtle: #697386;
+      --brand: #C0392B;
+      --brand-d: #9B2D20;
+      --brand-l: rgba(192,57,43,.08);
+      --bg: #ffffff;
+      --bg-alt: #f7f8fa;
+      --bg-dark: #0d1f33;
+      --border: #e3e8ef;
+      --shadow-sm: 0 1px 3px rgba(50,50,93,.1), 0 1px 2px rgba(0,0,0,.06);
+      --shadow-md: 0 4px 16px rgba(50,50,93,.12), 0 2px 6px rgba(0,0,0,.06);
+      --r: 10px;
+      --r-lg: 16px;
+    }
+
+    .grad-bar { height: 3px; background: linear-gradient(90deg, #7F0000, #C0392B, #E74C3C, #E67E22, #F39C12); width: 100%; }
+
+    /* Nav */
+    nav { position: sticky; top: 0; z-index: 100; transition: transform .35s ease; background: #fff; border-bottom: 1px solid rgba(0,0,0,.08); }
+    .nav-inner { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: relative; }
+    .nav-logo { display: flex; align-items: center; gap: .6rem; font-size: 1.25rem; font-weight: 800; color: var(--head); letter-spacing: -0.04em; text-decoration: none; }
+    .nav-logo img { height: 34px; width: auto; display: block; }
+    .nav-logo span { color: var(--brand); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: .875rem; font-weight: 700; color: rgba(0,0,0,.55); text-decoration: none; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--head); }
+    .nav-cta { font-size: .875rem; font-weight: 600; color: #fff; background: var(--brand); border: none; border-radius: var(--r); padding: .55rem 1.1rem; cursor: pointer; text-decoration: none; transition: background .2s, transform .15s, box-shadow .2s; box-shadow: 0 4px 12px rgba(192,57,43,.3); }
+    .nav-cta:hover { background: var(--brand-d); transform: translateY(-1px); box-shadow: 0 6px 18px rgba(192,57,43,.4); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: .4rem; }
+    .nav-hamburger span { width: 22px; height: 2px; background: var(--head); border-radius: 2px; transition: all .3s; }
+    .nav-right { display: flex; align-items: center; gap: .5rem; }
+    .nav-email-btn { display: none; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid rgba(0,0,0,.15); color: var(--head); text-decoration: none; flex-shrink: 0; transition: background .15s; }
+    .mobile-cta-item { display: none; }
+
+    /* Nav dropdown */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-btn { display: flex; align-items: center; gap: .3rem; font-size: .875rem; font-weight: 700; color: rgba(0,0,0,.55); cursor: pointer; background: none; border: none; padding: 0; font-family: inherit; transition: color .2s; }
+    .nav-dropdown-btn:hover, .nav-dropdown.open .nav-dropdown-btn { color: var(--head); }
+    .nav-dropdown-arrow { transition: transform .2s; display: flex; }
+    .nav-dropdown:hover .nav-dropdown-arrow { transform: rotate(180deg); }
+    .nav-dropdown-menu { position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%); background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: .4rem 0; min-width: 160px; box-shadow: 0 4px 16px rgba(0,0,0,.1); opacity: 0; visibility: hidden; transition: opacity .18s, visibility .18s; z-index: 300; }
+    .nav-dropdown:hover .nav-dropdown-menu { opacity: 1; visibility: visible; }
+    .nav-dropdown-menu a { display: block; padding: .65rem 1.2rem; font-size: .875rem; font-weight: 500; color: rgba(0,0,0,.6); text-decoration: none; white-space: nowrap; transition: color .15s, background .15s; }
+    .nav-dropdown-menu a:hover { color: var(--head); background: rgba(0,0,0,.04); }
+
+    /* Breadcrumb */
+    .breadcrumb { background: var(--bg-dark); padding: .75rem 1.5rem; display: flex; align-items: center; gap: .5rem; font-size: .8rem; color: rgba(255,255,255,.45); }
+    .breadcrumb a { color: rgba(255,255,255,.45); text-decoration: none; transition: color .2s; }
+    .breadcrumb a:hover { color: rgba(255,255,255,.8); }
+    .breadcrumb-sep { color: rgba(255,255,255,.2); }
+
+    /* Eyebrow */
+    .eyebrow { display: inline-flex; align-items: center; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--brand); margin-bottom: 1.25rem; }
+
+    /* Page hero */
+    .page-hero { background: var(--bg-dark); padding: 4rem 1.5rem 3.5rem; }
+    .page-hero-inner { max-width: 800px; margin: 0 auto; }
+    .page-hero .eyebrow { color: #27ae60; background: rgba(39,174,96,.12); border: 1px solid rgba(39,174,96,.3); border-radius: 999px; padding: .3rem .85rem; }
+    .page-hero h1 { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -0.03em; color: #fff; line-height: 1.1; margin-bottom: 1.25rem; }
+    .page-hero p { font-size: 1.0625rem; line-height: 1.8; color: rgba(255,255,255,.6); }
+
+    /* Content */
+    .content-wrap { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+    .content-block { padding: 3.5rem 0; border-bottom: 1px solid var(--border); }
+    .content-block:last-of-type { border-bottom: none; }
+    .content-block h2 { font-size: 1.5rem; font-weight: 800; color: var(--head); letter-spacing: -0.02em; margin-bottom: 1.25rem; padding-left: 1rem; border-left: 3px solid var(--brand); }
+    .content-block p { font-size: .9375rem; line-height: 1.8; color: var(--body); margin-bottom: 1rem; }
+    .content-block p:last-child { margin-bottom: 0; }
+
+    /* Group cards (employee categories) */
+    .group-cards { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
+    .group-card { background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.5rem 1.75rem; }
+    .group-card-label { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--brand); margin-bottom: .5rem; }
+    .group-card h3 { font-size: 1rem; font-weight: 700; color: var(--head); margin-bottom: .6rem; }
+    .group-card p { font-size: .875rem; line-height: 1.7; color: var(--body); margin: 0; }
+
+    /* Fine print alert */
+    .fine-print { margin-top: 1.5rem; padding: 1rem 1.25rem; background: rgba(192,57,43,.05); border: 1px solid rgba(192,57,43,.15); border-radius: var(--r); font-size: .85rem; color: var(--body); line-height: 1.65; }
+    .fine-print strong { color: var(--brand); }
+
+    /* Check list */
+    .check-list { list-style: none; display: flex; flex-direction: column; gap: .65rem; margin-top: 1.25rem; }
+    .check-list li { font-size: .9375rem; color: var(--body); line-height: 1.65; padding-left: 1.6rem; position: relative; }
+    .check-list li::before { content: '✓'; position: absolute; left: 0; color: var(--brand); font-weight: 700; }
+
+    /* Partner callout */
+    .partner-callout { margin-top: 1.75rem; background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 2rem 2.25rem; }
+    .partner-callout-header { display: flex; align-items: center; gap: .75rem; margin-bottom: 1rem; }
+    .partner-badge { font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #2980b9; background: rgba(41,128,185,.1); border-radius: 4px; padding: .2rem .6rem; }
+    .partner-callout h3 { font-size: 1rem; font-weight: 700; color: var(--head); margin-bottom: .85rem; }
+    .partner-callout p { font-size: .875rem; line-height: 1.75; color: var(--body); margin-bottom: .85rem; }
+    .partner-callout p:last-of-type { margin-bottom: 0; }
+    .partner-callout .check-list { margin-top: .75rem; }
+    .partner-callout a { color: #2980b9; font-weight: 600; text-decoration: none; }
+    .partner-callout a:hover { text-decoration: underline; }
+    .callout-result { margin-top: 1.25rem; padding: 1rem 1.25rem; background: #fff; border: 1px solid var(--border); border-radius: var(--r); font-size: .875rem; color: var(--head); font-weight: 600; line-height: 1.6; }
+
+    /* Steps */
+
+    /* CTA block */
+    .cta-block { background: var(--head); border-radius: var(--r-lg); padding: 3rem 2.5rem; margin: 4rem auto; max-width: 800px; }
+    .cta-block h2 { font-size: 1.4rem; font-weight: 800; color: #fff; letter-spacing: -0.02em; margin-bottom: 1rem; }
+    .cta-block p { font-size: .9375rem; line-height: 1.75; color: rgba(255,255,255,.7); margin-bottom: 1.5rem; }
+    .cta-block p a { color: rgba(255,255,255,.9); font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.3); transition: border-color .2s; }
+    .cta-block p a:hover { border-color: rgba(255,255,255,.7); }
+    .cta-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-white { display: inline-flex; align-items: center; gap: .45rem; background: #fff; color: var(--head); font-size: .9rem; font-weight: 700; border-radius: var(--r); padding: .75rem 1.5rem; text-decoration: none; transition: background .15s, transform .15s; }
+    .btn-white:hover { background: #f0f0f0; transform: translateY(-1px); }
+    .btn-outline-w { display: inline-flex; align-items: center; gap: .45rem; background: transparent; color: rgba(255,255,255,.8); font-size: .9rem; font-weight: 600; border-radius: var(--r); padding: .75rem 1.5rem; text-decoration: none; border: 1.5px solid rgba(255,255,255,.25); transition: border-color .2s, background .2s; }
+    .btn-outline-w:hover { border-color: rgba(255,255,255,.55); background: rgba(255,255,255,.07); }
+
+    /* Footer */
+    footer { background: #000; padding: 2.75rem 1.5rem; }
+    .footer-inner { max-width: 1160px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem; }
+    .footer-logo { display: flex; align-items: center; gap: .5rem; font-size: 1rem; font-weight: 800; color: rgba(255,255,255,.7); letter-spacing: -0.04em; text-decoration: none; }
+    .footer-logo img { height: 26px; width: auto; display: block; filter: brightness(0) invert(.7); }
+    .footer-logo span { color: var(--brand); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { font-size: .8rem; color: rgba(255,255,255,.35); text-decoration: none; transition: color .2s; }
+    .footer-links a:hover { color: rgba(255,255,255,.65); }
+    .footer-copy { font-size: .75rem; color: rgba(255,255,255,.22); }
+
+    /* Scroll reveal */
+    .sr { opacity: 0; transform: translateY(20px); transition: opacity .55s ease, transform .55s ease; }
+    .sr.in { opacity: 1; transform: none; }
+    .sr-delay-1 { transition-delay: .1s; }
+    .sr-delay-2 { transition-delay: .2s; }
+
+    /* Scroll-to-top */
+    .scroll-home { position: fixed; right: 0; top: 50%; transform: translateY(-50%) translateX(100%); background: var(--brand); color: #fff; width: 46px; height: 46px; border-radius: 12px 0 0 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 998; transition: transform .35s cubic-bezier(.4,0,.2,1), background .2s, box-shadow .2s; border: none; box-shadow: -3px 0 16px rgba(192,57,43,.35); text-decoration: none; }
+    .scroll-home.visible { transform: translateY(-50%) translateX(0); }
+    .scroll-home:hover { background: var(--brand-d); box-shadow: -4px 0 20px rgba(192,57,43,.5); }
+
+    @media (max-width: 768px) {
+      .page-hero { padding: 2rem 1.25rem 3rem; }
+      .content-wrap { padding: 0 1.25rem; }
+      .content-block { padding: 2.5rem 0; }
+      .cta-block { padding: 2rem 1.5rem; margin: 2.5rem 1.25rem; }
+      .group-card { padding: 1.25rem; }
+      .partner-callout { padding: 1.5rem; }
+      .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+      .nav-email-btn { display: flex; background: var(--brand); border-color: var(--brand); color: #fff; }
+      .nav-links { display: flex !important; flex-direction: column; list-style: none; gap: 0; position: absolute; top: 64px; right: 1rem; left: auto; width: 230px; background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,.1); overflow: hidden; max-height: 0; opacity: 0; pointer-events: none; transition: max-height .38s cubic-bezier(.4,0,.2,1), opacity .22s ease; z-index: 200; }
+      .nav-links.open { max-height: 900px; opacity: 1; pointer-events: auto; }
+      .nav-links li a { display: block; padding: .85rem 1.25rem; color: var(--head) !important; border-bottom: 1px solid rgba(0,0,0,.07); font-size: .9rem; }
+      .nav-links li:last-child a { border-bottom: none; }
+      .mobile-cta-item { display: block !important; padding: .6rem .75rem .75rem; }
+      .mobile-cta-item .nav-cta { display: block !important; text-align: center; padding: .65rem 1rem; box-shadow: none; border-radius: 8px; }
+      .nav-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+      .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: translateX(-8px); }
+      .nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+      .step-num-col { padding: 1.1rem .4rem; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .nav-dropdown-btn { display: flex !important; padding: .85rem 1.25rem; color: var(--head) !important; border-bottom: 1px solid rgba(0,0,0,.07); font-size: .9rem; width: 100%; justify-content: space-between; }
+      .nav-dropdown-menu { position: static; transform: none; opacity: 1; visibility: visible; box-shadow: none; border: none; padding: 0; min-width: auto; background: #fff; border-radius: 0; max-height: 0; overflow: hidden; transition: max-height .3s cubic-bezier(.4,0,.2,1); }
+      .nav-dropdown.open .nav-dropdown-menu { max-height: 400px; }
+      .nav-dropdown.open .nav-dropdown-arrow { transform: rotate(180deg); }
+      .nav-dropdown-menu a { padding: .75rem 1.25rem .75rem 2rem !important; font-size: .85rem !important; border-bottom: 1px solid rgba(0,0,0,.07) !important; color: rgba(0,0,0,.6) !important; }
+      .nav-dropdown-menu a[href="kontakt.html"] { display: none !important; }
+      .cta-btns { flex-direction: column; }
+    }
+    .steps-list { display: flex; flex-direction: column; gap: 0; margin-top: 1.35rem; border: 1px solid var(--border); border-radius: var(--r-lg); overflow: hidden; }
+    .step-item { display: grid; grid-template-columns: 52px 1fr; border-bottom: 1px solid var(--border); }
+    .step-item:last-child { border-bottom: none; }
+    .step-num-col { background: var(--bg-alt); display: flex; align-items: flex-start; justify-content: center; padding: 1.35rem .5rem; }
+    .step-num { width: 32px; height: 32px; background: var(--brand); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 800; flex-shrink: 0; }
+    .step-body { padding: 1.35rem 1.5rem; }
+    .step-body h3 { font-size: .95rem; font-weight: 700; color: var(--head); margin-bottom: .4rem; }
+    .step-body p { font-size: .875rem; line-height: 1.75; color: var(--body); margin: 0; }
+  </style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N6QKN765"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="grad-bar"></div>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="img/logo.svg" alt="SPBS logo" />
+      SPBS<span>.</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Domů</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-btn" aria-haspopup="true">
+          Služby
+          <span class="nav-dropdown-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="skoleni-zamestnancu.html" class="active">Školení zaměstnanců</a>
+          <a href="eps.html">EPS</a>
+          <a href="protipozarni-ucpavky.html">Protipožární ucpávky</a>
+          <a href="hasici-pristroje.html">Hasicí přístroje</a>
+          <a href="soucinnost-hzs.html">Součinnost HZS</a>
+          <a href="pozarni-dokumentace.html">Požární Dokumentace</a>
+          <a href="slovnik-pojmu.html">Slovník pojmů</a>
+        </div>
+      </li>
+      <li><a href="partneri.html">Partneři</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-btn" aria-haspopup="true">
+          Společnost
+          <span class="nav-dropdown-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="o-nas.html">O nás</a>
+          <a href="nase-projekty.html">Naše projekty</a>
+          <a href="reference.html">Reference</a>
+        </div>
+      </li>
+      <li class="mobile-cta-item"><a href="kontakt.html" class="nav-cta">Kontakt</a></li>
+    </ul>
+    <a href="kontakt.html" class="nav-cta">Kontakt</a>
+    <div class="nav-right">
+      <a href="mailto:email@email.cz" class="nav-email-btn" aria-label="Napište nám e-mail">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </a>
+      <div class="nav-hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+  <a href="index.html">Domů</a>
+  <span class="breadcrumb-sep">›</span>
+  
+  <span class="breadcrumb-sep">›</span>
+  <span>Školení zaměstnanců</span>
+</div>
+
+<!-- Hero -->
+<div class="page-hero">
+  <div class="page-hero-inner sr">
+    <span class="eyebrow">Školení zaměstnanců v oblasti požární ochrany</span>
+    <h1>Proč je školení zaměstnanců důležité?</h1>
+    <p>Každý zaměstnanec musí vědět, co dělat, když začne hořet. Ne proto, že to říká zákon – i když to říká – ale proto, že panika a zmatek při požáru stojí životy. Správně proškolený člověk ví, kde je hasičák, kudy se evakuovat a jak přivolat pomoc. A to je přesně to, co naše školení dává.</p>
+  </div>
+</div>
+
+<!-- Content -->
+<div class="content-wrap">
+
+  <!-- Koho musíte proškolit -->
+  <div class="content-block sr">
+    <h2>Koho ze zákona musíte proškolit?</h2>
+    <p>Školení požární ochrany upravuje zákon č. 133/1985 Sb. o požární ochraně a vyhláška č. 246/2001 Sb. o požární prevenci (§ 23). Povinnost se vztahuje na všechny zaměstnavatele – bez ohledu na velikost firmy nebo obor podnikání.</p>
+    <p>Zákon rozlišuje tři skupiny, pro které platí různé lhůty:</p>
+    <div class="group-cards">
+      <div class="group-card">
+        <div class="group-card-label">Skupina 1</div>
+        <h3>Řadoví zaměstnanci</h3>
+        <p>Školení při nástupu do zaměstnání a opakování nejméně 1× za 2 roky. Nutné také při každé změně pracoviště nebo pracovního zařazení, která mění požární riziko.</p>
+      </div>
+      <div class="group-card">
+        <div class="group-card-label">Skupina 2</div>
+        <h3>Vedoucí zaměstnanci</h3>
+        <p>Školení při nástupu do funkce a opakování nejméně 1× za 3 roky. Obsah školení pokrývá povinnosti vůči všem řízeným zaměstnancům.</p>
+      </div>
+      <div class="group-card">
+        <div class="group-card-label">Skupina 3</div>
+        <h3>Preventivní požární hlídky a preventisté PO</h3>
+        <p>Odborná příprava před zahájením funkce a opakování nejméně 1× ročně. Tato příprava má povinně jak teoretickou, tak praktickou část – včetně nácviku práce s hasicím přístrojem.</p>
+      </div>
+    </div>
+    <div class="fine-print">
+      <strong>Pozor na sankce:</strong> Za nezajištění školení hrozí pokuta od HZS až do výše 250 000 Kč u provozovatelů bez zvýšeného požárního nebezpečí a až 500 000 Kč u provozovatelů se zvýšeným požárním nebezpečím.
+    </div>
+  </div>
+
+  <!-- Co školení zahrnuje -->
+  <div class="content-block sr">
+    <h2>Co školení konkrétně zahrnuje?</h2>
+    <p>Nestačí zaměstnancům přečíst pár paragrafů a odfajfkovat prezenčku. Obsah školení musí odpovídat skutečnému provozu – rizikům, která na daném pracovišti reálně existují.</p>
+    <p>Školení vždy zahrnuje:</p>
+    <ul class="check-list">
+      <li>Organizaci a zajištění požární ochrany ve firmě a základní povinnosti zaměstnanců</li>
+      <li>Požární rizika konkrétního pracoviště – co a proč může hořet právě tam</li>
+      <li>Požární řád, požární poplachovou směrnici a evakuační plán</li>
+      <li>Způsob vyhlášení poplachu a postup přivolání hasičů</li>
+      <li>Rozmístění a obsluhu hasicích přístrojů, hydrantů a dalšího vybavení</li>
+      <li>Chování v době sníženého provozu a o víkendech</li>
+    </ul>
+    <p style="margin-top: 1.25rem;">U provozovatelů se zvýšeným nebo vysokým požárním nebezpečím se obsah školení zpracovává podle tematického plánu a časového rozvrhu. Školení u těchto provozů smí provádět výhradně odborně způsobilá osoba (OZO PO) nebo technik požární ochrany – preventista PO tuto pravomoc nemá.</p>
+  </div>
+
+  <!-- Školení BOZP a PO -->
+  <div class="content-block sr">
+    <h2>Školení BOZP a PO – vyřešíme obojí najednou</h2>
+    <p>Požární ochrana a bezpečnost práce spolu úzce souvisejí. Zákoník práce i zákon o PO kladou na zaměstnavatele povinnosti, které se vzájemně doplňují – a dává smysl je řešit společně, nikoli odděleně.</p>
+    <p>Proto spolupracujeme s partnerem <a href="https://www.spravabozp.cz" target="_blank" rel="noopener noreferrer" style="color: var(--brand); font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(192,57,43,.3);">SprávaBOZP.cz</a>, který zajišťuje komplexní agendu bezpečnosti a ochrany zdraví při práci. Společně nabízíme:</p>
+    <div class="partner-callout">
+      <div class="partner-callout-header">
+        <span class="partner-badge">Partner</span>
+        <a href="https://www.spravabozp.cz" target="_blank" rel="noopener noreferrer" style="font-size: .875rem; font-weight: 700; color: var(--head); text-decoration: none;">SprávaBOZP.cz</a>
+      </div>
+      <ul class="check-list">
+        <li>Školení BOZP – vstupní i periodická, pro řadové zaměstnance i vedoucí</li>
+        <li>Školení PO – v souladu s vyhláškou č. 246/2001 Sb., přizpůsobené vašemu provozu</li>
+        <li>Dokumentaci BOZP a PO – od hodnocení rizik přes požární řád až po evakuační plán</li>
+        <li>Preventivní prohlídky – pravidelná kontrola pracoviště a stavu požárně bezpečnostních zařízení</li>
+        <li>Posouzení požárního nebezpečí a začlenění do kategorie činností</li>
+      </ul>
+      <div class="callout-result">
+        Výsledek: jeden kontakt, jedno datum, jedno školení – a splněné povinnosti v obou oblastech najednou.
+      </div>
+    </div>
+  </div>
+
+  <!-- Jak školení probíhá -->
+  <div class="content-block sr">
+    <h2>Jak školení probíhá?</h2>
+    <p>Přijedeme k vám. Školení probíhá přímo na vašem pracovišti – protože každý provoz je jiný a zaměstnanci potřebují vidět konkrétní únikové cesty, skutečné hasicí přístroje a reálné rozmístění PBZ ve svém objektu.</p>
+    <div class="steps-list">
+      <div class="step-item">
+        <div class="step-num-col"><div class="step-num">1</div></div>
+        <div class="step-body"><p><strong>Zjistíme kategorii vašeho požárního nebezpečí a nastavíme obsah školení</strong>Obsah a lhůty školení se liší podle toho, do jaké kategorie váš provoz spadá.</p></div>
+      </div>
+      <div class="step-item">
+        <div class="step-num-col"><div class="step-num">2</div></div>
+        <div class="step-body"><p><strong>Provedeme školení pro každou skupinu zvlášť</strong>Zaměstnance, vedoucí i požární hlídky školíme odděleně – každá skupina dostane obsah odpovídající jejím povinnostem.</p></div>
+      </div>
+      <div class="step-item">
+        <div class="step-num-col"><div class="step-num">3</div></div>
+        <div class="step-body"><p><strong>Předáme dokladatelnou dokumentaci</strong>Prezenční listiny, záznam o provedeném školení a tematický plán – vše připravené pro případ kontroly ze strany HZS.</p></div>
+      </div>
+      <div class="step-item">
+        <div class="step-num-col"><div class="step-num">4</div></div>
+        <div class="step-body"><p><strong>Na přání: cvičný poplach nebo nácvik s hasicím přístrojem</strong>Praktický nácvik výrazně zvyšuje zapamatovatelnost a je povinnou součástí přípravy požárních hlídek.</p></div>
+      </div>
+    </div>
+    <p style="margin-top: 1.5rem;">Školení vedeme tak, aby zaměstnance nezaspalo. Žádné čtení paragrafů ze slidů – mluvíme o situacích, které se opravdu stávají, a o tom, jak na ně reagovat.</p>
+  </div>
+
+  <!-- Kdo školení provádí -->
+  <div class="content-block sr">
+    <h2>Kdo školení provádí?</h2>
+    <p>Školení zajišťuje odborně způsobilá osoba v požární ochraně (OZO PO) s platným osvědčením podle § 11 zákona č. 133/1985 Sb. To znamená, že splňujeme zákonné požadavky pro školení u provozů se zvýšeným i s vysokým požárním nebezpečím – tedy i tam, kde nestačí interní preventista.</p>
+  </div>
+
+</div>
+
+<!-- CTA block -->
+<div class="cta-block sr">
+  <h2>Potřebujete zajistit školení PO nebo BOZP a PO dohromady?</h2>
+  <p>Ozvěte se nám – zjistíme, co váš provoz potřebuje, a navrhneme řešení na míru. Spolupráce se <a href="https://www.spravabozp.cz" target="_blank" rel="noopener noreferrer">SprávaBOZP.cz</a> nám umožňuje pokrýt celou oblast bezpečnosti práce bez toho, abyste museli shánět více dodavatelů.</p>
+  <div class="cta-btns">
+    <a href="kontakt.html" class="btn-white">Nezávazná poptávka</a>
+    <a href="https://www.spravabozp.cz" target="_blank" rel="noopener noreferrer" class="btn-outline-w">
+      Přejít na SprávaBOZP.cz
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="footer-logo">
+      <img src="img/logo.svg" alt="SPBS logo" />
+      SPBS<span>.</span>
+    </a>
+    <div class="footer-links">
+      <a href="index.html">Domů</a>
+      
+      <a href="partneri.html">Partneři</a>
+      <a href="nase-projekty.html">Naše projekty</a>
+      <a href="o-nas.html">O nás</a>
+      <a href="kontakt.html">Kontakt</a>
+    </div>
+    <span class="footer-copy">&copy; 2026 SPBS – Požárně bezpečnostní řešení staveb</span>
+  </div>
+</footer>
+
+<button class="scroll-home" id="scrollHome" aria-label="Zpět na začátek">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+</button>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.sr').forEach(el => observer.observe(el));
+
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    hamburger.classList.toggle('open');
+  });
+
+  document.querySelectorAll('.nav-dropdown-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.closest('.nav-dropdown').classList.toggle('open');
+    });
+  });
+
+  const scrollHome = document.getElementById('scrollHome');
+  const mainNav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    const cur = window.scrollY;
+    mainNav.style.transform = cur > 80 ? 'translateY(-100%)' : '';
+    scrollHome.classList.toggle('visible', cur > 320);
+  });
+  scrollHome.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+</body>
+</html>

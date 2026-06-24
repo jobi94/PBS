@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N6QKN765');</script>
+<!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBTKS8D7NY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZBTKS8D7NY');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Součinnost s HZS – závazná stanoviska, kolaudace a státní požární dozor | SPBS</title>
+  <meta name="description" content="Připravíme dokumentaci, zastoupíme vás při jednání s HZS a provedeme vás od závazného stanoviska ke kolaudaci." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; color: var(--body); background: var(--bg); }
+
+    :root {
+      --head: #0a2540;
+      --body: #425466;
+      --subtle: #697386;
+      --brand: #C0392B;
+      --brand-d: #9B2D20;
+      --bg: #ffffff;
+      --bg-alt: #f7f8fa;
+      --bg-dark: #0d1f33;
+      --border: #e3e8ef;
+      --shadow-sm: 0 1px 3px rgba(50,50,93,.1), 0 1px 2px rgba(0,0,0,.06);
+      --shadow-md: 0 4px 16px rgba(50,50,93,.12), 0 2px 6px rgba(0,0,0,.06);
+      --r: 10px;
+      --r-lg: 16px;
+    }
+
+    .grad-bar { height: 3px; background: linear-gradient(90deg, #7F0000, #C0392B, #E74C3C, #E67E22, #F39C12); width: 100%; }
+
+    /* Nav */
+    nav { position: sticky; top: 0; z-index: 100; transition: transform .35s ease; background: #fff; border-bottom: 1px solid rgba(0,0,0,.08); }
+    .nav-inner { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: relative; }
+    .nav-logo { display: flex; align-items: center; gap: .6rem; font-size: 1.25rem; font-weight: 800; color: var(--head); letter-spacing: -0.04em; text-decoration: none; }
+    .nav-logo img { height: 34px; width: auto; display: block; }
+    .nav-logo span { color: var(--brand); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: .875rem; font-weight: 700; color: rgba(0,0,0,.55); text-decoration: none; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--head); }
+    .nav-cta { font-size: .875rem; font-weight: 600; color: #fff; background: var(--brand); border: none; border-radius: var(--r); padding: .55rem 1.1rem; cursor: pointer; text-decoration: none; transition: background .2s, transform .15s, box-shadow .2s; box-shadow: 0 4px 12px rgba(192,57,43,.3); }
+    .nav-cta:hover { background: var(--brand-d); transform: translateY(-1px); box-shadow: 0 6px 18px rgba(192,57,43,.4); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: .4rem; }
+    .nav-hamburger span { width: 22px; height: 2px; background: var(--head); border-radius: 2px; transition: all .3s; }
+    .nav-right { display: flex; align-items: center; gap: .5rem; }
+    .nav-email-btn { display: none; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid rgba(0,0,0,.15); color: var(--head); text-decoration: none; flex-shrink: 0; transition: background .15s; }
+    .mobile-cta-item { display: none; }
+
+    /* Nav dropdown */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-btn { display: flex; align-items: center; gap: .3rem; font-size: .875rem; font-weight: 700; color: rgba(0,0,0,.55); cursor: pointer; background: none; border: none; padding: 0; font-family: inherit; transition: color .2s; }
+    .nav-dropdown-btn:hover, .nav-dropdown.open .nav-dropdown-btn, .nav-dropdown-btn.active { color: var(--head); }
+    .nav-dropdown-arrow { transition: transform .2s; display: flex; }
+    .nav-dropdown:hover .nav-dropdown-arrow { transform: rotate(180deg); }
+    .nav-dropdown-menu { position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%); background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: .4rem 0; min-width: 210px; box-shadow: 0 4px 16px rgba(0,0,0,.1); opacity: 0; visibility: hidden; transition: opacity .18s, visibility .18s; z-index: 300; }
+    .nav-dropdown:hover .nav-dropdown-menu { opacity: 1; visibility: visible; }
+    .nav-dropdown-menu a { display: block; padding: .65rem 1.2rem; font-size: .875rem; font-weight: 500; color: rgba(0,0,0,.6); text-decoration: none; white-space: nowrap; transition: color .15s, background .15s; }
+    .nav-dropdown-menu a:hover, .nav-dropdown-menu a.active { color: var(--head); background: rgba(0,0,0,.04); }
+
+    /* Breadcrumb */
+    .breadcrumb { background: var(--bg-dark); padding: .75rem 1.5rem; display: flex; align-items: center; gap: .5rem; font-size: .8rem; color: rgba(255,255,255,.45); }
+    .breadcrumb a { color: rgba(255,255,255,.45); text-decoration: none; transition: color .2s; }
+    .breadcrumb a:hover { color: rgba(255,255,255,.8); }
+    .breadcrumb-sep { color: rgba(255,255,255,.2); }
+
+    /* Page hero */
+    .page-hero { background: var(--bg-dark); padding: 4rem 1.5rem 3.5rem; }
+    .page-hero-inner { max-width: 860px; margin: 0 auto; }
+    .page-hero .eyebrow { display: inline-flex; align-items: center; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #27ae60; background: rgba(39,174,96,.12); border: 1px solid rgba(39,174,96,.3); border-radius: 999px; padding: .3rem .85rem; margin-bottom: 1.25rem; }
+    .page-hero h1 { font-size: clamp(1.75rem, 3.5vw, 2.6rem); font-weight: 800; letter-spacing: -0.03em; color: #fff; line-height: 1.12; margin-bottom: 1.25rem; }
+    .page-hero p { font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,.65); max-width: 700px; }
+
+    /* Content sections */
+    .content-section { max-width: 860px; margin: 0 auto; padding: 3.5rem 1.5rem; border-bottom: 1px solid var(--border); }
+    .content-section:last-of-type { border-bottom: none; }
+    .content-section h2 { font-size: 1.5rem; font-weight: 800; color: var(--head); letter-spacing: -0.02em; margin-bottom: 1.25rem; padding-left: 1rem; border-left: 3px solid var(--brand); }
+    .content-section p { font-size: .9375rem; line-height: 1.8; color: var(--body); margin-bottom: 1rem; }
+    .content-section p:last-child { margin-bottom: 0; }
+
+    /* Category grid */
+    .category-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .85rem; margin-top: 1.35rem; }
+    .category-card { background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--r); padding: 1rem 1.1rem; }
+    .category-card .cat-label { font-size: .65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--subtle); margin-bottom: .3rem; }
+    .category-card .cat-name { font-size: .9rem; font-weight: 700; color: var(--head); margin-bottom: .35rem; }
+    .category-card p { font-size: .8rem; line-height: 1.6; color: var(--body); margin: 0; }
+    .category-card.highlight { border-color: rgba(192,57,43,.25); background: rgba(192,57,43,.04); }
+    .category-card.highlight .cat-name { color: var(--brand); }
+
+    /* Check list */
+    .check-list { list-style: none; display: flex; flex-direction: column; gap: .6rem; margin: 1.1rem 0; }
+    .check-list li { font-size: .9375rem; color: var(--body); line-height: 1.65; padding-left: 1.6rem; position: relative; }
+    .check-list li::before { content: '✓'; position: absolute; left: 0; color: var(--brand); font-weight: 700; }
+
+    /* Info box */
+    .info-box { background: var(--bg-alt); border: 1px solid var(--border); border-left: 3px solid var(--brand); border-radius: var(--r); padding: 1.25rem 1.5rem; margin: 1.25rem 0; }
+    .info-box p { font-size: .9rem; line-height: 1.75; color: var(--body); margin: 0; }
+
+    /* Warning box */
+    .warning-box { background: rgba(192,57,43,.06); border: 1px solid rgba(192,57,43,.2); border-left: 3px solid var(--brand); border-radius: var(--r); padding: 1.25rem 1.5rem; margin-top: 1.25rem; }
+    .warning-box-label { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--brand); margin-bottom: .65rem; }
+    .warning-box p { font-size: .875rem; line-height: 1.7; color: var(--body); margin: 0; }
+
+    /* Steps accordion style */
+    .steps-list { display: flex; flex-direction: column; gap: 0; margin-top: 1.35rem; border: 1px solid var(--border); border-radius: var(--r-lg); overflow: hidden; }
+    .step-item { display: grid; grid-template-columns: 52px 1fr; border-bottom: 1px solid var(--border); }
+    .step-item:last-child { border-bottom: none; }
+    .step-num-col { background: var(--bg-alt); display: flex; align-items: flex-start; justify-content: center; padding: 1.35rem .5rem; }
+    .step-num { width: 32px; height: 32px; background: var(--brand); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 800; flex-shrink: 0; }
+    .step-body { padding: 1.35rem 1.5rem; }
+    .step-body h3 { font-size: .95rem; font-weight: 700; color: var(--head); margin-bottom: .4rem; }
+    .step-body p { font-size: .875rem; line-height: 1.75; color: var(--body); margin: 0; }
+
+    /* Mistakes list */
+    .mistakes-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.25rem; }
+    .mistake-item { display: grid; grid-template-columns: 28px 1fr; gap: .85rem; align-items: start; }
+    .mistake-icon { width: 28px; height: 28px; background: rgba(192,57,43,.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: .15rem; color: var(--brand); }
+    .mistake-item p { font-size: .9rem; line-height: 1.7; color: var(--body); margin: 0; }
+    .mistake-item strong { color: var(--head); }
+
+    /* CTA block */
+    .cta-wrap { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+    .cta-block { background: var(--head); border-radius: var(--r-lg); padding: 3rem 2.5rem; }
+    .cta-block h2 { font-size: 1.4rem; font-weight: 800; color: #fff; letter-spacing: -0.02em; margin-bottom: 1rem; }
+    .cta-block p { font-size: .9375rem; line-height: 1.75; color: rgba(255,255,255,.7); margin-bottom: 1.5rem; }
+    .cta-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-white { display: inline-flex; align-items: center; gap: .45rem; background: #fff; color: var(--head); font-size: .9rem; font-weight: 700; border-radius: var(--r); padding: .75rem 1.5rem; text-decoration: none; transition: background .15s, transform .15s; }
+    .btn-white:hover { background: #f0f0f0; transform: translateY(-1px); }
+    .btn-outline-w { display: inline-flex; align-items: center; gap: .45rem; background: transparent; color: rgba(255,255,255,.8); font-size: .9rem; font-weight: 600; border-radius: var(--r); padding: .75rem 1.5rem; text-decoration: none; border: 1.5px solid rgba(255,255,255,.25); transition: border-color .2s, background .2s; }
+    .btn-outline-w:hover { border-color: rgba(255,255,255,.55); background: rgba(255,255,255,.07); }
+
+    /* Footer */
+    footer { background: #000; padding: 2.75rem 1.5rem; }
+    .footer-inner { max-width: 1160px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem; }
+    .footer-logo { display: flex; align-items: center; gap: .5rem; font-size: 1rem; font-weight: 800; color: rgba(255,255,255,.7); letter-spacing: -0.04em; text-decoration: none; }
+    .footer-logo img { height: 26px; width: auto; display: block; filter: brightness(0) invert(.7); }
+    .footer-logo span { color: var(--brand); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { font-size: .8rem; color: rgba(255,255,255,.35); text-decoration: none; transition: color .2s; }
+    .footer-links a:hover { color: rgba(255,255,255,.65); }
+    .footer-copy { font-size: .75rem; color: rgba(255,255,255,.22); }
+
+    /* Scroll reveal */
+    .sr { opacity: 0; transform: translateY(20px); transition: opacity .55s ease, transform .55s ease; }
+    .sr.in { opacity: 1; transform: none; }
+    .sr-delay-1 { transition-delay: .1s; }
+
+    /* Scroll-to-top */
+    .scroll-home { position: fixed; right: 0; top: 50%; transform: translateY(-50%) translateX(100%); background: var(--brand); color: #fff; width: 46px; height: 46px; border-radius: 12px 0 0 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 998; transition: transform .35s cubic-bezier(.4,0,.2,1), background .2s, box-shadow .2s; border: none; box-shadow: -3px 0 16px rgba(192,57,43,.35); }
+    .scroll-home.visible { transform: translateY(-50%) translateX(0); }
+    .scroll-home:hover { background: var(--brand-d); }
+
+    @media (max-width: 768px) {
+      .page-hero { padding: 2.5rem 1.25rem 3rem; }
+      .content-section { padding: 2.5rem 1.25rem; }
+      .cta-wrap { padding: 0 1.25rem 3rem; }
+      .cta-block { padding: 2rem 1.5rem; }
+      .cta-btns { flex-direction: column; }
+      .category-grid { grid-template-columns: 1fr 1fr; }
+      .step-num-col { padding: 1.1rem .4rem; }
+      .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+      .nav-email-btn { display: flex; background: var(--brand); border-color: var(--brand); color: #fff; }
+      .nav-links { display: flex !important; flex-direction: column; list-style: none; gap: 0; position: absolute; top: 64px; right: 1rem; left: auto; width: 230px; background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,.1); overflow: hidden; max-height: 0; opacity: 0; pointer-events: none; transition: max-height .38s cubic-bezier(.4,0,.2,1), opacity .22s ease; z-index: 200; }
+      .nav-links.open { max-height: 900px; opacity: 1; pointer-events: auto; }
+      .nav-links li a { display: block; padding: .85rem 1.25rem; color: var(--head) !important; border-bottom: 1px solid rgba(0,0,0,.07); font-size: .9rem; }
+      .nav-links li:last-child a { border-bottom: none; }
+      .mobile-cta-item { display: block !important; padding: .6rem .75rem .75rem; }
+      .mobile-cta-item .nav-cta { display: block !important; text-align: center; padding: .65rem 1rem; box-shadow: none; border-radius: 8px; }
+      .nav-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+      .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: translateX(-8px); }
+      .nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .nav-dropdown-btn { display: flex !important; padding: .85rem 1.25rem; color: var(--head) !important; border-bottom: 1px solid rgba(0,0,0,.07); font-size: .9rem; width: 100%; justify-content: space-between; }
+      .nav-dropdown-menu { position: static; transform: none; opacity: 1; visibility: visible; box-shadow: none; border: none; padding: 0; min-width: auto; background: #fff; border-radius: 0; max-height: 0; overflow: hidden; transition: max-height .3s cubic-bezier(.4,0,.2,1); }
+      .nav-dropdown.open .nav-dropdown-menu { max-height: 400px; }
+      .nav-dropdown.open .nav-dropdown-arrow { transform: rotate(180deg); }
+      .nav-dropdown-menu a { padding: .75rem 1.25rem .75rem 2rem !important; font-size: .85rem !important; border-bottom: 1px solid rgba(0,0,0,.07) !important; color: rgba(0,0,0,.6) !important; }
+      .nav-dropdown-menu a[href="kontakt.html"] { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N6QKN765"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="grad-bar"></div>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="img/logo.svg" alt="SPBS logo" />
+      SPBS<span>.</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Domů</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-btn active" aria-haspopup="true">
+          Služby
+          <span class="nav-dropdown-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="skoleni-zamestnancu.html">Školení zaměstnanců</a>
+          <a href="eps.html">EPS</a>
+          <a href="protipozarni-ucpavky.html">Protipožární ucpávky</a>
+          <a href="hasici-pristroje.html">Hasicí přístroje</a>
+          <a href="soucinnost-hzs.html" class="active">Součinnost HZS</a>
+          <a href="pozarni-dokumentace.html">Požární Dokumentace</a>
+          <a href="slovnik-pojmu.html">Slovník pojmů</a>
+        </div>
+      </li>
+      <li><a href="partneri.html">Partneři</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-btn" aria-haspopup="true">
+          Společnost
+          <span class="nav-dropdown-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="o-nas.html">O nás</a>
+          <a href="nase-projekty.html">Naše projekty</a>
+          <a href="reference.html">Reference</a>
+        </div>
+      </li>
+      <li class="mobile-cta-item"><a href="kontakt.html" class="nav-cta">Kontakt</a></li>
+    </ul>
+    <a href="kontakt.html" class="nav-cta">Kontakt</a>
+    <div class="nav-right">
+      <a href="mailto:email@email.cz" class="nav-email-btn" aria-label="Napište nám e-mail">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </a>
+      <div class="nav-hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+  <a href="index.html">Domů</a>
+  <span class="breadcrumb-sep">›</span>
+  <span>Součinnost s HZS</span>
+</div>
+
+<!-- Hero -->
+<div class="page-hero">
+  <div class="page-hero-inner sr">
+    <span class="eyebrow">Státní požární dozor</span>
+    <h1>Součinnost s HZS</h1>
+    <p>Hasičský záchranný sbor není protivník. Je to dotčený orgán státní správy, který chrání veřejný zájem – a pokud mu předložíte správně zpracovanou dokumentaci, celý proces proběhne hladce a v zákonných lhůtách. Problém nastane tehdy, když dokumentace nesedí, projekt neodpovídá skutečnosti nebo si stavebník neví rady s tím, co vlastně HZS po něm chce. Tam vstupujeme my.</p>
+  </div>
+</div>
+
+<!-- Státní požární dozor -->
+<div class="content-section sr">
+  <h2>Co je státní požární dozor a kdy se vás týká?</h2>
+  <p>Stavební prevence je činností vykonávanou v rámci státního požárního dozoru, kde HZS ČR vystupuje jako dotčený orgán pro řízení vedená podle stavebního zákona. Jeho stanovisko není jen doporučení.</p>
+  <p>Závazné stanovisko včetně uplatněných podmínek je pro místně příslušný stavební úřad závazným dokumentem, který musí být v rámci řízení plně respektován. Nesouhlasné nebo podmíněné stanovisko může celý stavební proces zastavit nebo výrazně prodloužit.</p>
+  <p>Od prosince 2021 platí nová kategorizace staveb podle vyhlášky č. 460/2021 Sb.:</p>
+  <div class="category-grid">
+    <div class="category-card">
+      <div class="cat-label">Kategorie 0</div>
+      <div class="cat-name">Žádné zvláštní nebezpečí</div>
+      <p>HZS nevystupuje jako dotčený orgán – přesto musí být stavba navržena v souladu s PBS.</p>
+    </div>
+    <div class="category-card">
+      <div class="cat-label">Kategorie I</div>
+      <div class="cat-name">Mírné nebezpečí</div>
+      <p>HZS nevystupuje jako dotčený orgán – požadavky PBS platí i bez státního požárního dozoru.</p>
+    </div>
+    <div class="category-card highlight">
+      <div class="cat-label">Kategorie II</div>
+      <div class="cat-name">Vyšší nebezpečí</div>
+      <p>HZS vydává závazné stanovisko. Povinný výkon státního požárního dozoru.</p>
+    </div>
+    <div class="category-card highlight">
+      <div class="cat-label">Kategorie III</div>
+      <div class="cat-name">Vysoké nebezpečí</div>
+      <p>HZS vydává závazné stanovisko. Povinný výkon státního požárního dozoru.</p>
+    </div>
+  </div>
+  <div class="info-box" style="margin-top:1.35rem;">
+    <p>To, že se u staveb kategorie 0 a I nevykonává státní požární dozor, neznamená, že na tyto stavby nebudou kladeny žádné požadavky požární bezpečnosti.</p>
+  </div>
+</div>
+
+<!-- Kdy potřebujete stanovisko -->
+<div class="content-section sr">
+  <h2>Kdy potřebujete závazné stanovisko HZS?</h2>
+  <p>Závazné stanovisko je nutné ve fázi územního a stavebního řízení a následně při kolaudaci – u všech staveb kategorie II a III. Konkrétně jde o:</p>
+  <ul class="check-list">
+    <li><strong>Nové stavby</strong> – před vydáním stavebního povolení</li>
+    <li><strong>Změny dokončených staveb</strong> – přístavby, nástavby, změny dispozice nebo účelu užívání</li>
+    <li><strong>Změny v užívání</strong> – pokud se mění provoz, který ovlivňuje požární riziko (například přeměna kanceláří na provozovnu s hořlavými látkami)</li>
+    <li><strong>Kolaudace</strong> – ověření, že skutečné provedení stavby odpovídá schválenému PBŘ a podmínkám vydaného stanoviska</li>
+  </ul>
+  <div class="info-box">
+    <p>Při ověřování způsobilosti stavby k užívání se zjišťuje, zda skutečné provedení stavby odpovídá požadavkům vyplývajícím z PBŘ, podmínkám stavebního povolení a vydaných stanovisek z hlediska požární bezpečnosti.</p>
+  </div>
+</div>
+
+<!-- Co předložit -->
+<div class="content-section sr">
+  <h2>Co musíte HZS předložit?</h2>
+  <p>Základním dokumentem je požárně bezpečnostní řešení (PBŘ), zpracované autorizovanou osobou v souladu s vyhláškou č. 246/2001 Sb. Ke kolaudaci je pak nutné doložit kompletní sadu dokumentů prokazujících, že stavba byla realizována podle projektu.</p>
+  <p>Ke kolaudaci je nutné předložit:</p>
+  <ul class="check-list">
+    <li>Doklady o montáži, funkčních zkouškách a kontrolách provozuschopnosti PBZ včetně provozní dokumentace</li>
+    <li>Doklady potvrzující oprávnění osob k montáži a doklady o provedení funkčních zkoušek</li>
+    <li>Dokumentaci o způsobilosti k bezpečnému provozu technických zařízení</li>
+    <li>Doklady potvrzující použití výrobků a konstrukcí s požadovanými vlastnostmi</li>
+  </ul>
+  <div class="warning-box">
+    <div class="warning-box-label">V praxi to znamená</div>
+    <p>Výchozí revize EPS, protokoly o funkčních zkouškách ZOKT a SHZ, atesty použitých požárně bezpečnostních výrobků, doklady o montáži protipožárních ucpávek, certifikáty montážních firem a dokumentace skutečného provedení. Každý chybějící doklad může kolaudaci zdržet.</p>
+  </div>
+</div>
+
+<!-- Co konkrétně děláme -->
+<div class="content-section sr">
+  <h2>Jak vypadá naše součinnost – co konkrétně děláme?</h2>
+  <p>Nesedíme u telefonu a neradíme, co byste měli udělat. Jdeme s vámi celou cestu:</p>
+  <div class="steps-list">
+    <div class="step-item">
+      <div class="step-num-col"><div class="step-num">1</div></div>
+      <div class="step-body">
+        <h3>Zpracování nebo revize PBŘ před podáním na HZS</h3>
+        <p>Projdeme projekt, identifikujeme slabá místa a upravíme dokumentaci tak, aby obstála při posouzení. Zbytečné připomínky zdržují – a každá připomínka HZS znamená další kolo komunikace a čekání.</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num-col"><div class="step-num">2</div></div>
+      <div class="step-body">
+        <h3>Podání žádosti o závazné stanovisko</h3>
+        <p>Od července 2024 se žádosti podávají výhradně elektronicky přes portál stavebníka nebo systém EPOSTAR. Zajistíme správné podání ve správném formátu – chyba v podání vrátí žádost zpět na start.</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num-col"><div class="step-num">3</div></div>
+      <div class="step-body">
+        <h3>Komunikace s HZS při připomínkách</h3>
+        <p>Pokud HZS vydá stanovisko s podmínkami nebo požaduje doplnění, víme, jak reagovat věcně a rychle. Připomínky řešíme přímo s pracovištěm stavební prevence – bez zbytečných průtahů.</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num-col"><div class="step-num">4</div></div>
+      <div class="step-body">
+        <h3>Příprava dokumentace ke kolaudaci</h3>
+        <p>Shromáždíme všechny povinné doklady, zkontrolujeme jejich úplnost a správnost a připravíme kompletní balíček pro kolaudační řízení. Žádná panika na poslední chvíli.</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num-col"><div class="step-num">5</div></div>
+      <div class="step-body">
+        <h3>Účast při kontrolní prohlídce HZS</h3>
+        <p>Na místě jsme přítomni při fyzické prohlídce stavby – vysvětlíme provedení, zodpovíme otázky a v případě drobných odchylek navrhujeme okamžitá řešení.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Nejčastější příčiny průtahů -->
+<div class="content-section sr">
+  <h2>Nejčastější příčiny průtahů a zamítnutých stanovisek</h2>
+  <p>Za léta praxe v PBS jsme viděli, co stavby nejčastěji brzdí nebo zastavuje:</p>
+  <div class="mistakes-list">
+    <div class="mistake-item">
+      <div class="mistake-icon">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </div>
+      <p><strong>Nesoulad skutečného provedení s PBŘ.</strong> Stavba proběhla jinak, než bylo v projektu – změnila se dispozice, materiál nebo trasa kabelů. HZS při prohlídce nesoulad odhalí a kolaudace se nekoná.</p>
+    </div>
+    <div class="mistake-item">
+      <div class="mistake-icon">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </div>
+      <p><strong>Chybějící nebo nekompletní doklady PBZ.</strong> Chybí protokol o funkční zkoušce EPS, revize ZOKT nebo certifikát montážní firmy. Každý chybějící papír zdržuje o týdny.</p>
+    </div>
+    <div class="mistake-item">
+      <div class="mistake-icon">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </div>
+      <p><strong>Špatná kategorizace stavby.</strong> PBŘ zpracoval projektant bez autorizace pro PBS nebo bez oprávnění pro danou kategorii stavby. Takové PBŘ HZS neakceptuje.</p>
+    </div>
+    <div class="mistake-item">
+      <div class="mistake-icon">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </div>
+      <p><strong>Nesprávné nebo neúplné podání.</strong> Žádost podaná v chybném formátu nebo bez povinných příloh se vrátí k doplnění – a zákonná lhůta začne běžet znovu až od správného podání.</p>
+    </div>
+    <div class="mistake-item">
+      <div class="mistake-icon">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </div>
+      <p><strong>Opomenuté PBZ.</strong> V projektu bylo předepsáno zařízení (EPS, ZOKT, SHZ, ucpávky), které při realizaci někdo vynechal nebo zredukoval. HZS podmínky nesouhlasného stanoviska nezapomíná.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Součinnost jako součást komplexní PBS -->
+<div class="content-section sr">
+  <h2>Součinnost s HZS jako součást komplexní PBS</h2>
+  <p>Součinnost s HZS není izolovaná služba – je to přirozené vyústění celého procesu požární bezpečnosti stavby. Pokud jsme zpracovávali PBŘ, projektovali EPS nebo ZOKT a koordinovali dodávku PBZ, pak ke kolaudaci přicházíme připraveni. Dokumentace sedí, protože jsme ji vytvořili – a víme přesně, co HZS bude chtít vidět.</p>
+  <p>Pokud vstupujete do procesu až ve fázi kolaudace s dokumentací od jiných dodavatelů, prověříme její stav a řekneme vám na rovinu, co chybí a co se dá ještě stihnout.</p>
+</div>
+
+<!-- CTA -->
+<div class="cta-wrap">
+  <div class="cta-block sr">
+    <h2>Čeká vás stavební řízení, změna stavby nebo kolaudace?</h2>
+    <p>Ozvěte se nám. Prověříme stav projektu, navrhneme úpravy a provedeme vás celým procesem – od správného podání žádosti o závazné stanovisko až po úspěšnou kolaudaci.</p>
+    <div class="cta-btns">
+      <a href="kontakt.html" class="btn-white">Nezávazná konzultace</a>
+      <a href="eps.html" class="btn-outline-w">EPS a PBZ systémy</a>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="footer-logo">
+      <img src="img/logo.svg" alt="SPBS logo" />
+      SPBS<span>.</span>
+    </a>
+    <div class="footer-links">
+      <a href="index.html">Domů</a>
+      <a href="partneri.html">Partneři</a>
+      <a href="nase-projekty.html">Naše projekty</a>
+      <a href="o-nas.html">O nás</a>
+      <a href="kontakt.html">Kontakt</a>
+    </div>
+    <span class="footer-copy">&copy; 2026 SPBS – Požárně bezpečnostní řešení staveb</span>
+  </div>
+</footer>
+
+<button class="scroll-home" id="scrollHome" aria-label="Zpět na začátek">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+</button>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.sr').forEach(el => observer.observe(el));
+
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    hamburger.classList.toggle('open');
+  });
+
+  document.querySelectorAll('.nav-dropdown-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.closest('.nav-dropdown').classList.toggle('open');
+    });
+  });
+
+  const scrollHome = document.getElementById('scrollHome');
+  const mainNav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    const cur = window.scrollY;
+    mainNav.style.transform = cur > 80 ? 'translateY(-100%)' : '';
+    scrollHome.classList.toggle('visible', cur > 320);
+  });
+  scrollHome.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+</body>
+</html>

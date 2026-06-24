@@ -78,7 +78,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .nav-dropdown-menu a:hover, .nav-dropdown-menu a.active { color: var(--head); background: rgba(0,0,0,.04); }
 
     /* Page hero */
-    .page-hero { max-width: 1160px; margin: 0 auto; padding: 5rem 1.5rem 4rem; border-bottom: 1px solid var(--border); }
+    .page-hero { background: var(--bg-dark); padding: 4rem 1.5rem 3.5rem; }
     .page-hero h1 { font-size: 3rem; font-weight: 800; letter-spacing: -0.03em; color: var(--head); line-height: 1.1; margin-bottom: 1.25rem; max-width: 760px; }
     .page-hero p { font-size: 1.0625rem; line-height: 1.75; color: var(--body); max-width: 600px; }
 
@@ -157,6 +157,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .scroll-home { position: fixed; right: 0; top: 50%; transform: translateY(-50%) translateX(100%); background: var(--brand); color: #fff; width: 46px; height: 46px; border-radius: 12px 0 0 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 998; transition: transform .35s cubic-bezier(.4,0,.2,1), background .2s, box-shadow .2s; border: none; box-shadow: -3px 0 16px rgba(192,57,43,.35); text-decoration: none; }
     .scroll-home.visible { transform: translateY(-50%) translateX(0); }
     .scroll-home:hover { background: var(--brand-d); box-shadow: -4px 0 20px rgba(192,57,43,.5); }
+      .page-hero h1 { color: #fff !important; }
+    .page-hero p { color: rgba(255,255,255,.65) !important; }
+    .page-hero .eyebrow { color: #27ae60; background: rgba(39,174,96,.12); border: 1px solid rgba(39,174,96,.3); border-radius: 999px; padding: .3rem .85rem; }
   </style>
 </head>
 <body>
@@ -182,12 +185,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="nav-dropdown-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
         </button>
         <div class="nav-dropdown-menu">
-          <a href="sluzby.html">Školení zaměstnanců</a>
-          <a href="sluzby.html">EPS</a>
-          <a href="sluzby.html">Protipožární ucpávky</a>
-          <a href="sluzby.html">Hasicí přístroje</a>
-          <a href="sluzby.html">Součinnost HZS</a>
-          <a href="sluzby.html">Požární Dokumentace</a>
+          <a href="skoleni-zamestnancu.html">Školení zaměstnanců</a>
+          <a href="eps.html">EPS</a>
+          <a href="protipozarni-ucpavky.html">Protipožární ucpávky</a>
+          <a href="hasici-pristroje.html">Hasicí přístroje</a>
+          <a href="soucinnost-hzs.html">Součinnost HZS</a>
+          <a href="pozarni-dokumentace.html">Požární Dokumentace</a>
           <a href="slovnik-pojmu.html">Slovník pojmů</a>
         </div>
       </li>
@@ -219,9 +222,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- Page hero -->
 <div class="page-hero sr">
+  <div class="page-hero-inner" style="max-width:860px;margin:0 auto;">
   <span class="eyebrow">Spojte se s námi</span>
   <h1>Kontakt</h1>
   <p>Potřebujete zpracovat PBŘ, zajistit montáž PBZ nebo naplánovat revize? Obraťte se přímo na naši asistentku nebo technické oddělení.</p>
+  </div>
 </div>
 
 <!-- Contacts -->
@@ -288,7 +293,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </a>
     <div class="footer-links">
       <a href="index.html">Domů</a>
-      <a href="sluzby.html">Služby</a>
+      
       <a href="o-nas.html">O nás</a>
       <a href="kontakt.html">Kontakt</a>
     </div>

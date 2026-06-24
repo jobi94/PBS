@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N6QKN765');</script>
+<!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBTKS8D7NY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZBTKS8D7NY');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hasicí přístroje – kontroly, revize, tlakové zkoušky a dodávka | SPBS</title>
+  <meta name="description" content="Zajistíme roční kontroly, periodické tlakové zkoušky i dodávku nových hasicích přístrojů. Vše na jednom místě, s protokolem a plombou ze zákona." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; color: var(--body); background: var(--bg); }
+
+    :root {
+      --head: #0a2540;
+      --body: #425466;
+      --subtle: #697386;
+      --brand: #C0392B;
+      --brand-d: #9B2D20;
+      --brand-l: rgba(192,57,43,.08);
+      --bg: #ffffff;
+      --bg-alt: #f7f8fa;
+      --bg-dark: #0d1f33;
+      --border: #e3e8ef;
+      --shadow-sm: 0 1px 3px rgba(50,50,93,.1), 0 1px 2px rgba(0,0,0,.06);
+      --shadow-md: 0 4px 16px rgba(50,50,93,.12), 0 2px 6px rgba(0,0,0,.06);
+      --r: 10px;
+      --r-lg: 16px;
+    }
+
+    .grad-bar { height: 3px; background: linear-gradient(90deg, #7F0000, #C0392B, #E74C3C, #E67E22, #F39C12); width: 100%; }
+
+    /* Nav */
+    nav { position: sticky; top: 0; z-index: 100; transition: transform .35s ease; background: #fff; border-bottom: 1px solid rgba(0,0,0,.08); }
+    .nav-inner { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 60px; position: relative; }
+    .nav-logo { display: flex; align-items: center; gap: .6rem; font-size: 1.25rem; font-weight: 800; color: var(--head); letter-spacing: -0.04em; text-decoration: none; }
+    .nav-logo img { height: 34px; width: auto; display: block; }
+    .nav-logo span { color: var(--brand); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: .875rem; font-weight: 700; color: rgba(0,0,0,.55); text-decoration: none; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--head); }
+    .nav-cta { font-size: .875rem; font-weight: 600; color: #fff; background: var(--brand); border: none; border-radius: var(--r); padding: .55rem 1.1rem; cursor: pointer; text-decoration: none; transition: background .2s, transform .15s, box-shadow .2s; box-shadow: 0 4px 12px rgba(192,57,43,.3); }
+    .nav-cta:hover { background: var(--brand-d); transform: translateY(-1px); box-shadow: 0 6px 18px rgba(192,57,43,.4); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: .4rem; }
+    .nav-hamburger span { width: 22px; height: 2px; background: var(--head); border-radius: 2px; transition: all .3s; }
+    .nav-right { display: flex; align-items: center; gap: .5rem; }
+    .nav-email-btn { display: none; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid rgba(0,0,0,.15); color: var(--head); text-decoration: none; flex-shrink: 0; transition: background .15s; }
+    .mobile-cta-item { display: none; }
+
+    /* Nav dropdown */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-btn { display: flex; align-items: center; gap: .3rem; font-size: .875rem; font-weight: 700; color: rgba(0,0,0,.55); cursor: pointer; background: none; border: none; padding: 0; font-family: inherit; transition: color .2s; }
+    .nav-dropdown-btn:hover, .nav-dropdown.open .nav-dropdown-btn, .nav-dropdown-btn.active { color: var(--head); }
+    .nav-dropdown-arrow { transition: transform .2s; display: flex; }
+    .nav-dropdown:hover .nav-dropdown-arrow { transform: rotate(180deg); }
+    .nav-dropdown-menu { position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%); background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: .4rem 0; min-width: 210px; box-shadow: 0 4px 16px rgba(0,0,0,.1); opacity: 0; visibility: hidden; transition: opacity .18s, visibility .18s; z-index: 300; }
+    .nav-dropdown:hover .nav-dropdown-menu { opacity: 1; visibility: visible; }
+    .nav-dropdown-menu a { display: block; padding: .65rem 1.2rem; font-size: .875rem; font-weight: 500; color: rgba(0,0,0,.6); text-decoration: none; white-space: nowrap; transition: color .15s, background .15s; }
+    .nav-dropdown-menu a:hover, .nav-dropdown-menu a.active { color: var(--head); background: rgba(0,0,0,.04); }
+
+    /* Breadcrumb */
+    .breadcrumb { background: var(--bg-dark); padding: .75rem 1.5rem; display: flex; align-items: center; gap: .5rem; font-size: .8rem; color: rgba(255,255,255,.45); }
+    .breadcrumb a { color: rgba(255,255,255,.45); text-decoration: none; transition: color .2s; }
+    .breadcrumb a:hover { color: rgba(255,255,255,.8); }
+    .breadcrumb-sep { color: rgba(255,255,255,.2); }
+
+    /* Page hero */
+    .page-hero { background: var(--bg-dark); padding: 4rem 1.5rem 3.5rem; }
+    .page-hero-inner { max-width: 860px; margin: 0 auto; }
+    .page-hero .eyebrow { display: inline-flex; align-items: center; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #27ae60; background: rgba(39,174,96,.12); border: 1px solid rgba(39,174,96,.3); border-radius: 999px; padding: .3rem .85rem; margin-bottom: 1.25rem; }
+    .page-hero h1 { font-size: clamp(1.75rem, 3.5vw, 2.6rem); font-weight: 800; letter-spacing: -0.03em; color: #fff; line-height: 1.12; margin-bottom: 1.25rem; }
+    .page-hero p { font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,.65); max-width: 700px; }
+
+    /* Content sections */
+    .content-section { max-width: 860px; margin: 0 auto; padding: 3.5rem 1.5rem; border-bottom: 1px solid var(--border); }
+    .content-section:last-of-type { border-bottom: none; }
+    .content-section h2 { font-size: 1.5rem; font-weight: 800; color: var(--head); letter-spacing: -0.02em; margin-bottom: 1.25rem; padding-left: 1rem; border-left: 3px solid var(--brand); }
+    .content-section p { font-size: .9375rem; line-height: 1.8; color: var(--body); margin-bottom: 1rem; }
+    .content-section p:last-child { margin-bottom: 0; }
+
+    /* Info box */
+    .info-box { background: var(--bg-alt); border: 1px solid var(--border); border-left: 3px solid var(--brand); border-radius: var(--r); padding: 1.25rem 1.5rem; margin: 1.25rem 0; }
+    .info-box p { font-size: .9rem; line-height: 1.75; color: var(--body); margin: 0; }
+
+    /* Warning box */
+    .warning-box { background: rgba(192,57,43,.06); border: 1px solid rgba(192,57,43,.2); border-left: 3px solid var(--brand); border-radius: var(--r); padding: 1.25rem 1.5rem; margin-top: 1.25rem; }
+    .warning-box-label { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--brand); margin-bottom: .65rem; }
+    .warning-box p { font-size: .875rem; line-height: 1.7; color: var(--body); margin: 0; }
+
+    /* Check list */
+    .check-list { list-style: none; display: flex; flex-direction: column; gap: .6rem; margin: 1.1rem 0; }
+    .check-list li { font-size: .9375rem; color: var(--body); line-height: 1.65; padding-left: 1.6rem; position: relative; }
+    .check-list li::before { content: '✓'; position: absolute; left: 0; color: var(--brand); font-weight: 700; }
+
+    /* Type cards (extinguisher types) */
+    .type-cards { display: flex; flex-direction: column; gap: .85rem; margin-top: 1.25rem; }
+    .type-card { background: var(--bg-alt); border: 1px solid var(--border); border-left: 3px solid var(--brand); border-radius: var(--r); padding: 1.1rem 1.4rem; }
+    .type-card strong { display: block; font-size: .9rem; font-weight: 700; color: var(--head); margin-bottom: .35rem; }
+    .type-card p { font-size: .875rem; line-height: 1.7; color: var(--body); margin: 0; }
+
+    /* Intervals grid */
+    .intervals-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.25rem; }
+    .interval-card { background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.35rem 1.5rem; }
+    .interval-card .interval-num { font-size: 2rem; font-weight: 800; color: var(--brand); letter-spacing: -0.04em; line-height: 1; margin-bottom: .3rem; }
+    .interval-card .interval-label { font-size: .8rem; font-weight: 600; color: var(--head); margin-bottom: .5rem; }
+    .interval-card p { font-size: .82rem; line-height: 1.6; color: var(--subtle); margin: 0; }
+
+    /* Steps list */
+
+    /* Highlight strip */
+    .highlight-strip { background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.5rem 1.75rem; margin-top: 1.5rem; display: flex; align-items: flex-start; gap: 1rem; }
+    .highlight-strip-icon { width: 36px; height: 36px; background: rgba(39,174,96,.12); border: 1px solid rgba(39,174,96,.25); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #27ae60; }
+    .highlight-strip p { font-size: .9rem; line-height: 1.7; color: var(--body); margin: 0; }
+
+    /* CTA block */
+    .cta-wrap { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+    .cta-block { background: var(--head); border-radius: var(--r-lg); padding: 3rem 2.5rem; }
+    .cta-block h2 { font-size: 1.4rem; font-weight: 800; color: #fff; letter-spacing: -0.02em; margin-bottom: 1rem; }
+    .cta-block p { font-size: .9375rem; line-height: 1.75; color: rgba(255,255,255,.7); margin-bottom: 1.5rem; }
+    .cta-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-white { display: inline-flex; align-items: center; gap: .45rem; background: #fff; color: var(--head); font-size: .9rem; font-weight: 700; border-radius: var(--r); padding: .75rem 1.5rem; text-decoration: none; transition: background .15s, transform .15s; }
+    .btn-white:hover { background: #f0f0f0; transform: translateY(-1px); }
+    .btn-outline-w { display: inline-flex; align-items: center; gap: .45rem; background: transparent; color: rgba(255,255,255,.8); font-size: .9rem; font-weight: 600; border-radius: var(--r); padding: .75rem 1.5rem; text-decoration: none; border: 1.5px solid rgba(255,255,255,.25); transition: border-color .2s, background .2s; }
+    .btn-outline-w:hover { border-color: rgba(255,255,255,.55); background: rgba(255,255,255,.07); }
+
+    /* Footer */
+    footer { background: #000; padding: 2.75rem 1.5rem; }
+    .footer-inner { max-width: 1160px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem; }
+    .footer-logo { display: flex; align-items: center; gap: .5rem; font-size: 1rem; font-weight: 800; color: rgba(255,255,255,.7); letter-spacing: -0.04em; text-decoration: none; }
+    .footer-logo img { height: 26px; width: auto; display: block; filter: brightness(0) invert(.7); }
+    .footer-logo span { color: var(--brand); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { font-size: .8rem; color: rgba(255,255,255,.35); text-decoration: none; transition: color .2s; }
+    .footer-links a:hover { color: rgba(255,255,255,.65); }
+    .footer-copy { font-size: .75rem; color: rgba(255,255,255,.22); }
+
+    /* Scroll reveal */
+    .sr { opacity: 0; transform: translateY(20px); transition: opacity .55s ease, transform .55s ease; }
+    .sr.in { opacity: 1; transform: none; }
+    .sr-delay-1 { transition-delay: .1s; }
+    .sr-delay-2 { transition-delay: .2s; }
+
+    /* Scroll-to-top */
+    .scroll-home { position: fixed; right: 0; top: 50%; transform: translateY(-50%) translateX(100%); background: var(--brand); color: #fff; width: 46px; height: 46px; border-radius: 12px 0 0 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 998; transition: transform .35s cubic-bezier(.4,0,.2,1), background .2s, box-shadow .2s; border: none; box-shadow: -3px 0 16px rgba(192,57,43,.35); text-decoration: none; }
+    .scroll-home.visible { transform: translateY(-50%) translateX(0); }
+    .scroll-home:hover { background: var(--brand-d); box-shadow: -4px 0 20px rgba(192,57,43,.5); }
+
+    @media (max-width: 768px) {
+      .page-hero { padding: 2.5rem 1.25rem 3rem; }
+      .content-section { padding: 2.5rem 1.25rem; }
+      .cta-wrap { padding: 0 1.25rem 3rem; }
+      .cta-block { padding: 2rem 1.5rem; }
+      .cta-btns { flex-direction: column; }
+      .intervals-grid { grid-template-columns: 1fr; }
+      .highlight-strip { flex-direction: column; gap: .75rem; }
+      .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+      .nav-email-btn { display: flex; background: var(--brand); border-color: var(--brand); color: #fff; }
+      .nav-links { display: flex !important; flex-direction: column; list-style: none; gap: 0; position: absolute; top: 64px; right: 1rem; left: auto; width: 230px; background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,.1); overflow: hidden; max-height: 0; opacity: 0; pointer-events: none; transition: max-height .38s cubic-bezier(.4,0,.2,1), opacity .22s ease; z-index: 200; }
+      .nav-links.open { max-height: 900px; opacity: 1; pointer-events: auto; }
+      .nav-links li a { display: block; padding: .85rem 1.25rem; color: var(--head) !important; border-bottom: 1px solid rgba(0,0,0,.07); font-size: .9rem; }
+      .nav-links li:last-child a { border-bottom: none; }
+      .mobile-cta-item { display: block !important; padding: .6rem .75rem .75rem; }
+      .mobile-cta-item .nav-cta { display: block !important; text-align: center; padding: .65rem 1rem; box-shadow: none; border-radius: 8px; }
+      .nav-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+      .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: translateX(-8px); }
+      .nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+      .step-num-col { padding: 1.1rem .4rem; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .nav-dropdown-btn { display: flex !important; padding: .85rem 1.25rem; color: var(--head) !important; border-bottom: 1px solid rgba(0,0,0,.07); font-size: .9rem; width: 100%; justify-content: space-between; }
+      .nav-dropdown-menu { position: static; transform: none; opacity: 1; visibility: visible; box-shadow: none; border: none; padding: 0; min-width: auto; background: #fff; border-radius: 0; max-height: 0; overflow: hidden; transition: max-height .3s cubic-bezier(.4,0,.2,1); }
+      .nav-dropdown.open .nav-dropdown-menu { max-height: 400px; }
+      .nav-dropdown.open .nav-dropdown-arrow { transform: rotate(180deg); }
+      .nav-dropdown-menu a { padding: .75rem 1.25rem .75rem 2rem !important; font-size: .85rem !important; border-bottom: 1px solid rgba(0,0,0,.07) !important; color: rgba(0,0,0,.6) !important; }
+      .nav-dropdown-menu a[href="kontakt.html"] { display: none !important; }
+    }
+    .steps-list { display: flex; flex-direction: column; gap: 0; margin-top: 1.35rem; border: 1px solid var(--border); border-radius: var(--r-lg); overflow: hidden; }
+    .step-item { display: grid; grid-template-columns: 52px 1fr; border-bottom: 1px solid var(--border); }
+    .step-item:last-child { border-bottom: none; }
+    .step-num-col { background: var(--bg-alt); display: flex; align-items: flex-start; justify-content: center; padding: 1.35rem .5rem; }
+    .step-num { width: 32px; height: 32px; background: var(--brand); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 800; flex-shrink: 0; }
+    .step-body { padding: 1.35rem 1.5rem; }
+    .step-body h3 { font-size: .95rem; font-weight: 700; color: var(--head); margin-bottom: .4rem; }
+    .step-body p { font-size: .875rem; line-height: 1.75; color: var(--body); margin: 0; }
+  </style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N6QKN765"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="grad-bar"></div>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="img/logo.svg" alt="SPBS logo" />
+      SPBS<span>.</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Domů</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-btn active" aria-haspopup="true">
+          Služby
+          <span class="nav-dropdown-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="skoleni-zamestnancu.html">Školení zaměstnanců</a>
+          <a href="eps.html">EPS</a>
+          <a href="protipozarni-ucpavky.html">Protipožární ucpávky</a>
+          <a href="hasici-pristroje.html" class="active">Hasicí přístroje</a>
+          <a href="soucinnost-hzs.html">Součinnost HZS</a>
+          <a href="pozarni-dokumentace.html">Požární Dokumentace</a>
+          <a href="slovnik-pojmu.html">Slovník pojmů</a>
+        </div>
+      </li>
+      <li><a href="partneri.html">Partneři</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-btn" aria-haspopup="true">
+          Společnost
+          <span class="nav-dropdown-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="o-nas.html">O nás</a>
+          <a href="nase-projekty.html">Naše projekty</a>
+          <a href="reference.html">Reference</a>
+        </div>
+      </li>
+      <li class="mobile-cta-item"><a href="kontakt.html" class="nav-cta">Kontakt</a></li>
+    </ul>
+    <a href="kontakt.html" class="nav-cta">Kontakt</a>
+    <div class="nav-right">
+      <a href="mailto:email@email.cz" class="nav-email-btn" aria-label="Napište nám e-mail">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </a>
+      <div class="nav-hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+  <a href="index.html">Domů</a>
+  <span class="breadcrumb-sep">›</span>
+  <span>Hasicí přístroje</span>
+</div>
+
+<!-- Hero -->
+<div class="page-hero">
+  <div class="page-hero-inner sr">
+    <span class="eyebrow">Požárně bezpečnostní zařízení</span>
+    <h1>Hasicí přístroje – kontroly, tlakové zkoušky a dodávka</h1>
+    <p>Hasicí přístroj visí na stěně roky, nikdo si ho nevšimne – a pak přijde chvíle, kdy na něm záleží. Jenže hasičák, který nebyl pravidelně kontrolován, může v tu chvíli selhat. Nízký tlak, znehodnocené hasivo, zkontaminovaná nádoba. Zákon proto nestanoví doporučení, ale povinnost. A my ji s vámi splníme.</p>
+  </div>
+</div>
+
+<!-- Zákonné povinnosti -->
+<div class="content-section sr">
+  <h2>Jaké povinnosti vám zákon ukládá?</h2>
+  <p>Podle vyhlášky č. 246/2001 Sb. o požární prevenci jsou hasicí přístroje považovány za požárně bezpečnostní zařízení a je nutné provádět pravidelné kontroly provozuschopnosti ve lhůtě <strong>1× ročně</strong>, nebo při pochybnosti o jejich provozuschopnosti.</p>
+  <p>Vedle roční kontroly přibývá v pravidelných intervalech povinnost periodické tlakové zkoušky:</p>
+  <div class="intervals-grid">
+    <div class="interval-card">
+      <div class="interval-num">3</div>
+      <div class="interval-label">roky – tlaková zkouška</div>
+      <p>Vodní, pěnové a práškové hasicí přístroje</p>
+    </div>
+    <div class="interval-card">
+      <div class="interval-num">5</div>
+      <div class="interval-label">let – tlaková zkouška</div>
+      <p>CO₂ hasicí přístroje</p>
+    </div>
+  </div>
+  <div class="info-box" style="margin-top:1.25rem;">
+    <p>Osoba provádějící kontrolu, údržbu nebo opravu je povinna vyřadit z provozu hasicí přístroj poškozený, ten u nějž nelze bezpečně zjistit výrobní číslo a rok výroby, nebo <strong>starší 20 let</strong> – s výjimkou CO₂ přístrojů, které se vyřazují po 40 letech.</p>
+  </div>
+  <div class="warning-box">
+    <div class="warning-box-label">Pozornost</div>
+    <p>Za hasicí přístroje mimo provozuschopný stav může HZS uložit pokutu až <strong>500 000 Kč</strong> právnické osobě nebo podnikající fyzické osobě.</p>
+  </div>
+</div>
+
+<!-- Roční kontrola -->
+<div class="content-section sr">
+  <h2>Roční kontrola provozuschopnosti – co zahrnuje?</h2>
+  <p>Jednou ročně k vám přijede revizní technik a provede kontrolu přímo na místě. Neodveze přístroj do dílny, nerozebere ho – jde o vizuální a funkční prověření, které ověří, zda je přístroj připravený k použití.</p>
+  <p>Kontrola zahrnuje:</p>
+  <ul class="check-list">
+    <li>Umístění a přístupnost přístroje – musí být volně dostupný, řádně označený a na místě předepsaném PBŘ nebo posouzením požárního nebezpečí</li>
+    <li>Stav nádoby – koroze, mechanické poškození, čitelnost typového štítku a výrobního čísla</li>
+    <li>Stav manometru a tlak hasiva – u přetlakových přístrojů se sleduje ručička manometru</li>
+    <li>Plomba spouštěcí armatury – nesmí být porušena</li>
+    <li>Stav hadice, trysky a ostatních součástí</li>
+  </ul>
+  <p style="margin-top:1.25rem;">Po kontrole technik opatří hasicí přístroj plombou spouštěcí armatury a trvale čitelným kontrolním štítkem tak, aby byl viditelný při pohledu na instalovaný přístroj. Vystaví také doklad o provedené kontrole s veškerými náležitostmi podle vyhlášky.</p>
+</div>
+
+<!-- Tlaková zkouška -->
+<div class="content-section sr">
+  <h2>Periodická tlaková zkouška – proč je důležitá?</h2>
+  <p>Hasicí přístroje jsou tlakové nádoby, které obsahují hasivo pod vysokým tlakem. Časem se tlak může snižovat, nádoba korodovat nebo se hasivo může znehodnotit. Zkouška se provádí v servisní dílně a má přesně stanovený postup:</p>
+  <div class="steps-list">
+    <div class="step-item">
+      <div class="step-num-col"><div class="step-num">1</div></div>
+      <div class="step-body">
+        <h3>Demontáž a vyprázdnění</h3>
+        <p>Úplné vyprázdnění hasiva a rozebrání přístroje.</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num-col"><div class="step-num">2</div></div>
+      <div class="step-body">
+        <h3>Vizuální kontrola nádoby</h3>
+        <p>Důkladná prohlídka vnitřního i vnějšího stavu – hledají se příznaky koroze, deformace nebo prasklin.</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num-col"><div class="step-num">3</div></div>
+      <div class="step-body">
+        <h3>Hydrostatická zkouška</h3>
+        <p>Nádoba je vystavena tlakové vodě na předepsaný tlak, obvykle 1,5násobek pracovního tlaku.</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num-col"><div class="step-num">4</div></div>
+      <div class="step-body">
+        <h3>Opětovné naplnění a závěrečná kontrola</h3>
+        <p>Nádoba se vysuší, znovu naplní hasivem, smontuje a provede se kontrola těsnosti a funkčnosti. Technik vydá protokol a přístroj označí novou plombovou značkou s datem.</p>
+      </div>
+    </div>
+  </div>
+  <div class="highlight-strip" style="margin-top:1.75rem;">
+    <div class="highlight-strip-icon">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 00-6 0v4"/><rect x="2" y="9" width="20" height="13" rx="2"/><circle cx="12" cy="15.5" r="1.5" fill="currentColor"/></svg>
+    </div>
+    <p>Po dobu, kdy je přístroj odvezen do dílny, zajistíme <strong>náhradní zapůjčení</strong> – objekt nezůstane ani hodinu bez ochrany.</p>
+  </div>
+</div>
+
+<!-- Typy přístrojů -->
+<div class="content-section sr">
+  <h2>Dodávka nových hasicích přístrojů</h2>
+  <p>Potřebujete doplnit nebo obnovit vybavení? Dodáme hasicí přístroje všech běžných typů – přesně podle požadavků vašeho objektu a platného PBŘ nebo posouzení požárního nebezpečí.</p>
+  <div class="type-cards">
+    <div class="type-card">
+      <strong>Práškové (P) – 1 až 12 kg</strong>
+      <p>Nejrozšířenější typ pro kanceláře, dílny, sklady i průmyslové provozy. Hasí třídy požáru A, B, C.</p>
+    </div>
+    <div class="type-card">
+      <strong>Pěnové (PF)</strong>
+      <p>Vhodné tam, kde hrozí požáry hořlavých kapalin (třída B) a pevných látek (třída A). Šetrnější k vybavení než práškový přístroj.</p>
+    </div>
+    <div class="type-card">
+      <strong>Vodní (V)</strong>
+      <p>Pro požáry pevných organických látek (třída A). Nelze použít na elektrická zařízení pod napětím.</p>
+    </div>
+    <div class="type-card">
+      <strong>CO₂ – 2 až 5 kg</strong>
+      <p>Ideální pro serverovny, elektrická zařízení a přesné technologie. Hasivo po použití nezanechává žádné reziduum.</p>
+    </div>
+    <div class="type-card">
+      <strong>Pojízdné hasicí přístroje</strong>
+      <p>Pro průmyslové objekty, výrobní haly nebo sklady s vyšším požárním rizikem, kde přenosný přístroj nestačí.</p>
+    </div>
+  </div>
+  <p style="margin-top:1.35rem;">Každý dodaný přístroj je vybaven platnou kontrolou provozuschopnosti, plombou a dokumentací. Rovnou ho rozmístíme na správná místa a zapíšeme do evidence.</p>
+</div>
+
+<!-- Jak to funguje -->
+<div class="content-section sr">
+  <h2>Jak to u nás funguje v praxi</h2>
+  <p>Přijedeme k vám, provedeme kontrolu všech přístrojů na místě a vystavíme doklad. Přístroje, které potřebují tlakovou zkoušku nebo opravu, odvezeme do dílny – a přivezeme náhradní, aby vás to neohrozilo. Po skončení servisní údržby vše vrátíme, umístíme a doložíme protokolem.</p>
+  <p>Výsledkem je kompletní dokumentace připravená pro kontrolu HZS nebo preventivní prohlídku OZO PO – přehledný doklad o každém přístroji s datem, výsledkem a podpisem technika.</p>
+  <div class="info-box">
+    <p>Servis hasicích přístrojů nabízíme jako <strong>jednorázovou zakázku</strong> nebo v rámci <strong>smluvní péče s automatickým hlídáním lhůt</strong>. Druhá varianta znamená, že na termín revize prostě zapomenete – my vám připomeneme, přijedeme a zařídíme vše sami.</p>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-wrap">
+  <div class="cta-block sr">
+    <h2>Nevíte, kdy byly vaše přístroje naposledy kontrolovány?</h2>
+    <p>Ozvěte se nám. Provedeme bezplatnou prověrku termínů a navrhneme plán servisní péče na míru – ať máte vždy jistotu, že vaše přístroje jsou připravené, plombované a zapsané.</p>
+    <div class="cta-btns">
+      <a href="kontakt.html" class="btn-white">Nezávazná poptávka</a>
+      <a href="skoleni-zamestnancu.html" class="btn-outline-w">Školení požární ochrany</a>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="footer-logo">
+      <img src="img/logo.svg" alt="SPBS logo" />
+      SPBS<span>.</span>
+    </a>
+    <div class="footer-links">
+      <a href="index.html">Domů</a>
+      <a href="partneri.html">Partneři</a>
+      <a href="nase-projekty.html">Naše projekty</a>
+      <a href="o-nas.html">O nás</a>
+      <a href="kontakt.html">Kontakt</a>
+    </div>
+    <span class="footer-copy">&copy; 2026 SPBS – Požárně bezpečnostní řešení staveb</span>
+  </div>
+</footer>
+
+<button class="scroll-home" id="scrollHome" aria-label="Zpět na začátek">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+</button>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.sr').forEach(el => observer.observe(el));
+
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    hamburger.classList.toggle('open');
+  });
+
+  document.querySelectorAll('.nav-dropdown-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.closest('.nav-dropdown').classList.toggle('open');
+    });
+  });
+
+  const scrollHome = document.getElementById('scrollHome');
+  const mainNav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    const cur = window.scrollY;
+    mainNav.style.transform = cur > 80 ? 'translateY(-100%)' : '';
+    scrollHome.classList.toggle('visible', cur > 320);
+  });
+  scrollHome.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+</body>
+</html>

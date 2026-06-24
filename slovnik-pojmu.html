@@ -18,8 +18,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Slovníček pojmů požární bezpečnosti staveb | PBS od A do Z</title>
-  <meta name="description" content="Přehledný slovník pojmů z oblasti požární bezpečnosti staveb. Vysvětlujeme požární úseky, odolnost konstrukcí, EPS, ZOKT, únikové cesty a desítky dalších pojmů srozumitelně a přesně." />
+  <title>Slovníček pojmů PBS, BOZP a požární ochrany | Kompletní průvodce A–Z</title>
+  <meta name="description" content="Přehledný slovník pojmů z oblasti PBS, BOZP a požární ochrany. Vysvětlujeme požární úseky, EPS, ZOKT, pracovní úraz, OOPP, kategorizaci prací a desítky dalších pojmů srozumitelně a přesně." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -77,13 +77,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* Page hero */
     .page-hero { background: var(--bg-dark); padding: 4rem 1.5rem 3.5rem; }
     .page-hero-inner { max-width: 860px; margin: 0 auto; }
-    .page-hero .eyebrow { display: inline-block; font-size: .7rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: rgba(192,57,43,.9); background: rgba(192,57,43,.15); border: 1px solid rgba(192,57,43,.25); border-radius: 999px; padding: .3rem .85rem; margin-bottom: 1.25rem; }
+    .page-hero .eyebrow { display: inline-block; font-size: .7rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #27ae60; background: rgba(39,174,96,.12); border: 1px solid rgba(39,174,96,.3); border-radius: 999px; padding: .3rem .85rem; margin-bottom: 1.25rem; }
     .page-hero h1 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800; color: #fff; line-height: 1.2; letter-spacing: -0.025em; margin-bottom: 1rem; }
     .page-hero p { font-size: 1.0625rem; color: rgba(255,255,255,.6); line-height: 1.7; max-width: 680px; }
 
     /* Search */
-    .search-wrap { background: var(--bg-alt); border-bottom: 1px solid var(--border); padding: 1.5rem; position: sticky; top: 60px; z-index: 90; }
-    .search-inner { max-width: 860px; margin: 0 auto; position: relative; }
+    .search-wrap { background: var(--bg-alt); border-bottom: 1px solid var(--border); padding: 1.5rem; position: sticky; top: 60px; z-index: 90; transition: top .35s ease; }
+    .search-wrap.nav-hidden { top: 0; }
+    .search-inner { max-width: 1160px; margin: 0 auto; position: relative; }
     .search-inner svg { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--subtle); pointer-events: none; }
     #glossSearch { width: 100%; padding: .75rem 1rem .75rem 2.75rem; font-size: .9375rem; font-family: inherit; border: 1.5px solid var(--border); border-radius: var(--r); background: #fff; color: var(--head); outline: none; transition: border-color .2s, box-shadow .2s; }
     #glossSearch:focus { border-color: var(--brand); box-shadow: 0 0 0 3px rgba(192,57,43,.1); }
@@ -99,20 +100,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .letter-nav-inner a.has-terms:hover, .letter-nav-inner a.active-letter { color: var(--brand); border-bottom-color: var(--brand); }
 
     /* Glossary content */
-    .gloss-wrap { max-width: 860px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+    .gloss-wrap { max-width: 1160px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
 
     .gloss-section { margin-bottom: 3rem; }
     .gloss-section.hidden { display: none; }
 
     .gloss-letter-head { font-size: 2rem; font-weight: 800; color: var(--brand); letter-spacing: -0.03em; margin-bottom: 1.25rem; padding-bottom: .75rem; border-bottom: 2px solid var(--brand-l); scroll-margin-top: 120px; }
 
-    .term-item { padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
-    .term-item:last-child { border-bottom: none; }
+    .terms-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; align-items: start; }
+
+    .term-item { background: var(--bg); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.25rem 1.25rem 1rem; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; transition: box-shadow .2s; }
+    .term-item:hover { box-shadow: var(--shadow-md); }
     .term-item.hidden { display: none; }
 
-    .term-name { font-size: 1rem; font-weight: 700; color: var(--head); margin-bottom: .4rem; }
-    .term-def { font-size: .9375rem; line-height: 1.75; color: var(--body); }
+    .term-name { font-size: .9375rem; font-weight: 700; color: var(--head); margin-bottom: .5rem; line-height: 1.35; }
+    .term-body { position: relative; }
+    .term-def { font-size: .875rem; line-height: 1.75; color: var(--body); max-height: 5.25em; overflow: hidden; transition: max-height .35s cubic-bezier(.4,0,.2,1); }
     .term-def em { font-style: italic; color: var(--subtle); }
+    .term-item.expanded .term-def { max-height: 600px; }
+    .term-fade { height: 2.5rem; background: linear-gradient(to bottom, transparent, #fff); margin-top: -2.5rem; position: relative; pointer-events: none; transition: opacity .2s; }
+    .term-item.expanded .term-fade { opacity: 0; pointer-events: none; }
+    .term-toggle { margin-top: .5rem; background: none; border: none; color: var(--brand); font-size: .78rem; font-weight: 600; cursor: pointer; padding: 0; font-family: inherit; letter-spacing: .01em; }
+    .term-toggle:hover { color: var(--brand-d); }
 
     /* Abbreviations table */
     .abbr-section { background: var(--bg-alt); border-top: 1px solid var(--border); padding: 3rem 1.5rem 4rem; }
@@ -168,6 +177,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .nav-dropdown-menu a { padding: .75rem 1.25rem .75rem 2rem !important; font-size: .85rem !important; border-bottom: 1px solid rgba(0,0,0,.07) !important; color: rgba(0,0,0,.6) !important; }
       .mobile-cta-item { display: list-item; }
       .search-wrap { top: 60px; }
+      .terms-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .terms-grid { grid-template-columns: 1fr; }
       .footer-inner { flex-direction: column; text-align: center; }
       .abbr-table td:first-child { width: 80px; }
     }
@@ -193,12 +206,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <span class="nav-dropdown-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
         </button>
         <div class="nav-dropdown-menu">
-          <a href="sluzby.html">Školení zaměstnanců</a>
-          <a href="sluzby.html">EPS</a>
-          <a href="sluzby.html">Protipožární ucpávky</a>
-          <a href="sluzby.html">Hasicí přístroje</a>
-          <a href="sluzby.html">Součinnost HZS</a>
-          <a href="sluzby.html">Požární Dokumentace</a>
+          <a href="skoleni-zamestnancu.html">Školení zaměstnanců</a>
+          <a href="eps.html">EPS</a>
+          <a href="protipozarni-ucpavky.html">Protipožární ucpávky</a>
+          <a href="hasici-pristroje.html">Hasicí přístroje</a>
+          <a href="soucinnost-hzs.html">Součinnost HZS</a>
+          <a href="pozarni-dokumentace.html">Požární Dokumentace</a>
           <a href="slovnik-pojmu.html" class="active">Slovník pojmů</a>
         </div>
       </li>
@@ -232,8 +245,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="page-hero">
   <div class="page-hero-inner">
     <span class="eyebrow">Vzdělání</span>
-    <h1>Slovník pojmů požární bezpečnosti staveb</h1>
-    <p>Zkratky, normy a odborné pojmy z oblasti PBS – vysvětleny srozumitelně a přesně. Pro projektanty, stavebníky i zvídavé laiky.</p>
+    <h1>Slovník pojmů PBS, BOZP a požární ochrany</h1>
+    <p>Zkratky, normy a odborné pojmy z oblasti PBS, BOZP a provozní požární ochrany – vysvětleny srozumitelně a přesně. Pro projektanty, stavebníky, personalisty i zvídavé laiky.</p>
   </div>
 </div>
 
@@ -248,6 +261,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- Letter nav -->
 <nav class="letter-nav" aria-label="Abecední navigace">
   <div class="letter-nav-inner" id="letterNav">
+    <a href="#vse" id="showAll" class="has-terms active-letter" style="width:auto;padding:0 .75rem;">Vše</a>
     <a href="#A" class="has-terms">A</a>
     <a href="#B" class="has-terms">B</a>
     <a href="#C" class="has-terms">C</a>
@@ -255,15 +269,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <a href="#E" class="has-terms">E</a>
     <a href="#F" class="has-terms">F</a>
     <a href="#H" class="has-terms">H</a>
+    <a href="#CH" class="has-terms">CH</a>
     <a href="#I" class="has-terms">I</a>
     <a href="#J" class="has-terms">J</a>
     <a href="#K" class="has-terms">K</a>
+    <a href="#L" class="has-terms">L</a>
     <a href="#M" class="has-terms">M</a>
     <a href="#N" class="has-terms">N</a>
     <a href="#O" class="has-terms">O</a>
     <a href="#P" class="has-terms">P</a>
     <a href="#R" class="has-terms">R</a>
     <a href="#S" class="has-terms">S</a>
+    <a href="#T" class="has-terms">T</a>
     <a href="#U" class="has-terms">U</a>
     <a href="#V" class="has-terms">V</a>
     <a href="#Z" class="has-terms">Z</a>
@@ -286,6 +303,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <h3 class="term-name">Autorizovaná osoba v oboru PBS</h3>
       <p class="term-def">Projektant se specializací na požární bezpečnost staveb, který je oprávněn zpracovávat požárně bezpečnostní řešení (PBŘ). Projektování PBS smí provádět pouze autorizovaní inženýři zapsaní v Komoře autorizovaných inženýrů a techniků (ČKAIT) s příslušnou specializací.</p>
     </div>
+    <div class="term-item">
+      <h3 class="term-name">Analýza rizik</h3>
+      <p class="term-def">Systematický postup identifikace nebezpečí na pracovišti a odhadu pravděpodobnosti a závažnosti možné újmy. Je podkladem pro hodnocení rizik a přijímání opatření. Analýza se musí opakovat při každé podstatné změně pracoviště, technologie nebo pracovní činnosti.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Audit BOZP</h3>
+      <p class="term-def">Systematické přezkoumání stavu bezpečnosti a ochrany zdraví v organizaci. Hodnotí, zda jsou nastavená opatření skutečně účinná – nestačí jen mít hromadu směrnic v šuplíku. Výstupem je zpráva s konkrétními nedostatky a doporučeními. Může ho provést interní tým nebo nezávislý externí odborník.</p>
+    </div>
   </section>
 
   <!-- B -->
@@ -298,6 +323,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="term-item">
       <h3 class="term-name">Bezkouřová vrstva</h3>
       <p class="term-def">Prostor těsně pod stropem, do kterého kouř při požáru ještě nepronikl. Norma předpokládá, že bezkouřová vrstva sahá do výšky minimálně 2,5 m nad podlahou – pod touto hranicí by měli být evakuující se lidé v bezpečí před zplodinami hoření. Výšku bezkouřové vrstvy ovlivňují zejména odvětrávací opatření a geometrie prostoru.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Bezpečnostní list (BL)</h3>
+      <p class="term-def">Dokument, který musí doprovázet každou nebezpečnou chemickou látku nebo směs. Obsahuje informace o složení, nebezpečných vlastnostech, první pomoci, skladování a ochranných opatřeních. Zaměstnavatel je povinen zpřístupnit bezpečnostní listy všem zaměstnancům, kteří s danou látkou pracují.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Bezpečnostní přestávka</h3>
+      <p class="term-def">Povinná přestávka nařízená pro konkrétní druhy prací – například při práci ve vnuceném tempu, při monotónní práci nebo při práci v extrémních teplotách. Na rozdíl od běžné přestávky na jídlo se bezpečnostní přestávka započítává do pracovní doby.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Bezpečnostní značení</h3>
+      <p class="term-def">Výstražné, zákazové, příkazové nebo informační značky na pracovišti dle NV č. 375/2017 Sb. Zahrnuje značky pro únikové cesty a nouzové východy (zelené), zákazové (červené), výstražné (žluté) i příkazové (modré).</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">BOZP – Bezpečnost a ochrana zdraví při práci</h3>
+      <p class="term-def">Interdisciplinární obor a soubor zákonných povinností chránících zdraví a životy zaměstnanců při práci. Zahrnuje hodnocení rizik, školení, poskytování OOPP, lékařské prohlídky, evidenci pracovních úrazů i vedení dokumentace. Povinnost zajišťovat BOZP má každý zaměstnavatel – bez výjimky.</p>
     </div>
   </section>
 
@@ -320,6 +361,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <h3 class="term-name">ČSN 73 0804</h3>
       <p class="term-def">Kmenová norma požární bezpečnosti pro výrobní objekty. Liší se od ČSN 73 0802 přístupem ke stanovení požárního rizika i specifickými požadavky na velké průmyslové haly, sklady a technologické provozy.</p>
     </div>
+    <div class="term-item">
+      <h3 class="term-name">Centrální ohlašovna požáru</h3>
+      <p class="term-def">Místo v organizaci (recepce, vrátnice, velín), kde jsou svedeny signály z EPS nebo kde zaměstnanci hlásí zjištěný požár. Ohlašovna musí být trvale obsazena v době, kdy je objekt v provozu. Volá se 150 (hasiči) nebo 112 (IZS).</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Cvičný poplach (evakuační cvičení)</h3>
+      <p class="term-def">Pravidelné praktické procvičení evakuace osob z objektu. Pro provozovatele se zvýšeným a vysokým požárním nebezpečím je povinný. Cílem je ověřit funkčnost poplachové soustavy, dobu evakuace a koordinaci odpovědných osob. Po cvičení se sepisuje zápis.</p>
+    </div>
   </section>
 
   <!-- D -->
@@ -332,6 +381,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="term-item">
       <h3 class="term-name">Druh konstrukční části (D1, D2, D3)</h3>
       <p class="term-def">Klasifikace stavebních konstrukcí podle jejich chování za požáru – zejména s ohledem na možné odkapávání nebo odpadávání hořícího materiálu. D1 jsou konstrukce bez odkapávání a odpadávání, D2 připouštějí odkapávání, D3 pak i odpadávání. Druh má přímý vliv na požadavky, které na danou konstrukci norma klade.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Dokumentace BOZP</h3>
+      <p class="term-def">Soubor povinných písemných dokumentů, které musí zaměstnavatel zpracovat a průběžně aktualizovat. Zahrnuje: hodnocení rizik, kategorizaci prací, evidenci pracovních úrazů, záznamy o školení, směrnice pro přidělování OOPP a místně provozní bezpečnostní předpisy.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Dokumentace PO (požární ochrany)</h3>
+      <p class="term-def">Povinná sada dokumentů v oblasti požární ochrany, jejíž rozsah závisí na kategorii požárního nebezpečí. Může zahrnovat: požární řád, požární poplachovou směrnici, evakuační plán, dokumentaci o školení, požární knihu nebo posouzení požárního nebezpečí. Zpracovává ji OZO PO nebo technik požární ochrany.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Dozor nad bezpečností práce</h3>
+      <p class="term-def">Pravidelná kontrola dodržování předpisů BOZP na pracovišti. Může být interní (vedoucí zaměstnanci, OZO BOZP) nebo externí státní (SÚIP, KHS). Výsledkem externího dozoru může být pokuta, příkaz k odstranění závad nebo správní řízení.</p>
     </div>
   </section>
 
@@ -354,6 +415,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <h3 class="term-name">Evakuační výtah</h3>
       <p class="term-def">Speciální výtah určený pro evakuaci osob, které se nemohou pohybovat po schodech (osoby na vozíčku, pacienti, starší lidé). Musí fungovat i za požáru – má vlastní požární úsek šachty, záložní napájení a zvýšenou požární odolnost.</p>
     </div>
+    <div class="term-item">
+      <h3 class="term-name">Ergonomie</h3>
+      <p class="term-def">Věda o přizpůsobování práce a pracovního prostředí člověku – jeho tělesným rozměrům, fyziologickým možnostem a psychickým schopnostem. V praxi BOZP to znamená správné nastavení výšky pracovního stolu, rozmístění ovládacích prvků, osvětlení nebo způsob manipulace s břemeny. Špatná ergonomie je jednou z hlavních příčin nemocí z povolání pohybového aparátu.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Evakuační plán</h3>
+      <p class="term-def">Grafický nebo textový dokument popisující způsob, trasy a organizaci evakuace osob z objektu při požáru nebo jiné mimořádné události. Vyvěšuje se na viditelných místech u každého východu a únikové cesty. Jeho zpracování je povinné pro provozovatele se zvýšeným a vysokým požárním nebezpečím.</p>
+    </div>
   </section>
 
   <!-- F -->
@@ -362,6 +431,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="term-item">
       <h3 class="term-name">Flash over (celkové vzplanutí prostoru)</h3>
       <p class="term-def">Okamžik, kdy teplota v hořícím prostoru stoupne natolik, že se zapaluje veškerý hořlavý obsah naráz. Před flash overem hoří jen část prostoru, po něm hoří vše. Jde o kritický bod, po kterém záchrana osob uvnitř není reálná. Požární odolnost konstrukcí se navrhuje právě pro podmínky po flash overu.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Fyzická zátěž (pracovní)</h3>
+      <p class="term-def">Rizikový faktor v BOZP zahrnující celkovou svalovou zátěž, lokální svalovou zátěž (ruky, paže), pracovní polohy a manipulaci s břemeny. Limitní hodnoty stanoví NV č. 361/2007 Sb. Překračování limitů vede k zařazení do vyšší kategorie prací a ke vzniku nemocí z povolání pohybového aparátu.</p>
     </div>
   </section>
 
@@ -384,6 +457,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <h3 class="term-name">Hořlavý konstrukční systém</h3>
       <p class="term-def">Stavba, jejíž nosné nebo požárně dělicí konstrukce jsou ze dřeva nebo jiných hořlavých materiálů. Klade vyšší požadavky na provedení – například kratší mezní rozměry požárních úseků nebo přísnější stupeň požární bezpečnosti. <em>Viz také: Nehořlavý konstrukční systém, Smíšený konstrukční systém.</em></p>
     </div>
+    <div class="term-item">
+      <h3 class="term-name">Hluk (jako rizikový faktor)</h3>
+      <p class="term-def">Nežádoucí zvuk na pracovišti, jehož překročení stanovené expozice poškozuje sluch. Hygienický limit pro osmihodinovou pracovní směnu je 85 dB. Zaměstnavatel je povinen nejprve snižovat hluk technickými opatřeními (tlumicí kryty, vibroizolace), teprve poté přistoupit k OOPP (chrániče sluchu).</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Hodnocení rizik</h3>
+      <p class="term-def">Klíčový dokument BOZP – systematický přehled identifikovaných nebezpečí na pracovišti s ohodnocením jejich pravděpodobnosti a závažnosti. Na základě hodnocení rizik se navrhují opatření ke snížení rizika. Bez aktuálního hodnocení rizik nelze splnit základní povinnosti zaměstnavatele.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Hygiena práce</h3>
+      <p class="term-def">Obor zabývající se vlivy pracovního prostředí a pracovní činnosti na zdraví zaměstnanců – chemickými látkami, hlukem, vibracemi, pracovním teplem nebo chladem, prachovými aerosoly apod.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Hygienické limity</h3>
+      <p class="term-def">Zákonem stanovené maximální hodnoty expozice rizikovým faktorům pracovního prostředí (hluk, vibrace, prach, chemické látky, záření). Dělí se na přípustné expoziční limity (PEL) a nejvyšší přípustné koncentrace (NPK-P). Jejich měření provádí akreditovaná laboratoř.</p>
+    </div>
+  </section>
+
+  <!-- CH -->
+  <section class="gloss-section sr" id="CH">
+    <h2 class="gloss-letter-head">CH</h2>
+    <div class="term-item">
+      <h3 class="term-name">Chemické látky a směsi (nebezpečné)</h3>
+      <p class="term-def">Látky nebo přípravky, které mohou ohrozit zdraví nebo bezpečnost zaměstnanců – jedy, karcinogeny, látky dráždící kůži nebo dýchací cesty, hořlaviny nebo výbušniny. Zaměstnavatel je povinen vést jejich evidenci, zajistit bezpečnostní listy a přijmout opatření k ochraně zdraví.</p>
+    </div>
   </section>
 
   <!-- I -->
@@ -393,6 +491,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <h3 class="term-name">Izolační schopnost (mezní stav I)</h3>
       <p class="term-def">Schopnost konstrukce zabránit přenosu tepla na neohroženou stranu tak, aby zde nevznikl požár nebo aby teplota nepřekročila normou stanovenou mez. Hodnotí se u požárních stěn, stropů a dveří. Spolu s mezními stavy R (únosnost) a E (celistvost) tvoří základ klasifikace požární odolnosti.</p>
     </div>
+    <div class="term-item">
+      <h3 class="term-name">Integrovaný záchranný systém (IZS)</h3>
+      <p class="term-def">Systém koordinace složek (hasiči, záchranná služba, policie) při řešení mimořádných událostí. Volá se na čísle 112. Pro BOZP a PO je IZS důležitý z hlediska spolupráce zaměstnavatele při záchranných akcích – povinnosti součinnosti, zpřístupnění objektu, podávání informací o nebezpečných látkách.</p>
+    </div>
   </section>
 
   <!-- J -->
@@ -401,6 +503,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="term-item">
       <h3 class="term-name">Jednotky požární ochrany (JPO)</h3>
       <p class="term-def">Souhrnný název pro profesionální i dobrovolné hasičské sbory, které zasahují při požárech. Navrhování staveb musí zohledňovat podmínky pro efektivní zásah JPO – přístupové komunikace, nástupní plochy, zásahové cesty i zásobování požární vodou.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Jiná škoda na zdraví z práce</h3>
+      <p class="term-def">Vedle pracovního úrazu a nemoci z povolání zákon zná i třetí kategorii poškození zdraví vzniklou v přímé souvislosti s prací. Může jít například o poškození zdraví způsobené dlouhodobým stresem, které nelze zařadit do seznamu nemocí z povolání.</p>
     </div>
   </section>
 
@@ -427,6 +533,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <h3 class="term-name">Kouřová zábrana</h3>
       <p class="term-def">Svislá pevná nebo závěsná clona, která rozděluje velký prostor (halu, atrium) na kouřové sekce. Zabraňuje horizontálnímu šíření kouře a umožňuje efektivní odvod kouře přes ZOKT.</p>
     </div>
+    <div class="term-item">
+      <h3 class="term-name">Kategorizace prací</h3>
+      <p class="term-def">Povinné zatřídění každé pracovní pozice do jedné ze čtyř kategorií podle míry zdravotního rizika. Kategorie 1 jsou bezrizikové práce (kanceláře), kategorie 2 jsou práce s nízkým rizikem, kategorie 3 a 4 jsou práce rizikové. O zařazení do kategorií 3 a 4 rozhoduje krajská hygienická stanice (KHS).</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">KHS – Krajská hygienická stanice</h3>
+      <p class="term-def">Orgán ochrany veřejného zdraví na regionální úrovni. Rozhoduje o zařazení prací do kategorie 3 a 4, provádí kontroly hygienických podmínek na pracovištích a vydává rozhodnutí o opatřeních. Zaměstnavatel je povinen zasílat KHS oznámení o kategorizaci prací do 30 dnů od zahájení výkonu práce.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Kontrolovaná pásma</h3>
+      <p class="term-def">Vymezená pracoviště, kde jsou zaměstnanci vystaveni rizikovým faktorům přesahujícím stanovené limity (ionizující záření, chemické karcinogeny, biologičtí činitelé). Vstup je omezen pouze na zaměstnance zdravotně způsobilé, proškolené a vybavené odpovídajícími OOPP.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Koordinátor BOZP na staveništi</h3>
+      <p class="term-def">Fyzická osoba určená zadavatelem stavby k zajištění koordinace BOZP v přípravné a realizační fázi stavby, kde současně působí více zhotovitelů. Zpracovává plán BOZP pro staveniště a dohlíží na jeho dodržování.</p>
+    </div>
+  </section>
+
+  <!-- L -->
+  <section class="gloss-section sr" id="L">
+    <h2 class="gloss-letter-head">L</h2>
+    <div class="term-item">
+      <h3 class="term-name">Lékařské prohlídky (pracovnělékařské)</h3>
+      <p class="term-def">Pravidelná zdravotní vyšetření zaměstnanců, jejichž frekvence a rozsah závisí na kategorii prací a profesním riziku. Rozlišují se vstupní, periodické, mimořádné a výstupní prohlídky. Provádí je smluvní lékař závodní preventivní péče.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Lhůty školení BOZP a PO</h3>
+      <p class="term-def">Zákonem nebo vyhláškou stanovené intervaly opakování školení. V BOZP jde typicky o vstupní školení a periodická opakování (zpravidla 1× ročně). V PO závisí na kategorii požárního nebezpečí – u zvýšeného a vysokého nebezpečí 1× ročně, u ostatních nejméně 1× za 2 roky.</p>
+    </div>
   </section>
 
   <!-- M -->
@@ -439,6 +574,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="term-item">
       <h3 class="term-name">Mezní rozměry požárního úseku</h3>
       <p class="term-def">Maximální přípustná plocha nebo délka požárního úseku, kterou norma připouští bez nutnosti dalšího členění. Závisí na stupni požární bezpečnosti, konstrukčním systému budovy a případné instalaci SHZ nebo ZOKT. Překročení mezních rozměrů není možné – prostor je nutné rozdělit požárními dělicími konstrukcemi.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Manipulace s břemeny</h3>
+      <p class="term-def">Oblast BOZP řešící bezpečné způsoby ručního přenášení, zdvihání a přemísťování těžkých předmětů. NV č. 361/2007 Sb. stanoví maximální hmotnosti (pro muže 50 kg při jednorázovém zdvihu, pro ženy 20 kg) i denní kumulativní limity. Zaměstnavatel je povinen preferovat mechanizaci.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Mikroklimatické podmínky</h3>
+      <p class="term-def">Tepelně-vlhkostní podmínky pracovního prostředí – teplota, vlhkost, rychlost proudění vzduchu a tepelné záření. Jejich limity pro různé druhy práce stanoví NV č. 361/2007 Sb. Extrémní hodnoty vedou k povinnosti bezpečnostních přestávek nebo poskytování ochranných nápojů.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Místně provozní bezpečnostní předpis (MPBP)</h3>
+      <p class="term-def">Interní předpis zaměstnavatele upravující konkrétní bezpečnostní pravidla pro danou provozovnu nebo pracovní činnost. Musí vycházet ze zákonných požadavků a hodnocení rizik. Zaměstnanci jsou s ním povinni být prokazatelně seznámeni.</p>
     </div>
   </section>
 
@@ -465,6 +612,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <h3 class="term-name">Nouzové osvětlení</h3>
       <p class="term-def">Osvětlení, které se automaticky spustí při výpadku el. energie nebo při evakuaci a osvětluje únikové cesty, požární uzávěry a bezpečnostní značení. Musí fungovat z autonomního záložního zdroje minimálně po stanovenou dobu.</p>
     </div>
+    <div class="term-item">
+      <h3 class="term-name">Nebezpečí (v BOZP)</h3>
+      <p class="term-def">Zdroj nebo situace s potenciálem způsobit újmu na zdraví – například stroj bez krytů, mokrá podlaha, nebezpečná chemická látka nebo nevhodné osvětlení. Nebezpečí se identifikuje jako první krok procesu hodnocení rizik.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Nemoc z povolání</h3>
+      <p class="term-def">Poškození zdraví způsobené dlouhodobým působením rizikových faktorů pracovního prostředí. Uznává ji příslušné zdravotnické zařízení pracovního lékařství. Seznam nemocí z povolání je uveden v NV č. 290/1995 Sb. Zaměstnavatel má v případě uznané nemoci povinnost uhradit odškodnění.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">NV č. 361/2007 Sb.</h3>
+      <p class="term-def">Nařízení vlády stanovující podmínky ochrany zdraví při práci – hygienické limity pro hluk, vibrace, prach, chemické látky, tepelnou zátěž, fyzickou zátěž a další rizikové faktory. Jde o jeden z klíčových prováděcích předpisů k zákoníku práce v oblasti BOZP.</p>
+    </div>
   </section>
 
   <!-- O -->
@@ -481,6 +640,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="term-item">
       <h3 class="term-name">OB1, OB2, OB3, OB4</h3>
       <p class="term-def">Skupiny budov pro bydlení a ubytování podle ČSN 73 0833. OB1 jsou nejmenší stavby (rodinné domy do 600 m² a tří nadzemních podlaží), OB4 naopak výškové bytové domy. Zařazení do skupiny určuje, jak přísné požadavky požární bezpečnosti musí daná stavba splňovat.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Ohrožení nemocí z povolání</h3>
+      <p class="term-def">Stav, kdy jsou u zaměstnance zjištěny zdravotní změny způsobené pracovními podmínkami, ale onemocnění ještě nedosáhlo plně rozvinuté nemoci z povolání. Zaměstnavatel je povinen přijmout opatření a zaměstnance převést na jinou práci bez expozice danému rizikovému faktoru.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">OOPP – Osobní ochranné pracovní prostředky</h3>
+      <p class="term-def">Vybavení chránící zaměstnance před riziky, která nelze eliminovat technickými nebo organizačními opatřeními. Patří sem ochranné přilby, respirátory, ochranné brýle, sluchátka, rukavice, bezpečnostní obuv nebo postroje. Zaměstnavatel je povinen OOPP poskytovat bezplatně a vést jejich evidenci.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">OZO BOZP – Odborně způsobilá osoba v prevenci rizik</h3>
+      <p class="term-def">Odborník zajišťující pro zaměstnavatele plnění povinností v oblasti BOZP – vyhledávání a hodnocení rizik, navrhování opatření, vedení dokumentace, koordinaci školení. Povinnost mít OZO BOZP má každý zaměstnavatel.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">OZO PO – Odborně způsobilá osoba v požární ochraně</h3>
+      <p class="term-def">Fyzická osoba s osvědčením vydaným ministerstvem vnitra, zajišťující plnění povinností zaměstnavatele v oblasti požární ochrany – zpracování dokumentace PO, preventivní prohlídky, školení vedoucích zaměstnanců. Platí pro provozovatele s vysokým požárním nebezpečím.</p>
     </div>
   </section>
 
@@ -571,6 +746,50 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <h3 class="term-name">Požární zatížení (stálé a nahodilé)</h3>
       <p class="term-def">Celkové množství hořlavých látek v požárním úseku. <strong>Stálé požární zatížení</strong> tvoří hořlavé materiály zabudované do konstrukcí. <strong>Nahodilé požární zatížení</strong> představují věci, které se v prostoru nacházejí při provozu. Dohromady tvoří výpočtové požární zatížení (pv).</p>
     </div>
+    <div class="term-item">
+      <h3 class="term-name">Plán BOZP pro staveniště</h3>
+      <p class="term-def">Dokument zpracovaný koordinátorem BOZP stanovující bezpečnostní pravidla pro stavbu s více dodavateli. Řeší organizaci práce, pohyb osob a strojů, rizika specifická pro dané staveniště a opatření k jejich eliminaci. Je závazný pro všechny zhotovitele.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Posouzení požárního nebezpečí</h3>
+      <p class="term-def">Dokument stanovující kategorii požárního nebezpečí provozovatele (bez zvýšeného / se zvýšeným / s vysokým požárním nebezpečím) a z toho plynoucí povinnosti. Zpracovává ho OZO PO nebo technik PO. Je výchozím dokumentem celé dokumentace PO.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Pracovní prostředí</h3>
+      <p class="term-def">Souhrn fyzikálních, chemických, biologických, psychosociálních a ergonomických podmínek, v nichž zaměstnanec vykonává práci. Zahrnuje pracoviště, stroje, nástroje, materiály, kolegy i organizaci práce. Jeho kvalitu a bezpečnost reguluje zákoník práce a navazující nařízení vlády.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Pracovní úraz</h3>
+      <p class="term-def">Poškození zdraví zaměstnance, k němuž došlo nezávisle na jeho vůli krátkodobým, náhlým a násilným působením vnějších vlivů při plnění pracovních úkolů. Zaměstnavatel je povinen úraz evidovat, vyšetřit příčiny a při pracovní neschopnosti delší než 3 dny sepsat záznam o úrazu.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Prevence rizik</h3>
+      <p class="term-def">Soubor opatření zaměřených na předcházení vzniku nebezpečí nebo na snížení pravděpodobnosti a závažnosti možné újmy. V hierarchii priorit BOZP stojí vždy na prvním místě – nejprve se snažíme nebezpečí odstranit u zdroje, teprve pak ho omezujeme organizačně nebo OOPP.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Preventista PO – Preventista požární ochrany</h3>
+      <p class="term-def">Zaměstnanec, který prošel odbornou přípravou v oblasti PO a je pověřen zaměstnavatelem ke kontrole dodržování předpisů a školení ostatních zaměstnanců. Může působit u provozovatelů se zvýšeným i bez zvýšeného požárního nebezpečí.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Preventivní prohlídka PO</h3>
+      <p class="term-def">Pravidelná fyzická kontrola objektu, pracoviště a dokumentace požární ochrany prováděná OZO PO nebo technikem PO. Hodnotí stav hasicích přístrojů, průchodnost únikových cest a funkčnost požárně bezpečnostních zařízení.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Profesní riziko</h3>
+      <p class="term-def">Riziko ohrožení zdraví vyplývající ze samotné povahy profese – například riziko infekce u zdravotníků nebo riziko fyzického napadení u bezpečnostního personálu. Ovlivňuje frekvenci pracovnělékařských prohlídek.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Prověrka BOZP</h3>
+      <p class="term-def">Pravidelná interní kontrola stavu BOZP v organizaci, prováděná zpravidla každoročně za účasti odborové organizace nebo zástupce zaměstnanců pro oblast BOZP. Výsledkem je písemný zápis s identifikovanými nedostatky a termíny jejich odstranění.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Psychosociální rizika</h3>
+      <p class="term-def">Rizika v pracovním prostředí spojená s organizací práce, sociálními vztahy a pracovní zátěží – nadměrný stres, šikana (mobbing, bossing), burnout nebo monotónní práce. Zaměstnavatel je povinen je vyhledávat a hodnotit stejně jako fyzická nebo chemická rizika.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Pyrotechnické práce / svařování a práce se zvýšeným nebezpečím vzniku požáru</h3>
+      <p class="term-def">Pracovní činnosti, při nichž hrozí riziko vzniku požáru nebo výbuchu (svařování, řezání plamenem, broušení s jiskřením, práce s hořlavými látkami). Platí pro ně přísnější podmínky požární ochrany a zvláštní dokumentace (příkaz ke svařování).</p>
+    </div>
   </section>
 
   <!-- R -->
@@ -583,6 +802,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="term-item">
       <h3 class="term-name">Revize PBZ</h3>
       <p class="term-def">Pravidelná odborná kontrola požárně bezpečnostních zařízení – hasicích přístrojů, hydrantů, EPS, ZOKT nebo SHZ. Frekvence revizí je dána právními předpisy a technickými normami. Bez platné revize není zařízení způsobilé plnit svou funkci při požáru.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Riziko (v BOZP)</h3>
+      <p class="term-def">Kombinace pravděpodobnosti vzniku újmy a závažnosti této újmy. Cílem BOZP je rizika identifikovat, vyhodnotit a přijmout opatření k jejich snížení na přijatelnou úroveň. Nulové riziko neexistuje – vždy jde o jeho řízení a minimalizaci.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Rizikové faktory pracovního prostředí</h3>
+      <p class="term-def">Faktory, které mohou poškozovat zdraví zaměstnance při dlouhodobé expozici. Zákon rozlišuje faktory fyzikální (hluk, vibrace, záření, teplo), chemické (prach, výpary, aerosoly), biologické (viry, bakterie, plísně), fyzické zátěže a psychické zátěže.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Rizikové práce</h3>
+      <p class="term-def">Práce zařazené do kategorie 3 nebo 4. Zaměstnanci vykonávající rizikové práce mají právo na kratší pracovní dobu, příplatky, OOPP, mycí prostředky a pravidelnější lékařské prohlídky.</p>
     </div>
   </section>
 
@@ -621,6 +852,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <h3 class="term-name">Stupeň požární bezpečnosti (SPB)</h3>
       <p class="term-def">Klasifikace každého požárního úseku do jednoho ze šesti stupňů (I–VI) podle výpočtového požárního zatížení a dalších parametrů. SPB přímo určuje požadovanou požární odolnost dělicích a nosných konstrukcí, mezní rozměry úseku i typ únikové cesty. Čím vyšší stupeň, tím přísnější požadavky.</p>
     </div>
+    <div class="term-item">
+      <h3 class="term-name">Směrnice BOZP</h3>
+      <p class="term-def">Interní předpis zaměstnavatele upravující pravidla bezpečnosti práce v organizaci. Musí vycházet ze zákonných požadavků a být přizpůsobena konkrétním podmínkám firmy. Zaměstnanci jsou s ní prokazatelně seznamováni při školení.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Stupeň požárního nebezpečí / kategorie požárního nebezpečí (provozní PO)</h3>
+      <p class="term-def">Zařazení provozovaných činností organizace do jedné ze tří kategorií: bez zvýšeného požárního nebezpečí, se zvýšeným požárním nebezpečím a s vysokým požárním nebezpečím. Určuje rozsah povinností v PO. Nezaměňovat se Stupněm požární bezpečnosti (SPB), který se vztahuje k technickému návrhu budov.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">SÚIP – Státní úřad inspekce práce</h3>
+      <p class="term-def">Orgán státní správy kontrolující dodržování pracovněprávních předpisů a předpisů BOZP. Má pod sebou osm oblastních inspektorátů práce (OIP). Při kontrole může uložit pokutu, nařídit opatření nebo podat podnět k trestnímu řízení.</p>
+    </div>
+  </section>
+
+  <!-- T -->
+  <section class="gloss-section sr" id="T">
+    <h2 class="gloss-letter-head">T</h2>
+    <div class="term-item">
+      <h3 class="term-name">Technik požární ochrany (TPO)</h3>
+      <p class="term-def">Fyzická osoba s osvědčením od ministerstva vnitra (nižší stupeň odborné způsobilosti než OZO PO). Může zpracovávat dokumentaci PO, provádět preventivní prohlídky a školení pro provozovatele se zvýšeným požárním nebezpečím. Pro vysoké požární nebezpečí je nutná OZO PO.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Toxické látky a expozice</h3>
+      <p class="term-def">Chemické látky nebo jejich směsi, které mohou poškozovat zdraví při vdechnutí, požití nebo kontaktu s kůží. Zaměstnavatel musí exposici minimalizovat technickými opatřeními (uzavřené systémy, odsávání) a teprve poté OOPP.</p>
+    </div>
   </section>
 
   <!-- U -->
@@ -647,6 +903,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <h3 class="term-name">Výšková budova</h3>
       <p class="term-def">Budova s požární výškou objektu (h) větší než 22,5 m, tedy přibližně od 9. nadzemního podlaží výše. Na výškové budovy se vztahují výrazně přísnější požadavky PBS – povinné chráněné únikové cesty s přetlakovou ventilací, evakuační výtahy, zvýšená požární odolnost nosných konstrukcí.</p>
     </div>
+    <div class="term-item">
+      <h3 class="term-name">Vibrace</h3>
+      <p class="term-def">Mechanické kmitání přenášené na zaměstnance rukou nebo celým tělem prostřednictvím pracovních nástrojů, vozidel nebo podložky. Dlouhodobá expozice způsobuje syndrom bílých prstů nebo poškození páteře. Limity expozice stanoví NV č. 361/2007 Sb.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Vyhrazená technická zařízení (VTZ)</h3>
+      <p class="term-def">Technická zařízení se zvýšenou mírou ohrožení zdraví a bezpečnosti, jejichž výroba, montáž, provoz, revize a opravy smí provádět pouze oprávněné osoby. Dělí se na: tlaková (kotle, tlakové nádoby), zdvihací (výtahy, jeřáby), elektrická a plynová. Každé VTZ musí mít aktuální výchozí a provozní revizi.</p>
+    </div>
   </section>
 
   <!-- Z -->
@@ -667,6 +931,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="term-item">
       <h3 class="term-name">Zpráva o posouzení požárního nebezpečí</h3>
       <p class="term-def">Dokument zpracovaný autorizovanou osobou v oboru PBS, který posuzuje konkrétní stavbu nebo změnu stavby z hlediska požárního nebezpečí. Je součástí projektové dokumentace tam, kde to zákon nebo vyhláška výslovně vyžadují.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Zákon č. 133/1985 Sb. o požární ochraně</h3>
+      <p class="term-def">Základní zákon upravující povinnosti fyzických a právnických osob v oblasti požární ochrany v ČR. Definuje kategorie požárního nebezpečí, stanovuje povinnosti zaměstnavatelů a upravuje státní požární dozor. Na zákon navazuje vyhláška č. 246/2001 Sb. o požární prevenci.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Zákon č. 262/2006 Sb. – Zákoník práce</h3>
+      <p class="term-def">Základní pracovněprávní předpis ČR, jehož část pátá (§ 101–108) upravuje základní povinnosti zaměstnavatele i zaměstnanců v BOZP. Je doplněn zákonem č. 309/2006 Sb. a řadou nařízení vlády pro specifické oblasti.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Zákon č. 309/2006 Sb.</h3>
+      <p class="term-def">Zákon, kterým se upravují další požadavky bezpečnosti a ochrany zdraví při práci – požadavky na pracoviště, pracovní prostředí, pracovní prostředky a výrobní postupy. Stanovuje také podmínky pro koordinaci BOZP na staveništích s více dodavateli.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Zákonné pojištění odpovědnosti zaměstnavatele</h3>
+      <p class="term-def">Povinné zákonné pojištění, které musí mít každý zaměstnavatel od vzniku prvního pracovního poměru. Kryje škody způsobené zaměstnancům pracovním úrazem nebo nemocí z povolání.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Zakázané práce</h3>
+      <p class="term-def">Práce, které zákon nebo zvláštní předpisy zakazují zcela, nebo které jsou zakázány pro specifické skupiny zaměstnanců – těhotné ženy, mladistvé nebo zaměstnance s konkrétním zdravotním omezením.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Zápis o úrazu (záznam o úrazu)</h3>
+      <p class="term-def">Povinný dokument sepisovaný při každém pracovním úrazu s pracovní neschopností delší než 3 dny nebo smrtelném úrazu. Vzor záznamu a okruh institucí, jimž se zasílá, stanoví NV č. 201/2010 Sb.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Zdravotní způsobilost k práci</h3>
+      <p class="term-def">Posouzení zdravotního stavu zaměstnance ve vztahu ke konkrétní vykonávané práci, provedené lékařem pracovnělékařských služeb. Výstupem je lékařský posudek. Zaměstnavatel nesmí přidělit zaměstnanci práci, k níž byl uznán nezpůsobilým.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Zástupce zaměstnanců pro oblast BOZP</h3>
+      <p class="term-def">Zaměstnanec zvolený kolegy k zastupování zájmů zaměstnanců v oblasti BOZP. Má právo účastnit se prověrek BOZP, přijímat informace o rizicích a podávat návrhy ke zlepšení podmínek bezpečnosti práce.</p>
+    </div>
+    <div class="term-item">
+      <h3 class="term-name">Zvýšené / vysoké požární nebezpečí</h3>
+      <p class="term-def">Dvě vyšší kategorie požárního nebezpečí dle zákona o PO. Zvýšené požární nebezpečí nastává například při práci s hořlavými látkami nad stanovený limit nebo při provozu s více než 200 osobami. Obě kategorie nesou přísnější povinnosti dokumentace, školení i odborné způsobilosti.</p>
     </div>
   </section>
 
@@ -701,6 +1001,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <tr><td>PTCh</td><td>Požárně technická charakteristika</td></tr>
         <tr><td>pv</td><td>Výpočtové požární zatížení</td></tr>
         <tr><td>h</td><td>Požární výška objektu</td></tr>
+        <tr><td>BOZP</td><td>Bezpečnost a ochrana zdraví při práci</td></tr>
+        <tr><td>PO</td><td>Požární ochrana</td></tr>
+        <tr><td>OZO BOZP</td><td>Odborně způsobilá osoba v prevenci rizik</td></tr>
+        <tr><td>OZO PO</td><td>Odborně způsobilá osoba v požární ochraně</td></tr>
+        <tr><td>TPO</td><td>Technik požární ochrany</td></tr>
+        <tr><td>OOPP</td><td>Osobní ochranné pracovní prostředky</td></tr>
+        <tr><td>VTZ</td><td>Vyhrazená technická zařízení</td></tr>
+        <tr><td>SÚIP</td><td>Státní úřad inspekce práce</td></tr>
+        <tr><td>OIP</td><td>Oblastní inspektorát práce</td></tr>
+        <tr><td>KHS</td><td>Krajská hygienická stanice</td></tr>
+        <tr><td>IZS</td><td>Integrovaný záchranný systém</td></tr>
+        <tr><td>BL</td><td>Bezpečnostní list</td></tr>
+        <tr><td>MPBP</td><td>Místně provozní bezpečnostní předpis</td></tr>
+        <tr><td>PEL</td><td>Přípustný expoziční limit</td></tr>
+        <tr><td>NPK-P</td><td>Nejvyšší přípustná koncentrace</td></tr>
+        <tr><td>NV</td><td>Nařízení vlády</td></tr>
       </tbody>
     </table>
   </div>
@@ -714,7 +1030,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </a>
     <div class="footer-links">
       <a href="index.html">Domů</a>
-      <a href="sluzby.html">Služby</a>
+      
       <a href="o-nas.html">O nás</a>
       <a href="kontakt.html">Kontakt</a>
     </div>
@@ -748,16 +1064,54 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     });
   });
 
-  // Scroll home + nav hide
+  // Scroll home + nav hide + sticky search
   const scrollHome = document.getElementById('scrollHome');
   const mainNav = document.querySelector('nav');
+  const searchWrap = document.querySelector('.search-wrap');
   window.addEventListener('scroll', () => {
     const cur = window.scrollY;
     mainNav.style.transform = cur > 80 ? 'translateY(-100%)' : '';
+    searchWrap.classList.toggle('nav-hidden', cur > 80);
     scrollHome.classList.toggle('visible', cur > 320);
   });
   scrollHome.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Wrap each section's term-items in a .terms-grid
+  document.querySelectorAll('.gloss-section').forEach(section => {
+    const items = Array.from(section.querySelectorAll('.term-item'));
+    if (!items.length) return;
+    const grid = document.createElement('div');
+    grid.className = 'terms-grid';
+    items[0].parentNode.insertBefore(grid, items[0]);
+    items.forEach(item => {
+      // Wrap def in .term-body
+      const def = item.querySelector('.term-def');
+      const body = document.createElement('div');
+      body.className = 'term-body';
+      def.parentNode.insertBefore(body, def);
+      body.appendChild(def);
+      grid.appendChild(item);
+    });
+  });
+
+  // Inject fade + toggle button for clipped cards
+  document.querySelectorAll('.term-item').forEach(card => {
+    const def = card.querySelector('.term-def');
+    if (def.scrollHeight > def.clientHeight + 4) {
+      const fade = document.createElement('div');
+      fade.className = 'term-fade';
+      card.querySelector('.term-body').appendChild(fade);
+      const btn = document.createElement('button');
+      btn.className = 'term-toggle';
+      btn.textContent = 'Zobrazit více ↓';
+      btn.addEventListener('click', () => {
+        const open = card.classList.toggle('expanded');
+        btn.textContent = open ? 'Zobrazit méně ↑' : 'Zobrazit více ↓';
+      });
+      card.appendChild(btn);
+    }
   });
 
   // Search filter
@@ -783,6 +1137,45 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     noResults.classList.toggle('visible', totalVisible === 0 && q.length > 0);
   });
+
+  // Letter nav
+  const showAllBtn = document.getElementById('showAll');
+
+  function clearLetterFilter() {
+    document.querySelectorAll('.letter-nav-inner a').forEach(a => a.classList.remove('active-letter'));
+    showAllBtn.classList.add('active-letter');
+    document.querySelectorAll('.gloss-section').forEach(s => s.classList.remove('hidden'));
+    searchInput.value = '';
+    noResults.classList.remove('visible');
+  }
+
+  showAllBtn.addEventListener('click', e => { e.preventDefault(); clearLetterFilter(); });
+
+  let activeLetter = null;
+  document.querySelectorAll('.letter-nav-inner a:not(#showAll)').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = link.getAttribute('href').slice(1);
+      activeLetter = target;
+      document.querySelectorAll('.letter-nav-inner a').forEach(a => a.classList.remove('active-letter'));
+      link.classList.add('active-letter');
+      document.querySelectorAll('.gloss-section').forEach(s => {
+        s.classList.toggle('hidden', s.id !== target);
+      });
+      searchInput.value = '';
+      noResults.classList.remove('visible');
+    });
+  });
+
+  // Clear letter filter when user types in search
+  searchInput.addEventListener('input', () => {
+    if (activeLetter) {
+      activeLetter = null;
+      document.querySelectorAll('.letter-nav-inner a').forEach(a => a.classList.remove('active-letter'));
+      showAllBtn.classList.add('active-letter');
+      document.querySelectorAll('.gloss-section').forEach(s => s.classList.remove('hidden'));
+    }
+  }, { capture: true });
 </script>
 </body>
 </html>

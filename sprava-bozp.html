@@ -38,6 +38,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       --bozp: #2980b9;
       --bozp-d: #1f6fa3;
       --bozp-l: rgba(41,128,185,.08);
+      --bg-dark: #0d1f33;
       --bg: #ffffff;
       --bg-alt: #f7f8fa;
       --border: #e3e8ef;
@@ -78,26 +79,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .nav-dropdown-menu a:hover { color: var(--head); background: rgba(0,0,0,.04); }
 
     /* Breadcrumb */
-    .breadcrumb { max-width: 1160px; margin: 0 auto; padding: 1.25rem 1.5rem 0; display: flex; align-items: center; gap: .5rem; font-size: .8rem; color: var(--subtle); }
-    .breadcrumb a { color: var(--subtle); text-decoration: none; transition: color .2s; }
-    .breadcrumb a:hover { color: var(--head); }
-    .breadcrumb-sep { color: var(--border); }
+    .breadcrumb { background: var(--bg-dark); padding: .75rem 1.5rem; display: flex; align-items: center; gap: .5rem; font-size: .8rem; color: rgba(255,255,255,.45); }
+    .breadcrumb a { color: rgba(255,255,255,.45); text-decoration: none; transition: color .2s; }
+    .breadcrumb a:hover { color: rgba(255,255,255,.8); }
+    .breadcrumb-sep { color: rgba(255,255,255,.2); }
 
     /* Page hero */
-    .page-hero { max-width: 1160px; margin: 0 auto; padding: 3rem 1.5rem 4rem; border-bottom: 1px solid var(--border); }
-    .page-hero-inner { display: grid; grid-template-columns: 1fr 260px; gap: 3rem; align-items: center; }
-    .page-hero h1 { font-size: 2.75rem; font-weight: 800; letter-spacing: -0.03em; color: var(--head); line-height: 1.1; margin-bottom: .6rem; }
-    .page-hero .sub { font-size: 1.0625rem; font-weight: 600; color: var(--bozp); margin-bottom: 1.25rem; }
-    .page-hero p { font-size: 1rem; line-height: 1.75; color: var(--body); max-width: 640px; margin-bottom: 2rem; }
-    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .hero-logo { display: flex; justify-content: center; align-items: center; }
-    .hero-logo img { width: 220px; max-width: 100%; }
-    .hero-title-row { display: flex; align-items: center; gap: 1rem; margin-bottom: .6rem; }
-    .hero-title-row h1 { margin-bottom: 0; }
-    .hero-logo-inline { display: none; width: 56px; height: 56px; object-fit: contain; flex-shrink: 0; }
+    .page-hero { background: var(--bg-dark); padding: 4rem 1.5rem 3.5rem; }
+    .page-hero-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 220px; gap: 4rem; align-items: center; }
+    .page-hero h1 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 800; letter-spacing: -0.03em; color: #fff; line-height: 1.12; margin-bottom: 1.25rem; }
+    .page-hero p { font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,.65); margin-bottom: .85rem; }
+    .page-hero p:last-of-type { margin-bottom: 0; }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.75rem; }
+    .hero-logo-box { display: flex; align-items: center; justify-content: center; background: #fff; border-radius: var(--r-lg); padding: 2rem; }
+    .hero-logo-box img { width: 160px; max-width: 100%; }
+    .btn-primary { display: inline-flex; align-items: center; gap: .45rem; background: var(--brand); color: #fff; font-size: .9rem; font-weight: 700; border-radius: var(--r); padding: .75rem 1.5rem; text-decoration: none; transition: background .2s, transform .15s; box-shadow: 0 4px 12px rgba(192,57,43,.35); }
+    .btn-primary:hover { background: var(--brand-d); transform: translateY(-1px); }
+    .btn-ghost-light { display: inline-flex; align-items: center; gap: .45rem; background: transparent; color: rgba(255,255,255,.75); font-size: .9rem; font-weight: 600; border-radius: var(--r); padding: .75rem 1.5rem; text-decoration: none; border: 1.5px solid rgba(255,255,255,.22); transition: border-color .2s, background .2s; }
+    .btn-ghost-light:hover { border-color: rgba(255,255,255,.5); background: rgba(255,255,255,.07); }
 
     /* Eyebrow */
-    .eyebrow { display: inline-flex; align-items: center; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--brand); margin-bottom: 1.25rem; }
+    .eyebrow { display: inline-flex; align-items: center; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #27ae60; background: rgba(39,174,96,.12); border: 1px solid rgba(39,174,96,.3); border-radius: 999px; padding: .3rem .85rem; margin-bottom: 1.25rem; }
 
     /* Wrap */
     .wrap { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; }
@@ -194,9 +196,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .sr-delay-3 { transition-delay: .3s; }
 
     @media (max-width: 900px) {
-      .page-hero-inner { grid-template-columns: 1fr; }
-      .hero-logo { display: none; }
-      .hero-logo-inline { display: block; }
+      .page-hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-logo-box { display: none; }
       .services-grid { grid-template-columns: 1fr 1fr; }
       .why-grid { grid-template-columns: 1fr; gap: 2rem; }
       .steps-grid { grid-template-columns: 1fr 1fr; }
@@ -261,12 +262,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="nav-dropdown-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
         </button>
         <div class="nav-dropdown-menu">
-          <a href="sluzby.html">Školení zaměstnanců</a>
-          <a href="sluzby.html">EPS</a>
-          <a href="sluzby.html">Protipožární ucpávky</a>
-          <a href="sluzby.html">Hasicí přístroje</a>
-          <a href="sluzby.html">Součinnost HZS</a>
-          <a href="sluzby.html">Požární Dokumentace</a>
+          <a href="skoleni-zamestnancu.html">Školení zaměstnanců</a>
+          <a href="eps.html">EPS</a>
+          <a href="protipozarni-ucpavky.html">Protipožární ucpávky</a>
+          <a href="hasici-pristroje.html">Hasicí přístroje</a>
+          <a href="soucinnost-hzs.html">Součinnost HZS</a>
+          <a href="pozarni-dokumentace.html">Požární Dokumentace</a>
           <a href="slovnik-pojmu.html">Slovník pojmů</a>
         </div>
       </li>
@@ -306,28 +307,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <!-- Hero -->
-<div class="page-hero sr">
-  <div class="page-hero-inner">
+<div class="page-hero">
+  <div class="page-hero-inner sr">
     <div>
       <span class="eyebrow">Partnerská firma</span>
-      <div class="hero-title-row">
-        <img class="hero-logo-inline" src="img/sprava-bozp-logo.png" alt="Správa BOZP s.r.o." />
-        <h1>Správa BOZP s.r.o.</h1>
-      </div>
-      <p class="sub">Bezpečnost práce &amp; Požární ochrana &amp; Životní prostředí</p>
+      <h1>Správa BOZP s.r.o.</h1>
       <p>BOZP, PO a ochrana životního prostředí – outsourcing bez kompromisů. Legislativa se mění každý rok. Pokuty za nedodržení povinností v oblasti bezpečnosti práce nebo požární ochrany sahají do statisíců. Správa BOZP s.r.o. se o celou agendu postará za vás – komplexně, odborně a bez zbytečné byrokracie na vaší straně.</p>
       <div class="hero-ctas">
-        <a href="https://www.spravabozp.cz" target="_blank" rel="noopener noreferrer" class="btn-bozp">
+        <a href="https://www.spravabozp.cz" target="_blank" rel="noopener noreferrer" class="btn-primary">
           Přejít na Správa BOZP
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
-        <a href="#sluzby" class="btn-outline">
+        <a href="#sluzby" class="btn-ghost-light">
           Co konkrétně zajistí
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </a>
       </div>
     </div>
-    <div class="hero-logo">
+    <div class="hero-logo-box">
       <img src="img/sprava-bozp-logo.png" alt="Správa BOZP s.r.o." />
     </div>
   </div>
@@ -513,7 +510,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </a>
     <div class="footer-links">
       <a href="index.html">Domů</a>
-      <a href="sluzby.html">Služby</a>
+      
       <a href="partneri.html">Partneři</a>
       <a href="nase-projekty.html">Naše projekty</a>
       <a href="o-nas.html">O nás</a>
