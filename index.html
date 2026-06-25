@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
+<script>
+/* Google Consent Mode v2 — deny all by default until user chooses */
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  analytics_storage: 'denied',
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  functionality_storage: 'denied',
+  personalization_storage: 'denied',
+  security_storage: 'granted',
+  wait_for_update: 1500
+});
+(function(){try{var c=localStorage.getItem('spbs_consent');if(c==='granted'){gtag('consent','update',{analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',functionality_storage:'granted',personalization_storage:'granted'});}}catch(e){}})();
+</script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -191,20 +207,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* Contact mini cards (right column) */
     .contact-cards-stack { display: flex; flex-direction: column; gap: .85rem; }
     .contact-mini-card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: var(--r-lg); padding: 1.35rem 1.5rem; display: flex; gap: 1.25rem; align-items: flex-start; }
-    .contact-mini-qr { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: .35rem; }
+    .contact-mini-qr { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: .35rem; order: 2; margin-left: auto; }
     .contact-mini-qr img { width: 72px; height: 72px; border-radius: 6px; display: block; background: #fff; padding: 4px; }
     .contact-mini-qr span { font-size: .6rem; color: rgba(255,255,255,.3); text-align: center; line-height: 1.3; }
     .contact-mini-info { display: flex; flex-direction: column; gap: .3rem; min-width: 0; }
     .contact-mini-role { font-size: .65rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: rgba(120,220,130,.85); }
     .contact-mini-name { font-size: .9rem; font-weight: 700; color: #fff; margin-bottom: .2rem; }
     .contact-mini-row { font-size: .8rem; color: rgba(255,255,255,.6); display: flex; gap: .5rem; }
-    .contact-mini-row span:first-child { color: rgba(255,255,255,.3); flex-shrink: 0; font-weight: 500; min-width: 2.5rem; }
+    .contact-mini-row span:first-child { color: rgba(255,255,255,.3); flex-shrink: 0; font-weight: 500; min-width: 3rem; }
     .contact-mini-row a { color: rgba(255,255,255,.75); text-decoration: none; transition: color .2s; }
     .contact-mini-row a:hover { color: #fff; }
 
     /* Footer */
     footer { background: #0a0f1a; border-top: 1px solid rgba(255,255,255,.06); }
-    .footer-main { max-width: 1160px; margin: 0 auto; padding: 3.5rem 1.5rem 2.5rem; display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr; gap: 3rem; }
+    .footer-main { max-width: 1160px; margin: 0 auto; padding: 2.25rem 1.5rem 1.75rem; display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr; gap: 2rem; align-items: start; }
     .footer-brand { display: flex; flex-direction: column; gap: 1rem; }
     .footer-logo { display: flex; align-items: center; gap: .55rem; font-size: 1.15rem; font-weight: 800; color: #fff; letter-spacing: -0.04em; text-decoration: none; }
     .footer-logo img { height: 28px; width: auto; display: block; filter: brightness(0) invert(1); opacity: .9; }
@@ -240,6 +256,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .contact-dark-inner { grid-template-columns: 1fr; gap: 3rem; }
     }
     @media (max-width: 768px) {
+      .contact-mini-qr { display: none; }
       .about-strip-inner { grid-template-columns: 1fr; gap: 2rem; }
       .about-strip-left { position: static; }
       .hero-wrap { min-height: 0; }
@@ -293,6 +310,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .scroll-home.visible { transform: translateY(-50%) translateX(0); }
     .scroll-home:hover { background: var(--brand-d); box-shadow: -4px 0 20px rgba(192,57,43,.5); }
   </style>
+<link rel="stylesheet" href="cookie-consent.css">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -336,14 +354,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="nav-dropdown-menu">
           <a href="o-nas.html">O nás</a>
           <a href="nase-projekty.html">Naše projekty</a>
-          <a href="reference.html">Reference</a>
         </div>
       </li>
       <li class="mobile-cta-item"><a href="kontakt.html" class="nav-cta">Kontakt</a></li>
     </ul>
     <a href="kontakt.html" class="nav-cta">Kontakt</a>
         <div class="nav-right">
-    <a href="mailto:email@email.cz" class="nav-email-btn" aria-label="Napište nám e-mail">
+    <a href="mailto:asistentka@spravabozp.cz" class="nav-email-btn" aria-label="Napište nám e-mail">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
     </a>
     <div class="nav-hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
@@ -483,7 +500,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- Asistentka -->
         <div class="contact-mini-card">
           <div class="contact-mini-qr">
-            <img src="img/qrcode.png" alt="QR kód – Asistentka" />
+            <img src="img/kontakt%20asistentka.svg" alt="QR kód – Asistentka" />
             <span>Rychlý kontakt</span>
           </div>
           <div class="contact-mini-info">
@@ -495,7 +512,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             <div class="contact-mini-row">
               <span>Mail</span>
-              <a href="mailto:email@email.cz">email@email.cz</a>
+              <a href="mailto:asistentka@spravabozp.cz">asistentka@spravabozp.cz</a>
             </div>
           </div>
         </div>
@@ -503,7 +520,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- Technik PO -->
         <div class="contact-mini-card">
           <div class="contact-mini-qr">
-            <img src="img/qrcode.png" alt="QR kód – Technik PO" />
+            <img src="img/Technik%20PO%20-%20JB.svg" alt="QR kód – Technik PO" />
             <span>Rychlý kontakt</span>
           </div>
           <div class="contact-mini-info">
@@ -511,11 +528,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <span class="contact-mini-name">Technik PO</span>
             <div class="contact-mini-row">
               <span>Tel.</span>
-              <a href="tel:+420000000000">+420 000 000 000</a>
+              <a href="tel:+420720200800">+420 720 200 800</a>
             </div>
             <div class="contact-mini-row">
               <span>Mail</span>
-              <a href="mailto:technik@email.cz">technik@email.cz</a>
+              <a href="mailto:josef@bina.cz">josef@bina.cz</a>
             </div>
           </div>
         </div>
@@ -557,29 +574,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="footer-col-links">
         <a href="o-nas.html">O nás</a>
         <a href="nase-projekty.html">Naše projekty</a>
-        <a href="reference.html">Reference</a>
         <a href="partneri.html">Partneři</a>
         <a href="slovnik-pojmu.html">Slovník pojmů</a>
       </div>
     </div>
-
-    <!-- Kontakt -->
+    <!-- Sídlo -->
     <div class="footer-col">
-      <h4>Kontakt</h4>
+      <h4>Sídlo</h4>
       <div class="footer-col-contact">
         <div class="footer-contact-row">
-          <div class="footer-contact-label">Tel.</div>
-          <a href="tel:+420737517995">+420 737 517 995</a>
+          Správa BOZP s.r.o.<br>Zemědělská 1145/4a<br>Slezské Předměstí<br>500 03 Hradec Králové
         </div>
         <div class="footer-contact-row">
-          <div class="footer-contact-label">E-mail</div>
-          <a href="mailto:email@email.cz">email@email.cz</a>
-        </div>
-        <div class="footer-contact-row">
-          <div class="footer-contact-label">Adresa</div>
-          Zemědělská 1145/4a<br>Hradec Králové 500 03
+          <div class="footer-contact-label">Otevírací doba</div>
+          Po – Pá: 7:00 – 17:00<br>So – Ne: Zavřeno
         </div>
       </div>
+    </div>
+    <!-- Fakturační údaje -->
+    <div class="footer-col">
+      <h4>Fakturační údaje</h4>
+      <div class="footer-col-contact">
+        <div class="footer-contact-row">
+          IČO: 22016295<br>DIČ: CZ22016295<br>Datová schránka: m8xca3n
+        </div>
+      </div>
+    </div>
     </div>
 
   </div>
@@ -590,6 +610,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="kontakt.html">Kontakt</a>
         <a href="o-nas.html">O nás</a>
         <a href="sitemap.html">Mapa webu</a>
+          <button id="cookie-settings" class="cookie-settings-link" type="button">Nastavení cookies</button>
       </div>
     </div>
   </div>
@@ -631,5 +652,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   scrollHome.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
-</script></body>
+</script>
+<!-- Cookie Consent -->
+<div id="cookie-overlay" class="cookie-overlay hidden"></div>
+<div id="cookie-banner" class="cookie-banner hidden" role="dialog" aria-modal="true" aria-label="Souhlas s cookies">
+  <div class="cookie-banner-icon">
+    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="cbg" cx="38%" cy="30%" r="68%">
+          <stop offset="0%" stop-color="#f5c07a"/>
+          <stop offset="55%" stop-color="#d9862e"/>
+          <stop offset="100%" stop-color="#a85218"/>
+        </radialGradient>
+        <radialGradient id="cbg2" cx="40%" cy="35%" r="60%">
+          <stop offset="0%" stop-color="#7a3c10"/>
+          <stop offset="100%" stop-color="#3d1c08"/>
+        </radialGradient>
+      </defs>
+      <!-- shadow -->
+      <ellipse cx="40" cy="46" rx="30" ry="8" fill="rgba(0,0,0,0.15)"/>
+      <!-- body -->
+      <circle cx="40" cy="38" r="32" fill="url(#cbg)"/>
+      <!-- highlight -->
+      <ellipse cx="30" cy="24" rx="13" ry="8" fill="rgba(255,255,255,0.2)" transform="rotate(-20 30 24)"/>
+      <!-- chips -->
+      <ellipse cx="28" cy="28" rx="4.5" ry="3.5" fill="url(#cbg2)" transform="rotate(-15 28 28)"/>
+      <ellipse cx="48" cy="24" rx="3.5" ry="4.5" fill="url(#cbg2)" transform="rotate(10 48 24)"/>
+      <ellipse cx="23" cy="44" rx="4" ry="3.2" fill="url(#cbg2)" transform="rotate(-5 23 44)"/>
+      <ellipse cx="43" cy="43" rx="4.5" ry="3.5" fill="url(#cbg2)" transform="rotate(20 43 43)"/>
+      <ellipse cx="53" cy="50" rx="3.5" ry="4.5" fill="url(#cbg2)" transform="rotate(-10 53 50)"/>
+      <ellipse cx="33" cy="55" rx="3.2" ry="4" fill="url(#cbg2)" transform="rotate(15 33 55)"/>
+    </svg>
+  </div>
+  <strong class="cookie-banner-title">Cookies &amp; soukromí</strong>
+  <p class="cookie-banner-body">Používáme analytické cookies pro měření návštěvnosti a zlepšení webu. Vaše data nesbíráme pro reklamu bez vašeho souhlasu.</p>
+  <div class="cookie-banner-btns">
+    <button id="cookie-reject" class="cookie-btn-reject" type="button">Odmítnout</button>
+    <button id="cookie-accept" class="cookie-btn-accept" type="button">Přijmout vše</button>
+  </div>
+</div>
+<script src="cookie-consent.js"></script>
+
+</body>
 </html>

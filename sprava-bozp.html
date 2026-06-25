@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
+<script>
+/* Google Consent Mode v2 — deny all by default until user chooses */
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  analytics_storage: 'denied',
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  functionality_storage: 'denied',
+  personalization_storage: 'denied',
+  security_storage: 'granted',
+  wait_for_update: 1500
+});
+(function(){try{var c=localStorage.getItem('spbs_consent');if(c==='granted'){gtag('consent','update',{analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',functionality_storage:'granted',personalization_storage:'granted'});}}catch(e){}})();
+</script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -178,15 +194,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .faq-a p { padding: 0 1.5rem 1.25rem; font-size: .9rem; color: var(--body); line-height: 1.75; }
 
     /* Footer */
-    footer { background: #000; padding: 2.75rem 1.5rem; }
-    .footer-inner { max-width: 1160px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem; }
-    .footer-logo { display: flex; align-items: center; gap: .5rem; font-size: 1rem; font-weight: 800; color: rgba(255,255,255,.7); letter-spacing: -0.04em; text-decoration: none; }
-    .footer-logo img { height: 26px; width: auto; display: block; filter: brightness(0) invert(.7); }
+    footer { background: #0a0f1a; border-top: 1px solid rgba(255,255,255,.06); }
+    .footer-main { max-width: 1160px; margin: 0 auto; padding: 2.25rem 1.5rem 1.75rem; display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr; gap: 2rem; align-items: start; }
+    .footer-brand { display: flex; flex-direction: column; gap: 1rem; }
+    .footer-logo { display: flex; align-items: center; gap: .55rem; font-size: 1.15rem; font-weight: 800; color: #fff; letter-spacing: -0.04em; text-decoration: none; }
+    .footer-logo img { height: 28px; width: auto; display: block; filter: brightness(0) invert(1); opacity: .9; }
     .footer-logo span { color: var(--brand); }
-    .footer-links { display: flex; gap: 1.5rem; }
-    .footer-links a { font-size: .8rem; color: rgba(255,255,255,.35); text-decoration: none; transition: color .2s; }
-    .footer-links a:hover { color: rgba(255,255,255,.65); }
-    .footer-copy { font-size: .75rem; color: rgba(255,255,255,.22); }
+    .footer-tagline { font-size: .8rem; color: rgba(255,255,255,.35); line-height: 1.65; max-width: 220px; }
+    .footer-col h4 { font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 1rem; }
+    .footer-col-links { display: flex; flex-direction: column; gap: .55rem; }
+    .footer-col-links a { font-size: .85rem; color: rgba(255,255,255,.5); text-decoration: none; transition: color .2s; }
+    .footer-col-links a:hover { color: #fff; }
+    .footer-col-contact { display: flex; flex-direction: column; gap: .55rem; }
+    .footer-contact-row { font-size: .82rem; color: rgba(255,255,255,.45); line-height: 1.5; }
+    .footer-contact-row a { color: rgba(255,255,255,.6); text-decoration: none; transition: color .2s; }
+    .footer-contact-row a:hover { color: #fff; }
+    .footer-contact-label { font-size: .68rem; font-weight: 600; color: rgba(255,255,255,.25); text-transform: uppercase; letter-spacing: .08em; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.06); }
+    .footer-bottom-inner { max-width: 1160px; margin: 0 auto; padding: 1.25rem 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .75rem; }
+    .footer-copy { font-size: .75rem; color: rgba(255,255,255,.2); }
+    .footer-bottom-links { display: flex; gap: 1.5rem; }
+    .footer-bottom-links a { font-size: .75rem; color: rgba(255,255,255,.2); text-decoration: none; transition: color .2s; }
+    .footer-bottom-links a:hover { color: rgba(255,255,255,.5); }
 
     /* Scroll reveal */
     .sr { opacity: 0; transform: translateY(20px); transition: opacity .55s ease, transform .55s ease; }
@@ -223,8 +252,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .mobile-cta-item .nav-cta { display: block !important; text-align: center; padding: .65rem 1rem; box-shadow: none; border-radius: 8px; }
       .nav-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
       .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: translateX(-8px); }
+      .footer-main { grid-template-columns: 1fr 1fr; gap: 2rem; }
       .nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
-      .footer-inner { flex-direction: column; text-align: center; }
       .nav-dropdown-btn { display: flex !important; padding: .85rem 1.25rem; color: var(--head) !important; border-bottom: 1px solid rgba(0,0,0,.07); font-size: .9rem; width: 100%; justify-content: space-between; }
       .nav-dropdown-menu { position: static; transform: none; opacity: 1; visibility: visible; box-shadow: none; border: none; padding: 0; min-width: auto; background: #fff; border-radius: 0; max-height: 0; overflow: hidden; transition: max-height .3s cubic-bezier(.4,0,.2,1); }
       .nav-dropdown.open .nav-dropdown-menu { max-height: 400px; }
@@ -238,6 +267,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .scroll-home.visible { transform: translateY(-50%) translateX(0); }
     .scroll-home:hover { background: var(--brand-d); box-shadow: -4px 0 20px rgba(192,57,43,.5); }
   </style>
+<link rel="stylesheet" href="cookie-consent.css">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -280,14 +310,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="nav-dropdown-menu">
           <a href="o-nas.html">O nás</a>
           <a href="nase-projekty.html">Naše projekty</a>
-          <a href="reference.html">Reference</a>
         </div>
       </li>
       <li class="mobile-cta-item"><a href="kontakt.html" class="nav-cta">Kontakt</a></li>
     </ul>
     <a href="kontakt.html" class="nav-cta">Kontakt</a>
         <div class="nav-right">
-    <a href="mailto:email@email.cz" class="nav-email-btn" aria-label="Napište nám e-mail">
+    <a href="mailto:asistentka@spravabozp.cz" class="nav-email-btn" aria-label="Napište nám e-mail">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
     </a>
     <div class="nav-hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
@@ -501,22 +530,64 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 
-<!-- Footer -->
 <footer>
-  <div class="footer-inner">
-    <a href="index.html" class="footer-logo">
-      <img src="img/logo.svg" alt="SPBS logo" />
-      SPBS<span>.</span>
-    </a>
-    <div class="footer-links">
-      <a href="index.html">Domů</a>
-      
-      <a href="partneri.html">Partneři</a>
-      <a href="nase-projekty.html">Naše projekty</a>
-      <a href="o-nas.html">O nás</a>
-      <a href="kontakt.html">Kontakt</a>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo">
+        <img src="img/logo.svg" alt="SPBS logo" />
+        SPBS<span>.</span>
+      </a>
+      <p class="footer-tagline">Specializovaná firma na požární bezpečnost staveb se sídlem v Hradci Králové.</p>
     </div>
-    <span class="footer-copy">&copy; 2026 SPBS – Požárně bezpečnostní řešení staveb</span>
+    <div class="footer-col">
+      <h4>Služby</h4>
+      <div class="footer-col-links">
+        <a href="skoleni-zamestnancu.html">Školení zaměstnanců</a>
+        <a href="eps.html">EPS</a>
+        <a href="protipozarni-ucpavky.html">Protipožární ucpávky</a>
+        <a href="hasici-pristroje.html">Hasicí přístroje</a>
+        <a href="soucinnost-hzs.html">Součinnost HZS</a>
+        <a href="pozarni-dokumentace.html">Požární dokumentace</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Společnost</h4>
+      <div class="footer-col-links">
+        <a href="o-nas.html">O nás</a>
+        <a href="nase-projekty.html">Naše projekty</a>
+        <a href="partneri.html">Partneři</a>
+        <a href="slovnik-pojmu.html">Slovník pojmů</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <div class="footer-col-contact">
+        <div class="footer-contact-two-col">
+          <div class="footer-contact-row">
+            <div class="footer-contact-label">Sídlo</div>
+            Správa BOZP s.r.o.<br>Zemědělská 1145/4a<br>Slezské Předměstí<br>500 03 Hradec Králové
+          </div>
+          <div class="footer-contact-row">
+            <div class="footer-contact-label">Fakturační údaje</div>
+            IČO: 22016295<br>DIČ: CZ22016295<br>Datová schránka: m8xca3n
+          </div>
+        </div>
+        <div class="footer-contact-row">
+          <div class="footer-contact-label">Otevírací doba</div>
+          Po – Pá: 7:00 – 17:00<br>So – Ne: Zavřeno
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <span class="footer-copy">&copy; 2026 SPBS – Správa požární bezpečnosti staveb s.r.o.</span>
+      <div class="footer-bottom-links">
+        <a href="kontakt.html">Kontakt</a>
+        <a href="sitemap.html">Mapa webu</a>
+          <button id="cookie-settings" class="cookie-settings-link" type="button">Nastavení cookies</button>
+      </div>
+    </div>
   </div>
 </footer>
 
@@ -582,5 +653,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   scrollHome.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
-</script></body>
+</script>
+<!-- Cookie Consent -->
+<div id="cookie-overlay" class="cookie-overlay hidden"></div>
+<div id="cookie-banner" class="cookie-banner hidden" role="dialog" aria-modal="true" aria-label="Souhlas s cookies">
+  <div class="cookie-banner-icon">
+    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="cbg" cx="38%" cy="30%" r="68%">
+          <stop offset="0%" stop-color="#f5c07a"/>
+          <stop offset="55%" stop-color="#d9862e"/>
+          <stop offset="100%" stop-color="#a85218"/>
+        </radialGradient>
+        <radialGradient id="cbg2" cx="40%" cy="35%" r="60%">
+          <stop offset="0%" stop-color="#7a3c10"/>
+          <stop offset="100%" stop-color="#3d1c08"/>
+        </radialGradient>
+      </defs>
+      <!-- shadow -->
+      <ellipse cx="40" cy="46" rx="30" ry="8" fill="rgba(0,0,0,0.15)"/>
+      <!-- body -->
+      <circle cx="40" cy="38" r="32" fill="url(#cbg)"/>
+      <!-- highlight -->
+      <ellipse cx="30" cy="24" rx="13" ry="8" fill="rgba(255,255,255,0.2)" transform="rotate(-20 30 24)"/>
+      <!-- chips -->
+      <ellipse cx="28" cy="28" rx="4.5" ry="3.5" fill="url(#cbg2)" transform="rotate(-15 28 28)"/>
+      <ellipse cx="48" cy="24" rx="3.5" ry="4.5" fill="url(#cbg2)" transform="rotate(10 48 24)"/>
+      <ellipse cx="23" cy="44" rx="4" ry="3.2" fill="url(#cbg2)" transform="rotate(-5 23 44)"/>
+      <ellipse cx="43" cy="43" rx="4.5" ry="3.5" fill="url(#cbg2)" transform="rotate(20 43 43)"/>
+      <ellipse cx="53" cy="50" rx="3.5" ry="4.5" fill="url(#cbg2)" transform="rotate(-10 53 50)"/>
+      <ellipse cx="33" cy="55" rx="3.2" ry="4" fill="url(#cbg2)" transform="rotate(15 33 55)"/>
+    </svg>
+  </div>
+  <strong class="cookie-banner-title">Cookies &amp; soukromí</strong>
+  <p class="cookie-banner-body">Používáme analytické cookies pro měření návštěvnosti a zlepšení webu. Vaše data nesbíráme pro reklamu bez vašeho souhlasu.</p>
+  <div class="cookie-banner-btns">
+    <button id="cookie-reject" class="cookie-btn-reject" type="button">Odmítnout</button>
+    <button id="cookie-accept" class="cookie-btn-accept" type="button">Přijmout vše</button>
+  </div>
+</div>
+<script src="cookie-consent.js"></script>
+
+</body>
 </html>
