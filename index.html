@@ -385,7 +385,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- Hero -->
 <section class="hero-wrap">
-  <video class="hero-video" id="heroVideo" autoplay muted loop playsinline src="img/hero-bg.mp4"></video>
+  <video class="hero-video" id="heroVideo" autoplay muted loop playsinline webkit-playsinline x-webkit-airplay="deny" disablepictureinpicture src="img/hero-bg.mp4"></video>
   <div class="hero">
     <div class="hero-left sr">
       <span class="eyebrow">Správa požární bezpečnosti staveb s.r.o.</span>
@@ -673,6 +673,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   const videoToggle = document.getElementById('heroVideoToggle');
   const heroVideo = document.getElementById('heroVideo');
+
+  if (heroVideo) {
+    // Force muted via JS (required by some browsers in addition to the attribute)
+    heroVideo.muted = true;
+
+    function tryPlay() {
+      if (heroVideo.paused) {
+        heroVideo.play().catch(function(){});
+      }
+    }
+
+    tryPlay();
+    heroVideo.addEventListener('loadeddata', tryPlay, { once: true });
+    heroVideo.addEventListener('canplay', tryPlay, { once: true });
+
+    // Last resort: play on first user interaction (covers Low Power Mode on iOS)
+    ['touchstart', 'touchend', 'pointerdown'].forEach(function(evt) {
+      document.addEventListener(evt, function() {
+        if (heroVideo.paused) heroVideo.play().catch(function(){});
+      }, { once: true, passive: true });
+    });
+  }
+
   if (videoToggle && heroVideo) {
     videoToggle.addEventListener('click', () => {
       if (heroVideo.paused) {
