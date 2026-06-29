@@ -43,8 +43,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="preload" as="video" href="img/hero-bg-sm.mp4" fetchpriority="high" media="(max-width:768px)" />
-  <link rel="preload" as="video" href="img/hero-bg.mp4" fetchpriority="high" media="(min-width:769px)" />
+  <link rel="preload" as="video" href="img/hero-bg.mp4" fetchpriority="high" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; font-size: 16px; }
@@ -381,23 +380,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- Hero -->
 <section class="hero-wrap">
-  <video class="hero-video" id="heroVideo" autoplay muted loop playsinline></video>
-  <script>
-    (function(){
-      var v = document.getElementById('heroVideo');
-      if (!v) return;
-      v.src = window.matchMedia('(max-width:768px)').matches ? 'img/hero-bg-sm.mp4' : 'img/hero-bg.mp4';
-      v.load();
-      var p = v.play();
-      if (p !== undefined) {
-        p.catch(function(){
-          var retry = function(){ v.play(); };
-          document.addEventListener('touchstart', retry, { once: true });
-          document.addEventListener('click', retry, { once: true });
-        });
-      }
-    })();
-  </script>
+  <video class="hero-video" id="heroVideo" autoplay muted loop playsinline src="img/hero-bg.mp4"></video>
   <div class="hero">
     <div class="hero-left sr">
       <span class="eyebrow">Správa požární bezpečnosti staveb s.r.o.</span>
