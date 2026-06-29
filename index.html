@@ -381,14 +381,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- Hero -->
 <section class="hero-wrap">
-  <video class="hero-video" id="heroVideo" muted loop playsinline></video>
+  <video class="hero-video" id="heroVideo" autoplay muted loop playsinline></video>
   <script>
     (function(){
       var v = document.getElementById('heroVideo');
       if (!v) return;
       v.src = window.matchMedia('(max-width:768px)').matches ? 'img/hero-bg-sm.mp4' : 'img/hero-bg.mp4';
       v.load();
-      v.play().catch(function(){});
+      var p = v.play();
+      if (p !== undefined) {
+        p.catch(function(){
+          var retry = function(){ v.play(); };
+          document.addEventListener('touchstart', retry, { once: true });
+          document.addEventListener('click', retry, { once: true });
+        });
+      }
     })();
   </script>
   <div class="hero">
