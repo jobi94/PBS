@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<script>
+/* Google Consent Mode v2 — deny all by default until user chooses */
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  analytics_storage: 'denied',
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  functionality_storage: 'denied',
+  personalization_storage: 'denied',
+  security_storage: 'granted',
+  wait_for_update: 1500
+});
+(function(){try{var r=localStorage.getItem('spbs_consent');if(!r)return;var p;try{p=JSON.parse(r);}catch(e){var g=r==='granted';p={preference:g,analytics:g,marketing:g,addata:g,adperson:g};}gtag('consent','update',{functionality_storage:'granted',personalization_storage:p.preference?'granted':'denied',analytics_storage:p.analytics?'granted':'denied',ad_storage:p.marketing?'granted':'denied',ad_user_data:p.addata?'granted':'denied',ad_personalization:p.adperson?'granted':'denied'});}catch(e){}})();
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N6QKN765');</script>
+<!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBTKS8D7NY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZBTKS8D7NY');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png" />
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+  <title>Požární ochrana pro haly a sklady | Správa PO + HallPro</title>
+  <meta name="description" content="Komplexní požární ochrana pro průmyslové haly, sklady a výrobní provozy. Revize, dokumentace PO a technický servis budov – vše pod jednou střechou se Správou PO a HallPro." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; color: var(--body); background: var(--bg); }
+
+    :root {
+      --head: #0a2540;
+      --body: #425466;
+      --subtle: #697386;
+      --brand: #C0392B;
+      --brand-d: #9B2D20;
+      --brand-l: rgba(192,57,43,.08);
+      --hallpro: #e07b1a;
+      --hallpro-d: #c1690f;
+      --hallpro-l: rgba(224,123,26,.1);
+      --bg-dark: #0d1f33;
+      --bg: #ffffff;
+      --bg-alt: #f7f8fa;
+      --border: #e3e8ef;
+      --shadow-sm: 0 1px 3px rgba(50,50,93,.1), 0 1px 2px rgba(0,0,0,.06);
+      --shadow-md: 0 4px 16px rgba(50,50,93,.12), 0 2px 6px rgba(0,0,0,.06);
+      --r: 10px;
+      --r-lg: 16px;
+    }
+
+    .grad-bar { height: 3px; background: linear-gradient(90deg, #7F0000, #C0392B, #E74C3C, #E67E22, #F39C12); width: 100%; }
+
+    /* Nav */
+    nav { position: sticky; top: 0; z-index: 100; transition: transform .35s ease; background: #fff; border-bottom: 1px solid rgba(0,0,0,.08); }
+    .nav-inner { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; height: 60px; position: relative; }
+    .nav-logo { display: flex; align-items: center; gap: .6rem; font-size: 1.25rem; font-weight: 800; color: var(--head); letter-spacing: -0.04em; text-decoration: none; justify-self: start; grid-column: 1; }
+    .nav-logo img { height: 48px; width: auto; display: block; }
+    .nav-logo span { color: var(--brand); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; grid-column: 2; }
+    .nav-links a { font-size: .875rem; font-weight: 700; color: rgba(0,0,0,.55); text-decoration: none; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--head); }
+    .nav-cta { font-size: .875rem; font-weight: 600; color: #fff; background: var(--brand); border: none; border-radius: var(--r); padding: .55rem 1.1rem; cursor: pointer; text-decoration: none; transition: background .2s, transform .15s, box-shadow .2s; box-shadow: 0 4px 12px rgba(192,57,43,.3); }
+    .nav-cta:hover { background: var(--brand-d); transform: translateY(-1px); box-shadow: 0 6px 18px rgba(192,57,43,.4); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: .4rem; }
+    .nav-hamburger span { width: 22px; height: 2px; background: var(--head); border-radius: 2px; transition: all .3s; }
+    .nav-right { display: flex; align-items: center; gap: .5rem; justify-self: end; grid-column: 3; }
+    .nav-email-btn { display: none; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid rgba(0,0,0,.15); color: var(--head); text-decoration: none; flex-shrink: 0; transition: background .15s; }
+    .mobile-cta-item { display: none; }
+
+    /* Nav dropdown */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-btn { display: flex; align-items: center; gap: .3rem; font-size: .875rem; font-weight: 700; color: rgba(0,0,0,.55); cursor: pointer; background: none; border: none; padding: 0; font-family: inherit; transition: color .2s; }
+    .nav-dropdown-btn:hover, .nav-dropdown.open .nav-dropdown-btn { color: var(--head); }
+    .nav-dropdown-arrow { transition: transform .2s; display: flex; }
+    .nav-dropdown:hover .nav-dropdown-arrow { transform: rotate(180deg); }
+    .nav-dropdown-menu { position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%); background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: .4rem 0; min-width: 160px; box-shadow: 0 4px 16px rgba(0,0,0,.1); opacity: 0; visibility: hidden; transition: opacity .18s, visibility .18s; z-index: 300; }
+    .nav-dropdown:hover .nav-dropdown-menu { opacity: 1; visibility: visible; }
+    .nav-dropdown-menu a { display: block; padding: .65rem 1.2rem; font-size: .875rem; font-weight: 500; color: rgba(0,0,0,.6); text-decoration: none; white-space: nowrap; transition: color .15s, background .15s; }
+    .nav-dropdown-menu a:hover { color: var(--head); background: rgba(0,0,0,.04); }
+
+    /* Breadcrumb */
+    .breadcrumb { background: var(--bg-dark); padding: .75rem 1.5rem; display: flex; align-items: center; gap: .5rem; font-size: .8rem; color: rgba(255,255,255,.45); }
+    .breadcrumb a { color: rgba(255,255,255,.45); text-decoration: none; transition: color .2s; }
+    .breadcrumb a:hover { color: rgba(255,255,255,.8); }
+    .breadcrumb-sep { color: rgba(255,255,255,.2); }
+
+    /* Page hero */
+    .page-hero { background: var(--bg-dark); padding: 5.5rem 1.5rem 4.5rem; }
+    .page-hero-inner { max-width: 800px; margin: 0 auto; }
+    .eyebrow { display: inline-flex; align-items: center; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--hallpro); background: var(--hallpro-l); border: 1px solid rgba(224,123,26,.3); border-radius: 999px; padding: .3rem .85rem; margin-bottom: 1.25rem; }
+    .page-hero h1 { font-size: clamp(1.9rem, 3.8vw, 2.7rem); font-weight: 800; letter-spacing: -0.03em; color: #fff; line-height: 1.12; margin-bottom: 1.25rem; }
+    .page-hero p { font-size: 1.0625rem; line-height: 1.8; color: rgba(255,255,255,.65); margin-bottom: .85rem; }
+    .page-hero p:last-of-type { margin-bottom: 0; }
+
+    /* Wrap */
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* Buttons */
+    .btn-hallpro { display: inline-flex; align-items: center; gap: .45rem; background: var(--hallpro); color: #fff; font-size: .9rem; font-weight: 600; border-radius: var(--r); padding: .7rem 1.4rem; text-decoration: none; transition: background .2s, transform .15s; }
+    .btn-hallpro:hover { background: var(--hallpro-d); transform: translateY(-1px); }
+    .btn-outline { display: inline-flex; align-items: center; gap: .45rem; background: transparent; color: var(--head); font-size: .9rem; font-weight: 600; border-radius: var(--r); padding: .7rem 1.4rem; text-decoration: none; border: 1.5px solid var(--border); transition: border-color .2s, background .2s; }
+    .btn-outline:hover { border-color: #c1c8d4; background: var(--bg-alt); }
+
+    /* Section spacing */
+    .section-block { padding: 4.5rem 0; border-bottom: 1px solid var(--border); }
+    .section-block:last-of-type { border-bottom: none; }
+    .section-title { font-size: 1.5rem; font-weight: 800; color: var(--head); letter-spacing: -0.02em; margin-bottom: .6rem; }
+    .section-sub { font-size: .9375rem; color: var(--subtle); margin-bottom: 2.5rem; max-width: 560px; line-height: 1.65; }
+
+    /* Why text */
+    .why-text p { font-size: .9375rem; color: var(--body); line-height: 1.75; margin-bottom: 1rem; }
+    .why-text p:last-child { margin-bottom: 0; }
+
+    /* Service cards */
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: start; }
+    .svc-card { background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 2rem; display: flex; flex-direction: column; }
+    .svc-bottom { margin-top: auto; padding-top: .5rem; }
+    .svc-icon { font-size: 2rem; margin-bottom: .85rem; }
+    .svc-tag { display: inline-block; font-size: .65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--hallpro); background: var(--hallpro-l); border-radius: 4px; padding: .2rem .55rem; margin-bottom: .75rem; }
+    .svc-card h3 { font-size: 1rem; font-weight: 700; color: var(--head); margin-bottom: .75rem; }
+    .svc-intro { font-size: .875rem; color: var(--body); line-height: 1.65; margin-bottom: 1rem; }
+    .svc-toggle { display: inline-flex; align-items: center; gap: .4rem; background: none; border: 1px solid var(--border); border-radius: 8px; padding: .45rem .85rem; font-size: .75rem; font-weight: 600; color: var(--hallpro); cursor: pointer; font-family: inherit; transition: background .15s, border-color .15s; margin-top: .25rem; white-space: nowrap; }
+    .svc-toggle:hover { background: var(--hallpro-l); border-color: rgba(224,123,26,.3); }
+    .svc-toggle-arrow { transition: transform .25s; display: flex; flex-shrink: 0; }
+    .svc-card.open .svc-toggle-arrow { transform: rotate(180deg); }
+    .svc-dropdown { max-height: 0; overflow: hidden; transition: max-height .35s cubic-bezier(.4,0,.2,1); }
+    .svc-card.open .svc-dropdown { max-height: 400px; }
+    .svc-card ul { list-style: none; display: flex; flex-direction: column; gap: .5rem; padding: .85rem 0 .25rem; }
+    .svc-card ul li { font-size: .875rem; color: var(--body); line-height: 1.5; padding-left: 1.2rem; position: relative; }
+    .svc-card ul li::before { content: '✓'; position: absolute; left: 0; color: var(--hallpro); font-weight: 700; font-size: .8rem; }
+
+    /* Steps */
+    .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    .step-card { background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.75rem; }
+    .step-num { font-size: .72rem; font-weight: 800; letter-spacing: .1em; color: var(--hallpro); margin-bottom: .75rem; }
+    .step-card h3 { font-size: .9375rem; font-weight: 700; color: var(--head); margin-bottom: .5rem; }
+    .step-card p { font-size: .875rem; color: var(--body); line-height: 1.6; }
+
+    /* Endorsement */
+    .endorsement { background: var(--hallpro-l); border: 1px solid rgba(224,123,26,.25); border-radius: var(--r-lg); padding: 2.5rem 3rem; }
+    .endorsement-badge { display: inline-flex; align-items: center; gap: .5rem; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--hallpro); margin-bottom: 1rem; }
+    .endorsement h2 { font-size: 1.2rem; font-weight: 800; color: var(--head); margin-bottom: .85rem; letter-spacing: -0.02em; }
+    .endorsement p { font-size: .9375rem; color: var(--body); line-height: 1.75; margin-bottom: 1.5rem; max-width: 700px; }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: .85rem; }
+    .faq-item { border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; }
+    .faq-q { width: 100%; text-align: left; background: none; border: none; padding: 1.2rem 1.5rem; font-size: .9375rem; font-weight: 600; color: var(--head); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-family: inherit; }
+    .faq-q:hover { background: var(--bg-alt); }
+    .faq-arrow { flex-shrink: 0; transition: transform .2s; }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+    .faq-item.open .faq-a { max-height: 320px; }
+    .faq-a p { padding: 0 1.5rem 1.25rem; font-size: .9rem; color: var(--body); line-height: 1.75; }
+
+    /* CTA */
+    .cta-wrap { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+    .cta-block { background: var(--head); border-radius: var(--r-lg); padding: 3rem 2.5rem; }
+    .cta-block h2 { font-size: 1.4rem; font-weight: 800; color: #fff; letter-spacing: -0.02em; margin-bottom: 1rem; }
+    .cta-block p { font-size: .9375rem; line-height: 1.75; color: rgba(255,255,255,.7); margin-bottom: 1.5rem; }
+    .cta-contact { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.75rem; }
+    .cta-contact a { display: inline-flex; align-items: center; gap: .5rem; font-size: .9rem; font-weight: 600; color: #fff; text-decoration: none; }
+    .cta-contact a:hover { color: var(--hallpro); }
+    .cta-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-white { display: inline-flex; align-items: center; gap: .45rem; background: var(--brand); color: #fff; font-size: .9rem; font-weight: 700; border-radius: var(--r); padding: .75rem 1.5rem; text-decoration: none; transition: background .2s, transform .15s; box-shadow: 0 4px 12px rgba(192,57,43,.35); }
+    .btn-white:hover { background: var(--brand-d); transform: translateY(-1px); }
+    .btn-outline-w { display: inline-flex; align-items: center; gap: .45rem; background: transparent; color: rgba(255,255,255,.85); font-size: .9rem; font-weight: 600; border-radius: var(--r); padding: .75rem 1.5rem; text-decoration: none; border: 1.5px solid rgba(255,255,255,.25); transition: border-color .2s, background .2s; }
+    .btn-outline-w:hover { border-color: rgba(255,255,255,.5); background: rgba(255,255,255,.07); }
+
+    /* Footer */
+    footer { background: #0a0f1a; border-top: 1px solid rgba(255,255,255,.06); }
+    .footer-main { max-width: 1160px; margin: 0 auto; padding: 2.25rem 1.5rem 1.75rem; display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr; gap: 2rem; align-items: start; }
+    .footer-brand { display: flex; flex-direction: column; gap: 1rem; }
+    .footer-logo { display: flex; align-items: center; gap: .55rem; font-size: 1.15rem; font-weight: 800; color: #fff; letter-spacing: -0.04em; text-decoration: none; }
+    .footer-logo img { height: 72px; width: auto; display: block; }
+    .footer-logo span { color: var(--brand); }
+    .footer-tagline { font-size: .8rem; color: rgba(255,255,255,.35); line-height: 1.65; max-width: 220px; }
+    .footer-col h4 { font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 1rem; }
+    .footer-col-links { display: flex; flex-direction: column; gap: .55rem; }
+    .footer-col-links a { font-size: .85rem; color: rgba(255,255,255,.5); text-decoration: none; transition: color .2s; }
+    .footer-col-links a:hover { color: #fff; }
+    .footer-col-contact { display: flex; flex-direction: column; gap: .55rem; }
+    .footer-contact-row { font-size: .82rem; color: rgba(255,255,255,.45); line-height: 1.5; }
+    .footer-contact-row a { color: rgba(255,255,255,.6); text-decoration: none; transition: color .2s; }
+    .footer-contact-row a:hover { color: #fff; }
+    .footer-contact-label { font-size: .68rem; font-weight: 600; color: rgba(255,255,255,.25); text-transform: uppercase; letter-spacing: .08em; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.06); }
+    .footer-bottom-inner { max-width: 1160px; margin: 0 auto; padding: 1.25rem 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .75rem; }
+    .footer-copy { font-size: .75rem; color: rgba(255,255,255,.2); }
+    .footer-bottom-links { display: flex; gap: 1.5rem; }
+    .footer-bottom-links a { font-size: .75rem; color: rgba(255,255,255,.2); text-decoration: none; transition: color .2s; }
+    .footer-bottom-links a:hover { color: rgba(255,255,255,.5); }
+
+    /* Scroll reveal */
+    .sr { opacity: 0; transform: translateY(20px); transition: opacity .55s ease, transform .55s ease; }
+    .sr.in { opacity: 1; transform: none; }
+    .sr-delay-1 { transition-delay: .1s; }
+    .sr-delay-2 { transition-delay: .2s; }
+    .sr-delay-3 { transition-delay: .3s; }
+
+    @media (max-width: 900px) {
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .steps-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .page-hero { padding: 3rem 1.25rem 3rem; }
+      .page-hero h1 { font-size: 1.9rem; }
+      .section-block { padding: 3rem 0; }
+      .endorsement { padding: 2rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .cta-wrap { padding: 0 1.25rem 3rem; }
+      .cta-block { padding: 2rem 1.5rem; }
+      .cta-btns { flex-direction: column; }
+      .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+      .nav-email-btn { display: flex; background: var(--brand); border-color: var(--brand); color: #fff; }
+      .nav-links { display: flex !important; flex-direction: column; list-style: none; gap: 0; position: absolute; top: 64px; right: 1rem; left: auto; width: 230px; background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,.1); overflow: hidden; max-height: 0; opacity: 0; pointer-events: none; transition: max-height .38s cubic-bezier(.4,0,.2,1), opacity .22s ease; z-index: 200; }
+      .nav-links.open { max-height: 900px; opacity: 1; pointer-events: auto; }
+      .nav-links li a { display: block; padding: .85rem 1.25rem; color: var(--head) !important; border-bottom: 1px solid rgba(0,0,0,.07); font-size: .9rem; }
+      .nav-links li:last-child a { border-bottom: none; }
+      .mobile-cta-item { display: block !important; padding: .6rem .75rem .75rem; }
+      .mobile-cta-item .nav-cta { display: block !important; text-align: center; padding: .65rem 1rem; box-shadow: none; border-radius: 8px; }
+      .nav-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+      .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: translateX(-8px); }
+      .footer-main { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+      .nav-dropdown-btn { display: flex !important; padding: .85rem 1.25rem; color: var(--head) !important; border-bottom: 1px solid rgba(0,0,0,.07); font-size: .9rem; width: 100%; justify-content: space-between; }
+      .nav-dropdown-menu { position: static; transform: none; opacity: 1; visibility: visible; box-shadow: none; border: none; padding: 0; min-width: auto; background: #fff; border-radius: 0; max-height: 0; overflow: hidden; transition: max-height .3s cubic-bezier(.4,0,.2,1); }
+      .nav-dropdown.open .nav-dropdown-menu { max-height: 400px; }
+      .nav-dropdown.open .nav-dropdown-arrow { transform: rotate(180deg); }
+      .nav-dropdown-menu a { padding: .75rem 1.25rem .75rem 2rem !important; font-size: .85rem !important; border-bottom: 1px solid rgba(0,0,0,.07) !important; color: rgba(0,0,0,.6) !important; }
+      .nav-dropdown-menu a[href="kontakt.html"] { display: none !important; }
+    }
+
+    /* Scroll-to-top home button */
+    .scroll-home { position: fixed; right: 0; top: 50%; transform: translateY(-50%) translateX(100%); background: var(--brand); color: #fff; width: 46px; height: 46px; border-radius: 12px 0 0 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 998; transition: transform .35s cubic-bezier(.4,0,.2,1), background .2s, box-shadow .2s; border: none; box-shadow: -3px 0 16px rgba(192,57,43,.35); text-decoration: none; }
+    .scroll-home.visible { transform: translateY(-50%) translateX(0); }
+    .scroll-home:hover { background: var(--brand-d); box-shadow: -4px 0 20px rgba(192,57,43,.5); }
+  </style>
+<link rel="stylesheet" href="cookie-consent.css">
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="YGo/YNWCs2VKpoZcsc5v7Q" async></script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N6QKN765"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="grad-bar"></div>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="img/spbs-logo.png" alt="SPBS logo" />
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Domů</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-btn" aria-haspopup="true">
+          Služby
+          <span class="nav-dropdown-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="skoleni-zamestnancu.html">Školení zaměstnanců</a>
+          <a href="eps.html">EPS</a>
+          <a href="protipozarni-ucpavky.html">Protipožární ucpávky</a>
+          <a href="hasici-pristroje.html">Hasicí přístroje</a>
+          <a href="soucinnost-hzs.html">Součinnost HZS</a>
+          <a href="pozarni-dokumentace.html">Požární Dokumentace</a>
+          <a href="slovnik-pojmu.html">Slovník pojmů</a>
+        </div>
+      </li>
+      <li><a href="partneri.html" class="active">Partneři</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-btn" aria-haspopup="true">
+          Společnost
+          <span class="nav-dropdown-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="o-nas.html">O nás</a>
+          <a href="nase-projekty.html">Naše projekty</a>
+        </div>
+      </li>
+      <li class="mobile-cta-item"><a href="kontakt.html" class="nav-cta">Kontakt</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="kontakt.html" class="nav-cta">Kontakt</a>
+    <a href="mailto:asistentka@spravabozp.cz" class="nav-email-btn" aria-label="Napište nám e-mail">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    </a>
+    <div class="nav-hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+  <a href="index.html">Domů</a>
+  <span class="breadcrumb-sep">›</span>
+  <a href="partneri.html">Partneři</a>
+  <span class="breadcrumb-sep">›</span>
+  <span>HallPro Service</span>
+</div>
+
+<!-- Hero -->
+<div class="page-hero">
+  <div class="page-hero-inner sr">
+    <h1>Požární ochrana pro průmyslové haly a sklady</h1>
+    <p>Průmyslová hala nebo sklad není kancelář. Jsou tam větší prostory, vyšší stropy, složitější technologie a zpravidla vyšší požární zatížení. Legislativa to dobře ví — a požadavky na požární ochranu tomu odpovídají. Vyšší kategorie požárního nebezpečí, přísnější lhůty prohlídek, specifická dokumentace a pravidelné revize celé řady zařízení. A to vše musí fungovat jako celek — ne jen jako složka papírů v šuplíku.</p>
+    <p>Správa PO zajišťuje kompletní požární ochranu pro průmyslové haly, sklady a výrobní provozy. Ve spolupráci s naším partnerem HallPro Service — specialistou na servis průmyslových budov — nabízíme jedinečnou kombinaci: požárně technické revize, dokumentaci PO i technický servis budov s přímou vazbou na požární bezpečnost. Jeden kontakt, jeden systém, vše pod kontrolou.</p>
+  </div>
+</div>
+
+<!-- Why -->
+<div class="wrap">
+  <div class="section-block">
+    <div class="sr">
+      <h2 class="section-title">Proč haly a sklady potřebují jiný přístup k požární ochraně</h2>
+      <div class="why-text">
+        <p>Každá firma má povinnosti v oblasti požární ochrany. Ale firma provozující průmyslovou halu jich má výrazně víc než kancelář se dvaceti zaměstnanci.</p>
+        <p>Začleňování průmyslových provozů do kategorie požárního nebezpečí se liší objekt od objektu. Záleží na tom, co a v jakém množství se v hale skladuje nebo vyrábí, jak jsou uspořádány únikové cesty, kde jsou instalovány požárně bezpečnostní zařízení a jak se mění podmínky provozu v čase. Změna technologie, přesun regálů, instalace nového zařízení nebo vznik nabíjecího místa pro elektrovozíky — to vše může mít přímý dopad na požární ochranu a vyžádat si aktualizaci dokumentace.</p>
+        <p>Sklady s hořlavým zbožím, výrobní haly s chemickými látkami nebo logistická centra s vysokozdvižnými vozíky jsou prostředí, kde formální splnění povinností nestačí. Požární ochrana musí fungovat v reálném provozu, nejen na papíře.</p>
+        <p>Proto je pro firmy provozující haly a sklady zásadní, aby měly partnera, který zná jejich provoz, hlídá termíny za ně a při změnách provozu reaguje okamžitě — ne až po příchodu hasičského záchranného sboru.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Services -->
+<div class="wrap">
+  <div class="section-block">
+    <h2 class="section-title sr">Co pro vás zajistíme — Správa PO + HallPro Service</h2>
+    <p class="section-sub sr">Požárně technické povinnosti i technický stav budovy pod jednou střechou.</p>
+    <div class="services-grid">
+
+      <div class="svc-card sr">
+        <div class="svc-icon">🧯</div>
+        <span class="svc-tag">Revize</span>
+        <h3>Požárně technické revize a kontroly</h3>
+        <p class="svc-intro">Každý provoz v průmyslové hale musí mít v pořádku celou řadu požárně bezpečnostních zařízení. Zajišťujeme jejich revize a kontroly přesně v zákonných lhůtách, s protokoly, které obstojí při jakékoli kontrole HZS.</p>
+        <div class="svc-bottom">
+        <button class="svc-toggle">
+          S čím vám pomůžeme
+          <svg class="svc-toggle-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="svc-dropdown">
+          <ul>
+            <li>Revize hasicích přístrojů (min. 1× ročně)</li>
+            <li>Kontroly provozuschopnosti požárních hydrantů (min. 1× ročně dle ČSN 73 0873)</li>
+            <li>Revize elektrické požární signalizace (EPS)</li>
+            <li>Kontroly požárních klapek ve vzduchotechnice</li>
+            <li>Revize nouzového osvětlení a únikového značení</li>
+            <li>Kontroly požárních dveří a uzávěrů</li>
+            <li>Revize sprinklerových a stabilních hasicích zařízení</li>
+            <li>Kontroly požárních ucpávek a prostupů</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+
+      <div class="svc-card sr sr-delay-1">
+        <div class="svc-icon">📋</div>
+        <span class="svc-tag">Dokumentace</span>
+        <h3>Dokumentace požární ochrany pro průmyslový provoz</h3>
+        <p class="svc-intro">Průmyslový provoz je z pohledu požární ochrany náročnější než kancelář. Dokumentace musí odpovídat skutečnému stavu haly, nikoli tomu, jak vypadala při kolaudaci.</p>
+        <div class="svc-bottom">
+        <button class="svc-toggle">
+          S čím vám pomůžeme
+          <svg class="svc-toggle-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="svc-dropdown">
+          <ul>
+            <li>Začlenění provozované činnosti do kategorie požárního nebezpečí</li>
+            <li>Dokumentaci požární ochrany včetně požárního řádu pro průmyslový provoz</li>
+            <li>Evakuační plán přizpůsobený dispozici haly a počtu zaměstnanců</li>
+            <li>Poplachové směrnice s ohledem na provozní specifika (noční směny, logistické toky)</li>
+            <li>Požární knihu a záznamy z preventivních prohlídek</li>
+            <li>Posouzení požárního nebezpečí (pro provozy se zvýšeným nebo vysokým nebezpečím)</li>
+            <li>Dokumentaci zdolávání požáru pro velké průmyslové objekty</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+
+      <div class="svc-card sr sr-delay-2">
+        <div class="svc-icon">🏭</div>
+        <span class="svc-tag">Servis budov</span>
+        <h3>Technický servis budov a opravy s vazbou na PO</h3>
+        <p class="svc-intro">Tady vstupuje do hry náš partner HallPro Service. Průmyslová hala je živý organismus — střechy se opotřebovávají, opláštění praskají, technická zařízení selhávají. Některé z těchto závad mají přímý dopad na požární bezpečnost objektu.</p>
+        <div class="svc-bottom">
+        <button class="svc-toggle">
+          S čím vám pomůžeme
+          <svg class="svc-toggle-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="svc-dropdown">
+          <ul>
+            <li>Poškozená střecha může ohrozit požární segmentaci budovy</li>
+            <li>Nefunkční ventilace může zhoršit odvod kouře při požáru</li>
+            <li>Prasklinami v opláštění mohou procházet požárně nebezpečné prvky</li>
+            <li>HallPro Service závady identifikuje a opravuje v rámci pravidelného servisu budovy</li>
+            <li>Správa PO zajistí, aby opravy odpovídaly požadavkům požární ochrany</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Partner endorsement -->
+<div class="wrap">
+  <div class="section-block">
+    <div class="endorsement sr">
+      <img src="img/hallpro-logo.png" alt="HallPro Service" style="height:40px;width:auto;display:block;margin-bottom:1.1rem;" />
+      <div class="endorsement-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
+        Partner SPBS pro servis budov
+      </div>
+      <h2>Náš partner pro servis budov — HallPro Service</h2>
+      <p>HallPro Service je specialista na servis průmyslových budov, hal a skladů po celé České republice. Jejich tým provádí pravidelné kontroly a opravy konstrukcí, opláštění, střech a technického vybavení hal, zajišťuje rychlý zásah při haváriích a nabízí dlouhodobé servisní programy na míru.</p>
+      <p><strong>Proč spolupracujeme právě s HallPro?</strong> Protože požární ochrana v průmyslové hale nefunguje odděleně od technického stavu budovy. Revize jsou jen část příběhu. Druhá část je to, aby hasicí přístroje visely na přístupných místech, únikové cesty byly průchozí, požární klapky byly funkční a střecha netekla na elektrické rozvody. To všechno vyžaduje nejen dokumentaci a revize — ale i reálnou technickou péči o budovu.</p>
+      <p>Společně s HallPro Service vám nabídneme servisní program, který pokrývá jak požárně technické povinnosti, tak technický stav objektu. Pro vás to znamená jediné: jeden kontakt, jeden přehled, žádné mezery.</p>
+      <a href="https://www.hallpro.cz" target="_blank" rel="noopener noreferrer" class="btn-hallpro">
+        Navštívit web HallPro Service
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- How it works -->
+<div class="wrap">
+  <div class="section-block">
+    <h2 class="section-title sr">Jak spolupráce probíhá</h2>
+    <div class="steps-grid">
+
+      <div class="step-card sr">
+        <div class="step-num">KROK 1</div>
+        <h3>Vstupní prohlídka objektu</h3>
+        <p>Přijedeme do vaší haly nebo skladu, prohlédneme stav požárně bezpečnostních zařízení, zkontrolujeme stávající dokumentaci a zjistíme, kde jsou mezery. Paralelně může proběhnout i technická prohlídka budovy ze strany HallPro Service.</p>
+      </div>
+
+      <div class="step-card sr sr-delay-1">
+        <div class="step-num">KROK 2</div>
+        <h3>Návrh rozsahu spolupráce</h3>
+        <p>Na základě vstupní prohlídky navrhneme, co je potřeba okamžitě zajistit a co je součástí průběžné správy. Domluvíme harmonogram revizí a nastavíme systém pro sledování termínů.</p>
+      </div>
+
+      <div class="step-card sr sr-delay-2">
+        <div class="step-num">KROK 3</div>
+        <h3>Průběžná správa</h3>
+        <p>Fungujeme jako váš externí tým pro požární ochranu: hlídáme lhůty, provádíme revize v termínu a aktualizujeme dokumentaci při každé změně provozu.</p>
+      </div>
+
+      <div class="step-card sr sr-delay-3">
+        <div class="step-num">KROK 4</div>
+        <h3>Zastoupení při kontrole HZS</h3>
+        <p>Přijde kontrola hasičského záchranného sboru? Zastoupíme vás, obhájíme odvedenou práci a přímo na místě doložíme, že vše je v pořádku.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="wrap">
+  <div class="section-block">
+    <h2 class="section-title sr">Nejčastější otázky o požární ochraně v halách a skladech</h2>
+    <div class="faq-list sr">
+
+      <div class="faq-item">
+        <button class="faq-q">Jak se liší povinnosti v PO pro průmyslovou halu a běžnou kancelář?
+          <svg class="faq-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><p>Průmyslové provozy jsou zpravidla zařazeny do kategorie se zvýšeným nebo vysokým požárním nebezpečím — a s tím přichází přísnější požadavky. Preventivní požární prohlídky musí probíhat každých 6 měsíců (ne jednou ročně jako u kanceláří), dokumentace musí být obsáhlejší, musí existovat požární kniha, posouzení požárního nebezpečí a v mnoha případech i dokumentace zdolávání požáru schválená HZS. Přesný rozsah povinností závisí na konkrétním provozu — proto vždy začínáme vstupní prohlídkou.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Musím mít v průmyslové hale preventivní požární hlídku?
+          <svg class="faq-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><p>Záleží na kategorii provozu. Ve zvýšeném a vysokém požárním nebezpečí je preventivní požární hlídka zákonnou povinností — a tato hlídka musí mít prokazatelně proběhlou odbornou přípravu každý rok. Zajistíme jak jmenování, tak přípravu hlídky.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Jak často se musí revidovat hasicí přístroje v hale?
+          <svg class="faq-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><p>Minimálně 1× ročně, ale v průmyslovém provozu je zpravidla doporučena i zkrácená kontrola stavu po 6 měsících. U přístrojů s rizikovějším umístěním (prašné prostředí, chemické látky) může výrobce stanovit kratší lhůtu. Výsledkem každé revize musí být protokol — bez něj je přístroj z pohledu HZS nefunkční.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Co se stane, když při kontrole HZS najdou nesrovnalosti v dokumentaci?
+          <svg class="faq-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><p>HZS může uložit pokutu, nařídit nápravná opatření nebo v krajním případě i zastavení provozu. Výše pokuty záleží na závažnosti — za provoz bez platné dokumentace PO nebo bez provedených revizí jde o stovky tisíc korun. Pokud jste v situaci, kdy kontrola přichází a dokumentace není v pořádku, kontaktujte nás okamžitě — reagujeme expresně.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Co musím aktualizovat v dokumentaci PO, když rozšíříme provoz v hale?
+          <svg class="faq-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><p>Prakticky vždy. Změna skladování, nová technologie, úprava dispozice, vznik nabíjecích stanic pro elektrovozíky, zvýšení počtu zaměstnanců — to vše může ovlivnit začlenění do kategorie požárního nebezpečí, evakuační plán i rozmístění hasicích přístrojů. Dokumentace musí vždy odpovídat skutečnému stavu provozu. Zákon to tak přímo vyžaduje.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Jakou roli hraje HallPro Service v oblasti požární ochrany haly?
+          <svg class="faq-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><p>HallPro zajišťuje technický stav budovy — opravy střech, fasád, opláštění, technická zařízení. Tím přímo přispívá k tomu, aby objekt splňoval fyzické podmínky požární bezpečnosti: průchodné únikové cesty, funkční vzduchotechnika, kompaktní střecha bez rizika propadu. Správa PO zajišťuje požárně technické revize, dokumentaci a zákonné povinnosti. Dohromady pokrýváme komplexně celou oblast péče o průmyslový objekt z pohledu PO.</p></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-wrap">
+  <div class="cta-block sr">
+    <h2>Provozujete průmyslovou halu, sklad nebo výrobní provoz?</h2>
+    <p>Zjistěte, jak na tom jste s požární ochranou — a co je potřeba zajistit. Provedeme nezávaznou vstupní prohlídku a řekneme vám přesně, co chybí.</p>
+    <div class="cta-contact">
+      <a href="tel:+420720200800">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        +420 720 200 800
+      </a>
+      <a href="mailto:josef@spravabozp.cz">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        josef@spravabozp.cz
+      </a>
+    </div>
+    <div class="cta-btns">
+      <a href="kontakt.html" class="btn-white">Chci vstupní prohlídku zdarma →</a>
+      <a href="pozarni-dokumentace.html" class="btn-outline-w">Dokumentace požární ochrany</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-main">
+
+    <!-- Brand -->
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo">
+        <img src="img/spbs-logo-white.png" alt="SPBS logo" />
+      </a>
+      <p class="footer-tagline">Specializovaná firma na požární bezpečnost staveb se sídlem v Hradci Králové.</p>
+    </div>
+
+    <!-- Služby -->
+    <div class="footer-col">
+      <h4>Služby</h4>
+      <div class="footer-col-links">
+        <a href="skoleni-zamestnancu.html">Školení zaměstnanců</a>
+        <a href="eps.html">EPS</a>
+        <a href="protipozarni-ucpavky.html">Protipožární ucpávky</a>
+        <a href="hasici-pristroje.html">Hasicí přístroje</a>
+        <a href="soucinnost-hzs.html">Součinnost HZS</a>
+        <a href="pozarni-dokumentace.html">Požární dokumentace</a>
+      </div>
+    </div>
+
+    <!-- Společnost -->
+    <div class="footer-col">
+      <h4>Společnost</h4>
+      <div class="footer-col-links">
+        <a href="o-nas.html">O nás</a>
+        <a href="nase-projekty.html">Naše projekty</a>
+        <a href="partneri.html">Partneři</a>
+        <a href="slovnik-pojmu.html">Slovník pojmů</a>
+      </div>
+    </div>
+
+    <!-- Sídlo -->
+    <div class="footer-col">
+      <h4>Sídlo</h4>
+      <div class="footer-col-contact">
+        <div class="footer-contact-row">
+          Správa požární bezpečnosti staveb s.r.o.<br>Zemědělská 1145/4a<br>Slezské Předměstí<br>500 03 Hradec Králové
+        </div>
+        <div class="footer-contact-row">
+          <div class="footer-contact-label">Otevírací doba</div>
+          Po – Pá: 7:00 – 17:00<br>So – Ne: Zavřeno
+        </div>
+      </div>
+    </div>
+
+    <!-- Fakturační údaje -->
+    <div class="footer-col">
+      <h4>Fakturační údaje</h4>
+      <div class="footer-col-contact">
+        <div class="footer-contact-row">
+          IČO: 22016295<br>DIČ: CZ22016295<br>Datová schránka: m8xca3n
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <span class="footer-copy">&copy; 2026 SPBS – Správa požární bezpečnosti staveb s.r.o.</span>
+      <div class="footer-bottom-links">
+        <a href="kontakt.html">Kontakt</a>
+        <a href="o-nas.html">O nás</a>
+        <a href="sitemap.html">Mapa webu</a>
+          <button id="cookie-settings" class="cookie-settings-link" type="button">Nastavení cookies</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-home" id="scrollHome" aria-label="Zpět na začátek">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+</button>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.sr').forEach(el => observer.observe(el));
+
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    hamburger.classList.toggle('open');
+  });
+
+  document.querySelectorAll('.nav-dropdown-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.closest('.nav-dropdown').classList.toggle('open');
+    });
+  });
+
+  // Equalize service card heights so only the clicked one expands
+  const svcCards = document.querySelectorAll('.svc-card');
+  const equalizeCards = () => {
+    svcCards.forEach(c => { c.style.minHeight = ''; });
+    let max = 0;
+    svcCards.forEach(c => { max = Math.max(max, c.offsetHeight); });
+    svcCards.forEach(c => { c.style.minHeight = max + 'px'; });
+  };
+  window.addEventListener('load', equalizeCards);
+  window.addEventListener('resize', equalizeCards);
+
+  svcCards.forEach(btn => {
+    btn.querySelector('.svc-toggle').addEventListener('click', () => {
+      const card = btn;
+      const isOpen = card.classList.contains('open');
+      svcCards.forEach(c => c.classList.remove('open'));
+      if (!isOpen) card.classList.add('open');
+    });
+  });
+
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  const scrollHome = document.getElementById('scrollHome');
+  const mainNav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    const cur = window.scrollY;
+    mainNav.style.transform = cur > 80 ? 'translateY(-100%)' : '';
+    scrollHome.classList.toggle('visible', cur > 320);
+  });
+  scrollHome.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+<!-- Cookie Consent -->
+<div id="cookie-overlay" class="cookie-overlay hidden"></div>
+<div id="cookie-banner" class="cookie-banner hidden" role="dialog" aria-modal="true" aria-label="Nastavení cookies">
+  <button class="cookie-banner-close" id="cookie-close" aria-label="Zavřít" type="button">&#x2715;</button>
+  <div class="cookie-banner-icon">
+    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="cbg" cx="38%" cy="30%" r="68%">
+          <stop offset="0%" stop-color="#f5c07a"/>
+          <stop offset="55%" stop-color="#d9862e"/>
+          <stop offset="100%" stop-color="#a85218"/>
+        </radialGradient>
+        <radialGradient id="cbg2" cx="40%" cy="35%" r="60%">
+          <stop offset="0%" stop-color="#7a3c10"/>
+          <stop offset="100%" stop-color="#3d1c08"/>
+        </radialGradient>
+      </defs>
+      <ellipse cx="40" cy="46" rx="30" ry="8" fill="rgba(0,0,0,0.15)"/>
+      <circle cx="40" cy="38" r="32" fill="url(#cbg)"/>
+      <ellipse cx="30" cy="24" rx="13" ry="8" fill="rgba(255,255,255,0.2)" transform="rotate(-20 30 24)"/>
+      <ellipse cx="28" cy="28" rx="4.5" ry="3.5" fill="url(#cbg2)" transform="rotate(-15 28 28)"/>
+      <ellipse cx="48" cy="24" rx="3.5" ry="4.5" fill="url(#cbg2)" transform="rotate(10 48 24)"/>
+      <ellipse cx="23" cy="44" rx="4" ry="3.2" fill="url(#cbg2)" transform="rotate(-5 23 44)"/>
+      <ellipse cx="43" cy="43" rx="4.5" ry="3.5" fill="url(#cbg2)" transform="rotate(20 43 43)"/>
+      <ellipse cx="53" cy="50" rx="3.5" ry="4.5" fill="url(#cbg2)" transform="rotate(-10 53 50)"/>
+      <ellipse cx="33" cy="55" rx="3.2" ry="4" fill="url(#cbg2)" transform="rotate(15 33 55)"/>
+    </svg>
+  </div>
+  <strong class="cookie-banner-title">Cookies &amp; soukromí</strong>
+  <p class="cookie-banner-body">Používáme cookies pro zlepšení webu a analýzu návštěvnosti. Sv&#367;j výběr m&#367;žete kdykoli změnit.</p>
+  <div class="cookie-categories" id="cookie-cats">
+    <label class="cookie-category">
+      <div class="cookie-cat-check">
+        <input type="checkbox" id="cc-essential" checked disabled>
+        <span class="cookie-cat-checkmark"></span>
+      </div>
+      <div class="cookie-cat-text">
+        <strong>Základní</strong>
+        <p>Zaji&#353;&#357;ují fungování webu, bez nich budou stránky nefunk&#269;ní.</p>
+      </div>
+    </label>
+    <label class="cookie-category">
+      <div class="cookie-cat-check">
+        <input type="checkbox" id="cc-preference">
+        <span class="cookie-cat-checkmark"></span>
+      </div>
+      <div class="cookie-cat-text">
+        <strong>Preferen&#269;ní</strong>
+        <p>Díky nim vám m&#367;žeme zobrazit obsah p&#345;izp&#367;sobený va&#353;im preferencím.</p>
+      </div>
+    </label>
+    <label class="cookie-category">
+      <div class="cookie-cat-check">
+        <input type="checkbox" id="cc-analytics">
+        <span class="cookie-cat-checkmark"></span>
+      </div>
+      <div class="cookie-cat-text">
+        <strong>Analytické</strong>
+        <p>Pomáhají nám pochopit, jak máme web dále vylep&#353;ovat.</p>
+      </div>
+    </label>
+    <label class="cookie-category">
+      <div class="cookie-cat-check">
+        <input type="checkbox" id="cc-marketing">
+        <span class="cookie-cat-checkmark"></span>
+      </div>
+      <div class="cookie-cat-text">
+        <strong>Marketingové</strong>
+        <p>Díky nim vás m&#367;žeme znovu oslovit v p&#345;ípad&#283; akcí nebo novinek.</p>
+      </div>
+    </label>
+    <label class="cookie-category">
+      <div class="cookie-cat-check">
+        <input type="checkbox" id="cc-addata">
+        <span class="cookie-cat-checkmark"></span>
+      </div>
+      <div class="cookie-cat-text">
+        <strong>Reklamní údaje</strong>
+        <p>Va&#353;e údaje m&#367;žeme použít v reklamních systémech, jako je Google Ads.</p>
+      </div>
+    </label>
+    <label class="cookie-category">
+      <div class="cookie-cat-check">
+        <input type="checkbox" id="cc-adperson">
+        <span class="cookie-cat-checkmark"></span>
+      </div>
+      <div class="cookie-cat-text">
+        <strong>Personalizace reklam</strong>
+        <p>Va&#353;e údaje m&#367;žeme p&#345;idat do publik pro ná&#353; remarketing.</p>
+      </div>
+    </label>
+  </div>
+  <button class="cookie-toggle-details" id="cookie-toggle" type="button">
+    <span>Podrobné nastavení</span>
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <div class="cookie-banner-btns">
+    <button id="cookie-reject" class="cookie-btn-reject" type="button">Zamítnout v&#353;e</button>
+    <button id="cookie-accept" class="cookie-btn-accept" type="button">Schválit v&#353;e</button>
+  </div>
+  <button id="cookie-save" class="cookie-btn-save" type="button">Uložit nastavení</button>
+</div>
+<script src="cookie-consent.js"></script>
+
+</body>
+</html>
